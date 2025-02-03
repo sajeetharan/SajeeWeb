@@ -5,14 +5,7 @@ import { Project, ProjectData } from "../components/projects/Project";
 
 const assetsDir = "./assets/blogs";
 const projects: ProjectData[] = [
-  {
-    title: "Botkube",
-    description:
-      "Monitor and act on your Kubernetes cluster from your favorite chat platforms.",
-    url: "https://botkube.io/",
-    image: require(`${assetsDir}/botkube.png`),
-    role: "Maintainer",
-  }
+  
 ];
 
 const title = "Blogs";
