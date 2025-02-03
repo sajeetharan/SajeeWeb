@@ -8,7 +8,7 @@ const config: Config = {
   tagline:
     "From Humble Beginnings to Global Impact—Empowering Developers, One Line at a Time",
   url: "https://sajeetharan.github.io/",
-  baseUrl: "/SajeeWeb/",
+  baseUrl: "/",
   onBrokenLinks: "warn",
   onBrokenMarkdownLinks: "warn",
   favicon: "img/favicon.ico",
