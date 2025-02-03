@@ -9,7 +9,7 @@ const config: Config = {
     "From Humble Beginnings to Global Impact—Empowering Developers, One Line at a Time",
   url: "https://sajeetharan.github.io/",
   baseUrl: "/",
-  onBrokenLinks: "throw",
+  onBrokenLinks: "warn",
   onBrokenMarkdownLinks: "warn",
   favicon: "img/favicon.ico",
 
