@@ -16,7 +16,7 @@ export const Hero: FunctionComponent = () => {
       backSpeed: 50,
       backDelay: 2000, // Pause before retyping
       showCursor: true,
-      loop: true, // Enable infinite loop
+      loop: true, // Enable infinite loop 
     });
 
     return () => {
