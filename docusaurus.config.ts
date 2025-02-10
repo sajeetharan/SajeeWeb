@@ -52,7 +52,7 @@ const config: Config = {
       "@docusaurus/preset-classic",
       {
         gtag: {
-          trackingID: "G-CNSKHL41CT",
+          trackingID: "G-Z468LV5WJ4",
           anonymizeIP: true,
         },
 
