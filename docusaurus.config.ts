@@ -19,8 +19,7 @@ const config: Config = {
 
   customFields: {
     newsletter: {
-      action:
-        "",
+      action: "",
       method: "post",
       emailFieldName: "EMAIL",
       firstNameFieldName: "FNAME",
@@ -52,6 +51,11 @@ const config: Config = {
     [
       "@docusaurus/preset-classic",
       {
+        gtag: {
+          trackingID: "G-CNSKHL41CT",
+          anonymizeIP: true,
+        },
+
         docs: false,
         blog: {
           showReadingTime: true,
