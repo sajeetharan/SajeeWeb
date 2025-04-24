@@ -1,23 +1,24 @@
 ---
-title: "Deploy Deno App on Azure with Github Actions"
-utcDate: "2020-05-31"
-categories: 
-  - "angular"
-  - "architecture"
-  - "bestpractices"
-  - "deno"
-  - "githubactions"
-  - "javascript"
-  - "tools"
-  - "visualstudio"
-tags: 
-  - "api"
-  - "azure"
-  - "nodejs"
-  - "restapi"
-  - "typescript"
-  - "webapp"
-coverImage: "azure001.jpg"
+title: Deploy Deno App on Azure with Github Actions
+Date: '2020-05-31'
+categories:
+  - angular
+  - architecture
+  - bestpractices
+  - deno
+  - githubactions
+  - javascript
+  - tools
+  - visualstudio
+tags:
+  - api
+  - azure
+  - nodejs
+  - restapi
+  - typescript
+  - webapp
+coverImage: azure001.jpg
+utcDate: '2025-04-24T09:52:37.821Z'
 ---
 
 ## Overview :

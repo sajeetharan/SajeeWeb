@@ -1,20 +1,21 @@
 ---
-title: "Build serverless functions with OpenFaaS on Azure"
-utcDate: "2019-03-03"
-categories: 
-  - "c"
-  - "kubernetes"
-  - "openfaas"
-  - "opensource"
-  - "visualstudio"
-  - "vscode"
-tags: 
-  - "aks"
-  - "azure"
-  - "docker"
-  - "microservices"
-  - "serverless"
-coverImage: "dfrkf4nxoaajwn2.jpg"
+title: Build serverless functions with OpenFaaS on Azure
+Date: '2019-03-03'
+categories:
+  - c
+  - kubernetes
+  - openfaas
+  - opensource
+  - visualstudio
+  - vscode
+tags:
+  - aks
+  - azure
+  - docker
+  - microservices
+  - serverless
+coverImage: dfrkf4nxoaajwn2.jpg
+utcDate: '2025-04-24T09:52:37.555Z'
 ---
 
 For the past one month , I have been experimenting with one of the promising serverless framework for creating serverless functions.  With the modern applications moving to cloud with microservices this framework becomes very handy to create/manage your microservices in the form of functions.

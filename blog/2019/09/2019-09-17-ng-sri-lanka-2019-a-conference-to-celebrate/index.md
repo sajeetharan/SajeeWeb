@@ -1,21 +1,22 @@
 ---
-title: "NG-Sri Lanka 2019 - A conference to celebrate"
-utcDate: "2019-09-17"
-categories: 
-  - "angular"
-  - "angularcli"
-  - "developer"
-  - "opensource"
-  - "oss"
-tags: 
-  - "conference"
-  - "developers"
-  - "google"
-  - "microsoft"
-  - "speakers"
-  - "srilanka"
-  - "typescript"
-coverImage: "70189103_2455346634679918_4029996529988141056_o-e1569982707139.jpg"
+title: NG-Sri Lanka 2019 - A conference to celebrate
+Date: '2019-09-17'
+categories:
+  - angular
+  - angularcli
+  - developer
+  - opensource
+  - oss
+tags:
+  - conference
+  - developers
+  - google
+  - microsoft
+  - speakers
+  - srilanka
+  - typescript
+coverImage: 70189103_2455346634679918_4029996529988141056_o-e1569982707139.jpg
+utcDate: '2025-04-24T09:52:37.604Z'
 ---
 
 Hey NG folks, [ng-Srilanka 2019](https://www.facebook.com/ngslcon), the First-ever Angular conference on the 14th of September 2019 was a great success. It was a dream come true moment for me. Yes, I am one of those developers who marries one platform or framework and doesn’t care too much about the other ones. I have been an Angularjs/Angular developer for the past 7 years. One of the reasons why I wanted to make this happen was because of the strong and wide Angular community in Sri Lanka. When I became a GDE in Angular in 2018, my first aim was to build a strong developer,especially Angular community in SriLanka. NG-Srilanka has been a 2 year dream and finally I am glad it happened with all grandeur .

@@ -1,23 +1,26 @@
 ---
-title: "Deploy Angular Applications to Azure with Github Actions - Emotion Detection App"
-utcDate: "2019-11-24"
-categories: 
-  - "angularcli"
-  - "appservice"
-  - "cosmosdb"
-  - "developer"
-  - "microsoft"
-  - "visualstudio"
-  - "vscode"
-tags: 
-  - "angular"
-  - "artificiallintelligence"
-  - "azure"
-  - "azure-cosmosdb"
-  - "ci-cd"
-  - "cognitiveservice"
-  - "github"
-coverImage: "azure2.jpg"
+title: >-
+  Deploy Angular Applications to Azure with Github Actions - Emotion Detection
+  App
+Date: '2019-11-24'
+categories:
+  - angularcli
+  - appservice
+  - cosmosdb
+  - developer
+  - microsoft
+  - visualstudio
+  - vscode
+tags:
+  - angular
+  - artificiallintelligence
+  - azure
+  - azure-cosmosdb
+  - ci-cd
+  - cognitiveservice
+  - github
+coverImage: azure2.jpg
+utcDate: '2025-04-24T09:52:37.621Z'
 ---
 
 The first ever [Github Universe viewing party in SriLanka](https://www.facebook.com/pg/GitHubCommunityLK/photos/?tab=album&album_id=117412043051475&__xts__%5B0%5D=68.ARD0AqdfH6U5QAgDeeCdwuCnXplpBNaJcXpoel6Hrwjtvb4LyHd5mBQ5n6wS-qlWrXnEJGHlZSAFY32t8vnE4GZkSEqLAeKeYq_8b4td4GavjoEkJfiwoeipIemWyuUJRNLWYnenlFp7GP-4odhPya5plxFCHNTFNwbT9DDrkMl5zM_p1yx-xyI_p41kMhCyuWyTGngXc5FihXpgNtntmRW6XlvH10QU0KBEeY-t3JIwBanTuetuk1FNl63_-1xnEfCtZ-ZzZ9BW2OJt_WYCkK-A9fV2HpOICSAtuXQVBbvY6npHHMA-btBkYK9v-mrxPmnF9XICPoQ&__tn__=-UCH-R) took place on last Thursday organized by the Github Campus Experts in the country. It was an event to share all the exciting news and updates on Github and it was a great success. I decided to write this blog based on the session i presented on “Github Actions”. It’s amazing to see the new features announced by the Github over the span of last 12 months out of which Github actions was the latest one and it was made generally available on  few days ago (November 13, 2019) to build CI/CD pipelines from GitHub itself. I was excited about this announcement and tested it with two of my projects and I have to say I’m impressed.

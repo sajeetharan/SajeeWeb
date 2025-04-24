@@ -1,16 +1,17 @@
 ---
-title: "Angular Language Service - A handy extension for angular developers"
-utcDate: "2017-11-10"
-categories: 
-  - "angularcli"
-  - "developer"
-tags: 
-  - "angular"
-  - "developers"
-  - "plugins"
-  - "typescript"
-  - "vscode"
-  - "webdevelopment"
+title: Angular Language Service - A handy extension for angular developers
+Date: '2017-11-10'
+categories:
+  - angularcli
+  - developer
+tags:
+  - angular
+  - developers
+  - plugins
+  - typescript
+  - vscode
+  - webdevelopment
+utcDate: '2025-04-24T09:52:37.458Z'
 ---
 
 Even though there have been plenty of tools/extension to check the typescript/javascript code, but there have not been any extension to validate the HTML code or related features to it. [Angular Language Service](https://marketplace.visualstudio.com/items?itemName=Angular.ng-template) was released to make the developers more productive and reduce the errors by offering better code completion.

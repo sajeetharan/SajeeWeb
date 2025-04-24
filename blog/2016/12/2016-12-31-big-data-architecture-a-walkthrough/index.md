@@ -1,19 +1,20 @@
 ---
-title: "Big Data Architecture - a walkthrough"
-utcDate: "2016-12-31"
-categories: 
-  - "developer"
-tags: 
-  - "architecture"
-  - "bigdata"
-  - "etl"
-  - "flume"
-  - "hadoop"
-  - "modern"
-  - "olap"
-  - "oltp"
-  - "spark"
-  - "sqoop"
+title: Big Data Architecture - a walkthrough
+Date: '2016-12-31'
+categories:
+  - developer
+tags:
+  - architecture
+  - bigdata
+  - etl
+  - flume
+  - hadoop
+  - modern
+  - olap
+  - oltp
+  - spark
+  - sqoop
+utcDate: '2025-04-24T09:52:37.387Z'
 ---
 
 Let me start this blog with a little example. Assume, Sachin have a leak in a water pipe in his garden. He takes a bucket and a some sealing material to fix the problem. After a while, he see s that the leak is much bigger that and he needs a specialist  to bring bigger tools. Meanwhile, he still uses the bucket to drain the water. After a while, he notices that a massive underground stream has opened and he needs to handle millions of liters of water every second.   

@@ -1,14 +1,15 @@
 ---
-title: "Shift from Angular1 to Angular2 if you are an Angular 1.x fan"
-utcDate: "2017-01-27"
-categories: 
-  - "developer"
-tags: 
-  - "angular1-x"
-  - "angular2"
-  - "angularjs"
-  - "components"
-  - "directive"
+title: Shift from Angular1 to Angular2 if you are an Angular 1.x fan
+Date: '2017-01-27'
+categories:
+  - developer
+tags:
+  - angular1-x
+  - angular2
+  - angularjs
+  - components
+  - directive
+utcDate: '2025-04-24T09:52:37.395Z'
 ---
 
 I am a big fan of AngularJS over the years and involved in developing enterprise applications using Angular1. To all the angular1.x developers out there, am going to write about my experience on migrating from Angular 1.x to Angular 2. 

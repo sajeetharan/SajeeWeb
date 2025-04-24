@@ -1,8 +1,9 @@
 ---
-title: "Software Piracy - boon or a bane?"
-utcDate: "2012-05-07"
-categories: 
-  - "developer"
+title: Software Piracy - boon or a bane?
+Date: '2012-05-07'
+categories:
+  - developer
+utcDate: '2025-04-24T09:52:37.328Z'
 ---
 
 ## In general, this is not so much a Sri Lankan only issue as it is a global one. But the fact is this: piracy in Sri Lanka is increasing at an alarming rate. You have huge shops selling pirated software, movies, music and games. This commercialization is something that is primarily an Asia-only issue. The excuses people have given for buying pirated stuff are: we don’t have the money, the original is not available in Asia yet and it doesn’t really harm anyone. 

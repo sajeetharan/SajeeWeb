@@ -1,13 +1,14 @@
 ---
-title: "Best practices in handling Azure Service Bus dead-letter messages"
-utcDate: "2020-04-22"
-categories: 
-  - "bestpractices"
-  - "microsoft"
-  - "servicebus"
-tags: 
-  - "azure"
-coverImage: "as01.jpg"
+title: Best practices in handling Azure Service Bus dead-letter messages
+Date: '2020-04-22'
+categories:
+  - bestpractices
+  - microsoft
+  - servicebus
+tags:
+  - azure
+coverImage: as01.jpg
+utcDate: '2025-04-24T09:52:37.800Z'
 ---
 
 **Overview :** 

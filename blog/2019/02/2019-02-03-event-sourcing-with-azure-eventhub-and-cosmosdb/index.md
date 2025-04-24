@@ -1,19 +1,20 @@
 ---
-title: "Event Sourcing with Azure EventHub and CosmosDB"
-utcDate: "2019-02-03"
-categories: 
-  - "eventhub"
-  - "vscode"
-tags: 
-  - "azure"
-  - "bigdata"
-  - "cosmosdb"
-  - "data"
-  - "eventsourcing"
-  - "iot"
-  - "nosql"
-  - "serverless"
-coverImage: "234png.jpg"
+title: Event Sourcing with Azure EventHub and CosmosDB
+Date: '2019-02-03'
+categories:
+  - eventhub
+  - vscode
+tags:
+  - azure
+  - bigdata
+  - cosmosdb
+  - data
+  - eventsourcing
+  - iot
+  - nosql
+  - serverless
+coverImage: 234png.jpg
+utcDate: '2025-04-24T09:52:37.541Z'
 ---
 
 ### **Traditional Architecture :**

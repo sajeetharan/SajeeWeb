@@ -1,24 +1,25 @@
 ---
-title: "My experience at Microsoft OpenHack DevOps - Singapore"
-utcDate: "2019-11-30"
-categories: 
-  - "appservice"
-  - "azuredevops"
-  - "kubernetes"
-  - "microservices"
-  - "openachk"
-  - "visualstudio"
-  - "vscode"
-tags: 
-  - "aks"
-  - "azure"
-  - "azuremonitor"
-  - "devops"
-  - "fun"
-  - "microsoft"
-  - "openhack"
-  - "team"
-coverImage: "123.jpg"
+title: My experience at Microsoft OpenHack DevOps - Singapore
+Date: '2019-11-30'
+categories:
+  - appservice
+  - azuredevops
+  - kubernetes
+  - microservices
+  - openachk
+  - visualstudio
+  - vscode
+tags:
+  - aks
+  - azure
+  - azuremonitor
+  - devops
+  - fun
+  - microsoft
+  - openhack
+  - team
+coverImage: 123.jpg
+utcDate: '2025-04-24T09:52:37.625Z'
 ---
 
 This week I participated my first ever OpenHack on DevOps organized by Microsoft in Singapore. It was a three day event from 26th-29th November 2019. The hackathon was focused on Azure DevOps and Azure Kubernetes services. There were participants from all over the world gathered at one place.

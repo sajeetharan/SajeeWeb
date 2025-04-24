@@ -1,17 +1,18 @@
 ---
-title: "Azure &amp; AWS - Find which data center is right for you?"
-utcDate: "2019-08-25"
-categories: 
-  - "aws"
-  - "cloud"
-  - "developer"
-  - "gcp"
-tags: 
-  - "amazon"
-  - "azure"
-  - "microsoft"
-  - "tools"
-coverImage: "speeed.jpg"
+title: Azure &amp; AWS - Find which data center is right for you?
+Date: '2019-08-25'
+categories:
+  - aws
+  - cloud
+  - developer
+  - gcp
+tags:
+  - amazon
+  - azure
+  - microsoft
+  - tools
+coverImage: speeed.jpg
+utcDate: '2025-04-24T09:52:37.600Z'
 ---
 
 There are few cool speed test tools available out there which allows you to test network latencies and speed to data centers from different countries and locations.  Along with finding the closest Datacenter near your location, it tests the storage latency as well as upload and download speeds. 

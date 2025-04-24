@@ -1,26 +1,29 @@
 ---
-title: "Build and Deploy Future Proof Application with Azure Kubernetes Service in 10 Minutes (Nodejs, Go + AKS)"
-utcDate: "2020-04-18"
-categories: 
-  - "appinsights"
-  - "appservice"
-  - "architecture"
-  - "asp-net-core"
-  - "azuredevops"
-  - "ci-cd"
-  - "microsoft"
-  - "opensource"
-tags: 
-  - "aks"
-  - "azure"
-  - "azurekubernetes"
-  - "devops"
-  - "devops-starter"
-  - "devopslabs"
-  - "golang"
-  - "kubernetes"
-  - "node"
-coverImage: "aks_01.jpg"
+title: >-
+  Build and Deploy Future Proof Application with Azure Kubernetes Service in 10
+  Minutes (Nodejs, Go + AKS)
+Date: '2020-04-18'
+categories:
+  - appinsights
+  - appservice
+  - architecture
+  - asp-net-core
+  - azuredevops
+  - ci-cd
+  - microsoft
+  - opensource
+tags:
+  - aks
+  - azure
+  - azurekubernetes
+  - devops
+  - devops-starter
+  - devopslabs
+  - golang
+  - kubernetes
+  - node
+coverImage: aks_01.jpg
+utcDate: '2025-04-24T09:52:37.790Z'
 ---
 
 Quarantine, self isolation , social distancing for the past one month, I’m living with these words. While most of us are investing this time to learn new technologies/tools. I challenged myself to skill up myself and have deep knowledge on certain services on Azure.

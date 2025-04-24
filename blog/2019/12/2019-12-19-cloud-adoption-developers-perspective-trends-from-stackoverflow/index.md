@@ -1,18 +1,19 @@
 ---
-title: "Cloud Adoption : Developers perspective trends from Stackoverflow"
-utcDate: "2019-12-19"
-categories: 
-  - "aws"
-  - "azure"
-  - "cloud"
-  - "developer"
-  - "gcp"
-  - "microsoft"
-tags: 
-  - "cloudadoption"
-  - "stackoverflow"
-  - "trends"
-coverImage: "banner1.jpg"
+title: 'Cloud Adoption : Developers perspective trends from Stackoverflow'
+Date: '2019-12-19'
+categories:
+  - aws
+  - azure
+  - cloud
+  - developer
+  - gcp
+  - microsoft
+tags:
+  - cloudadoption
+  - stackoverflow
+  - trends
+coverImage: banner1.jpg
+utcDate: '2025-04-24T09:52:37.638Z'
 ---
 
 I have been answering questions on Stackoverflow since 2011, and recently i started answering questions on #Azure. I was amazed to see the growth of Azure in the last 3 years among developers which is almost 200%. More the questions means more are implementing solutions on Azure.

@@ -1,8 +1,9 @@
 ---
-title: "What to do with damaged CDs?"
-utcDate: "2011-04-13"
-categories: 
-  - "developer"
+title: What to do with damaged CDs?
+Date: '2011-04-13'
+categories:
+  - developer
+utcDate: '2025-04-24T09:52:37.309Z'
 ---
 
 I was wondering what could I do with CD's that I cannot use anymore.Here are some of the creative ideas that struck my mind!  

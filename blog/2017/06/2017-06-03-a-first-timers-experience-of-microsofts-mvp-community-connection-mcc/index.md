@@ -1,8 +1,9 @@
 ---
-title: "A first-timer’s experience of Microsoft’s MVP Community Connection (MCC)"
-utcDate: "2017-06-03"
-categories: 
-  - "developer"
+title: A first-timer’s experience of Microsoft’s MVP Community Connection (MCC)
+Date: '2017-06-03'
+categories:
+  - developer
+utcDate: '2025-04-24T09:52:37.418Z'
 ---
 
 It was my first ever experience to participate in Microsoft's event outside Sri Lanka. My experience as a “first-timer” attending the South East Asia's MVP community connection, along with few other MVPs from my country. MVP Community Connection is a day to connect, learn, inspire and celebrate the local MVP community and MS employees.

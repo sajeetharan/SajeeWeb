@@ -1,25 +1,25 @@
 ---
-title: "How i built Serverless App 'MentorMe' with Azure Functions and Cosmosdb"
-utcDate: "2021-02-26"
-categories: 
-  - "appinsights"
-  - "azure-monitor"
-  - "azurefunction"
-  - "azurefunction"
-tags: 
-  - "apimanagement"
-  - "architecture"
-  - "azure"
-  - "azurefunctions"
-  - "cloud"
-  - "cosmosdb"
-  - "flutter"
-  - "microservices"
-  - "mobile"
-  - "notification"
-  - "reference"
-  - "serverless"
-coverImage: "820b5-appservice-1-1.jpg"
+title: How i built Serverless App 'MentorMe' with Azure Functions and Cosmosdb
+Date: '2021-02-26'
+categories:
+  - appinsights
+  - azure-monitor
+  - azurefunction
+  - azurefunction
+tags:
+  - apimanagement
+  - architecture
+  - azure
+  - azurefunctions
+  - cloud
+  - cosmosdb
+  - flutter
+  - microservices
+  - mobile
+  - notification
+  - reference
+  - serverless
+coverImage: 820b5-appservice-1-1.jpg
 ---
 
 ### Overview

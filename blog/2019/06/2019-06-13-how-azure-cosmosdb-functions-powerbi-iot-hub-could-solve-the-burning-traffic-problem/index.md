@@ -1,20 +1,23 @@
 ---
-title: "How Azure CosmosDB + Functions + IOT hub + PowerBI could solve the burning Traffic problem"
-utcDate: "2019-06-13"
-categories: 
-  - "azurefunction"
-  - "bot"
-  - "cloud"
-  - "iothub"
-tags: 
-  - "architecture"
-  - "azure"
-  - "challenges"
-  - "cosmosdb"
-  - "powerbi"
-  - "problems"
-  - "traffic"
-coverImage: "blog2.jpg"
+title: >-
+  How Azure CosmosDB + Functions + IOT hub + PowerBI could solve the burning
+  Traffic problem
+Date: '2019-06-13'
+categories:
+  - azurefunction
+  - bot
+  - cloud
+  - iothub
+tags:
+  - architecture
+  - azure
+  - challenges
+  - cosmosdb
+  - powerbi
+  - problems
+  - traffic
+coverImage: blog2.jpg
+utcDate: '2025-04-24T09:52:37.587Z'
 ---
 
 Road traffic is a very classic and burning problem in Sri Lanka and in most of the Asian countries. Personally I have to spend 2 hours on the road everyday by just stuck in the traffic and I assume the same for other people who gets stuck for many hours with no way out.

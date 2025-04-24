@@ -1,8 +1,9 @@
 ---
-title: "Team Theater Workshop - Memorable day!"
-utcDate: "2011-04-15"
-categories: 
-  - "developer"
+title: Team Theater Workshop - Memorable day!
+Date: '2011-04-15'
+categories:
+  - developer
+utcDate: '2025-04-24T09:52:37.314Z'
 ---
 
   

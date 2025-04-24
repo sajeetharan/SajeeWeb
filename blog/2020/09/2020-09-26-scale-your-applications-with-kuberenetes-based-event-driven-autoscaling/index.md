@@ -1,28 +1,29 @@
 ---
-title: "Scale Applications with Kuberenetes-based Event Driven AutoScaling"
-utcDate: "2020-09-26"
-categories: 
-  - "azurefunction"
-  - "azurefunction"
-  - "eventgrid"
-  - "kubernetes"
-  - "serverless"
-  - "servicebus"
-  - "vscode"
-tags: 
-  - "aks"
-  - "autoscaling"
-  - "azure"
-  - "azurefunctions"
-  - "eventdriven"
-  - "eventhub"
-  - "keda"
-  - "messages"
-  - "microservices"
-  - "opensource"
-  - "oss"
-  - "storagequeue"
-coverImage: "7bf39-keda.jpg"
+title: Scale Applications with Kuberenetes-based Event Driven AutoScaling
+Date: '2020-09-26'
+categories:
+  - azurefunction
+  - azurefunction
+  - eventgrid
+  - kubernetes
+  - serverless
+  - servicebus
+  - vscode
+tags:
+  - aks
+  - autoscaling
+  - azure
+  - azurefunctions
+  - eventdriven
+  - eventhub
+  - keda
+  - messages
+  - microservices
+  - opensource
+  - oss
+  - storagequeue
+coverImage: 7bf39-keda.jpg
+utcDate: '2025-04-24T09:52:37.855Z'
 ---
 
 ### **Overview:**

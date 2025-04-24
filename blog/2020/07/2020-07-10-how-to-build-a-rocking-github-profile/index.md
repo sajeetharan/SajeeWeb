@@ -1,17 +1,18 @@
 ---
-title: "How to Build a Rocking Github Profile"
-utcDate: "2020-07-10"
-categories: 
-  - "brand"
-  - "githubactions"
-  - "onlinepresence"
-tags: 
-  - "developers"
-  - "development"
-  - "github"
-  - "profile"
-  - "skills"
-coverImage: "github-pro.jpg"
+title: How to Build a Rocking Github Profile
+Date: '2020-07-10'
+categories:
+  - brand
+  - githubactions
+  - onlinepresence
+tags:
+  - developers
+  - development
+  - github
+  - profile
+  - skills
+coverImage: github-pro.jpg
+utcDate: '2025-04-24T09:52:37.841Z'
 ---
 
 Since the acquisition by Microsoft, Github been so much better! They have added so many new features, made mobile app. GitHub recently made lot of improvements on the UI aspects including adding a twitter handle to your profile. Also introduced a special feature for developers, that allows you to showcase yourself by pinning a `README.md` containing information about you, your work, portfolio and anything else on your GitHub profile.

@@ -1,8 +1,9 @@
 ---
-title: "Visual Studio 2017 has landed!"
-utcDate: "2017-03-12"
-categories: 
-  - "developer"
+title: Visual Studio 2017 has landed!
+Date: '2017-03-12'
+categories:
+  - developer
+utcDate: '2025-04-24T09:52:37.408Z'
 ---
 
 It has been an amazing journey for Microsoft Visual studio , Recently marking 20 years of software development tool in the industry. Tech giant Microsoft has introduced the discharge of Visual Studio 2017. Users can obtain visual Studio 2017 by visiting https://www.visualstudio.com/.  

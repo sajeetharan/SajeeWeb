@@ -1,17 +1,18 @@
 ---
-title: "Project Tye : Build developer focused Microsevices with AKS"
-utcDate: "2020-12-21"
-tags: 
-  - "azure"
-  - "containers"
-  - "debug"
-  - "developers"
-  - "docker"
-  - "k8s"
-  - "kubernetes"
-  - "microservices"
-  - "vscode"
-coverImage: "6f01b-tye_header.jpg"
+title: 'Project Tye : Build developer focused Microsevices with AKS'
+Date: '2020-12-21'
+tags:
+  - azure
+  - containers
+  - debug
+  - developers
+  - docker
+  - k8s
+  - kubernetes
+  - microservices
+  - vscode
+coverImage: 6f01b-tye_header.jpg
+utcDate: '2025-04-24T09:52:37.902Z'
 ---
 
 ## Overview

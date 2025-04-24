@@ -1,20 +1,21 @@
 ---
-title: "Digging into BigData with Google's BigQuery"
-utcDate: "2016-09-02"
-categories: 
-  - "developer"
-tags: 
-  - "bigdata"
-  - "bigquery"
-  - "columnar"
-  - "datasets"
-  - "deployment"
-  - "dreamel"
-  - "google"
-  - "googlestore"
-  - "jobs"
-  - "tables"
-  - "tree"
+title: Digging into BigData with Google's BigQuery
+Date: '2016-09-02'
+categories:
+  - developer
+tags:
+  - bigdata
+  - bigquery
+  - columnar
+  - datasets
+  - deployment
+  - dreamel
+  - google
+  - googlestore
+  - jobs
+  - tables
+  - tree
+utcDate: '2025-04-24T09:52:37.366Z'
 ---
 
 Well, i was one of the speaker at Colombo Big Data Meetup which was held yesterday and i spoke about Google's bigquery. Hence i have decided to write a blog on that so that you could get benefited if you are a BigData Fan.  

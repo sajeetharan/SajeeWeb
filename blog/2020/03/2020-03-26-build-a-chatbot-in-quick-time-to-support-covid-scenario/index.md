@@ -1,22 +1,25 @@
 ---
-title: "Build a BOT in quick time to support COVID Scenario and place it with Teams and Your Website!"
-utcDate: "2020-03-26"
-categories: 
-  - "aibuilder"
-  - "appinsights"
-  - "architecture"
-  - "azure"
-  - "azurefunction"
-  - "bot"
-  - "botservice"
-  - "cloud"
-  - "cognitiveservice"
-tags: 
-  - "angular"
-  - "covid"
-  - "microsoft"
-  - "teams"
-coverImage: "banner.png"
+title: >-
+  Build a BOT in quick time to support COVID Scenario and place it with Teams
+  and Your Website!
+Date: '2020-03-26'
+categories:
+  - aibuilder
+  - appinsights
+  - architecture
+  - azure
+  - azurefunction
+  - bot
+  - botservice
+  - cloud
+  - cognitiveservice
+tags:
+  - angular
+  - covid
+  - microsoft
+  - teams
+coverImage: banner.png
+utcDate: '2025-04-24T09:52:37.773Z'
 ---
 
 ### Overview

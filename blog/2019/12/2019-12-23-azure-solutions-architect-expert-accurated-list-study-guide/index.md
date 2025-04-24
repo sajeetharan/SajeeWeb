@@ -1,18 +1,19 @@
 ---
-title: "Azure Solutions Architect Expert : curated list study guide"
-utcDate: "2019-12-23"
-categories: 
-  - "certifications"
-  - "developer"
-tags: 
-  - "architect"
-  - "az-303"
-  - "az300"
-  - "az301"
-  - "az304"
-  - "azure"
-  - "certification"
-coverImage: "banner1-1.jpg"
+title: 'Azure Solutions Architect Expert : curated list study guide'
+Date: '2019-12-23'
+categories:
+  - certifications
+  - developer
+tags:
+  - architect
+  - az-303
+  - az300
+  - az301
+  - az304
+  - azure
+  - certification
+coverImage: banner1-1.jpg
+utcDate: '2025-04-24T09:52:37.647Z'
 ---
 
 Recently, I managed to acclaim the Azure Solutions Architect badge by completing [AZ-300](https://docs.microsoft.com/en-us/learn/certifications/exams/az-300) and [AZ-301](https://docs.microsoft.com/en-us/learn/certifications/exams/az-301) exams.

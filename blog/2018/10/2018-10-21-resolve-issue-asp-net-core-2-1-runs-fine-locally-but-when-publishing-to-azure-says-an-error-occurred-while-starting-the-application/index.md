@@ -1,13 +1,16 @@
 ---
-title: "Resolve Issue : ASP.NET Core 2.1 runs fine locally but when publishing to Azure says “An error occurred while starting the application.”"
-utcDate: "2018-10-21"
-categories: 
-  - "asp-net-core"
-  - "c"
-  - "visualstudio"
-tags: 
-  - "error"
-coverImage: "0_lonwwnvxmmcfy-i6.png"
+title: >-
+  Resolve Issue : ASP.NET Core 2.1 runs fine locally but when publishing to
+  Azure says “An error occurred while starting the application.”
+Date: '2018-10-21'
+categories:
+  - asp-net-core
+  - c
+  - visualstudio
+tags:
+  - error
+coverImage: 0_lonwwnvxmmcfy-i6.png
+utcDate: '2025-04-24T09:52:37.533Z'
 ---
 
 After building my first production ready application with ASP.NET Core 2.1 and tested locally when i tried to deploy for the first time on Azure, I was stuck with the following page.

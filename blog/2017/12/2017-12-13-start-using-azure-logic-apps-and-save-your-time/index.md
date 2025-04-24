@@ -1,19 +1,20 @@
 ---
-title: "Start using Azure Logic apps and save your time"
-utcDate: "2017-12-13"
-categories: 
-  - "developer"
-  - "microservices"
-tags: 
-  - "azure"
-  - "c"
-  - "connectors"
-  - "custom"
-  - "dotnet"
-  - "logicapp"
-  - "microsoft"
-  - "portal"
-  - "visualstudio"
+title: Start using Azure Logic apps and save your time
+Date: '2017-12-13'
+categories:
+  - developer
+  - microservices
+tags:
+  - azure
+  - c
+  - connectors
+  - custom
+  - dotnet
+  - logicapp
+  - microsoft
+  - portal
+  - visualstudio
+utcDate: '2025-04-24T09:52:37.465Z'
 ---
 
 This is my first blog and Azure and i am inspired to write this one after attending the Microsoft's workshop "App innovation day".There was a cool technology **"Windows Workflow Foundation"** provided by Microsoft with dot net framework to create workflows to cater business logic in dot net applications. With Azure, The Logic Apps service fulfill the purpose to have business processes or workflows take shape of an app.

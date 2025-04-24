@@ -1,19 +1,20 @@
 ---
-title: "Let's build clean and Scalable Angular application"
-utcDate: "2018-10-24"
-categories: 
-  - "typescript"
-tags: 
-  - "angular"
-  - "angular7"
-  - "angularcli"
-  - "best-practices"
-  - "extensions"
-  - "lazyloading"
-  - "tips"
-  - "tricks"
-  - "vscode"
-coverImage: "angular.jpg"
+title: Let's build clean and Scalable Angular application
+Date: '2018-10-24'
+categories:
+  - typescript
+tags:
+  - angular
+  - angular7
+  - angularcli
+  - best-practices
+  - extensions
+  - lazyloading
+  - tips
+  - tricks
+  - vscode
+coverImage: angular.jpg
+utcDate: '2025-04-24T09:52:37.536Z'
 ---
 
 The wait is over and Angular 7 is out, finally time has come to write about some tips to build fast angular application. In this blog i will share my experience with practices that you need to follow when you are starting a new project.

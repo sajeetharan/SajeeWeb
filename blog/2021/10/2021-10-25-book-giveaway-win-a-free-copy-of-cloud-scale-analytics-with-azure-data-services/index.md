@@ -1,20 +1,23 @@
 ---
-title: 'BOOK GIVEAWAY: Win a free copy of  "Cloud Scale Analytics with Azure Data Services "'
-utcDate: "2021-10-25"
+title: >-
+  BOOK GIVEAWAY: Win a free copy of  "Cloud Scale Analytics with Azure Data
+  Services "
+Date: '2021-10-25'
 tags:
-  - "adls"
-  - "analytics"
-  - "azure"
-  - "bigdata"
-  - "cosmosdb"
-  - "datalake"
-  - "ebook"
-  - "free"
-  - "giveaway"
-  - "hadoop"
-  - "packt"
-  - "spark"
-coverImage: "cosmos.jpg"
+  - adls
+  - analytics
+  - azure
+  - bigdata
+  - cosmosdb
+  - datalake
+  - ebook
+  - free
+  - giveaway
+  - hadoop
+  - packt
+  - spark
+coverImage: cosmos.jpg
+utcDate: '2025-04-24T09:52:37.975Z'
 ---
 
 Hello folks!

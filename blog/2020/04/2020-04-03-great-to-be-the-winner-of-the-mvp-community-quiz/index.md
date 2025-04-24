@@ -1,15 +1,16 @@
 ---
-title: "Great to be the Winner of the MVP Community Quiz"
-utcDate: "2020-04-03"
-categories: 
-  - "azure"
-tags: 
-  - "community"
-  - "microsoft"
-  - "mvp"
-  - "quize"
-  - "winner"
-coverImage: "bg.jpg"
+title: Great to be the Winner of the MVP Community Quiz
+Date: '2020-04-03'
+categories:
+  - azure
+tags:
+  - community
+  - microsoft
+  - mvp
+  - quize
+  - winner
+coverImage: bg.jpg
+utcDate: '2025-04-24T09:52:37.777Z'
 ---
 
 The online [MVP Community Quiz](https://www.isidorakatanic.com/post/mvp-community-quiz) is an online quize program by [Isidora Katanic](https://twitter.com/isidorakatanic), who is the organizer of the famous community events such as Experts Live Europe and Experts Live Switzerland.

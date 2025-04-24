@@ -1,8 +1,9 @@
 ---
-title: "Microsoft - A Big Thank You"
-utcDate: "2017-03-18"
-categories: 
-  - "developer"
+title: Microsoft - A Big Thank You
+Date: '2017-03-18'
+categories:
+  - developer
+utcDate: '2025-04-24T09:52:37.411Z'
 ---
 
   

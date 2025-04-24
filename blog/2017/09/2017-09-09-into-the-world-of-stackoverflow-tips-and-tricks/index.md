@@ -1,22 +1,23 @@
 ---
-title: "Into the world of stackoverflow - Tips and tricks"
-utcDate: "2017-09-09"
-categories: 
-  - "angular"
-  - "tips"
-  - "vscode"
-tags: 
-  - "coding"
-  - "contribute"
-  - "foss"
-  - "google"
-  - "mentor"
-  - "opensouce"
-  - "programmers"
-  - "programming"
-  - "soready2help"
-  - "stackoverflow"
-coverImage: "so.jpg"
+title: Into the world of stackoverflow - Tips and tricks
+Date: '2017-09-09'
+categories:
+  - angular
+  - tips
+  - vscode
+tags:
+  - coding
+  - contribute
+  - foss
+  - google
+  - mentor
+  - opensouce
+  - programmers
+  - programming
+  - soready2help
+  - stackoverflow
+coverImage: so.jpg
+utcDate: '2025-04-24T09:52:37.455Z'
 ---
 
 It's been so long since i wanted to write a blog on how to contribute on stackoverflow. Recently myself and one of my colleague had a small session on the same topic and i decided to share the experience in this post and this is a good opportunity to address some misconceptions about Stack Overflow.  

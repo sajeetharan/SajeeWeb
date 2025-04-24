@@ -1,17 +1,20 @@
 ---
-title: "Azure static web app is simply AWESOME : Deployed MEME generator app in 10 seconds!"
-utcDate: "2020-05-19"
-categories: 
-  - "azurefunction"
-  - "ci-cd"
-  - "githubactions"
-  - "vscode"
-tags: 
-  - "angular"
-  - "azure"
-  - "spas"
-  - "staticwebapp"
-coverImage: "azure2.jpg"
+title: >-
+  Azure static web app is simply AWESOME : Deployed MEME generator app in 10
+  seconds!
+Date: '2020-05-19'
+categories:
+  - azurefunction
+  - ci-cd
+  - githubactions
+  - vscode
+tags:
+  - angular
+  - azure
+  - spas
+  - staticwebapp
+coverImage: azure2.jpg
+utcDate: '2025-04-24T09:52:37.812Z'
 ---
 
 One of the highlight among the announcements made at Microsoft Build 2020 was announcement of the new Azure service in the keynote: Azure App Static Web Apps. **Azure** **Static** **Web Apps** is a service that automatically builds and deploys full stack **web apps** to **Azure** from a GitHub repository. This service allow web developers to publish websites to a production environment by building apps from a GitHub repository for free. developers can use modular and extensible patterns to deploy apps in minutes while taking advantage of the built-in scaling and cost-savings offered by serverless technologies.

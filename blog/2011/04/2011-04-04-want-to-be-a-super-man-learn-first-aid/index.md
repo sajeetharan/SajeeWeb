@@ -1,8 +1,9 @@
 ---
-title: "Want To Be a Super Man? - Learn First Aid!"
-utcDate: "2011-04-04"
-categories: 
-  - "developer"
+title: Want To Be a Super Man? - Learn First Aid!
+Date: '2011-04-04'
+categories:
+  - developer
+utcDate: '2025-04-24T09:52:37.300Z'
 ---
 
 It is very important that we must understand the importance of first aid. The art that we all think is redundant in life but let me tell you friends that how good it is. It is realized when we save someones life, help him/her in the situation where your help is required the most as the situation may be the matter of life and death.Simple situations like, choking can kill a person in a minute or two, poisoning, bleeding for 15 minutes can be real fatal, heart attack / cardiac arrest etc. What we need to do is really a simple thing first aid. It is not a rocket science.This is one of the session i attended in my training period.  

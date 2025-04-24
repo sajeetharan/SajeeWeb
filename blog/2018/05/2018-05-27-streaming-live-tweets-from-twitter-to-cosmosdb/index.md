@@ -1,18 +1,19 @@
 ---
-title: "Streaming Live Tweets from Twitter to CosmosDB"
-utcDate: "2018-05-27"
-categories: 
-  - "nodejs"
-  - "opensource"
-tags: 
-  - "analytics"
-  - "azure"
-  - "cosmosdb"
-  - "realtime"
-  - "stream"
-  - "tweets"
-  - "twitter"
-coverImage: "stream.jpg"
+title: Streaming Live Tweets from Twitter to CosmosDB
+Date: '2018-05-27'
+categories:
+  - nodejs
+  - opensource
+tags:
+  - analytics
+  - azure
+  - cosmosdb
+  - realtime
+  - stream
+  - tweets
+  - twitter
+coverImage: stream.jpg
+utcDate: '2025-04-24T09:52:37.518Z'
 ---
 
 This is time for another blog on cosmosdb explaining how to stream tweets from twitter using hashtags and store them in cosmosdb in real time. You should be able to setup and run this demo within 15 minutes.

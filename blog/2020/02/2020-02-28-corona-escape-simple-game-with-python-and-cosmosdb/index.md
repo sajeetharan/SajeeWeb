@@ -1,18 +1,19 @@
 ---
-title: "Corona Escape - Game with Python and Cosmosdb"
-utcDate: "2020-02-28"
-categories: 
-  - "appinsights"
-  - "azure"
-  - "cloud"
-  - "microsoft"
-  - "vscode"
-tags: 
-  - "corona"
-  - "cosmosdb"
-  - "game"
-  - "python"
-coverImage: "pygame.jpg"
+title: Corona Escape - Game with Python and Cosmosdb
+Date: '2020-02-28'
+categories:
+  - appinsights
+  - azure
+  - cloud
+  - microsoft
+  - vscode
+tags:
+  - corona
+  - cosmosdb
+  - game
+  - python
+coverImage: pygame.jpg
+utcDate: '2025-04-24T09:52:37.749Z'
 ---
 
 I've been gaming since 2003 till now.I remember those sleepless nights and how much fun i had playing PC games. I always wanted to be a game designer since my childhood days and have built lot of small games during my university days. After a very long time i invested some time and built a simple game using Python and Azure cosmosdb. I wanted to write how to build the game "Corona escape" with others in this blog post.

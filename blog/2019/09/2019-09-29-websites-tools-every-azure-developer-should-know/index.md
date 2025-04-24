@@ -1,16 +1,17 @@
 ---
-title: "Websites/tools every Azure developer should know!"
-utcDate: "2019-09-29"
-categories: 
-  - "appinsights"
-  - "appservice"
-  - "cloud"
-  - "developer"
-tags: 
-  - "azure"
-  - "microsoft"
-  - "tools"
-coverImage: "cover23.jpg"
+title: Websites/tools every Azure developer should know!
+Date: '2019-09-29'
+categories:
+  - appinsights
+  - appservice
+  - cloud
+  - developer
+tags:
+  - azure
+  - microsoft
+  - tools
+coverImage: cover23.jpg
+utcDate: '2025-04-24T09:52:37.607Z'
 ---
 
 There are few mandatory sites that every developer on azure should know. This post will contain a curated list of awesome websites which will definitely help.

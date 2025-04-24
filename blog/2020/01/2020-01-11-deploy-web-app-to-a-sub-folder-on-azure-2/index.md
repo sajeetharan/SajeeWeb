@@ -1,18 +1,19 @@
 ---
-title: "How to deploy Web App to a Sub-folder on Azure Appservice"
-utcDate: "2020-01-11"
-categories: 
-  - "appservice"
-  - "asp-net-core"
-  - "cloud"
-tags: 
-  - "angular"
-  - "azure"
-  - "deployment"
-  - "publish"
-  - "virtualdirectory"
-  - "webapp"
-coverImage: "appservice.jpg"
+title: How to deploy Web App to a Sub-folder on Azure Appservice
+Date: '2020-01-11'
+categories:
+  - appservice
+  - asp-net-core
+  - cloud
+tags:
+  - angular
+  - azure
+  - deployment
+  - publish
+  - virtualdirectory
+  - webapp
+coverImage: appservice.jpg
+utcDate: '2025-04-24T09:52:37.691Z'
 ---
 
 I came across this question about "How to deploy a web app within a sub folder on Azure" in Stackoverflow many times. Even though there is an official [documentation](https://docs.microsoft.com/en-us/archive/blogs/tomholl/deploying-multiple-virtual-directories-to-a-single-azure-website), this question has not been addressed in general. With Virtual Directories, You could keep your web sites in separate folders and use the ‘virtual directories and applications’ settings in Azure to publish the two different projects under the same site.

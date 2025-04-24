@@ -1,22 +1,23 @@
 ---
-title: "Am I really a developer or just a nethead?"
-utcDate: "2016-12-18"
-categories: 
-  - "developer"
-tags: 
-  - "badpractices"
-  - "digin"
-  - "duosoftware"
-  - "experience"
-  - "google"
-  - "kokkisajee"
-  - "programmer"
-  - "sajee"
-  - "sajeetharan"
-  - "sinnathurai"
-  - "srilanka"
-  - "stackoverflow"
-  - "tips"
+title: Am I really a developer or just a nethead?
+Date: '2016-12-18'
+categories:
+  - developer
+tags:
+  - badpractices
+  - digin
+  - duosoftware
+  - experience
+  - google
+  - kokkisajee
+  - programmer
+  - sajee
+  - sajeetharan
+  - sinnathurai
+  - srilanka
+  - stackoverflow
+  - tips
+utcDate: '2025-04-24T09:52:37.383Z'
 ---
 
 It has been 6 years since i entered into programming field, and 18 years since i started using a computer, Everyone things i am a computer geek. Some times in my mind sounds come that Is that I am really a developer or just a good nethead?.

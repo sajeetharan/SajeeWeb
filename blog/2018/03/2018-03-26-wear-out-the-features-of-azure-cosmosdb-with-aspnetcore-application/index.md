@@ -1,24 +1,25 @@
 ---
-title: "Wear out the features of Azure CosmosDB with AspNetCore application"
-utcDate: "2018-03-26"
-categories: 
-  - "developer"
-  - "visualstudio"
-  - "vscode"
-tags: 
-  - "azure"
-  - "c"
-  - "cosmosdb"
-  - "course"
-  - "crud"
-  - "documentdb"
-  - "dotnet"
-  - "dotnetcore"
-  - "emulator"
-  - "github"
-  - "nosql"
-  - "portal"
-  - "sql"
+title: Wear out the features of Azure CosmosDB with AspNetCore application
+Date: '2018-03-26'
+categories:
+  - developer
+  - visualstudio
+  - vscode
+tags:
+  - azure
+  - c
+  - cosmosdb
+  - course
+  - crud
+  - documentdb
+  - dotnet
+  - dotnetcore
+  - emulator
+  - github
+  - nosql
+  - portal
+  - sql
+utcDate: '2025-04-24T09:52:37.505Z'
 ---
 
 Azure CosmosDB ([Azure Cosmos DB – Globally Distributed Database Service (formerly DocumentDB) | Microsoft Azure](https://azure.microsoft.com/en-us/services/cosmos-db/)) is a super set of the service once known as “Azure Document Db”. In short: “Azure CosmosDB ” = “Azure Document Db” + new data types + new APIs.

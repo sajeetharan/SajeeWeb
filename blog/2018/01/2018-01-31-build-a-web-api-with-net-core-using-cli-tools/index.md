@@ -1,20 +1,21 @@
 ---
-title: "Build a web API with .NET Core using CLI Tools"
-utcDate: "2018-01-31"
-categories: 
-  - "asp-net-core"
-  - "developer"
-  - "visualstudio"
-tags: 
-  - "azure"
-  - "c"
-  - "cli"
-  - "crossplatform"
-  - "dotnet"
-  - "mac"
-  - "microsoft"
-  - "netcore"
-  - "vscode"
+title: Build a web API with .NET Core using CLI Tools
+Date: '2018-01-31'
+categories:
+  - asp-net-core
+  - developer
+  - visualstudio
+tags:
+  - azure
+  - c
+  - cli
+  - crossplatform
+  - dotnet
+  - mac
+  - microsoft
+  - netcore
+  - vscode
+utcDate: '2025-04-24T09:52:37.489Z'
 ---
 
 In this blog i will start with an introduction to .NET Core CLI tools with an example of how to create a web API using the CLI tools provided with .NET Core. At the end we will set up a solution grouping an API project and a test project. Let's dive into the steps,

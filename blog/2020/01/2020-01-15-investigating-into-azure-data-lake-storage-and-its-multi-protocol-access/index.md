@@ -1,18 +1,19 @@
 ---
-title: "Investigating into Azure Data Lake Storage and its Multi-protocol Access"
-utcDate: "2020-01-15"
-categories: 
-  - "adls"
-  - "datalake"
-  - "datalakes"
-  - "datawarehouse"
-  - "developer"
-  - "sqlserver"
-tags: 
-  - "azure"
-  - "bigdata"
-  - "blobstorage"
-coverImage: "blog34.jpg"
+title: Investigating into Azure Data Lake Storage and its Multi-protocol Access
+Date: '2020-01-15'
+categories:
+  - adls
+  - datalake
+  - datalakes
+  - datawarehouse
+  - developer
+  - sqlserver
+tags:
+  - azure
+  - bigdata
+  - blobstorage
+coverImage: blog34.jpg
+utcDate: '2025-04-24T09:52:37.697Z'
 ---
 
 We have a wide variety of options to store data in Microsoft Azure. Nevertheless, every storage option has a unique purpose for its existence. In this blog, we will discuss ADLS (Azure Data Lake Storage) and its multi-protocol access that Microsoft introduced in the year 2019.

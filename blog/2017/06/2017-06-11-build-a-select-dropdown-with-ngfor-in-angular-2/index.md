@@ -1,10 +1,11 @@
 ---
-title: "Build a select dropdown with *ngFor in Angular 2"
-utcDate: "2017-06-11"
-categories: 
-  - "angular"
-  - "developer"
-  - "typescript"
+title: Build a select dropdown with *ngFor in Angular 2
+Date: '2017-06-11'
+categories:
+  - angular
+  - developer
+  - typescript
+utcDate: '2025-04-24T09:52:37.435Z'
 ---
 
 One of the most repeated questions with angular2 i have come across Stack overflow is "how to generate a select dropdown with an array or object". Hence, i decided to write a sample post with sample code to ease the search.

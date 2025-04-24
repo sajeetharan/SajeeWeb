@@ -1,11 +1,12 @@
 ---
-title: "Angular 4.3 Now released"
-utcDate: "2017-07-15"
-categories: 
-  - "angular"
-  - "developer"
-  - "typescript"
-  - "vscode"
+title: Angular 4.3 Now released
+Date: '2017-07-15'
+categories:
+  - angular
+  - developer
+  - typescript
+  - vscode
+utcDate: '2025-04-24T09:52:37.439Z'
 ---
 
 Angular version 4.3 has been released. This is a very minor release.

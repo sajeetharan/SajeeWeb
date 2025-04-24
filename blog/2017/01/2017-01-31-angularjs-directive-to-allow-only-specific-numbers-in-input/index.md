@@ -1,8 +1,9 @@
 ---
-title: "AngularJS directive to allow only specific numbers in input"
-utcDate: "2017-01-31"
-categories: 
-  - "developer"
+title: AngularJS directive to allow only specific numbers in input
+Date: '2017-01-31'
+categories:
+  - developer
+utcDate: '2025-04-24T09:52:37.401Z'
 ---
 
 I came across this question on stackoverflow to allow the user to type only specific numbers such as 3,6,9,12 and so on. You can use the following directive which checks for the key and allows as input.  

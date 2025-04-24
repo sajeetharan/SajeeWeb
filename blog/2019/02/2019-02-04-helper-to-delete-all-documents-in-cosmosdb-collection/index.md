@@ -1,18 +1,19 @@
 ---
-title: "How to delete all documents in Cosmosdb Collection"
-utcDate: "2019-02-04"
-categories: 
-  - "nodejs"
-  - "vscode"
-tags: 
-  - "azure"
-  - "big-data"
-  - "c"
-  - "cosmosdb"
-  - "documentdb"
-  - "microsoft"
-  - "nosql"
-coverImage: "node.jpg"
+title: How to delete all documents in Cosmosdb Collection
+Date: '2019-02-04'
+categories:
+  - nodejs
+  - vscode
+tags:
+  - azure
+  - big-data
+  - c
+  - cosmosdb
+  - documentdb
+  - microsoft
+  - nosql
+coverImage: node.jpg
+utcDate: '2025-04-24T09:52:37.545Z'
 ---
 
 I have been working with couple of applications built with CosmosDB and one of the things that surprised me was one cannot clear all documents in a collection from the [Azure web portal](https://azure.microsoft.com/en-gb/features/azure-portal/) or using the [Storage Explorer](https://azure.microsoft.com/en-us/features/storage-explorer/). As I was struggling to do this while doing some tests on the application I decided to write a blog on the solution I used. There are two ways to achieve the same

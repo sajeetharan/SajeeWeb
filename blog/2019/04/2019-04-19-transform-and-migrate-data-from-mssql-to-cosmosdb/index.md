@@ -1,18 +1,19 @@
 ---
-title: "Transform and Migrate data from MSSQL to Cosmosdb"
-utcDate: "2019-04-19"
-categories: 
-  - "c"
-  - "json"
-  - "migration"
-  - "sql"
-  - "sqlserver"
-tags: 
-  - "adventureworks"
-  - "azure"
-  - "cosmosdb"
-  - "onprem"
-coverImage: "blog.jpg"
+title: Transform and Migrate data from MSSQL to Cosmosdb
+Date: '2019-04-19'
+categories:
+  - c
+  - json
+  - migration
+  - sql
+  - sqlserver
+tags:
+  - adventureworks
+  - azure
+  - cosmosdb
+  - onprem
+coverImage: blog.jpg
+utcDate: '2025-04-24T09:52:37.569Z'
 ---
 
 Recently, I was involved in working with a customer who had their data in on prem SQL server. As they are shifting their soultion to Cloud(Azure) with Cosmosdb, the first requirement was to migrate the existing data to Cosmosdb. In this post, I will be explaining on how to do the migration and also how to do the data transformation as Cosmosdb stores the data as key value(JSON) format in the collection whereas MSSQL stores it as a row in the table.

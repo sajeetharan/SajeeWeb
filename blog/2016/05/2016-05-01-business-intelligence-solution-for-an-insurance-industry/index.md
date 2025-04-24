@@ -1,8 +1,9 @@
 ---
-title: "Business Intelligence Solution for an Insurance Industry"
-utcDate: "2016-05-01"
-categories: 
-  - "developer"
+title: Business Intelligence Solution for an Insurance Industry
+Date: '2016-05-01'
+categories:
+  - developer
+utcDate: '2025-04-24T09:52:37.359Z'
 ---
 
 **Business Intelligence and It's impacts:**  

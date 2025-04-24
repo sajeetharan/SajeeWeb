@@ -1,17 +1,18 @@
 ---
-title: "Automate Azure Resources with PowerApps"
-utcDate: "2020-02-08"
-categories: 
-  - "flow"
-  - "powerapp"
-  - "vscode"
-tags: 
-  - "automationjobs"
-  - "azure"
-  - "microsoft"
-  - "powerplatform"
-  - "resources"
-coverImage: "post1.jpg"
+title: Automate Azure Resources with PowerApps
+Date: '2020-02-08'
+categories:
+  - flow
+  - powerapp
+  - vscode
+tags:
+  - automationjobs
+  - azure
+  - microsoft
+  - powerplatform
+  - resources
+coverImage: post1.jpg
+utcDate: '2025-04-24T09:52:37.725Z'
 ---
 
 Microsoft's Power Platform is a low code platform which enable the organization to analyse data from multiple sources, act on it through application and automate business process. Power Platform contains 3 main aspects (Power Apps,Power BI and Microsoft Flow) and it also integrates two main ecosystems(Office 365 and Dynamics 365). In this blog we will see in detail about Power Apps which helps to quickly build apps that connects data and run on web and mobile devices.

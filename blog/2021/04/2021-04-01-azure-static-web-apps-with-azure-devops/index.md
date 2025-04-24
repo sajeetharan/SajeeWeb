@@ -1,21 +1,22 @@
 ---
-title: "Publish an Angular Application to Azure static web apps with Azure Devops"
-utcDate: "2021-04-01"
-categories: 
-  - "azuredevops"
-  - "azurefunction"
-  - "githubactions"
-  - "microsoft"
-  - "vscode"
-tags: 
-  - "angular"
-  - "azure"
-  - "azurefunctions"
-  - "devops"
-  - "singlepage"
-  - "static"
-  - "staticwebapps"
-coverImage: "9ac37-azure2.jpg"
+title: Publish an Angular Application to Azure static web apps with Azure Devops
+Date: '2021-04-01'
+categories:
+  - azuredevops
+  - azurefunction
+  - githubactions
+  - microsoft
+  - vscode
+tags:
+  - angular
+  - azure
+  - azurefunctions
+  - devops
+  - singlepage
+  - static
+  - staticwebapps
+coverImage: 9ac37-azure2.jpg
+utcDate: '2025-04-24T09:52:37.956Z'
 ---
 
 Microsoft introduced App Service Static Web Apps in Preview at Build 2020 as"[Azure static web apps](https://azure.microsoft.com/en-us/services/app-service/static/)", a service which allows web developers to build and deploy website to any environment from Github repository for free. Developers can deploy applications in minute while taking the advantage of scaling and cost savings offered by azure functions as backend. One of the frequent questions that i heard from the developers was the availability of Azure Devops support with Azure static web apps.

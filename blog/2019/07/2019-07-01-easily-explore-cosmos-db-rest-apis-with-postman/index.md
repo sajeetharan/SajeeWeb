@@ -1,6 +1,6 @@
 ---
 title: "Explore and Test Cosmos DB Rest APIs with POSTMAN"
-utcDate: "2019-07-01"
+Date: "2019-07-01"
 categories: 
   - "appservice"
   - "c"
@@ -99,10 +99,11 @@ As we are requesting to get the list of databases, we are ready to add values to
 **x-ms-version** : 2019-06-30  
 (This is the latest version. You can find the other versions [here](https://docs.microsoft.com/en-us/rest/api/cosmos-db/index).)
 
-**x-ms-date** : {{utcDate}}  
-(This is the parameter we just created in POSTMAN Environment. We are going to generate its value in script.)
+**`x-ms-date`**: `{{utcDate}}`  
+(This is the variable we defined in the Postman environment. Its value will be generated dynamically in the Pre-request Script.)
 
-**authorization** : {{authToken}}  
+
+**`authorization`** : `{{authToken}}` 
 (This is the other parameter we just created. We are going to generate its value in script.)
 
 **Accept** : **application/json**.  
@@ -112,7 +113,10 @@ Your screen should looks like this.
 
 ![](images/5-1.png)
 
-Next, we need to generate an authorization token and the date in the required format. To do that, We need to use o use the Pre-request Script section. POSTMAN will run this script before each request, This will be the part we will generate authToken and utcDate parameters. Copy and Paste the code to the Pre-Request Script tab.
+Next, we need to generate an authorization token and the current date in the required format.  
+To do this, we’ll use the **Pre-request Script** section in Postman. This script runs automatically before each request. In this step, we’ll generate the `authToken` and `utcDate` parameters.  
+Simply copy and paste the following code into the **Pre-request Script** tab:
+
 
 https://gist.github.com/sajeetharan/c2c1fbc48bf24e3b321323b34232f5a8
 

@@ -1,8 +1,9 @@
 ---
-title: "Use Moment.js with angular2 application"
-utcDate: "2017-02-11"
-categories: 
-  - "developer"
+title: Use Moment.js with angular2 application
+Date: '2017-02-11'
+categories:
+  - developer
+utcDate: '2025-04-24T09:52:37.404Z'
 ---
 
 Recently i was developing an application in angular2 where i had to use a calendar which shows the results for this **month**, this **week** and this **weekend**. I was finding a solution in pure javascript but it was time consuming. I decided to go on with moment.js , this is how i have embedded moment with angular2 application.  

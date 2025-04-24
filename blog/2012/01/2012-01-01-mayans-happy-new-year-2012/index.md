@@ -1,10 +1,11 @@
 ---
-title: "Mayans! Happy New Year 2012!"
-utcDate: "2012-01-01"
-categories: 
-  - "developer"
-tags: 
-  - "new-year"
+title: Mayans! Happy New Year 2012!
+Date: '2012-01-01'
+categories:
+  - developer
+tags:
+  - new-year
+utcDate: '2025-04-24T09:52:37.323Z'
 ---
 
 That is a POSITIVE ATTITUDE , but  we have to Respect  Great Civilization...!!

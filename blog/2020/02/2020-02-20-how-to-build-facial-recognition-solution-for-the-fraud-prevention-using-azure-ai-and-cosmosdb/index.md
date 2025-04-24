@@ -1,20 +1,23 @@
 ---
-title: "How to build Facial Recognition Solution for the fraud prevention using Azure AI and Cosmosdb"
-utcDate: "2020-02-20"
-categories: 
-  - "ai"
-  - "azure"
-  - "azurefunction"
-  - "cloud"
-  - "cosmosdb"
-  - "eventgrid"
-tags: 
-  - "architecture"
-  - "azurefunctions"
-  - "cognitiveservice"
-  - "facerecognition"
-  - "identification"
-coverImage: "appservice-1-1.jpg"
+title: >-
+  How to build Facial Recognition Solution for the fraud prevention using Azure
+  AI and Cosmosdb
+Date: '2020-02-20'
+categories:
+  - ai
+  - azure
+  - azurefunction
+  - cloud
+  - cosmosdb
+  - eventgrid
+tags:
+  - architecture
+  - azurefunctions
+  - cognitiveservice
+  - facerecognition
+  - identification
+coverImage: appservice-1-1.jpg
+utcDate: '2025-04-24T09:52:37.743Z'
 ---
 
 **Biometric Face Recognition** is the process and ability of a bio metric machine to identify and recognize the face of an individual either to grant access to a secured system or to find out the details of a person by matching the face with existing data in the machine’s system.

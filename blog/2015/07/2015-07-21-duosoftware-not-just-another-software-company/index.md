@@ -1,22 +1,23 @@
 ---
-title: "DuoSoftware, Not Just another Software Company"
-utcDate: "2015-07-21"
-categories: 
-  - "developer"
-tags: 
-  - "apictaa"
-  - "canagey"
-  - "digin"
-  - "duosoftware"
-  - "duoworld"
-  - "facetone"
-  - "innovation"
-  - "it-industry"
-  - "muhunthan"
-  - "nbqsa"
-  - "product-sme"
-  - "sajeetharan"
-  - "srilanka"
+title: 'DuoSoftware, Not Just another Software Company'
+Date: '2015-07-21'
+categories:
+  - developer
+tags:
+  - apictaa
+  - canagey
+  - digin
+  - duosoftware
+  - duoworld
+  - facetone
+  - innovation
+  - it-industry
+  - muhunthan
+  - nbqsa
+  - product-sme
+  - sajeetharan
+  - srilanka
+utcDate: '2025-04-24T09:52:37.353Z'
 ---
 
 Time has gone extremely fast, and I can still recall the day that I joined Duo. I can safely say that Duo is an awesome place to work at since I have had the opportunity to work with awesome, highly motivated people who loves the company. I never had much trouble with work life balance as I only worked more when I felt like it, rather than someone telling me to do. It truly is a different experience working for a Product Company which gives you an environment (Innovation engine) and Core focus on developing cutting-edge components.

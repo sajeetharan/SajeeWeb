@@ -1,8 +1,9 @@
 ---
-title: "Missing you is the Hardest part"
-utcDate: "2011-08-14"
-categories: 
-  - "developer"
+title: Missing you is the Hardest part
+Date: '2011-08-14'
+categories:
+  - developer
+utcDate: '2025-04-24T09:52:37.319Z'
 ---
 
 I just don't know what to say,i don't know what to do

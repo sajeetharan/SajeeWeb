@@ -1,22 +1,25 @@
 ---
-title: "Programmatically change CosmosDB Request Units(RU) with Azure function 2.x and Cosmos DB SDK 3.0"
-utcDate: "2019-06-18"
-categories: 
-  - "appservice"
-  - "azure"
-  - "azurefunction"
-  - "cosmosdbsdk"
-  - "database"
-  - "tips"
-  - "visualstudio"
-  - "vscode"
-tags: 
-  - "autoscaling"
-  - "azurefunctions"
-  - "cosmosdb"
-  - "functions"
-  - "nosql"
-coverImage: "stream.jpg"
+title: >-
+  Programmatically change CosmosDB Request Units(RU) with Azure function 2.x and
+  Cosmos DB SDK 3.0
+Date: '2019-06-18'
+categories:
+  - appservice
+  - azure
+  - azurefunction
+  - cosmosdbsdk
+  - database
+  - tips
+  - visualstudio
+  - vscode
+tags:
+  - autoscaling
+  - azurefunctions
+  - cosmosdb
+  - functions
+  - nosql
+coverImage: stream.jpg
+utcDate: '2025-04-24T09:52:37.592Z'
 ---
 
 When you are involving in an architectural discussion which involves Azure's cosmosdb, a mandatory question that you get is "Is not Azure Cosmos DB very expensive?". Based on the fact that Cosmos DB is evolving very fast, there are lot of customers stepping in to use the service in their architecture. To understand one thing Cosmos DB is not priced based on the usage the pricing is based on what you reserve. One of the best serverless example we could consider here is renting out a car rather than managing and hailing it. Key point here is you pay for what you reserve, which is the capacity, which is refered in terms as Request Units (RUs). Any customer consuming the Cosmos DB serivce will be paying for the RUs as well as the space.

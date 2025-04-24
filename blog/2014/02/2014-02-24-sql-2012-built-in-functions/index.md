@@ -1,7 +1,8 @@
 ---
-title: "SQL 2012 Built In Functions"
-utcDate: "2014-02-24"
-author: "Sajeetharan"
+title: SQL 2012 Built In Functions
+Date: '2014-02-24'
+author: Sajeetharan
+utcDate: '2025-04-24T09:52:37.341Z'
 ---
 
 Well, I have decided to write on technologies finally. It was one of the good sessions from the SQL meetup held at Microsoft Sri Lanka this month. I learned some useful and simple SQL functions in SQL Server 2012.

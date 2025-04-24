@@ -1,20 +1,21 @@
 ---
-title: "Running Python Inside SQL Server"
-utcDate: "2017-08-01"
-categories: 
-  - "asp-net-core"
-  - "developer"
-  - "sql"
-  - "sqlserver"
-tags: 
-  - "algorithm"
-  - "analaytics"
-  - "bigdata"
-  - "iot"
-  - "machinelearning"
-  - "mssql"
-  - "visualstudio"
-  - "vscode"
+title: Running Python Inside SQL Server
+Date: '2017-08-01'
+categories:
+  - asp-net-core
+  - developer
+  - sql
+  - sqlserver
+tags:
+  - algorithm
+  - analaytics
+  - bigdata
+  - iot
+  - machinelearning
+  - mssql
+  - visualstudio
+  - vscode
+utcDate: '2025-04-24T09:52:37.442Z'
 ---
 
 One of the valuable addition to data analytics by Microsoft was adding python into SQL server.Now SQL Server will support the two primary languages of Data Science within SQL Server R and Python. I am a fan of Python and  [Python](http://spectrum.ieee.org/computing/software/the-2017-top-programming-languages) is near the top of the most popular programming language charts, many people are interested in learning more about it.  As many professionals are unfamiliar with Python, i wanted to this post about the same.  

@@ -1,18 +1,19 @@
 ---
-title: "2019 in Review and Happy New Year 2020"
-utcDate: "2020-01-01"
-categories: 
-  - "azure"
-  - "developer"
-tags: 
-  - "2019"
-  - "career"
-  - "happy"
-  - "new-year"
-  - "personal"
-  - "review"
-  - "yearend"
-coverImage: "2019.jpg"
+title: 2019 in Review and Happy New Year 2020
+Date: '2020-01-01'
+categories:
+  - azure
+  - developer
+tags:
+  - '2019'
+  - career
+  - happy
+  - new-year
+  - personal
+  - review
+  - yearend
+coverImage: 2019.jpg
+utcDate: '2025-04-24T09:52:37.657Z'
 ---
 
 My first blog of the new born year 2020 and first of all **Happy new year**! Wish you all have a great time with your family and friends .

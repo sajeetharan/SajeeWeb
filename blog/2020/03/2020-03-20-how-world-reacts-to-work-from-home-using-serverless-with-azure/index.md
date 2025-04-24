@@ -1,24 +1,27 @@
 ---
-title: "How world reacts to Work from home(#WFH) using Serverless with Azure(CosmosDB + Functions + LogicApps)"
-utcDate: "2020-03-20"
-categories: 
-  - "ai"
-  - "appinsights"
-  - "azurefunction"
-  - "c"
-  - "resources"
-  - "teams"
-  - "tips"
-  - "vscode"
-tags: 
-  - "azure"
-  - "cognitiveservice"
-  - "cosmosdb"
-  - "powerbi"
-  - "sentiments"
-  - "textanalytics"
-  - "wfh"
-coverImage: "appservice-1.jpg"
+title: >-
+  How world reacts to Work from home(#WFH) using Serverless with Azure(CosmosDB
+  + Functions + LogicApps)
+Date: '2020-03-20'
+categories:
+  - ai
+  - appinsights
+  - azurefunction
+  - c
+  - resources
+  - teams
+  - tips
+  - vscode
+tags:
+  - azure
+  - cognitiveservice
+  - cosmosdb
+  - powerbi
+  - sentiments
+  - textanalytics
+  - wfh
+coverImage: appservice-1.jpg
+utcDate: '2025-04-24T09:52:37.769Z'
 ---
 
 ## Overview:

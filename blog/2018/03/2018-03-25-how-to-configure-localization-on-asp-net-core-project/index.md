@@ -1,19 +1,20 @@
 ---
-title: "How to configure localization on Asp.Net Core project"
-utcDate: "2018-03-25"
-categories: 
-  - "developer"
-  - "visualstudio"
-  - "vscode"
-tags: 
-  - "asp-net-core"
-  - "c"
-  - "dotnetcore"
-  - "localization"
-  - "mvc"
-  - "nuget"
-  - "razor"
-  - "sample"
+title: How to configure localization on Asp.Net Core project
+Date: '2018-03-25'
+categories:
+  - developer
+  - visualstudio
+  - vscode
+tags:
+  - asp-net-core
+  - c
+  - dotnetcore
+  - localization
+  - mvc
+  - nuget
+  - razor
+  - sample
+utcDate: '2025-04-24T09:52:37.500Z'
 ---
 
 In this post I'll walk through the process of adding localization to an **ASP.NET Core** application. Localization in ASP.NET Core is almost similar to the way it works in the ASP.NET 4.X. You have to define a number of .resx resource files in your application, one for each culture you support. You then reference resources via a key, and depending on the current culture, the appropriate value is selected from the closest matching resource file.

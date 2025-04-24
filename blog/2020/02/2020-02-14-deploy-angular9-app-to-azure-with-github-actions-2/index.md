@@ -1,21 +1,22 @@
 ---
-title: "Deploy Angular 9 App to Azure with Github Actions"
-utcDate: "2020-02-14"
-categories: 
-  - "agile"
-  - "ci-cd"
-  - "githubactions"
-  - "typescript"
-  - "vscode"
-tags: 
-  - "angular"
-  - "angular9"
-  - "angularcli"
-  - "azure"
-  - "github"
-  - "githubaction"
-  - "hexa"
-coverImage: "appservice-1.jpg"
+title: Deploy Angular 9 App to Azure with Github Actions
+Date: '2020-02-14'
+categories:
+  - agile
+  - ci-cd
+  - githubactions
+  - typescript
+  - vscode
+tags:
+  - angular
+  - angular9
+  - angularcli
+  - azure
+  - github
+  - githubaction
+  - hexa
+coverImage: appservice-1.jpg
+utcDate: '2025-04-24T09:52:37.736Z'
 ---
 
 It's been almost a week since Angular 9 was released which included several new features such as new Ivy Renderer, SSR, Type checking etc. In this post, i will be going through on how to build and deploy an Angular9 application as a static website to Azure with GitHub Actions.

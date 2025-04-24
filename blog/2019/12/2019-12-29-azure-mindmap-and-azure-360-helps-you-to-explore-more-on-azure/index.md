@@ -1,16 +1,17 @@
 ---
-title: "Azure MindMap and Azure 360 helps you to learn more about Azure"
-utcDate: "2019-12-29"
-categories: 
-  - "certifications"
-  - "mindmap"
-tags: 
-  - "360"
-  - "azure"
-  - "azureresources"
-  - "resources"
-  - "services"
-coverImage: "mindmap2.jpg"
+title: Azure MindMap and Azure 360 helps you to learn more about Azure
+Date: '2019-12-29'
+categories:
+  - certifications
+  - mindmap
+tags:
+  - '360'
+  - azure
+  - azureresources
+  - resources
+  - services
+coverImage: mindmap2.jpg
+utcDate: '2025-04-24T09:52:37.653Z'
 ---
 
 Are you an Azure or Cloud enthusiast? Got a resolution to learn [#Azure](https://www.linkedin.com/feed/hashtag/?highlightedUpdateUrns=urn%3Ali%3Aactivity%3A6616654176497823744&keywords=%23Azure&originTrackingId=jSzdquiDS%2BSyyztiL9ol4Q%3D%3D) in 2020?. I recently read a [wonderful blog](https://www.thomasmaurer.ch/2019/12/how-to-learn-microsoft-azure-in-2020/) by [@ThomasMaurer](https://twitter.com/ThomasMaurer) . Immediately i wanted to create visualization to make all the resouces in one place so that i will be easy for everyone to access. On the following days i created two resources namely,

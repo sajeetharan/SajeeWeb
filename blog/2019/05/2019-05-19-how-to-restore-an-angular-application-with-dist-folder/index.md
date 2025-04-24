@@ -1,15 +1,16 @@
 ---
-title: "How to restore an Angular application code with dist folder"
-utcDate: "2019-05-19"
-categories: 
-  - "html"
-  - "vscode"
-tags: 
-  - "angular"
-  - "coding"
-  - "engineering"
-  - "programming"
-coverImage: "revers_01.jpg"
+title: How to restore an Angular application code with dist folder
+Date: '2019-05-19'
+categories:
+  - html
+  - vscode
+tags:
+  - angular
+  - coding
+  - engineering
+  - programming
+coverImage: revers_01.jpg
+utcDate: '2025-04-24T09:52:37.576Z'
 ---
 
 This is going to be a very small blog post, but indeed it will be helpful for lot of Angular developers out there. One of the recent question i answered on Stack overflow on how to reverse engineer an [Angular application](https://stackoverflow.com/questions/56197381/i-want-to-decompile-an-angular-7-built-app/56197497#56197497).

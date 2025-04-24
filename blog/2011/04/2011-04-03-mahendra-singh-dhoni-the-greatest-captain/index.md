@@ -1,20 +1,21 @@
 ---
-title: "Mahendra singh dhoni - The greatest Captain."
-utcDate: "2011-04-03"
-categories: 
-  - "developer"
-tags: 
-  - "captrain"
-  - "dhoni"
-  - "excellent"
-  - "ganguly"
-  - "india"
-  - "mahendra"
-  - "singh"
-  - "story"
-  - "superhero"
-  - "untold"
-  - "worldcup"
+title: Mahendra singh dhoni - The greatest Captain.
+Date: '2011-04-03'
+categories:
+  - developer
+tags:
+  - captrain
+  - dhoni
+  - excellent
+  - ganguly
+  - india
+  - mahendra
+  - singh
+  - story
+  - superhero
+  - untold
+  - worldcup
+utcDate: '2025-04-24T09:52:37.296Z'
 ---
 
 [![](https://sajeetharan.wordpress.com/wp-content/uploads/2011/04/86cfb-indian-sport-star-mahendra-singh-dhoni2.jpg?w=225)](https://sajeetharan.wordpress.com/wp-content/uploads/2011/04/86cfb-indian-sport-star-mahendra-singh-dhoni2.jpg)  

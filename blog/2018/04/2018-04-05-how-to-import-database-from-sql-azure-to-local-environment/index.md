@@ -1,11 +1,12 @@
 ---
-title: "How to Import database from SQL Azure to local environment"
-utcDate: "2018-04-05"
-categories: 
-  - "c"
-  - "database"
-  - "mssql"
-  - "sql"
+title: How to Import database from SQL Azure to local environment
+Date: '2018-04-05'
+categories:
+  - c
+  - database
+  - mssql
+  - sql
+utcDate: '2025-04-24T09:52:37.511Z'
 ---
 
 One of the most frequent thing that developers always wanted to have a copy of the development database in local. In this blog i will pen down the steps on how to export and import a database from SQL azure instance to local machine and restore it on SQL server. **Prerequisites:** You will need an Azure account and get the credentials  from Azure web portal. 

@@ -1,13 +1,14 @@
 ---
-title: "Cosmic Clone - An amazing Cosmosdb Utility Tool"
-utcDate: "2019-04-30"
-categories: 
-  - "c"
-  - "cosmosdb"
-  - "database"
-  - "opensource"
-  - "vscode"
-coverImage: "pic.png"
+title: Cosmic Clone - An amazing Cosmosdb Utility Tool
+Date: '2019-04-30'
+categories:
+  - c
+  - cosmosdb
+  - database
+  - opensource
+  - vscode
+coverImage: pic.png
+utcDate: '2025-04-24T09:52:37.573Z'
 ---
 
 In any business, the value of your data is the cost to reproduce it.  For an instance if the data came from any form the cost is the amount of money in wages to recreate the data in the same form where it came from. While in the case of application running in production, some data can’t be reproduced. So if lost or destroyed, and there is no backup no amount of money can get it back. It is really important that having a data backup and recovery plan is important to the overall success of your business. If there is no data backup plan business can suffer from permanent data loss, massive downtime, and unnecessary expenses.

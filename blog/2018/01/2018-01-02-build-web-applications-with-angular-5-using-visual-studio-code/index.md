@@ -1,16 +1,17 @@
 ---
-title: "Build Web Applications With Angular 5 Using Visual Studio Code"
-utcDate: "2018-01-02"
-categories: 
-  - "developer"
-tags: 
-  - "angular"
-  - "angular2"
-  - "angularcli"
-  - "typescript"
-  - "visual-studio"
-  - "vscode"
-  - "webdevelopment"
+title: Build Web Applications With Angular 5 Using Visual Studio Code
+Date: '2018-01-02'
+categories:
+  - developer
+tags:
+  - angular
+  - angular2
+  - angularcli
+  - typescript
+  - visual-studio
+  - vscode
+  - webdevelopment
+utcDate: '2025-04-24T09:52:37.480Z'
 ---
 
 My first post for the year 2018 and i wanted to write something about a technology in which i have vast experience and passionate about. This blog will be very useful for those who want to start with angular for developing web applications.In this blog i am going to set up Angular 5 app using Visual Studio Code. I will be using Angular CLI for our sample application. The following are the steps needed to create your first angular application using angular5.

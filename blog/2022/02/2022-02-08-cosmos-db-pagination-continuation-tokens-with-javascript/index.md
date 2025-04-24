@@ -1,12 +1,13 @@
 ---
-title: "Cosmos DB Pagination &amp; Continuation Tokens with JavaScript"
-utcDate: "2022-02-08"
+title: Cosmos DB Pagination &amp; Continuation Tokens with JavaScript
+Date: '2022-02-08'
 tags:
-  - "azure"
-  - "cosmosdb"
-  - "developers"
-  - "microsoft"
-coverImage: "cosmos.jpg"
+  - azure
+  - cosmosdb
+  - developers
+  - microsoft
+coverImage: cosmos.jpg
+utcDate: '2025-04-24T09:52:37.979Z'
 ---
 
 #### **Overview:**

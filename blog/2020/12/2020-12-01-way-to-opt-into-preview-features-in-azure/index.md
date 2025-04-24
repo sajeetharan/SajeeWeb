@@ -1,12 +1,13 @@
 ---
-title: "Azure Tip : Opt into preview features in Azure Portal"
-utcDate: "2020-12-01"
-categories: 
-  - "azure"
-  - "developer"
-tags: 
-  - "azure-tip-developer-portal-preview"
-coverImage: "5a3e1-bridgee.jpg"
+title: 'Azure Tip : Opt into preview features in Azure Portal'
+Date: '2020-12-01'
+categories:
+  - azure
+  - developer
+tags:
+  - azure-tip-developer-portal-preview
+coverImage: 5a3e1-bridgee.jpg
+utcDate: '2025-04-24T09:52:37.884Z'
 ---
 
 One of the hardest truth is that even as Microsoft employee, i have become very difficult to catch up with Azure updates. It can be said that Azure is constantly evolving day by day.

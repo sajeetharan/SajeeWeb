@@ -1,14 +1,15 @@
 ---
-title: "A checklist for building Angular web applications in the correct way"
-utcDate: "2018-08-04"
-categories: 
-  - "javascript"
-  - "visualstudio"
-tags: 
-  - "angular"
-  - "angularcli"
-  - "typescript"
-coverImage: "angular_checklist.jpg"
+title: A checklist for building Angular web applications in the correct way
+Date: '2018-08-04'
+categories:
+  - javascript
+  - visualstudio
+tags:
+  - angular
+  - angularcli
+  - typescript
+coverImage: angular_checklist.jpg
+utcDate: '2025-04-24T09:52:37.523Z'
 ---
 
 Hey guys, There has not been a  proper resource to have a checklist to make sure that applicaiton is flawless.I decided to write a simple tips on checklist items needed before you deploy your app to production.Following are a few Angular Code Review Checklists useful while doing a peer review of Angular code. Make sure to check these when you are building a production ready application

@@ -1,19 +1,20 @@
 ---
-title: "How to change TimeZone in Azure App Service?"
-utcDate: "2019-11-12"
-categories: 
-  - "appservice"
-  - "asp-net-core"
-  - "c"
-  - "visualstudio"
-tags: 
-  - "azure"
-  - "cloud"
-  - "containers"
-  - "linux"
-  - "timezone"
-  - "windows"
-coverImage: "timezoneblog1.jpg"
+title: How to change TimeZone in Azure App Service?
+Date: '2019-11-12'
+categories:
+  - appservice
+  - asp-net-core
+  - c
+  - visualstudio
+tags:
+  - azure
+  - cloud
+  - containers
+  - linux
+  - timezone
+  - windows
+coverImage: timezoneblog1.jpg
+utcDate: '2025-04-24T09:52:37.610Z'
 ---
 
 One of the frequent questions i get from partners is on how to set Timezone for an application running on Azure app service. It is too easy to change the timezone for an app service hosted in windows OS , but the same settings do not apply for an app service hosted in Linux or Web App running using a container.

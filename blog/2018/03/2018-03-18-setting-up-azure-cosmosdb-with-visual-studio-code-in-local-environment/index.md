@@ -1,18 +1,19 @@
 ---
-title: "Setting up Azure CosmosDB with Visual Studio Code in Local Environment"
-utcDate: "2018-03-18"
-categories: 
-  - "c"
-  - "developer"
-  - "visualstudio"
-tags: 
-  - "azure"
-  - "cosmosdb"
-  - "data"
-  - "documentdb"
-  - "nosql"
-  - "vscode"
-coverImage: "stream.jpg"
+title: Setting up Azure CosmosDB with Visual Studio Code in Local Environment
+Date: '2018-03-18'
+categories:
+  - c
+  - developer
+  - visualstudio
+tags:
+  - azure
+  - cosmosdb
+  - data
+  - documentdb
+  - nosql
+  - vscode
+coverImage: stream.jpg
+utcDate: '2025-04-24T09:52:37.494Z'
 ---
 
 Recently I started experimenting with Azure's CosmosDB and developed few applications using the same. To start with it this blog will help all the Azure/CosmosDB developers out there to easily setup with visual studio code. I will be sharing how to connect to Azure CosmosDB without using the portal in local machine.

@@ -1,24 +1,25 @@
 ---
-title: "Build hybrid apps with Cosmosdb + Ionic"
-utcDate: "2019-06-12"
-categories: 
-  - "ionic"
-  - "javascript"
-  - "nodejs"
-  - "vscode"
-tags: 
-  - "android"
-  - "angualr-cli"
-  - "angular"
-  - "azure"
-  - "capacitor"
-  - "cosmosdb"
-  - "html"
-  - "hybrid"
-  - "ios"
-  - "typescript"
-  - "windows"
-coverImage: "cosmos.jpg"
+title: Build hybrid apps with Cosmosdb + Ionic
+Date: '2019-06-12'
+categories:
+  - ionic
+  - javascript
+  - nodejs
+  - vscode
+tags:
+  - android
+  - angualr-cli
+  - angular
+  - azure
+  - capacitor
+  - cosmosdb
+  - html
+  - hybrid
+  - ios
+  - typescript
+  - windows
+coverImage: cosmos.jpg
+utcDate: '2025-04-24T09:52:37.581Z'
 ---
 
 I was at the Global Azure Bootcamp recently concluded last week, one of the participant came and asked me, "Hey what is Cosmos DB" I casually responded “Well, that’s Microsoft’s globally distributed, massively scalable, horizontally partitioned, low latency, fully indexed, multi-model NoSQL database". The immediate question came after that was whether it supports hybrid applications. In this blog I will be explaining how to leverage the features of cosmos db when you're building hybrid applications.

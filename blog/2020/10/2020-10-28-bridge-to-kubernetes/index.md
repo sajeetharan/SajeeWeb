@@ -1,23 +1,24 @@
 ---
-title: "No more DevSpaces, time to move to Bridge to Kubernetes"
-utcDate: "2020-10-28"
-categories: 
-  - "appinsights"
-  - "architecture"
-  - "kubernetes"
-  - "microservices"
-  - "microsoft"
-tags: 
-  - "aks"
-  - "azure"
-  - "azurekubernetes"
-  - "bridgetok8s"
-  - "bridgetokuber"
-  - "developers"
-  - "devops"
-  - "devspaces"
-  - "tools"
-coverImage: "08c52-bridgee.jpg"
+title: 'No more DevSpaces, time to move to Bridge to Kubernetes'
+Date: '2020-10-28'
+categories:
+  - appinsights
+  - architecture
+  - kubernetes
+  - microservices
+  - microsoft
+tags:
+  - aks
+  - azure
+  - azurekubernetes
+  - bridgetok8s
+  - bridgetokuber
+  - developers
+  - devops
+  - devspaces
+  - tools
+coverImage: 08c52-bridgee.jpg
+utcDate: '2025-04-24T09:52:37.864Z'
 ---
 
 ### Overview:

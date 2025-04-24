@@ -1,15 +1,16 @@
 ---
-title: "Partial Document Update Samples with Cosmos DB REST Operation"
-utcDate: "2022-02-22"
+title: Partial Document Update Samples with Cosmos DB REST Operation
+Date: '2022-02-22'
 tags:
-  - "azure"
-  - "azure-cosmosdb"
-  - "cosmosdb"
-  - "partialupdate"
-  - "patch"
-  - "postman"
-  - "rest"
-coverImage: "3.jpg"
+  - azure
+  - azure-cosmosdb
+  - cosmosdb
+  - partialupdate
+  - patch
+  - postman
+  - rest
+coverImage: 3.jpg
+utcDate: '2025-04-24T09:52:37.984Z'
 ---
 
 **Overview :**

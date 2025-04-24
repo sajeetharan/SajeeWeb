@@ -1,18 +1,19 @@
 ---
-title: "Get to know how to query Azure Cosmos DB by using the SQL API"
-utcDate: "2021-05-27"
+title: Get to know how to query Azure Cosmos DB by using the SQL API
+Date: '2021-05-27'
 tags:
-  - "azure"
-  - "c"
-  - "cosmosdb"
-  - "datamigration"
-  - "developers"
-  - "migration"
-  - "nosql"
-  - "projection"
-  - "sql"
-  - "sqlapi"
-coverImage: "cosmos.jpg"
+  - azure
+  - c
+  - cosmosdb
+  - datamigration
+  - developers
+  - migration
+  - nosql
+  - projection
+  - sql
+  - sqlapi
+coverImage: cosmos.jpg
+utcDate: '2025-04-24T09:52:37.971Z'
 ---
 
 ## Overview :

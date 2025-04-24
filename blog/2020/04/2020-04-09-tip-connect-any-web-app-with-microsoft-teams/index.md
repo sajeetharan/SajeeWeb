@@ -1,17 +1,18 @@
 ---
-title: "Tip : Connect/Navigate to Microsoft Teams From any Web App"
-utcDate: "2020-04-09"
-categories: 
-  - "azure"
-  - "azuread"
-tags: 
-  - "angular"
-  - "graph"
-  - "integration"
-  - "microsoft"
-  - "react"
-  - "teams"
-coverImage: "azureblog.jpg"
+title: 'Tip : Connect/Navigate to Microsoft Teams From any Web App'
+Date: '2020-04-09'
+categories:
+  - azure
+  - azuread
+tags:
+  - angular
+  - graph
+  - integration
+  - microsoft
+  - react
+  - teams
+coverImage: azureblog.jpg
+utcDate: '2025-04-24T09:52:37.785Z'
 ---
 
 I was working with a partner recently in developing Apps and integrated them as a part of Teams. At times there are questions from customers whether they would be able to utilize the features of teams within their application. The simple answer for the will be [NO](https://stackoverflow.com/questions/45727094/integrating-microsoft-team-into-my-web-app) as Teams Platform Architecture is enabling developers to bring adoption to teams by building more applications from different industry verticals which can be embedded inside teams

@@ -1,19 +1,20 @@
 ---
-title: "Azure Tip : Enable Debug Mode on Azure Portal"
-utcDate: "2020-01-22"
-categories: 
-  - "azure"
-  - "cloud"
-  - "developer"
-  - "microsoft"
-tags: 
-  - "dashboard"
-  - "debug"
-  - "developertool"
-  - "performance"
-  - "portal"
-  - "slowness"
-coverImage: "twillio-1.jpg"
+title: 'Azure Tip : Enable Debug Mode on Azure Portal'
+Date: '2020-01-22'
+categories:
+  - azure
+  - cloud
+  - developer
+  - microsoft
+tags:
+  - dashboard
+  - debug
+  - developertool
+  - performance
+  - portal
+  - slowness
+coverImage: twillio-1.jpg
+utcDate: '2025-04-24T09:52:37.705Z'
 ---
 
 I was checking out this cool feature on the [Azure Portal](https://portal.azure.com/) Today. I usually spent 3 hours per week on evaluating the new features or building something new on Azure. Azure Portal is for a lot of developers is the go-to place to manage all their Azure resources and services. Most often i hear from the developers is that Portal takes much time to load when you login and sometimes we feel that portal is slow. Today i figured out a way to debug the portal loading time. If you are developer who considers Azure Portal as your website and want to know about the duration for each view of the page, while you are logged in into the **Azure Portal** and press the keyboard shortcut **CTRL + ALT + D** you can see the load time and other useful information for every title.

@@ -1,8 +1,11 @@
 ---
-title: "Fix : Could not load file or assembly “System.Net.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a”"
-utcDate: "2017-12-21"
-categories: 
-  - "developer"
+title: >-
+  Fix : Could not load file or assembly “System.Net.Http, Version=4.0.0.0,
+  Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a”
+Date: '2017-12-21'
+categories:
+  - developer
+utcDate: '2025-04-24T09:52:37.472Z'
 ---
 
 Even though there are several answers on stackoverflow, nothing helped me to solve this issue and found the solution as follows,

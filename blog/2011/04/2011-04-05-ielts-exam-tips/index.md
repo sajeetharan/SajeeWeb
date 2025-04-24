@@ -1,8 +1,9 @@
 ---
-title: "IELTS Exam Tips!"
-utcDate: "2011-04-05"
-categories: 
-  - "developer"
+title: IELTS Exam Tips!
+Date: '2011-04-05'
+categories:
+  - developer
+utcDate: '2025-04-24T09:52:37.304Z'
 ---
 
 IELTS stands for International English Language Testing System Which is conducted by BRITISH COUNCIL to Test the standard of English among students. Here are some of the tips for scoring more in IELTS. IELTS exam consists of 4 parts.They are,  

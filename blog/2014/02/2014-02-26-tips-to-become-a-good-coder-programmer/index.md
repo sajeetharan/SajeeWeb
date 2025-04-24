@@ -1,8 +1,9 @@
 ---
-title: "Tips to become a good Coder/Programmer"
-utcDate: "2014-02-26"
-categories: 
-  - "developer"
+title: Tips to become a good Coder/Programmer
+Date: '2014-02-26'
+categories:
+  - developer
+utcDate: '2025-04-24T09:52:37.345Z'
 ---
 
 I am not a great programmer, but i love coding and trying my best to become a good coder, there are few things i got to know when i made a research on how to become an efficient programmer.  

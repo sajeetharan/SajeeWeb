@@ -1,19 +1,20 @@
 ---
-title: "How to resolve : Cosmos DB x-ms-partitionkey Error"
-utcDate: "2020-06-15"
-categories: 
-  - "azure"
-  - "cosmosdbsdk"
-  - "microsoft"
-  - "nodejs"
-  - "python"
-  - "vscode"
-tags: 
-  - "cosmosdb"
-  - "javascript"
-  - "partitionkey"
-  - "sdk"
-coverImage: "azure2.jpg"
+title: 'How to resolve : Cosmos DB x-ms-partitionkey Error'
+Date: '2020-06-15'
+categories:
+  - azure
+  - cosmosdbsdk
+  - microsoft
+  - nodejs
+  - python
+  - vscode
+tags:
+  - cosmosdb
+  - javascript
+  - partitionkey
+  - sdk
+coverImage: azure2.jpg
+utcDate: '2025-04-24T09:52:37.837Z'
 ---
 
 One of the most repeated question that i came across on stackoverflow on the tag #Cosmosdb is that how to resolve the error **"The partition key supplied in x-ms-partitionkey header has fewer components than defined in the the collection"**

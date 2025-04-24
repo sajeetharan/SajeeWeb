@@ -1,25 +1,26 @@
 ---
-title: "Download Top Azure eBooks from Microsoft to learn Azure"
-utcDate: "2020-01-04"
-categories: 
-  - "ai"
-  - "aks"
-  - "appservice"
-  - "cognitiveservice"
-  - "containerregistry"
-  - "datalakes"
-  - "developer"
-  - "resources"
-  - "sql"
-  - "sqlserver"
-tags: 
-  - "azure"
-  - "bigdata"
-  - "cloud"
-  - "cloudcomputing"
-  - "devops"
-  - "ebook"
-coverImage: "banner03.jpg"
+title: Download Top Azure eBooks from Microsoft to learn Azure
+Date: '2020-01-04'
+categories:
+  - ai
+  - aks
+  - appservice
+  - cognitiveservice
+  - containerregistry
+  - datalakes
+  - developer
+  - resources
+  - sql
+  - sqlserver
+tags:
+  - azure
+  - bigdata
+  - cloud
+  - cloudcomputing
+  - devops
+  - ebook
+coverImage: banner03.jpg
+utcDate: '2025-04-24T09:52:37.668Z'
 ---
 
 You might have noticed my recent posts were mostly focused on how to get started and learn Azure in 2020. This post is also to help all Azure enthusiasts to get to know and download all the free ebooks by Microsoft to learn more in depth about Azure. I have added the reference to this blog in my tool [Azure 360](http://azure360.info/) as well. There are around 174 ebooks which can be downloadable from the Microsoft site as of now. I have listed the top 60 books which are recommended and liked,shared the most among the social mediums.
