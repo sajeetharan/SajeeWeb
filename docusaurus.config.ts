@@ -58,7 +58,10 @@ const config: Config = {
 
         docs: false,
         blog: {
+          routeBasePath: "/blogs",
           showReadingTime: true,
+          postsPerPage: 5,
+          blogSidebarCount: 10,
           editUrl: "https://github.com/sajeetharan/website/tree/main/",
           feedOptions: {
             type: "all",
@@ -102,8 +105,9 @@ const config: Config = {
         srcDark: "img/logo-white.svg",
       },
       items: [
-        { to: "/blogs", label: "Blogs", position: "left" },
+        { to: "/projects", label: "Projects", position: "left" },
         { to: "/talks", label: "Talks", position: "left" },
+        { to: "/blogs", label: "Blogs", position: "left" },
       ],
     },
     footer: {
@@ -134,12 +138,12 @@ const config: Config = {
               to: "/",
             },
             {
-              label: "Blogs",
-              to: "/blogs",
-            },
-            {
               label: "Talks",
               to: "/talks",
+            },
+            {
+              label: "Blogs",
+              to: "/blogs",
             },
           ],
         },

@@ -17,7 +17,7 @@ const talks: TalkMetadata[] = [
       {
         name: "Semantic Kernel with C# to build multi-agent AI applications powered by Azure Cosmos DB",
         location: "Azure Cosmos DB Live, Virtual Event",
-        date: new Date(2025, 2, 20),
+        date: new Date(2025, 4, 16),
       },
     ],
     recordingURL: "https://youtu.be/UMgsYdmslSo",
@@ -35,10 +35,10 @@ const talks: TalkMetadata[] = [
       },
     ],
     recordingURL: "https://www.youtube.com/watch?v=KipU6tiv2JU",
-    slidesURL: "",
+    slidesURL: "https://slides.com/sajeetharan/zero-hero-js-sdk",
   },
   {
-    title: "Google DevFest 2024",
+    title: "Google DevFest 2024 - Main Talk",
     description:
       "Join Angular expert Sajeetharan Sinnathurai at DevFest 2024 as he unveils the latest features in Angular and demonstrates powerful strategies for creating reusable libraries. Discover how to maximize code efficiency with the 'Code Once, Conquer Everywhere' approach. Learn practical tips for building scalable, maintainable Angular libraries that can power multiple applications while reducing development time and technical debt.",
     events: [
@@ -49,10 +49,10 @@ const talks: TalkMetadata[] = [
       },
     ],
     recordingURL: "https://www.youtube.com/watch?v=fMCxk-c1p6Q&t",
-    slidesURL: "",
+    slidesURL: "https://slides.com/sajeetharan/devfest-main-talk",
   },
   {
-    title: "Google DevFest 2024",
+    title: "Google DevFest 2024 - Workshop",
     description:
       "Workshop for beginners on Angular to understand Concepts of Angular along with the practical implementation of the same.",
     events: [
@@ -62,11 +62,24 @@ const talks: TalkMetadata[] = [
         date: new Date(2024, 12, 7),
       },
     ],
-    recordingURL: "https://www.youtube.com/watch?v=KipU6tiv2JU",
-    slidesURL: "",
+    recordingURL: "",
+    slidesURL: "https://slides.com/sajeetharan/devfestr2024-codelabs",
   },
   {
-    title: "City JS Conference 2025",
+    title: "NIBM - Workshop",
+    description: "Boosting Developer productivity with Microsoft Copilot",
+    events: [
+      {
+        name: "Boosting Developer productivity with Microsoft Copilot",
+        location: "Colombo,Sri Lanka",
+        date: new Date(2024, 11, 1),
+      },
+    ],
+    recordingURL: "",
+    slidesURL: "https://slides.com/sajeetharan/nibm_copilot",
+  },
+  {
+    title: "City JS Conference 2024",
     description:
       "Let's talk about latest and greatest features of Javascript SDK and AI integration with Azure Cosmos DB. We will also discuss about how to build scalable and resilient applications with JavaScript and Azure Cosmos DB.",
     events: [
