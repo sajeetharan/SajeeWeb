@@ -1,6 +1,6 @@
 ---
 title: "Azure MindMap and Azure 360 helps you to learn more about Azure"
-date: "2019-12-29"
+utcDate: "2019-12-29"
 categories: 
   - "certifications"
   - "mindmap"

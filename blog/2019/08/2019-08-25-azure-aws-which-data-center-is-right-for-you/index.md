@@ -1,6 +1,6 @@
 ---
 title: "Azure &amp; AWS - Find which data center is right for you?"
-date: "2019-08-25"
+utcDate: "2019-08-25"
 categories: 
   - "aws"
   - "cloud"

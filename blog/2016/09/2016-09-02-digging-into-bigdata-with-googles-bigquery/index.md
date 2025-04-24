@@ -1,6 +1,6 @@
 ---
 title: "Digging into BigData with Google's BigQuery"
-date: "2016-09-02"
+utcDate: "2016-09-02"
 categories: 
   - "developer"
 tags: 

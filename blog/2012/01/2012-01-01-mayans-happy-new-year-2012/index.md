@@ -1,6 +1,6 @@
 ---
 title: "Mayans! Happy New Year 2012!"
-date: "2012-01-01"
+utcDate: "2012-01-01"
 categories: 
   - "developer"
 tags: 

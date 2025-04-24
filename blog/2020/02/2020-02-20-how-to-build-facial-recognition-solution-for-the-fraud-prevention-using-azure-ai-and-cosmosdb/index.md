@@ -1,6 +1,6 @@
 ---
 title: "How to build Facial Recognition Solution for the fraud prevention using Azure AI and Cosmosdb"
-date: "2020-02-20"
+utcDate: "2020-02-20"
 categories: 
   - "ai"
   - "azure"

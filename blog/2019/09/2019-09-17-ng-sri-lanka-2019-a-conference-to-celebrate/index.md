@@ -1,6 +1,6 @@
 ---
 title: "NG-Sri Lanka 2019 - A conference to celebrate"
-date: "2019-09-17"
+utcDate: "2019-09-17"
 categories: 
   - "angular"
   - "angularcli"

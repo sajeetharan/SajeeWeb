@@ -1,6 +1,6 @@
 ---
 title: "Download Top Azure eBooks by Microsoft to learn Azure"
-date: "2020-01-04"
+utcDate: "2020-01-04"
 categories: 
   - "ai"
   - "aks"

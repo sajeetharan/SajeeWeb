@@ -1,6 +1,6 @@
 ---
 title: "Build a BOT in quick time to support COVID Scenario and place it with Teams and Your Website!"
-date: "2020-03-26"
+utcDate: "2020-03-26"
 categories: 
   - "aibuilder"
   - "appinsights"

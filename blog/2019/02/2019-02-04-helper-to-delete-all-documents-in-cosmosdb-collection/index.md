@@ -1,6 +1,6 @@
 ---
 title: "How to delete all documents in Cosmosdb Collection"
-date: "2019-02-04"
+utcDate: "2019-02-04"
 categories: 
   - "nodejs"
   - "vscode"

@@ -1,6 +1,6 @@
 ---
 title: "A checklist for building Angular web applications in the correct way"
-date: "2018-08-04"
+utcDate: "2018-08-04"
 categories: 
   - "javascript"
   - "visualstudio"

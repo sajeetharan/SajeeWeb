@@ -1,6 +1,6 @@
 ---
 title: "Cloud Adoption : Developers perspective trends from Stackoverflow"
-date: "2019-12-19"
+utcDate: "2019-12-19"
 categories: 
   - "aws"
   - "azure"

@@ -1,6 +1,6 @@
 ---
 title: "How to configure localization on Asp.Net Core project"
-date: "2018-03-25"
+utcDate: "2018-03-25"
 categories: 
   - "developer"
   - "visualstudio"

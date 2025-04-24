@@ -1,6 +1,6 @@
 ---
 title: "Build serverless functions with OpenFaaS on Azure"
-date: "2019-03-03"
+utcDate: "2019-03-03"
 categories: 
   - "c"
   - "kubernetes"

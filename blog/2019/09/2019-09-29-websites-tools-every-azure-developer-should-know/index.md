@@ -1,6 +1,6 @@
 ---
 title: "Websites/tools every Azure developer should know!"
-date: "2019-09-29"
+utcDate: "2019-09-29"
 categories: 
   - "appinsights"
   - "appservice"

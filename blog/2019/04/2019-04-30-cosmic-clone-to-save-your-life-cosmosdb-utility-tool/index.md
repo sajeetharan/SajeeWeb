@@ -1,6 +1,6 @@
 ---
 title: "Cosmic Clone - An amazing Cosmosdb Utility Tool"
-date: "2019-04-30"
+utcDate: "2019-04-30"
 categories: 
   - "c"
   - "cosmosdb"

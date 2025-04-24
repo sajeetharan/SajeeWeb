@@ -1,6 +1,6 @@
 ---
 title: "Scale Applications with Kuberenetes-based Event Driven AutoScaling"
-date: "2020-09-26"
+utcDate: "2020-09-26"
 categories: 
   - "azurefunction"
   - "azurefunction"

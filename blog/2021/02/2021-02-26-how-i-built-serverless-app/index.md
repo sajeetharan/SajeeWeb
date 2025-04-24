@@ -1,6 +1,6 @@
 ---
 title: "How i built Serverless App 'MentorMe' with Azure Functions and Cosmosdb"
-date: "2021-02-26"
+utcDate: "2021-02-26"
 categories: 
   - "appinsights"
   - "azure-monitor"

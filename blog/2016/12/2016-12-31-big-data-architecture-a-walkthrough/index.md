@@ -1,6 +1,6 @@
 ---
 title: "Big Data Architecture - a walkthrough"
-date: "2016-12-31"
+utcDate: "2016-12-31"
 categories: 
   - "developer"
 tags: 

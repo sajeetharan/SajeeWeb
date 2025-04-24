@@ -1,6 +1,6 @@
 ---
 title: "Deploy Web App to a Sub-folder on Azure"
-date: "2020-01-11"
+utcDate: "2020-01-11"
 categories: 
   - "appservice"
   - "asp-net-core"

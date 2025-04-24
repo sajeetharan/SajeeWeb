@@ -1,6 +1,6 @@
 ---
 title: "How to resolve : Cosmos DB x-ms-partitionkey Error"
-date: "2020-06-15"
+utcDate: "2020-06-15"
 categories: 
   - "azure"
   - "cosmosdbsdk"

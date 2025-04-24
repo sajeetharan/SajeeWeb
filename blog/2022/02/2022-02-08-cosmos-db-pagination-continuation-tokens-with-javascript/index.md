@@ -1,6 +1,6 @@
 ---
 title: "Cosmos DB Pagination &amp; Continuation Tokens with JavaScript"
-date: "2022-02-08"
+utcDate: "2022-02-08"
 tags:
   - "azure"
   - "cosmosdb"

@@ -1,6 +1,6 @@
 ---
 title: "Explore and Test Cosmos DB Rest APIs with POSTMAN"
-date: "2019-07-01"
+utcDate: "2019-07-01"
 categories: 
   - "appservice"
   - "c"

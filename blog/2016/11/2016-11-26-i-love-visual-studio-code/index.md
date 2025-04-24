@@ -1,6 +1,6 @@
 ---
 title: "I love Visual Studio Code"
-date: "2016-11-26"
+utcDate: "2016-11-26"
 categories: 
   - "developer"
   - "typescript"

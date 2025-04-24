@@ -1,6 +1,6 @@
 ---
 title: 'BOOK GIVEAWAY: Win a free copy of  "Cloud Scale Analytics with Azure Data Services "'
-date: "2021-10-25"
+utcDate: "2021-10-25"
 tags:
   - "adls"
   - "analytics"

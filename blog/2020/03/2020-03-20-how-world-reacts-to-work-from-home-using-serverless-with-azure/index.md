@@ -1,6 +1,6 @@
 ---
 title: "How world reacts to Work from home(#WFH) using Serverless with Azure(CosmosDB + Functions + LogicApps)"
-date: "2020-03-20"
+utcDate: "2020-03-20"
 categories: 
   - "ai"
   - "appinsights"

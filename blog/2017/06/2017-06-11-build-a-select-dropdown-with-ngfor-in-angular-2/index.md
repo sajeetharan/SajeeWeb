@@ -1,6 +1,6 @@
 ---
 title: "Build a select dropdown with *ngFor in Angular 2"
-date: "2017-06-11"
+utcDate: "2017-06-11"
 categories: 
   - "angular"
   - "developer"

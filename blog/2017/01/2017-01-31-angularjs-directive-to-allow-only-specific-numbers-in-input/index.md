@@ -1,6 +1,6 @@
 ---
 title: "AngularJS directive to allow only specific numbers in input"
-date: "2017-01-31"
+utcDate: "2017-01-31"
 categories: 
   - "developer"
 ---

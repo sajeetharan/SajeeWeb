@@ -1,6 +1,6 @@
 ---
 title: "Complete Tutorial: Webpy + Apache + mod_wsgi on Ubuntu"
-date: "2016-11-29"
+utcDate: "2016-11-29"
 categories: 
   - "developer"
 tags: 

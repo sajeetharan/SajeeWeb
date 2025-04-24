@@ -1,6 +1,6 @@
 ---
 title: "Microsoft - A Big Thank You"
-date: "2017-03-18"
+utcDate: "2017-03-18"
 categories: 
   - "developer"
 ---

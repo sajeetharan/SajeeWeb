@@ -1,6 +1,6 @@
 ---
 title: "Business Intelligence Solution for an Insurance Industry"
-date: "2016-05-01"
+utcDate: "2016-05-01"
 categories: 
   - "developer"
 ---

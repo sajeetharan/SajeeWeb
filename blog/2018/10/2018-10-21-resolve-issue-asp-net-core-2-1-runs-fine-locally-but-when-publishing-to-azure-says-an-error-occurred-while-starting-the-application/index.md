@@ -1,6 +1,6 @@
 ---
 title: "Resolve Issue : ASP.NET Core 2.1 runs fine locally but when publishing to Azure says “An error occurred while starting the application.”"
-date: "2018-10-21"
+utcDate: "2018-10-21"
 categories: 
   - "asp-net-core"
   - "c"

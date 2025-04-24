@@ -1,6 +1,6 @@
 ---
 title: "Angular 4.3 Now released"
-date: "2017-07-15"
+utcDate: "2017-07-15"
 categories: 
   - "angular"
   - "developer"

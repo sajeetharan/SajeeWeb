@@ -1,6 +1,6 @@
 ---
 title: "Deploy Deno App to Azure with Github Actions"
-date: "2020-05-31"
+utcDate: "2020-05-31"
 categories: 
   - "angular"
   - "architecture"

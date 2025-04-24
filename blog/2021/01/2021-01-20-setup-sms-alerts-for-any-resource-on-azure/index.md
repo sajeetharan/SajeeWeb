@@ -1,6 +1,6 @@
 ---
 title: "Effective Monitoring : How to Setup SMS alerts for any unhealthy resource on Azure"
-date: "2021-01-20"
+utcDate: "2021-01-20"
 categories: 
   - "agile"
   - "asp-net-core"

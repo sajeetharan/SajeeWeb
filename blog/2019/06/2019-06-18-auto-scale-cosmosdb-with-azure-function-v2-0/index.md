@@ -1,6 +1,6 @@
 ---
 title: "Programmatically change CosmosDB Request Units(RU) with Azure function 2.x and Cosmos DB SDK 3.0"
-date: "2019-06-18"
+utcDate: "2019-06-18"
 categories: 
   - "appservice"
   - "azure"

@@ -1,6 +1,6 @@
 ---
 title: "Into the world of stackoverflow - Tips and tricks"
-date: "2017-09-09"
+utcDate: "2017-09-09"
 categories: 
   - "angular"
   - "tips"

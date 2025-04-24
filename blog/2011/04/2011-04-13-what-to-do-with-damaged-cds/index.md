@@ -1,6 +1,6 @@
 ---
 title: "What to do with damaged CDs?"
-date: "2011-04-13"
+utcDate: "2011-04-13"
 categories: 
   - "developer"
 ---

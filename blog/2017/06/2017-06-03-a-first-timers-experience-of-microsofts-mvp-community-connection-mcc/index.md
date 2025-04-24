@@ -1,6 +1,6 @@
 ---
 title: "A first-timer’s experience of Microsoft’s MVP Community Connection (MCC)"
-date: "2017-06-03"
+utcDate: "2017-06-03"
 categories: 
   - "developer"
 ---

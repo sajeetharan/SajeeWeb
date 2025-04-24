@@ -1,6 +1,6 @@
 ---
 title: "Get to know how to query Azure Cosmos DB by using the SQL API"
-date: "2021-05-27"
+utcDate: "2021-05-27"
 tags:
   - "azure"
   - "c"

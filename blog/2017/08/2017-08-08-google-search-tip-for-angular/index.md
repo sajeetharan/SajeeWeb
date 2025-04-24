@@ -1,6 +1,6 @@
 ---
 title: "Search tip for Angular problems"
-date: "2017-08-08"
+utcDate: "2017-08-08"
 categories: 
   - "angular"
   - "javascript"

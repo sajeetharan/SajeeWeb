@@ -1,6 +1,6 @@
 ---
 title: "How to Import database from SQL Azure to local environment"
-date: "2018-04-05"
+utcDate: "2018-04-05"
 categories: 
   - "c"
   - "database"

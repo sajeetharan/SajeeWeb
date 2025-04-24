@@ -1,6 +1,6 @@
 ---
 title: "Shift from Angular1 to Angular2 if you are an Angular 1.x fan"
-date: "2017-01-27"
+utcDate: "2017-01-27"
 categories: 
   - "developer"
 tags: 

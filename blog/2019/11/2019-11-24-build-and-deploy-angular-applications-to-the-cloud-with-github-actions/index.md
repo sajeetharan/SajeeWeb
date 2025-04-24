@@ -1,6 +1,6 @@
 ---
 title: "Deploy Angular Applications to Azure with Github Actions - Emotion Detection App"
-date: "2019-11-24"
+utcDate: "2019-11-24"
 categories: 
   - "angularcli"
   - "appservice"

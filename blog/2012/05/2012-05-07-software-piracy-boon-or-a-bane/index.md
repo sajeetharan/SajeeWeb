@@ -1,6 +1,6 @@
 ---
 title: "Software Piracy - boon or a bane?"
-date: "2012-05-07"
+utcDate: "2012-05-07"
 categories: 
   - "developer"
 ---

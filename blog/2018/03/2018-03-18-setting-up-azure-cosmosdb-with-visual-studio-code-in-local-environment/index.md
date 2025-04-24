@@ -1,6 +1,6 @@
 ---
 title: "Setting up Azure CosmosDB with Visual Studio Code in Local Environment"
-date: "2018-03-18"
+utcDate: "2018-03-18"
 categories: 
   - "c"
   - "developer"

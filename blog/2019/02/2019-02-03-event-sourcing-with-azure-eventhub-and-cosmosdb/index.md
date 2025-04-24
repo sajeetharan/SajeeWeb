@@ -1,6 +1,6 @@
 ---
 title: "Event Sourcing with Azure EventHub and CosmosDB"
-date: "2019-02-03"
+utcDate: "2019-02-03"
 categories: 
   - "eventhub"
   - "vscode"

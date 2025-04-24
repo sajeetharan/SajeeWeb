@@ -1,6 +1,6 @@
 ---
 title: "Visual Studio 2019 - Better than ever before"
-date: "2019-04-03"
+utcDate: "2019-04-03"
 categories: 
   - "asp-net-core"
   - "c"

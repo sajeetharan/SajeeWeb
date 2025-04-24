@@ -1,6 +1,6 @@
 ---
 title: "DuoSoftware, Not Just another Software Company"
-date: "2015-07-21"
+utcDate: "2015-07-21"
 categories: 
   - "developer"
 tags: 

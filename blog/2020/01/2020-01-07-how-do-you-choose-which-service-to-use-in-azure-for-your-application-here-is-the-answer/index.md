@@ -1,6 +1,6 @@
 ---
 title: "How to choose which service to use in Azure for your application? Here is the answer."
-date: "2020-01-07"
+utcDate: "2020-01-07"
 categories: 
   - "aks"
   - "appservice"

@@ -1,6 +1,6 @@
 ---
 title: "Team Theater Workshop - Memorable day!"
-date: "2011-04-15"
+utcDate: "2011-04-15"
 categories: 
   - "developer"
 ---

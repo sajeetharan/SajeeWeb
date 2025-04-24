@@ -1,6 +1,6 @@
 ---
 title: "Publish an Angular Application to Azure static web apps with Azure Devops"
-date: "2021-04-01"
+utcDate: "2021-04-01"
 categories: 
   - "azuredevops"
   - "azurefunction"

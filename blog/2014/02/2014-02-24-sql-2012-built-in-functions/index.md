@@ -1,6 +1,6 @@
 ---
 title: "SQL 2012 Built In Functions"
-date: "2014-02-24"
+utcDate: "2014-02-24"
 author: "Sajeetharan"
 ---
 

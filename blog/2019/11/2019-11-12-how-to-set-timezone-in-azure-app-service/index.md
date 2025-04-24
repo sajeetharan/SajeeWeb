@@ -1,6 +1,6 @@
 ---
 title: "How to change TimeZone in Azure App Service?"
-date: "2019-11-12"
+utcDate: "2019-11-12"
 categories: 
   - "appservice"
   - "asp-net-core"

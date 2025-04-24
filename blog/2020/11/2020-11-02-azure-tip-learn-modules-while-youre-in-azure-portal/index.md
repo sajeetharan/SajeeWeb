@@ -1,6 +1,6 @@
 ---
 title: "Azure Tip : Learn Azure Modules while you're in Azure Portal"
-date: "2020-11-02"
+utcDate: "2020-11-02"
 categories: 
   - "certifications"
   - "developer"

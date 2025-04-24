@@ -1,6 +1,6 @@
 ---
 title: "Use Moment.js with angular2 application"
-date: "2017-02-11"
+utcDate: "2017-02-11"
 categories: 
   - "developer"
 ---

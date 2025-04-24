@@ -1,6 +1,6 @@
 ---
 title: "Ace Angular Interview in 20 minutes - PART1"
-date: "2018-09-15"
+utcDate: "2018-09-15"
 categories: 
   - "typescript"
   - "visualstudio"

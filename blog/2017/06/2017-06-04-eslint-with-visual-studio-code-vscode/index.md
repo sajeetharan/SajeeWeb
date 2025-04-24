@@ -1,6 +1,6 @@
 ---
 title: "ESLint with Visual Studio Code (vscode)"
-date: "2017-06-04"
+utcDate: "2017-06-04"
 categories: 
   - "developer"
 ---

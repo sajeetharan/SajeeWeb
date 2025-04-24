@@ -1,6 +1,6 @@
 ---
 title: "Retrieve documents without  Metadata properties in Azure CosmosDB"
-date: "2019-11-16"
+utcDate: "2019-11-16"
 categories: 
   - "cloud"
   - "database"

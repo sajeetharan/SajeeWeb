@@ -1,6 +1,6 @@
 ---
 title: "Productivity Tip : Run Azure Cloud shell, Stackoverflow, Github in Microsoft teams."
-date: "2019-11-30"
+utcDate: "2019-11-30"
 categories: 
   - "angular"
   - "cloudshell"

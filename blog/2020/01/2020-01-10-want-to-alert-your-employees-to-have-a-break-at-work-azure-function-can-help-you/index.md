@@ -1,6 +1,6 @@
 ---
 title: "Want to alert your boyfriend/girlfriend to have break at work? Azure function can help you!"
-date: "2020-01-10"
+utcDate: "2020-01-10"
 categories: 
   - "appservice"
   - "azurefunction"

@@ -1,6 +1,6 @@
 ---
 title: "How to copy a Database from a MongoDB instance to another?"
-date: "2017-06-04"
+utcDate: "2017-06-04"
 categories: 
   - "developer"
 ---

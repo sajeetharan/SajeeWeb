@@ -1,6 +1,6 @@
 ---
 title: "Streaming Live Tweets from Twitter to CosmosDB"
-date: "2018-05-27"
+utcDate: "2018-05-27"
 categories: 
   - "nodejs"
   - "opensource"

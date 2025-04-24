@@ -1,6 +1,6 @@
 ---
 title: "No more DevSpaces, time to move to Bridge to Kubernetes"
-date: "2020-10-28"
+utcDate: "2020-10-28"
 categories: 
   - "appinsights"
   - "architecture"

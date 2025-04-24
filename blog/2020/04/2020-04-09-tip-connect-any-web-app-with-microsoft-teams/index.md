@@ -1,6 +1,6 @@
 ---
 title: "Tip : Connect/Navigate to Microsoft Teams From any Web App"
-date: "2020-04-09"
+utcDate: "2020-04-09"
 categories: 
   - "azure"
   - "azuread"

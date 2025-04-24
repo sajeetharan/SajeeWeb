@@ -1,6 +1,6 @@
 ---
 title: "2019 in Review and Happy New Year 2020"
-date: "2020-01-01"
+utcDate: "2020-01-01"
 categories: 
   - "azure"
   - "developer"

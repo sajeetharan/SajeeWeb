@@ -1,6 +1,6 @@
 ---
 title: "Love your Job ! But.. Not your Company!"
-date: "2014-01-06"
+utcDate: "2014-01-06"
 categories: 
   - "developer"
 ---

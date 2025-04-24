@@ -1,6 +1,6 @@
 ---
 title: "How to Build a Rocking Github Profile"
-date: "2020-07-10"
+utcDate: "2020-07-10"
 categories: 
   - "brand"
   - "githubactions"

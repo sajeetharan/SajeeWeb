@@ -1,6 +1,6 @@
 ---
 title: "Want To Be a Super Man? - Learn First Aid!"
-date: "2011-04-04"
+utcDate: "2011-04-04"
 categories: 
   - "developer"
 ---

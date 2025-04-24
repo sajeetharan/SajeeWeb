@@ -1,6 +1,6 @@
 ---
 title: "Power Platform Fundamentals PL-900 Certification exam"
-date: "2020-03-14"
+utcDate: "2020-03-14"
 categories: 
   - "aibuilder"
   - "power-automate"

@@ -1,6 +1,6 @@
 ---
 title: "Angular Language Service - A handy extension for angular developers"
-date: "2017-11-10"
+utcDate: "2017-11-10"
 categories: 
   - "angularcli"
   - "developer"

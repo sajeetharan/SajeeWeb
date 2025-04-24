@@ -1,6 +1,6 @@
 ---
 title: "One of My Inspiration: Jagath Jayasekera - A True Trainer and One of a Kind."
-date: "2011-04-01"
+utcDate: "2011-04-01"
 categories: 
   - "developer"
 ---

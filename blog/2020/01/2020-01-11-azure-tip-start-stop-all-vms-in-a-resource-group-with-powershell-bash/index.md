@@ -1,6 +1,6 @@
 ---
 title: "Azure Tip : Start/Stop all VMs in a Resource Group with PowerShell/Bash"
-date: "2020-01-11"
+utcDate: "2020-01-11"
 categories: 
   - "azure"
   - "cloud"

@@ -1,6 +1,6 @@
 ---
 title: "Deploy Angular9 App to Azure with Github Actions"
-date: "2020-02-14"
+utcDate: "2020-02-14"
 categories: 
   - "agile"
   - "ci-cd"

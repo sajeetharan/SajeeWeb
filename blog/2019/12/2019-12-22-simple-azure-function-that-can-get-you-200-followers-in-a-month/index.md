@@ -1,6 +1,6 @@
 ---
 title: "Simple Azure Function that can get you 200+ Twitter followers in a month!"
-date: "2019-12-22"
+utcDate: "2019-12-22"
 categories: 
   - "appservice"
   - "azurefunction"

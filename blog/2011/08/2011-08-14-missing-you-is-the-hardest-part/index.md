@@ -1,6 +1,6 @@
 ---
 title: "Missing you is the Hardest part"
-date: "2011-08-14"
+utcDate: "2011-08-14"
 categories: 
   - "developer"
 ---

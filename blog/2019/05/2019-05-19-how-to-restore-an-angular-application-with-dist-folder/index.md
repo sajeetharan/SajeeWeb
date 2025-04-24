@@ -1,6 +1,6 @@
 ---
 title: "How to restore an Angular application code with dist folder"
-date: "2019-05-19"
+utcDate: "2019-05-19"
 categories: 
   - "html"
   - "vscode"

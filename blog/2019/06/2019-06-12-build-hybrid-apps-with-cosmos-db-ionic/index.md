@@ -1,6 +1,6 @@
 ---
 title: "Build hybrid apps with Cosmosdb + Ionic"
-date: "2019-06-12"
+utcDate: "2019-06-12"
 categories: 
   - "ionic"
   - "javascript"

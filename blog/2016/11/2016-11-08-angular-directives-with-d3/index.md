@@ -1,6 +1,6 @@
 ---
 title: "Angular Directives with D3"
-date: "2016-11-08"
+utcDate: "2016-11-08"
 categories: 
   - "developer"
 tags: 

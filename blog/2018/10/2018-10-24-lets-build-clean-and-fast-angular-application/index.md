@@ -1,6 +1,6 @@
 ---
 title: "Let's build clean and Scalable Angular application"
-date: "2018-10-24"
+utcDate: "2018-10-24"
 categories: 
   - "typescript"
 tags: 

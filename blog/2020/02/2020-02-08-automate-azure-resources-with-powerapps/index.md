@@ -1,6 +1,6 @@
 ---
 title: "Automate Azure Resources with PowerApps"
-date: "2020-02-08"
+utcDate: "2020-02-08"
 categories: 
   - "flow"
   - "powerapp"

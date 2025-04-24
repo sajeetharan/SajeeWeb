@@ -1,6 +1,6 @@
 ---
 title: "Project Tye : Build developer focused Microsevices with AKS"
-date: "2020-12-21"
+utcDate: "2020-12-21"
 tags: 
   - "azure"
   - "containers"

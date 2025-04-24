@@ -1,6 +1,6 @@
 ---
 title: "Azure static web app is simply AWESOME : Deployed an Angular app in 10 seconds!"
-date: "2020-05-19"
+utcDate: "2020-05-19"
 categories: 
   - "azurefunction"
   - "ci-cd"

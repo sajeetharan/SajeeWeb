@@ -1,6 +1,6 @@
 ---
 title: "Build a web API with .NET Core using CLI Tools"
-date: "2018-01-31"
+utcDate: "2018-01-31"
 categories: 
   - "asp-net-core"
   - "developer"

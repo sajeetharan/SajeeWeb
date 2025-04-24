@@ -1,6 +1,6 @@
 ---
 title: "Wear out the features of Azure CosmosDB with AspNetCore application"
-date: "2018-03-26"
+utcDate: "2018-03-26"
 categories: 
   - "developer"
   - "visualstudio"

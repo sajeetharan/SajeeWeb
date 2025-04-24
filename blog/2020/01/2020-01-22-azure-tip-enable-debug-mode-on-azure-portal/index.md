@@ -1,6 +1,6 @@
 ---
 title: "Azure Tip : Enable Debug Mode on Azure Portal"
-date: "2020-01-22"
+utcDate: "2020-01-22"
 categories: 
   - "azure"
   - "cloud"

@@ -1,6 +1,6 @@
 ---
 title: "Tips to become a good Coder/Programmer"
-date: "2014-02-26"
+utcDate: "2014-02-26"
 categories: 
   - "developer"
 ---

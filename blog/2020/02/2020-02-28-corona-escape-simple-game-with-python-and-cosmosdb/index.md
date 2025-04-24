@@ -1,6 +1,6 @@
 ---
 title: "Corona Escape - Game with Python and Cosmosdb"
-date: "2020-02-28"
+utcDate: "2020-02-28"
 categories: 
   - "appinsights"
   - "azure"

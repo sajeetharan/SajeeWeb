@@ -1,6 +1,6 @@
 ---
 title: "Azure Solutions Architect Expert : curated list study guide"
-date: "2019-12-23"
+utcDate: "2019-12-23"
 categories: 
   - "certifications"
   - "developer"

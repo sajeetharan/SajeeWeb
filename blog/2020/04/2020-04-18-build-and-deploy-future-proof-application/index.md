@@ -1,6 +1,6 @@
 ---
 title: "Build and Deploy Future Proof Application with Azure Kubernetes Service in 10 Minutes (Nodejs, Go + AKS)"
-date: "2020-04-18"
+utcDate: "2020-04-18"
 categories: 
   - "appinsights"
   - "appservice"

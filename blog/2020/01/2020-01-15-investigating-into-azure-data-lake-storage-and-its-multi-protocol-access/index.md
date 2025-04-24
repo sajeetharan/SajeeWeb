@@ -1,6 +1,6 @@
 ---
 title: "Investigating into Azure Data Lake Storage and its Multi-protocol Access"
-date: "2020-01-15"
+utcDate: "2020-01-15"
 categories: 
   - "adls"
   - "datalake"

@@ -1,6 +1,6 @@
 ---
 title: "Running Python Inside SQL Server"
-date: "2017-08-01"
+utcDate: "2017-08-01"
 categories: 
   - "asp-net-core"
   - "developer"

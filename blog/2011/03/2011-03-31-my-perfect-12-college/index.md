@@ -1,6 +1,6 @@
 ---
 title: "My Perfect 12 @ College!"
-date: "2011-03-31"
+utcDate: "2011-03-31"
 categories: 
   - "nontech"
 tags: 

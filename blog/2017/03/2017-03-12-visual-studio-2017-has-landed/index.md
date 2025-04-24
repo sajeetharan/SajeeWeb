@@ -1,6 +1,6 @@
 ---
 title: "Visual Studio 2017 has landed!"
-date: "2017-03-12"
+utcDate: "2017-03-12"
 categories: 
   - "developer"
 ---

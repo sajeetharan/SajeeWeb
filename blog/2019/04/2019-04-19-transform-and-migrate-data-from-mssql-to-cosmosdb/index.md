@@ -1,6 +1,6 @@
 ---
 title: "Transform and Migrate data from MSSQL to Cosmosdb"
-date: "2019-04-19"
+utcDate: "2019-04-19"
 categories: 
   - "c"
   - "json"

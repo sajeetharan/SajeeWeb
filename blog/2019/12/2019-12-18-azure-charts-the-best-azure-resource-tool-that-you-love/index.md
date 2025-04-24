@@ -1,6 +1,6 @@
 ---
 title: "Azure Charts : The best Azure Resources tool that you love"
-date: "2019-12-18"
+utcDate: "2019-12-18"
 categories: 
   - "cloud"
   - "developer"

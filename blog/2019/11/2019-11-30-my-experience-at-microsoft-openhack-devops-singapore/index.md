@@ -1,6 +1,6 @@
 ---
 title: "My experience at Microsoft OpenHack DevOps - Singapore"
-date: "2019-11-30"
+utcDate: "2019-11-30"
 categories: 
   - "appservice"
   - "azuredevops"

@@ -1,6 +1,6 @@
 ---
 title: "Create Github Issue Reporter with Azure Function and CosmosDB"
-date: "2020-02-02"
+utcDate: "2020-02-02"
 categories: 
   - "appinsights"
   - "azurefunction"

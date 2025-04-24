@@ -1,6 +1,6 @@
 ---
 title: "Great to be the Winner of the MVP Community Quiz"
-date: "2020-04-03"
+utcDate: "2020-04-03"
 categories: 
   - "azure"
 tags: 

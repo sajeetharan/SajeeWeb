@@ -1,6 +1,6 @@
 ---
 title: "Partial Document Update Samples with Cosmos DB REST Operation"
-date: "2022-02-22"
+utcDate: "2022-02-22"
 tags:
   - "azure"
   - "azure-cosmosdb"
