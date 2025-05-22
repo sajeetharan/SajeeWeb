@@ -25,26 +25,21 @@ export const Project: FunctionComponent<ProjectData> = ({
       <div className={clsx("card", styles.card)}>
         <div className={clsx("card__image", styles.image)}>
           <Image img={image} alt={description} title={title} />
-          {role && (
-            <span className={clsx("badge badge--secondary", styles.role)}>
-              Role: {role}
-            </span>
-          )}
+          {role && <span className={clsx("badge", styles.role)}>{role}</span>}
         </div>
-        <div className="card__body">
-          <h2>{title}</h2>
-          <p>{description}</p>
+        <div className={clsx("card__body", styles.cardBody)}>
+          <h2 className={styles.title}>{title}</h2>
+          <p className={styles.description}>{description}</p>
         </div>
-        <div className="card__footer">
+        <div className={clsx("card__footer", styles.cardFooter)}>
           <a
             href={url}
             target="_blank"
-            className="button button--primary button--outline"
+            rel="noopener noreferrer"
+            className={clsx("button", styles.discoverButton)}
           >
-            <span className="button__icon">
-              <DiscoverIcon />
-            </span>
-            Discover
+            <DiscoverIcon className={styles.icon} />
+            <span>Discover</span>
           </a>
         </div>
       </div>

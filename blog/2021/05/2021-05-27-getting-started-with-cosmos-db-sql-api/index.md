@@ -1,6 +1,6 @@
 ---
 title: Get to know how to query Azure Cosmos DB by using the SQL API
-Date: '2021-05-27'
+Date: "2021-05-27"
 tags:
   - azure
   - c
@@ -13,7 +13,7 @@ tags:
   - sql
   - sqlapi
 coverImage: cosmos.jpg
-utcDate: '2025-04-24T09:52:37.971Z'
+utcDate: "2025-04-24T09:52:37.971Z"
 ---
 
 ## Overview :
@@ -185,7 +185,7 @@ Now that we know how to join to our child array we can use it for filtering. Let
 ```
 SELECT hashtags
 FROM tweets
-JOIN hashtags IN tweets.Hashtags
+JOIN hashutcDate IN tweets.Hashtags
 WHERE hashtags.text NOT IN ("CosmosDB", "Azure")
 ```
 

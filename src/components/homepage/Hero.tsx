@@ -1,12 +1,10 @@
 import clsx from "clsx";
-import React, { FunctionComponent, useEffect, useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import Typed from "typed.js";
 
 import styles from "./Hero.module.scss";
 
-
-export const Hero: FunctionComponent = () => {
-
+export const Hero: React.FC = () => {
   const typedRef = useRef(null);
 
   useEffect(() => {
@@ -14,28 +12,29 @@ export const Hero: FunctionComponent = () => {
       strings: ["Sajeetharan Sinnathurai"],
       typeSpeed: 100,
       backSpeed: 50,
-      backDelay: 2000, // Pause before retyping
+      backDelay: 2000,
       showCursor: true,
-      loop: true, // Enable infinite loop 
+      loop: true,
     });
 
     return () => {
-      typed.destroy(); // Cleanup when component unmounts
+      typed.destroy();
     };
   }, []);
-  
+
   return (
     <header className={clsx("hero hero--primary", styles.heroBanner)}>
-      <div className="container">
-      <h1 className={clsx("hero__title", styles.title)}>
-      Hi. I'm{" "}
-      <span className={styles.highlighted} ref={typedRef}></span>,
-      <br />
-      Principal Product Manager at Microsoft
-    </h1>
-        <p className={clsx("hero__subtitle", styles.subtitle)}>
-          Empowering developers with cloud & database solutions
-          <br /> | Principal PM | Top Stack Overflow contributor | GDE & MVP | Speaker & OSS contributor.
+      <div className={styles.glassCard}>
+        <h1 className={clsx(styles.title)}>
+          Hi, I'm <span className={styles.highlighted} ref={typedRef}></span>
+          <br />
+          Principal Program Manager @ Microsoft
+        </h1>
+        <p className={clsx(styles.subtitle)}>
+          Driving Developer Experience & AI Innovation.
+          <br />
+          Cloud | Databases | Stack Overflow Top Contributor | GDE | MVP |
+          Speaker | OSS Enthusiast.
         </p>
       </div>
     </header>
