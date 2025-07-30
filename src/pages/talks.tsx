@@ -10,6 +10,21 @@ import GraphQLInGoDescription from "./assets/talks/_graphql-in-go.md";
 const talks: TalkMetadata[] = [
   {
     title:
+      "What's New in Azure Cosmos DB JavaScript SDK V4",
+    description:
+      "We will walk you through a multi-agent application in C# that is built on top of the Semantic Kernel framework. You will understand the concepts behind agentic applications, understand the implementation details and nuances, and learn how to integrate Azure Cosmos DB as the database for various use-cases.",
+    events: [
+      {
+        name: "This session explores the key features of SDK v4, highlighting its fully modular architecture that allows selective imports for optimized builds",
+        location: "Azure Cosmos DB Live, Virtual Event",
+        date: new Date(2025, 4, 16),
+      },
+    ],
+    recordingURL: "https://www.youtube.com/watch?v=3Q8OPpTi7kg",
+    slidesURL: "",
+  },
+  {
+    title:
       "Semantic Kernel with C# to build multi-agent AI applications powered by Azure Cosmos DB",
     description:
       "We will walk you through a multi-agent application in C# that is built on top of the Semantic Kernel framework. You will understand the concepts behind agentic applications, understand the implementation details and nuances, and learn how to integrate Azure Cosmos DB as the database for various use-cases.",
