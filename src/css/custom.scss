@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
 
 h1,
 h2,
@@ -11,16 +11,14 @@ h5 {
 
 /* You can override the default Infima variables here. */
 :root {
-  --pk-blue: #4cc9ed;
-  --pk-green: #6646f6  ;
+  --ifm-color-primary: #0969da;
+  --ifm-color-primary-dark: #0860ca;
+  --ifm-color-primary-darker: #075abe;
+  --ifm-color-primary-darkest: #064a9d;
+  --ifm-color-primary-light: #1f7eea;
+  --ifm-color-primary-lighter: #2f89f0;
+  --ifm-color-primary-lightest: #5ca3f5;
 
-  --ifm-color-primary: #d63384;
-  --ifm-color-primary-dark: #bf2e77;
-  --ifm-color-primary-darker: #b12b70;
-  --ifm-color-primary-darkest: #98255f;
-  --ifm-color-primary-light: #e04893;
-  --ifm-color-primary-lighter: #e4559c;
-  --ifm-color-primary-lightest: #eb6ab0;
   --ifm-code-font-size: 95%;
   --ifm-font-family-base: "Inter", sans-serif;
   --ifm-font-size-base: 17px;
@@ -29,7 +27,74 @@ h5 {
   --ifm-footer-background-color: transparent;
   --ifm-footer-padding-vertical: calc(var(--ifm-spacing-vertical) * 3);
 
-  --ifm-global-radius: 0.3rem;
+  --ifm-global-radius: 0.5rem;
+  --ifm-line-height-base: 1.6;
+}
+
+/* For readability concerns, you should choose a lighter palette in dark mode. */
+[data-theme="dark"] {
+  --ifm-color-primary: #539bf5;
+  --ifm-color-primary-dark: #3489f3;
+  --ifm-color-primary-darker: #247ff1;
+  --ifm-color-primary-darkest: #0c69d9;
+  --ifm-color-primary-light: #72adf7;
+  --ifm-color-primary-lighter: #82b7f8;
+  --ifm-color-primary-lightest: #b2d4fb;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+}
+
+html[data-theme="dark"] {
+  --ifm-background-color: #0d1117;
+  --ifm-background-surface-color: #161b22;
+
+  .navbar {
+    border-bottom: 1px solid var(--ifm-color-emphasis-200);
+  }
+}
+
+.footer {
+  border-top: 1px solid var(--ifm-color-emphasis-200);
+
+  &__bottom {
+    margin-top: 4rem;
+  }
+}
+
+.button--outline {
+  &:focus {
+    --ifm-button-background-color: var(--ifm-button-border-color);
+  }
+
+  &.button--primary:focus {
+    --ifm-button-color: var(--ifm-font-color-base-inverse);
+  }
+}
+
+.button__icon {
+  width: 18px;
+  height: 18px;
+  display: inline-block;
+  margin-right: 0.5rem;
+  position: relative;
+  top: 3px;
+  fill: var(--ifm-button-color);
+
+  .button--secondary & {
+    fill: var(--ifm-color-gray-900);
+
+    [data-theme="dark"] & {
+      fill: var(--ifm-font-color-base);
+    }
+  }
+
+  .button--outline:hover &,
+  .button--outline:active &,
+  .button--outline:focus &,
+  .button--outline.button--active & {
+    [data-theme="dark"] & {
+      fill: var(--ifm-font-color-base-inverse);
+    }
+  }
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
