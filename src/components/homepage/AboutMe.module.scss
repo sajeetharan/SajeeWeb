@@ -1,6 +1,5 @@
 @import "../../css/mixins";
 
-
 $avatar-size: 310px;
 .avatar {
   display: block;
@@ -9,8 +8,13 @@ $avatar-size: 310px;
 
   img,
   & > div {
-    border-radius: 999px;
+    border-radius: 50%;
     max-height: $avatar-size;
+    width: $avatar-size;
+    height: $avatar-size;
+    object-fit: cover;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    border: 4px solid var(--ifm-color-emphasis-200);
   }
 
   @include small-size {
@@ -20,6 +24,10 @@ $avatar-size: 310px;
 
 .avatarContainer {
   margin-left: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   @include small-size {
     margin: 2rem 0 0;
   }
