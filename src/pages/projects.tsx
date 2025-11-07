@@ -6,6 +6,14 @@ import { Project, ProjectData } from "../components/projects/Project";
 const assetsDir = "./assets/projects";
 const projects: ProjectData[] = [
   {
+    title: "Azure Cosmos DB Toolkit",
+    description:
+      "A comprehensive toolkit for Azure Cosmos DB that provides tools, utilities, and resources to enhance developer productivity and streamline database operations.",
+    url: "https://github.com/AzureCosmosDB/MCPToolKit",
+    image: "/img/cosmos-toolkit.png",
+    role: "Author",
+  },
+  {
     title: "Azure Cosmos DB MCP server sample",
     description:
       "A Model Context Protocol (MCP) server that provides secure access to Azure Cosmos DB datasets. Enables Large Language Models (LLMs) to safely query and analyze data through a standardized interface.",
@@ -60,14 +68,35 @@ const description = "Featured Projects I was/am involved in.";
 export default function Projects(): JSX.Element {
   return (
     <Layout title={title} description={description}>
-      <main className="container container--fluid margin-vert--lg">
-        <h1>{title}</h1>
-        <p>{description}</p>
+      <main className="container margin-vert--lg">
+        <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
+          <header style={{ marginBottom: "3rem", textAlign: "center" }}>
+            <h1
+              style={{
+                fontSize: "2.5rem",
+                marginBottom: "1rem",
+                fontWeight: 700,
+              }}
+            >
+              {title}
+            </h1>
+            <p
+              style={{
+                fontSize: "1.15rem",
+                color: "var(--ifm-color-emphasis-700)",
+                maxWidth: "600px",
+                margin: "0 auto",
+              }}
+            >
+              {description}
+            </p>
+          </header>
 
-        <div className="row">
-          {projects.map((project) => (
-            <Project key={project.title} {...project} />
-          ))}
+          <div className="row">
+            {projects.map((project) => (
+              <Project key={project.title} {...project} />
+            ))}
+          </div>
         </div>
       </main>
     </Layout>
