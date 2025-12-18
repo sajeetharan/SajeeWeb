@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
 
 h1,
 h2,
@@ -11,13 +11,13 @@ h5 {
 
 /* You can override the default Infima variables here. */
 :root {
-  --ifm-color-primary: #0969da;
-  --ifm-color-primary-dark: #0860ca;
-  --ifm-color-primary-darker: #075abe;
-  --ifm-color-primary-darkest: #064a9d;
-  --ifm-color-primary-light: #1f7eea;
-  --ifm-color-primary-lighter: #2f89f0;
-  --ifm-color-primary-lightest: #5ca3f5;
+  --ifm-color-primary: #2563eb;
+  --ifm-color-primary-dark: #1d4ed8;
+  --ifm-color-primary-darker: #1e40af;
+  --ifm-color-primary-darkest: #1e3a8a;
+  --ifm-color-primary-light: #3b82f6;
+  --ifm-color-primary-lighter: #60a5fa;
+  --ifm-color-primary-lightest: #93c5fd;
 
   --ifm-code-font-size: 95%;
   --ifm-font-family-base: "Inter", sans-serif;
@@ -27,19 +27,22 @@ h5 {
   --ifm-footer-background-color: transparent;
   --ifm-footer-padding-vertical: calc(var(--ifm-spacing-vertical) * 3);
 
-  --ifm-global-radius: 0.5rem;
+  --ifm-global-radius: 0.75rem;
   --ifm-line-height-base: 1.6;
+
+  --ifm-heading-font-weight: 700;
+  --ifm-navbar-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme="dark"] {
-  --ifm-color-primary: #539bf5;
-  --ifm-color-primary-dark: #3489f3;
-  --ifm-color-primary-darker: #247ff1;
-  --ifm-color-primary-darkest: #0c69d9;
-  --ifm-color-primary-light: #72adf7;
-  --ifm-color-primary-lighter: #82b7f8;
-  --ifm-color-primary-lightest: #b2d4fb;
+  --ifm-color-primary: #60a5fa;
+  --ifm-color-primary-dark: #3b82f6;
+  --ifm-color-primary-darker: #2563eb;
+  --ifm-color-primary-darkest: #1d4ed8;
+  --ifm-color-primary-light: #93c5fd;
+  --ifm-color-primary-lighter: #bfdbfe;
+  --ifm-color-primary-lightest: #dbeafe;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
 
@@ -52,6 +55,18 @@ html[data-theme="dark"] {
   }
 }
 
+/* Navigation styling */
+.navbar {
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: var(--ifm-navbar-shadow);
+
+  [data-theme="dark"] & {
+    background: rgba(13, 17, 23, 0.95);
+  }
+}
+
+/* Footer styling */
 .footer {
   border-top: 1px solid var(--ifm-color-emphasis-200);
 
@@ -60,6 +75,7 @@ html[data-theme="dark"] {
   }
 }
 
+/* Button styles */
 .button--outline {
   &:focus {
     --ifm-button-background-color: var(--ifm-button-border-color);
@@ -97,88 +113,60 @@ html[data-theme="dark"] {
   }
 }
 
-/* For readability concerns, you should choose a lighter palette in dark mode. */
-[data-theme="dark"] {
-  --ifm-color-primary: var(--pk-blue);
-  --ifm-color-primary-dark: #1e90fa;
-  --ifm-color-primary-darker: #0e82fa;
-  --ifm-color-primary-darkest: #0465d5;
-  --ifm-color-primary-light: #5aa8fc;
-  --ifm-color-primary-lighter: #6ab2fc;
-  --ifm-color-primary-lightest: #97cafd;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+/* Professional enhancements */
+.container {
+  max-width: 1200px;
 }
 
-html[data-theme="dark"] {
-  --ifm-background-color: #101010;
-  --ifm-background-surface-color: #101010;
+h2 {
+  font-size: 2.25rem;
+  margin-bottom: 2rem;
+  font-weight: 700;
 
-  .navbar {
-    border-bottom: 1px solid var(--ifm-color-emphasis-200);
+  @media (max-width: 768px) {
+    font-size: 1.75rem;
   }
 }
 
-.footer {
-  border-top: 1px solid var(--ifm-color-emphasis-200);
+h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
 
-  &__bottom {
-    margin-top: 4rem;
+/* Card styling */
+.card {
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  border: 1px solid var(--ifm-color-emphasis-200);
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
   }
 }
 
-.button--outline {
-  &:focus {
-    --ifm-button-background-color: var(--ifm-button-border-color);
-  }
+/* Section spacing */
+.section {
+  padding: 4rem 0;
 
-  &.button--primary:focus {
-    --ifm-button-color: var(--ifm-font-color-base-inverse);
-  }
-}
-
-.button__icon {
-  width: 18px;
-  height: 18px;
-  display: inline-block;
-  margin-right: 0.5rem;
-  position: relative;
-  top: 3px;
-  fill: var(--ifm-button-color);
-
-  .button--secondary & {
-    fill: var(--ifm-color-gray-900);
-
-    [data-theme="dark"] & {
-      fill: var(--ifm-font-color-base);
-    }
-  }
-
-  .button--outline:hover &,
-  .button--outline:active &,
-  .button--outline:focus &,
-  .button--outline.button--active & {
-    [data-theme="dark"] & {
-      fill: var(--ifm-font-color-base-inverse);
-    }
+  @media (max-width: 768px) {
+    padding: 3rem 0;
   }
 }
 
+/* DocSearch styling */
 .DocSearch {
   [data-theme="light"] & {
-    /* --docsearch-primary-color: var(--ifm-color-primary); */
-    /* --docsearch-text-color: var(--ifm-font-color-base); */
     --docsearch-muted-color: var(--ifm-color-secondary-darkest);
     --docsearch-container-background: rgba(94, 100, 112, 0.7);
-    /* Modal */
     --docsearch-modal-background: var(--ifm-color-secondary-lighter);
-    /* Search box */
     --docsearch-searchbox-background: var(--ifm-color-secondary);
     --docsearch-searchbox-focus-background: var(--ifm-color-white);
-    /* Hit */
     --docsearch-hit-color: var(--ifm-font-color-base);
     --docsearch-hit-active-color: var(--ifm-color-white);
     --docsearch-hit-background: var(--ifm-color-white);
-    /* Footer */
     --docsearch-footer-background: var(--ifm-color-white);
   }
 
@@ -186,16 +174,12 @@ html[data-theme="dark"] {
     --docsearch-text-color: var(--ifm-font-color-base);
     --docsearch-muted-color: var(--ifm-color-secondary-darkest);
     --docsearch-container-background: rgba(47, 55, 69, 0.7);
-    /* Modal */
     --docsearch-modal-background: var(--ifm-background-color);
-    /* Search box */
     --docsearch-searchbox-background: var(--ifm-color-emphasis-100);
     --docsearch-searchbox-focus-background: var(--ifm-color-black);
-    /* Hit */
     --docsearch-hit-color: var(--ifm-font-color-base);
     --docsearch-hit-active-color: var(--ifm-color-black);
     --docsearch-hit-background: var(--ifm-color-emphasis-100);
-    /* Footer */
     --docsearch-footer-background: var(--ifm-background-surface-color);
     --docsearch-key-gradient: linear-gradient(
       -26.5deg,

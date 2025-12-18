@@ -28,11 +28,16 @@ export const SocialLinks: FunctionComponent<SocialLinksProps> = ({ data }) => {
   ));
 
   return (
-    <div className={styles.socialContainer}>
-      <h2>Social media</h2>
-      <div className={clsx("row", styles.socialLinks)}>
-        {socialLinksComponents}
+    <section className={styles.socialSection}>
+      <div className={styles.socialContainer}>
+        <h2 className={styles.sectionTitle}>Let's Connect</h2>
+        <p className={styles.sectionSubtitle}>
+          Feel free to reach out on any of these platforms. I'd love to connect!
+        </p>
+        <div className={clsx("row", styles.socialLinks)}>
+          {socialLinksComponents}
+        </div>
       </div>
-    </div>
+    </section>
   );
 };

@@ -2,6 +2,7 @@ import React from "react";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Layout from "@theme/Layout";
 import { AboutMe } from "../components/homepage/AboutMe";
+import { FeaturedSection } from "../components/homepage/FeaturedSection";
 import {
   SocialLinkData,
   SocialLinks,
@@ -60,8 +61,9 @@ export default function Home(): JSX.Element {
     <Layout title="Home" description={siteConfig.tagline}>
       <Hero />
       <main>
-        <div className="container padding-vert">
-          <AboutMe avatar={avatar} descriptionComponent={<AboutMeDesc />} />
+        <AboutMe avatar={avatar} descriptionComponent={<AboutMeDesc />} />
+        <FeaturedSection />
+        <div className="container padding-vert--lg">
           <SocialLinks data={socialLinks} />
         </div>
       </main>

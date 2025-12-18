@@ -1,25 +1,65 @@
 @import "../../css/mixins";
 
+.socialSection {
+  padding: 5rem 0;
+  background: var(--ifm-background-surface-color);
+  border-top: 1px solid var(--ifm-color-emphasis-200);
+
+  @include small-size {
+    padding: 3rem 0;
+  }
+}
+
 .socialContainer {
-  padding: 3rem 0 4rem;
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.sectionTitle {
+  font-size: 2.25rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  color: var(--ifm-font-color-base);
+
+  @include small-size {
+    font-size: 1.75rem;
+  }
+}
+
+.sectionSubtitle {
+  font-size: 1.1rem;
+  color: var(--ifm-color-emphasis-700);
+  margin-bottom: 2.5rem;
+  line-height: 1.6;
+
+  @include small-size {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
 }
 
 .btnIcon {
   display: block;
-  width: 1.5rem;
+  width: 1.75rem;
+  height: 1.75rem;
   padding: 0.5rem 0;
   margin: 0 auto;
-  fill: var(--ifm-button-color);
+  fill: var(--ifm-color-primary);
   transition: fill 0.2s ease;
 }
 
 .btnText {
-  color: var(--ifm-font-color-base);
-  font-weight: 500;
+  color: var(--ifm-color-primary);
+  font-weight: 600;
+  font-size: 1rem;
   transition: color 0.2s ease;
 }
 
 .socialLinks {
+  margin-top: 2rem;
+  justify-content: center;
+
   @include small-size {
     & > div:nth-child(odd) {
       padding-right: calc(var(--ifm-spacing-horizontal) / 2);
@@ -39,26 +79,33 @@
 
 .btn {
   width: 100%;
-  border-color: var(--ifm-color-emphasis-200);
-  padding: 1.25rem 0;
-  background-color: var(--ifm-background-surface-color);
-  transition: all 0.2s ease;
+  border: 2px solid var(--ifm-color-emphasis-200);
+  padding: 1.5rem 1rem;
+  background-color: var(--ifm-background-color);
+  border-radius: 0.75rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 
   &:hover {
     border-color: var(--ifm-color-primary);
-    background-color: var(--ifm-color-primary);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(135deg, #2563eb, #3b82f6);
+    transform: translateY(-4px);
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
 
     .btnText {
-      color: var(--ifm-font-color-base-inverse);
+      color: white;
     }
     .btnIcon {
-      fill: var(--ifm-font-color-base-inverse);
+      fill: white;
+      transform: scale(1.1);
     }
   }
 
   &:active {
-    transform: translateY(0);
+    transform: translateY(-2px);
+  }
+
+  @include small-size {
+    padding: 1.25rem 0.75rem;
   }
 }
