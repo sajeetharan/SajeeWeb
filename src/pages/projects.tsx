@@ -6,7 +6,7 @@ import { Project, ProjectData } from "../components/projects/Project";
 const assetsDir = "./assets/projects";
 const projects: ProjectData[] = [
   {
-    title: "Azure Cosmos DB Toolkit",
+    title: "Azure Cosmos DB MCP Toolkit",
     description:
       "A comprehensive toolkit for Azure Cosmos DB that provides tools, utilities, and resources to enhance developer productivity and streamline database operations.",
     url: "https://github.com/AzureCosmosDB/MCPToolKit",
@@ -27,6 +27,22 @@ const projects: ProjectData[] = [
       "One-stop for everything Azure Cosmos DB. Code samples, docs, videos, decks, etc. Everything in one location. Community contributions are welcome.",
     url: "https://github.com/AzureCosmosDB/gallery",
     image: require(`${assetsDir}/gallery-social.png`),
+    role: "Author",
+  },
+  {
+    title: "Cosmos Graphic",
+    description:
+      "A visualization and graphics library for Azure Cosmos DB. Provides tools and utilities for creating visual representations of Cosmos DB data and architecture.",
+    url: "https://github.com/sajeetharan/cosmos-graphic",
+    image: require(`${assetsDir}/cosmos-graphic.png`),
+    role: "Author",
+  },
+  {
+    title: "Angular Graphic",
+    description:
+      "A collection of Angular components and directives for building interactive graphics and visualizations in Angular applications.",
+    url: "https://github.com/sajeetharan/angular-graphic",
+    image: require(`${assetsDir}/angular-graphic.png`),
     role: "Author",
   },
   {
