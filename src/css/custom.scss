@@ -66,6 +66,41 @@ html[data-theme="dark"] {
   }
 }
 
+/* Mobile menu styles */
+.navbar-sidebar {
+  background: var(--ifm-background-color) !important;
+}
+
+.navbar-sidebar__brand {
+  background: var(--ifm-background-surface-color);
+  padding: 1rem;
+}
+
+.navbar-sidebar__items {
+  padding: 0.5rem 0;
+}
+
+.menu__link {
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+@media (max-width: 996px) {
+  .navbar__toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    color: var(--ifm-navbar-link-color);
+  }
+
+  .navbar-sidebar {
+    display: block !important;
+  }
+}
+
 /* Footer styling */
 .footer {
   border-top: 1px solid var(--ifm-color-emphasis-200);
