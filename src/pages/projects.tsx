@@ -103,7 +103,7 @@ const projects: ProjectData[] = [
   {
     title: "D3 Angular Directives",
     description:
-      "This repository gives you the directives written in angular for various d3 visualizations",
+      "Repository with directives written in Angular for various D3 visualizations",
     url: "https://github.com/sajeetharan/d3AngularDirectives",
     image: require(`${assetsDir}/d3-angular.png`),
     role: "Author",
@@ -119,7 +119,7 @@ const projects: ProjectData[] = [
   {
     title: "Postman GitHub GraphQL",
     description:
-      "This is a demo application to demonstrate the capabilities of Postman with Graphql at Postman API Day 2023",
+      "This is a demo application to demonstrate the capabilities of Postman with GraphQL at Postman API Day 2023",
     url: "https://github.com/sajeetharan/Postman-github-graphql",
     image: require(`${assetsDir}/postman-graphql.png`),
     role: "Author",
