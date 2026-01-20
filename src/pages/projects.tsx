@@ -76,6 +76,54 @@ const projects: ProjectData[] = [
     image: require(`${assetsDir}/cosmos-js-sdk.png`),
     role: "Contributor",
   },
+  {
+    title: "Azure Mindmap",
+    description:
+      "Solution Architecture Patterns and Checklists Mind Map for beginners on Azure",
+    url: "https://github.com/sajeetharan/azure-mindmap",
+    image: require(`${assetsDir}/azure-mindmap.png`),
+    role: "Author",
+  },
+  {
+    title: "Azure Function CosmosDB CRUD",
+    description:
+      "Sample Demonstration using azure cosmosdb and azure function CRUD operation",
+    url: "https://github.com/sajeetharan/AzureFunctionCosmosDBCrud",
+    image: require(`${assetsDir}/azure-function-cosmosdb.png`),
+    role: "Author",
+  },
+  {
+    title: "Angular Structure",
+    description:
+      "Recommended structure for your Angular App",
+    url: "https://github.com/sajeetharan/Angular-Structure",
+    image: require(`${assetsDir}/angular-structure.png`),
+    role: "Author",
+  },
+  {
+    title: "D3 Angular Directives",
+    description:
+      "This repository gives you the directives written in angular for various d3 visualizations",
+    url: "https://github.com/sajeetharan/d3AngularDirectives",
+    image: require(`${assetsDir}/d3-angular.png`),
+    role: "Author",
+  },
+  {
+    title: "GitHub Action Angular",
+    description:
+      "Demo application showcasing GitHub Actions CI/CD pipeline with Angular applications",
+    url: "https://github.com/sajeetharan/github_action_angular",
+    image: require(`${assetsDir}/github-action.png`),
+    role: "Author",
+  },
+  {
+    title: "Postman GitHub GraphQL",
+    description:
+      "This is a demo application to demonstrate the capabilities of Postman with Graphql at Postman API Day 2023",
+    url: "https://github.com/sajeetharan/Postman-github-graphql",
+    image: require(`${assetsDir}/postman-graphql.png`),
+    role: "Author",
+  },
 ];
 
 const title = "Projects";
