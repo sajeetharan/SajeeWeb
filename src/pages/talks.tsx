@@ -9,8 +9,21 @@ import GraphQLInGoDescription from "./assets/talks/_graphql-in-go.md";
 
 const talks: TalkMetadata[] = [
   {
-    title:
-      "What's New in Azure Cosmos DB JavaScript SDK V4",
+    title: "Supercharging AI Agents with the Azure Cosmos DB MCP Toolkit",
+    description:
+      "In this session, we'll explore the full toolkit experience, supported capabilities like CRUD operations, schema discovery, text search, and vector querying, and how it enables RAG and agent-driven workflows instantly. We'll walk through how the MCP toolkit integrates seamlessly with Microsoft Azure AI Foundry, allowing developers to build production-grade AI agents that can reason over real application data with enterprise security, Entra ID authentication, and minimal code.",
+    events: [
+      {
+        name: "Azure Cosmos DB MCP Toolkit Deep Dive",
+        location: "Azure Cosmos DB Live, Virtual Event",
+        date: new Date(2026, 0, 30),
+      },
+    ],
+    recordingURL: "https://www.youtube.com/watch?v=6rPFDDJh3as",
+    slidesURL: "",
+  },
+  {
+    title: "What's New in Azure Cosmos DB JavaScript SDK V4",
     description:
       "We will walk you through a multi-agent application in C# that is built on top of the Semantic Kernel framework. You will understand the concepts behind agentic applications, understand the implementation details and nuances, and learn how to integrate Azure Cosmos DB as the database for various use-cases.",
     events: [
