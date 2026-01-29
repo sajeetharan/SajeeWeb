@@ -6,6 +6,14 @@ import { Project, ProjectData } from "../components/projects/Project";
 const assetsDir = "./assets/projects";
 const projects: ProjectData[] = [
   {
+    title: "Azure Cosmos DB Agent Kit",
+    description:
+      "A collection of AI coding agent skills for Azure Cosmos DB. Contains 45+ performance optimization rules across 8 categories covering data modeling, partition keys, queries, and SDK best practices.",
+    url: "https://github.com/AzureCosmosDB/cosmosdb-agent-kit",
+    image: require(`${assetsDir}/cosmosdb-agent-kit.jpg`),
+    role: "Author",
+  },
+  {
     title: "Azure Cosmos DB MCP Toolkit",
     description:
       "A comprehensive toolkit for Azure Cosmos DB that provides tools, utilities, and resources to enhance developer productivity and streamline database operations.",
@@ -38,11 +46,19 @@ const projects: ProjectData[] = [
     role: "Author",
   },
   {
-    title: "Angular Graphic",
+    title: "Angular Agent Kit",
     description:
-      "A collection of Angular components and directives for building interactive graphics and visualizations in Angular applications.",
-    url: "https://github.com/sajeetharan/angular-graphic",
-    image: require(`${assetsDir}/angular-graphic.png`),
+      "A collection of AI coding agent skills for Angular development. Contains 45+ performance optimization rules across 8 categories. Works with GitHub Copilot, Claude Code, Cursor, and Gemini CLI.",
+    url: "https://github.com/sajeetharan/angular-agent-kit",
+    image: require("../../blog/2026/01/2026-01-30-introducing-angular-agent-kit/images/angular-agent-kit.jpg"),
+    role: "Author",
+  },
+  {
+    title: "Angular Visual Storybook",
+    description:
+      "An interactive learning resource with 26 beautifully designed infographics covering all Angular concepts from basics to advanced topics like SSR, performance optimization, and AI integration.",
+    url: "https://sajeetharan.github.io/angular-graphic/",
+    image: require("../../blog/2025/12/2025-12-15-introducing-angular-visual-storybook/images/angular-visual-storybook.jpg"),
     role: "Author",
   },
   {
