@@ -30,6 +30,43 @@ const config: Config = {
     },
   },
 
+  headTags: [
+    {
+      tagName: "link",
+      attributes: {
+        rel: "api-catalog",
+        href: "/.well-known/api-catalog",
+        type: "application/linkset+json",
+      },
+    },
+    {
+      tagName: "link",
+      attributes: {
+        rel: "alternate",
+        href: "/blogs/rss.xml",
+        type: "application/rss+xml",
+        title: "Blog RSS Feed",
+      },
+    },
+    {
+      tagName: "link",
+      attributes: {
+        rel: "alternate",
+        href: "/blogs/atom.xml",
+        type: "application/atom+xml",
+        title: "Blog Atom Feed",
+      },
+    },
+    {
+      tagName: "link",
+      attributes: {
+        rel: "describedby",
+        href: "/sitemap.xml",
+        type: "application/xml",
+      },
+    },
+  ],
+
   i18n: {
     defaultLocale: "en",
     locales: ["en"],

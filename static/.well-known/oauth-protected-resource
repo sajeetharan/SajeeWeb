@@ -1,0 +1,12 @@
+{
+  "resource": "https://sajeetharan.github.io/",
+  "authorization_servers": [
+    "https://github.com"
+  ],
+  "scopes_supported": [
+    "read"
+  ],
+  "bearer_methods_supported": [
+    "header"
+  ]
+}
