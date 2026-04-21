@@ -1,0 +1,19 @@
+{
+  "$schema": "https://schemas.agentskills.io/discovery/0.2.0/schema.json",
+  "skills": [
+    {
+      "name": "blog-feed",
+      "type": "skill-md",
+      "description": "Discover and consume blog content via RSS and Atom feeds",
+      "url": "https://sajeetharan.github.io/.well-known/agent-skills/blog-feed/SKILL.md",
+      "digest": "sha256:1d3c3eef770782676e95fbf8e81df39aa35aafc609ec7ef66c41e780819dd34a"
+    },
+    {
+      "name": "site-navigation",
+      "type": "skill-md",
+      "description": "Navigate and discover content on the portfolio site",
+      "url": "https://sajeetharan.github.io/.well-known/agent-skills/site-navigation/SKILL.md",
+      "digest": "sha256:128a7ccde8af96a948325cddba9506c5f79bc40567783d2fef9a491b920a0940"
+    }
+  ]
+}
