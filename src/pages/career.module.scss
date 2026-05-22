@@ -1,0 +1,131 @@
+@import "../css/mixins";
+
+.careerPage {
+  padding: 3rem 0 5rem;
+  min-height: calc(100vh - 60px);
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 4rem;
+
+  h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    color: var(--ifm-font-color-base);
+
+    @include small-size {
+      font-size: 2rem;
+    }
+  }
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  color: var(--ifm-color-emphasis-600);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.timeline {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+  padding-left: 2rem;
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: var(--ifm-color-emphasis-200);
+  }
+}
+
+.timelineItem {
+  position: relative;
+  padding-bottom: 3rem;
+
+  &:last-child {
+    padding-bottom: 0;
+  }
+}
+
+.timelineDot {
+  position: absolute;
+  left: -2rem;
+  top: 0.5rem;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--ifm-color-primary);
+  border: 3px solid var(--ifm-background-color);
+  box-shadow: 0 0 0 2px var(--ifm-color-primary);
+  transform: translateX(-50%);
+  left: -2.05rem;
+}
+
+.timelineContent {
+  background: var(--ifm-background-surface-color);
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 1rem;
+  padding: 1.75rem;
+  transition: all 0.3s ease;
+
+  &:hover {
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+    border-color: var(--ifm-color-primary);
+  }
+}
+
+.timelineMeta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.period {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--ifm-color-primary);
+  background: var(--ifm-color-primary-lightest);
+  padding: 0.2rem 0.75rem;
+  border-radius: 1rem;
+}
+
+.location {
+  font-size: 0.85rem;
+  color: var(--ifm-color-emphasis-600);
+}
+
+.role {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin: 0.5rem 0 0.25rem;
+  color: var(--ifm-font-color-base);
+}
+
+.company {
+  font-size: 1rem;
+  color: var(--ifm-color-emphasis-700);
+  margin: 0 0 1rem;
+  font-weight: 600;
+}
+
+.descriptionList {
+  margin: 0;
+  padding-left: 1.2rem;
+
+  li {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: var(--ifm-color-emphasis-700);
+    margin-bottom: 0.25rem;
+  }
+}

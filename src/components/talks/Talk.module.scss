@@ -50,3 +50,22 @@
     fill: var(--ifm-font-color-base);
   }
 }
+
+.videoPreview {
+  margin-top: 1.5rem;
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  border-radius: 0.5rem;
+  border: 1px solid var(--ifm-color-emphasis-200);
+
+  iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 0.5rem;
+  }
+}

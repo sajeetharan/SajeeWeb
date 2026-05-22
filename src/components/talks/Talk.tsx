@@ -32,6 +32,8 @@ const Talk: FunctionComponent<TalkMetadata> = ({
   slidesURL,
   repoURL,
 }) => {
+  const videoId = recordingURL ? getYouTubeVideoId(recordingURL) : null;
+
   return (
     <div className="col col--12">
       <div className={clsx("card", styles.card)}>
@@ -45,6 +47,17 @@ const Talk: FunctionComponent<TalkMetadata> = ({
               <EventDetails data={events} />
             </div>
           </div>
+          {videoId && (
+            <div className={styles.videoPreview}>
+              <iframe
+                src={`https://www.youtube.com/embed/${videoId}`}
+                title={title}
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              />
+            </div>
+          )}
         </div>
         <div className="card__footer">
           <div className={styles.buttons}>
@@ -133,6 +146,19 @@ const EventDetails: FunctionComponent<{ data: EventMetadata[] }> = ({
 
 function formatDateString(date: Date): string {
   return `${date.getMonth() + 1}/${date.getUTCFullYear()}`;
+}
+
+function getYouTubeVideoId(url: string): string | null {
+  const patterns = [
+    /(?:youtube\.com\/watch\?v=)([^&]+)/,
+    /(?:youtu\.be\/)([^?&]+)/,
+    /(?:youtube\.com\/embed\/)([^?&]+)/,
+  ];
+  for (const pattern of patterns) {
+    const match = url.match(pattern);
+    if (match) return match[1];
+  }
+  return null;
 }
 
 export default Talk;
