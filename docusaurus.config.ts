@@ -145,6 +145,7 @@ const config: Config = {
         { to: "/projects", label: "Projects", position: "left" },
         { to: "/talks", label: "Talks", position: "left" },
         { to: "/awards", label: "Awards", position: "left" },
+        { to: "/career", label: "Career Journey", position: "left" },
         { to: "/blogs", label: "Blogs", position: "left" },
       ],
     },

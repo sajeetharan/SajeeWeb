@@ -8,6 +8,7 @@ interface Award {
   year: string;
   description: string;
   image: string;
+  link?: string;
   category: "award" | "recognition" | "certification" | "speaking";
 }
 
@@ -37,6 +38,7 @@ const awards: Award[] = [
     description:
       "#1 Stack Overflow contributor from Sri Lanka with global Top 10 ranking in Azure, Angular, and Azure Cosmos DB tags. Helping developers worldwide solve complex technical challenges.",
     image: "/img/awards/stackoverflow.jpg",
+    link: "https://stackoverflow.com/users/1749403/sajeetharan",
     category: "recognition",
   },
   {
@@ -46,6 +48,16 @@ const awards: Award[] = [
     description:
       "Recognized for outstanding technical leadership, innovation, and contributions to building high-quality software solutions for global clients.",
     image: "/img/awards/tech_leadership.jpg",
+    category: "award",
+  },
+  {
+    title: "Most Outstanding Educator in Technology",
+    organization: "HackerNoon Noonies",
+    year: "2020",
+    description:
+      "Winner of the HackerNoon Noonies 2020 award for Most Outstanding Educator in Technology with 533 votes, recognized for empowering developers through mentoring, open source contributions, and community leadership.",
+    image: "/img/awards/noonies_2020.jpg",
+    link: "https://noonies.hackernoon.com/2020/technology/2020-most-outstanding-educator-in-technology",
     category: "award",
   },
   {
@@ -138,6 +150,16 @@ export default function Awards(): JSX.Element {
                     <span className={styles.year}>{award.year}</span>
                   </div>
                   <p className={styles.description}>{award.description}</p>
+                  {award.link && (
+                    <a
+                      href={award.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={styles.awardLink}
+                    >
+                      View Details →
+                    </a>
+                  )}
                 </div>
               </div>
             ))}

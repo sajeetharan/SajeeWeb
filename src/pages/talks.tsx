@@ -9,6 +9,20 @@ import GraphQLInGoDescription from "./assets/talks/_graphql-in-go.md";
 
 const talks: TalkMetadata[] = [
   {
+    title: "Azure Cosmos DB Dev Environment with AI",
+    description:
+      "Explore how to set up and optimize your Azure Cosmos DB development environment with AI-powered tools and workflows to boost productivity and streamline your database development experience.",
+    events: [
+      {
+        name: "Azure Cosmos DB Dev Environment with AI",
+        location: "Azure Cosmos DB Live, Virtual Event",
+        date: new Date(2026, 4, 22),
+      },
+    ],
+    recordingURL: "https://www.youtube.com/watch?v=PrO_42ZC_1M",
+    slidesURL: "",
+  },
+  {
     title: "Supercharging AI Agents with the Azure Cosmos DB MCP Toolkit",
     description:
       "In this session, we'll explore the full toolkit experience, supported capabilities like CRUD operations, schema discovery, text search, and vector querying, and how it enables RAG and agent-driven workflows instantly. We'll walk through how the MCP toolkit integrates seamlessly with Microsoft Azure AI Foundry, allowing developers to build production-grade AI agents that can reason over real application data with enterprise security, Entra ID authentication, and minimal code.",
