@@ -7,6 +7,15 @@ import styles from "./Hero.module.scss";
 export const Hero: React.FC = () => {
   return (
     <header className={clsx("hero", styles.heroBanner)}>
+      <div className={styles.animatedBg}></div>
+      <div className={styles.codeBackground}>
+        <pre>{`const developer = {
+  name: "Sajeetharan",
+  role: "Principal PM @ Microsoft",
+  focus: ["Cloud", "Databases", "AI"],
+  passion: "Empowering developers"
+};`}</pre>
+      </div>
       <div className="container">
         <div className={styles.heroContent}>
           <div className={styles.badge}>
@@ -71,7 +80,6 @@ export const Hero: React.FC = () => {
           </div>
         </div>
       </div>
-      <div className={styles.gradientOverlay}></div>
     </header>
   );
 };

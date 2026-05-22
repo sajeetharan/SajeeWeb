@@ -131,6 +131,7 @@ const config: Config = {
       },
     ],
     colorMode: {
+      defaultMode: "dark",
       respectPrefersColorScheme: true,
     },
     navbar: {

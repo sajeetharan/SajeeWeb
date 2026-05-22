@@ -9,6 +9,8 @@ import {
 } from "../components/homepage/SocialLinks";
 import { Hero } from "../components/homepage/Hero";
 import { Contributions } from "../components/homepage/Contributions";
+import { TechStack } from "../components/homepage/TechStack";
+import { ScrollReveal } from "../components/homepage/ScrollReveal";
 
 import avatar from "./assets/index/avatar.jpg";
 import AboutMeDesc from "./assets/index/_about-me.md";
@@ -61,13 +63,22 @@ export default function Home(): JSX.Element {
   return (
     <Layout title="Home" description={siteConfig.tagline}>
       <Hero />
+      <TechStack />
       <main>
-        <AboutMe avatar={avatar} descriptionComponent={<AboutMeDesc />} />
-        <FeaturedSection />
-        <Contributions />
-        <div className="container padding-vert--lg">
-          <SocialLinks data={socialLinks} />
-        </div>
+        <ScrollReveal>
+          <AboutMe avatar={avatar} descriptionComponent={<AboutMeDesc />} />
+        </ScrollReveal>
+        <ScrollReveal delay={100}>
+          <FeaturedSection />
+        </ScrollReveal>
+        <ScrollReveal delay={150}>
+          <Contributions />
+        </ScrollReveal>
+        <ScrollReveal delay={200}>
+          <div className="container padding-vert--lg">
+            <SocialLinks data={socialLinks} />
+          </div>
+        </ScrollReveal>
       </main>
     </Layout>
   );
