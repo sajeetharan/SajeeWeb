@@ -19,7 +19,25 @@ export const AboutMe: FunctionComponent<AboutMeProps> = ({
         <div className={styles.aboutCard}>
           <div className="row">
             <div className={clsx("col col--7", styles.descriptionCol)}>
-              <div className={styles.description}>{descriptionComponent}</div>
+              <div className={styles.terminal}>
+                <div className={styles.terminalHeader}>
+                  <div className={styles.terminalDots}>
+                    <span className={styles.dotRed}></span>
+                    <span className={styles.dotYellow}></span>
+                    <span className={styles.dotGreen}></span>
+                  </div>
+                  <span className={styles.terminalTitle}>~/about-me</span>
+                </div>
+                <div className={styles.terminalBody}>
+                  <div className={styles.terminalLine}>
+                    <span className={styles.prompt}>❯</span>
+                    <span className={styles.command}>cat intro.md</span>
+                  </div>
+                  <div className={styles.terminalOutput}>
+                    {descriptionComponent}
+                  </div>
+                </div>
+              </div>
               <div className={styles.highlights}>
                 <div className={styles.highlightItem}>
                   <div className={styles.highlightIcon}>🏆</div>

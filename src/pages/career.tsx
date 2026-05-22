@@ -16,7 +16,7 @@ const careerTimeline: CareerEntry[] = [
     role: "Principal Product Manager",
     company: "Microsoft",
     period: "2020 - Present",
-    location: "Redmond, WA",
+    location: "Bangalore, India",
     description: [
       "Leading Azure Cosmos DB developer experience, SDK design, and tooling",
       "Driving product strategy for developer tools and extensions",
