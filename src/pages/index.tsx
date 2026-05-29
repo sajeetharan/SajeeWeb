@@ -8,6 +8,7 @@ import {
   SocialLinks,
 } from "../components/homepage/SocialLinks";
 import { Hero } from "../components/homepage/Hero";
+import { Reviews } from "../components/homepage/Reviews";
 import { Contributions } from "../components/homepage/Contributions";
 import { TechStack } from "../components/homepage/TechStack";
 import { ScrollReveal } from "../components/homepage/ScrollReveal";
@@ -72,9 +73,12 @@ export default function Home(): JSX.Element {
           <FeaturedSection />
         </ScrollReveal>
         <ScrollReveal delay={150}>
-          <Contributions />
+          <Reviews />
         </ScrollReveal>
         <ScrollReveal delay={200}>
+          <Contributions />
+        </ScrollReveal>
+        <ScrollReveal delay={250}>
           <div className="container padding-vert--lg">
             <SocialLinks data={socialLinks} />
           </div>
