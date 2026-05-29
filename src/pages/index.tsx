@@ -8,6 +8,7 @@ import {
   SocialLinks,
 } from "../components/homepage/SocialLinks";
 import { Hero } from "../components/homepage/Hero";
+import { Reviews } from "../components/homepage/Reviews";
 
 import avatar from "./assets/index/avatar.jpg";
 import AboutMeDesc from "./assets/index/_about-me.md";
@@ -63,6 +64,7 @@ export default function Home(): JSX.Element {
       <main>
         <AboutMe avatar={avatar} descriptionComponent={<AboutMeDesc />} />
         <FeaturedSection />
+        <Reviews />
         <div className="container padding-vert--lg">
           <SocialLinks data={socialLinks} />
         </div>
