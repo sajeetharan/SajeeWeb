@@ -204,6 +204,21 @@
   margin: 0;
 }
 
+.awardLink {
+  display: inline-block;
+  margin-top: 0.75rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--ifm-color-primary);
+  text-decoration: none;
+  transition: color 0.2s;
+
+  &:hover {
+    color: var(--ifm-color-primary-dark);
+    text-decoration: underline;
+  }
+}
+
 .notice {
   text-align: center;
   padding: 1.5rem;

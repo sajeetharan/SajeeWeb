@@ -1,0 +1,97 @@
+@import "../../css/mixins";
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.techSection {
+  padding: 2.5rem 0;
+  overflow: hidden;
+  background: var(--ifm-background-surface-color);
+  border-top: 1px solid rgba(6, 182, 212, 0.1);
+  border-bottom: 1px solid rgba(6, 182, 212, 0.1);
+
+  [data-theme="dark"] & {
+    border-top: 1px solid rgba(34, 211, 238, 0.1);
+    border-bottom: 1px solid rgba(34, 211, 238, 0.1);
+  }
+}
+
+.scrollContainer {
+  position: relative;
+  width: 100%;
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 10%,
+    black 90%,
+    transparent
+  );
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 10%,
+    black 90%,
+    transparent
+  );
+}
+
+.scrollTrack {
+  display: flex;
+  gap: 2rem;
+  width: max-content;
+  animation: scroll 30s linear infinite;
+
+  &:hover {
+    animation-play-state: paused;
+  }
+}
+
+.techItem {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.75rem 1.5rem;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(8px);
+  border-radius: 2rem;
+  border: 1px solid rgba(6, 182, 212, 0.15);
+  white-space: nowrap;
+  transition: all 0.3s ease;
+
+  &:hover {
+    border-color: rgba(6, 182, 212, 0.5);
+    transform: scale(1.05);
+    box-shadow: 0 4px 16px rgba(6, 182, 212, 0.15);
+  }
+
+  [data-theme="dark"] & {
+    background: rgba(18, 18, 26, 0.8);
+    border: 1px solid rgba(34, 211, 238, 0.15);
+
+    &:hover {
+      border-color: rgba(34, 211, 238, 0.5);
+      box-shadow: 0 4px 16px rgba(34, 211, 238, 0.1);
+    }
+  }
+}
+
+.techIcon {
+  font-size: 1.4rem;
+}
+
+.techName {
+  font-size: 0.95rem;
+  font-weight: 600;
+  font-family: "JetBrains Mono", monospace;
+  color: #334155;
+
+  [data-theme="dark"] & {
+    color: rgba(255, 255, 255, 0.9);
+  }
+}

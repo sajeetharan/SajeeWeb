@@ -1,0 +1,61 @@
+{
+  "linkset": [
+    {
+      "anchor": "https://sajeetharan.github.io/blogs/rss.xml",
+      "service-desc": [
+        {
+          "href": "https://sajeetharan.github.io/blogs/rss.xml",
+          "type": "application/rss+xml"
+        }
+      ],
+      "service-doc": [
+        {
+          "href": "https://sajeetharan.github.io/blogs",
+          "type": "text/html"
+        }
+      ],
+      "status": [
+        {
+          "href": "https://sajeetharan.github.io/",
+          "type": "text/html"
+        }
+      ]
+    },
+    {
+      "anchor": "https://sajeetharan.github.io/blogs/atom.xml",
+      "service-desc": [
+        {
+          "href": "https://sajeetharan.github.io/blogs/atom.xml",
+          "type": "application/atom+xml"
+        }
+      ],
+      "service-doc": [
+        {
+          "href": "https://sajeetharan.github.io/blogs",
+          "type": "text/html"
+        }
+      ],
+      "status": [
+        {
+          "href": "https://sajeetharan.github.io/",
+          "type": "text/html"
+        }
+      ]
+    },
+    {
+      "anchor": "https://sajeetharan.github.io/sitemap.xml",
+      "service-desc": [
+        {
+          "href": "https://sajeetharan.github.io/sitemap.xml",
+          "type": "application/xml"
+        }
+      ],
+      "service-doc": [
+        {
+          "href": "https://sajeetharan.github.io/",
+          "type": "text/html"
+        }
+      ]
+    }
+  ]
+}

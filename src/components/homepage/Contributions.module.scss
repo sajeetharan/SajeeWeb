@@ -1,0 +1,180 @@
+@import "../../css/mixins";
+
+.contributions {
+  padding: 5rem 0;
+  background: var(--ifm-background-color);
+
+  @include small-size {
+    padding: 3rem 0;
+  }
+}
+
+.sectionTitle {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 3rem;
+  color: var(--ifm-font-color-base);
+  font-family: "JetBrains Mono", monospace;
+
+  @include small-size {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+
+  @include small-size {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  border-radius: 1.25rem;
+  padding: 2rem;
+  border: 1px solid rgba(6, 182, 212, 0.12);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 48px rgba(6, 182, 212, 0.12);
+    border-color: rgba(6, 182, 212, 0.35);
+  }
+
+  [data-theme="dark"] & {
+    background: rgba(18, 18, 26, 0.7);
+    border: 1px solid rgba(34, 211, 238, 0.1);
+
+    &:hover {
+      box-shadow: 0 16px 48px rgba(34, 211, 238, 0.08);
+      border-color: rgba(34, 211, 238, 0.3);
+    }
+  }
+
+  @include small-size {
+    padding: 1.5rem;
+  }
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+
+  h3 {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 700;
+    font-family: "JetBrains Mono", monospace;
+  }
+}
+
+.icon {
+  width: 28px;
+  height: 28px;
+  fill: var(--ifm-font-color-base);
+}
+
+.username {
+  margin: 0 0 1.5rem;
+
+  a {
+    color: #06b6d4;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    font-family: "JetBrains Mono", monospace;
+
+    &:hover {
+      text-decoration: underline;
+    }
+
+    [data-theme="dark"] & {
+      color: #22d3ee;
+    }
+  }
+}
+
+.graphContainer {
+  margin-bottom: 1.5rem;
+  overflow: hidden;
+  border-radius: 0.75rem;
+}
+
+.contributionGraph {
+  width: 100%;
+  height: auto;
+  border-radius: 0.75rem;
+}
+
+.soFlair {
+  width: 100%;
+  max-width: 220px;
+  height: auto;
+}
+
+.soHighlights {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.highlight {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.highlightLabel {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #06b6d4;
+  font-family: "JetBrains Mono", monospace;
+
+  [data-theme="dark"] & {
+    color: #22d3ee;
+  }
+}
+
+.highlightDesc {
+  font-size: 0.85rem;
+  color: #64748b;
+
+  [data-theme="dark"] & {
+    color: rgba(255, 255, 255, 0.6);
+  }
+}
+
+.stats {
+  margin-top: auto;
+}
+
+.viewProfile {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #06b6d4;
+  text-decoration: none;
+  font-family: "JetBrains Mono", monospace;
+
+  &:hover {
+    text-decoration: underline;
+    color: #0891b2;
+  }
+
+  [data-theme="dark"] & {
+    color: #22d3ee;
+
+    &:hover {
+      color: #67e8f9;
+    }
+  }
+}

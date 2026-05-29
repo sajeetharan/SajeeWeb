@@ -1,0 +1,17 @@
+/*
+  X-Content-Type-Options: nosniff
+
+/
+  Link: </.well-known/api-catalog>; rel="api-catalog"
+  Link: </blogs/rss.xml>; rel="alternate"; type="application/rss+xml"; title="Blog RSS Feed"
+  Link: </blogs/atom.xml>; rel="alternate"; type="application/atom+xml"; title="Blog Atom Feed"
+  Link: </sitemap.xml>; rel="describedby"; type="application/xml"
+
+/.well-known/api-catalog
+  Content-Type: application/linkset+json
+
+/.well-known/oauth-protected-resource
+  Content-Type: application/json
+
+/.well-known/agent-skills/index.json
+  Content-Type: application/json
