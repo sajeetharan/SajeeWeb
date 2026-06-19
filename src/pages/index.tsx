@@ -1,6 +1,7 @@
 import React from "react";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Layout from "@theme/Layout";
+import Head from "@docusaurus/Head";
 import { AboutMe } from "../components/homepage/AboutMe";
 import { FeaturedSection } from "../components/homepage/FeaturedSection";
 import {
@@ -61,8 +62,43 @@ const socialLinks: SocialLinkData[] = [
 
 export default function Home(): JSX.Element {
   const { siteConfig } = useDocusaurusContext();
+
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: "Sajeetharan Sinnathurai",
+    url: "https://sajeetharan.github.io/",
+    jobTitle: "Principal Program Manager",
+    worksFor: {
+      "@type": "Organization",
+      name: "Microsoft",
+    },
+    knowsAbout: [
+      "Developer Tooling",
+      "Azure Cosmos DB",
+      "Cosmos DB",
+      "Databases",
+      "NoSQL",
+      "Developer Experience",
+      "Coding Agents",
+      "GitHub Copilot",
+      "GitHub",
+      "Cloud Computing",
+      "Azure",
+    ],
+    sameAs: [
+      "https://www.linkedin.com/in/sajeetharan/",
+      "https://twitter.com/kokkisajee",
+      "https://github.com/sajeetharan",
+      "https://stackoverflow.com/users/3785469/sajeetharan",
+    ],
+  };
+
   return (
     <Layout title="Home" description={siteConfig.tagline}>
+      <Head>
+        <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
+      </Head>
       <Hero />
       <TechStack />
       <main>

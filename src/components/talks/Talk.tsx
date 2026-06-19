@@ -13,6 +13,7 @@ export interface TalkMetadata {
   title: string;
   description: React.ReactNode;
   events: EventMetadata[];
+  topics?: string[];
   recordingURL?: string;
   slidesURL?: string;
   repoURL?: string;

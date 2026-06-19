@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useMemo } from "react";
 import Layout from "@theme/Layout";
 
 import Talk, { TalkMetadata } from "../components/talks/Talk";
@@ -8,6 +8,36 @@ import DevTeamCollaborationGitBestPracticesDescription from "./assets/talks/_dev
 import GraphQLInGoDescription from "./assets/talks/_graphql-in-go.md";
 
 const talks: TalkMetadata[] = [
+  {
+    title: "Agentic Coding with Azure Cosmos DB: From Idea to Working App",
+    description:
+      "Discover how to leverage agentic coding workflows with Azure Cosmos DB to go from idea to a fully working application. Learn how AI-powered development tools can accelerate your database-driven app development process.",
+    events: [
+      {
+        name: "Agentic Coding with Azure Cosmos DB: From Idea to Working App",
+        location: "Microsoft Reactor, Virtual Event",
+        date: new Date(2026, 5, 19),
+      },
+    ],
+    recordingURL: "https://www.youtube.com/watch?v=ST8lvhD9d_M",
+    slidesURL: "",
+    topics: ["AI", "Databases"],
+  },
+  {
+    title: "Powering Coding Agents with Azure Cosmos DB Agent Kit",
+    description:
+      "Explore how to power coding agents with the Azure Cosmos DB Agent Kit, enabling AI-driven workflows that interact with your data seamlessly for building intelligent, agent-powered applications.",
+    events: [
+      {
+        name: "Microsoft Azure Skillup Tamilnadu Session 6",
+        location: "Chennai, India",
+        date: new Date(2026, 5, 13),
+      },
+    ],
+    recordingURL: "",
+    slidesURL: "https://cosmosdbagentkit2026.z13.web.core.windows.net/",
+    topics: ["AI", "Databases", "Conference"],
+  },
   {
     title: "Azure Cosmos DB Dev Environment with AI",
     description:
@@ -21,6 +51,7 @@ const talks: TalkMetadata[] = [
     ],
     recordingURL: "https://www.youtube.com/watch?v=PrO_42ZC_1M",
     slidesURL: "",
+    topics: ["AI", "Databases"],
   },
   {
     title: "Supercharging AI Agents with the Azure Cosmos DB MCP Toolkit",
@@ -35,6 +66,7 @@ const talks: TalkMetadata[] = [
     ],
     recordingURL: "https://www.youtube.com/watch?v=6rPFDDJh3as",
     slidesURL: "",
+    topics: ["AI", "Databases"],
   },
   {
     title: "What's New in Azure Cosmos DB JavaScript SDK V4",
@@ -49,6 +81,7 @@ const talks: TalkMetadata[] = [
     ],
     recordingURL: "https://www.youtube.com/watch?v=3Q8OPpTi7kg",
     slidesURL: "",
+    topics: ["Databases", "JavaScript"],
   },
   {
     title:
@@ -64,6 +97,7 @@ const talks: TalkMetadata[] = [
     ],
     recordingURL: "https://youtu.be/UMgsYdmslSo",
     slidesURL: "",
+    topics: ["AI", "Databases"],
   },
   {
     title: "Azure Cosmos DB Live - February 2025",
@@ -78,6 +112,7 @@ const talks: TalkMetadata[] = [
     ],
     recordingURL: "https://www.youtube.com/watch?v=KipU6tiv2JU",
     slidesURL: "https://slides.com/sajeetharan/zero-hero-js-sdk",
+    topics: ["Databases", "JavaScript"],
   },
   {
     title: "Google DevFest 2024 - Main Talk",
@@ -92,6 +127,7 @@ const talks: TalkMetadata[] = [
     ],
     recordingURL: "https://www.youtube.com/watch?v=fMCxk-c1p6Q&t",
     slidesURL: "https://slides.com/sajeetharan/devfest-main-talk",
+    topics: ["Conference", "JavaScript"],
   },
   {
     title: "Google DevFest 2024 - Workshop",
@@ -106,6 +142,7 @@ const talks: TalkMetadata[] = [
     ],
     recordingURL: "",
     slidesURL: "https://slides.com/sajeetharan/devfestr2024-codelabs",
+    topics: ["Conference", "JavaScript"],
   },
   {
     title: "NIBM - Workshop",
@@ -119,6 +156,7 @@ const talks: TalkMetadata[] = [
     ],
     recordingURL: "",
     slidesURL: "https://slides.com/sajeetharan/nibm_copilot",
+    topics: ["AI", "Workshop"],
   },
   {
     title: "City JS Conference 2024",
@@ -133,21 +171,63 @@ const talks: TalkMetadata[] = [
     ],
     recordingURL: "https://www.youtube.com/watch?v=2qXpF0GdI9U",
     slidesURL: "",
+    topics: ["Conference", "Databases", "JavaScript"],
   },
 ];
 
-const title = "Talks";
-const description = "Featured talks I presented on various events.";
+const title = "Talks | Sajeetharan Sinnathurai";
+const description =
+  "Conference talks and sessions by Sajeetharan on Azure Cosmos DB, Coding Agents, Developer Tooling, GitHub Copilot, NoSQL databases, and Developer Experience.";
+
+const allTopics = Array.from(
+  new Set(talks.flatMap((t) => t.topics || [])),
+).sort();
 
 export default function Talks(): JSX.Element {
+  const [selectedTopic, setSelectedTopic] = useState<string | null>(null);
+
+  const filteredTalks = useMemo(
+    () =>
+      selectedTopic
+        ? talks.filter((t) => t.topics?.includes(selectedTopic))
+        : talks,
+    [selectedTopic],
+  );
+
   return (
     <Layout title={title} description={description}>
       <main className="container container--fluid margin-vert--lg">
         <h1>{title}</h1>
         <p>{description}</p>
 
+        <div className="margin-bottom--md">
+          <button
+            className={`button button--sm margin-right--sm margin-bottom--sm ${
+              selectedTopic === null
+                ? "button--primary"
+                : "button--secondary button--outline"
+            }`}
+            onClick={() => setSelectedTopic(null)}
+          >
+            All
+          </button>
+          {allTopics.map((topic) => (
+            <button
+              key={topic}
+              className={`button button--sm margin-right--sm margin-bottom--sm ${
+                selectedTopic === topic
+                  ? "button--primary"
+                  : "button--secondary button--outline"
+              }`}
+              onClick={() => setSelectedTopic(topic)}
+            >
+              {topic}
+            </button>
+          ))}
+        </div>
+
         <div className="row">
-          {talks.map((talkData) => (
+          {filteredTalks.map((talkData) => (
             <Talk key={talkData.title} {...talkData} />
           ))}
         </div>

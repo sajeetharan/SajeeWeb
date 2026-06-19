@@ -4,9 +4,10 @@ import type { Config } from "@docusaurus/types";
 import type * as Preset from "@docusaurus/preset-classic";
 
 const config: Config = {
-  title: "Sajeetharan Sinnathurai,From Code to Cloud ",
+  title:
+    "Sajeetharan Sinnathurai | Developer Tooling, Azure Cosmos DB & Coding Agents",
   tagline:
-    "From Humble Beginnings to Global Impact—Empowering Developers, One Line at a Time",
+    "Principal PM at Microsoft empowering developers with Azure Cosmos DB, GitHub Copilot, coding agents, and NoSQL databases—from code to cloud.",
   url: "https://sajeetharan.github.io/",
   baseUrl: "/",
   onBrokenLinks: "warn",
@@ -118,16 +119,28 @@ const config: Config = {
       {
         name: "description",
         content:
-          "Empowering developers with cloud & databases  | Principal PM | Top Stack Overflow contributor | GDE & MVP | Speaker & OSS contributor",
+          "Sajeetharan Sinnathurai — Principal PM at Microsoft specializing in Developer Tooling, Azure Cosmos DB, Developer Experience, Coding Agents, GitHub Copilot, and NoSQL databases. Speaker, mentor, and open-source contributor.",
       },
       {
         name: "keywords",
         content:
-          "fullstack,frontend,developer,databases,azure,cloud,azurecosmosdb,engineer,javascript,graphql,rest,react,angukar,devops,cloud-native,cka,ckad,open-source",
+          "Sajeetharan,Developer Tooling,Databases,Azure Cosmos DB,Cosmos DB,Developer Experience,Coding Agents,NoSQL,Copilot,GitHub,Azure,cloud,developer,fullstack,javascript,open-source,GDE,MVP,Stack Overflow,DevOps,cloud-native",
       },
       {
         name: "twitter:card",
         content: "summary",
+      },
+      {
+        name: "author",
+        content: "Sajeetharan Sinnathurai",
+      },
+      {
+        property: "og:type",
+        content: "website",
+      },
+      {
+        property: "og:site_name",
+        content: "Sajeetharan Sinnathurai",
       },
     ],
     colorMode: {
@@ -148,6 +161,11 @@ const config: Config = {
         { to: "/awards", label: "Awards", position: "left" },
         { to: "/career", label: "Career Journey", position: "left" },
         { to: "/blogs", label: "Blogs", position: "left" },
+        {
+          href: "https://adplist.org/mentors/sajeetharan-sinnathurai?session=pathway-to-product-management-2a3a-mqkf9umx",
+          label: "Get Mentored",
+          position: "left",
+        },
       ],
     },
     footer: {
