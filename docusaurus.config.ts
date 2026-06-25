@@ -124,7 +124,7 @@ const config: Config = {
       {
         name: "keywords",
         content:
-          "Sajeetharan,Developer Tooling,Databases,Azure Cosmos DB,Cosmos DB,Developer Experience,Coding Agents,NoSQL,Copilot,GitHub,Azure,cloud,developer,fullstack,javascript,open-source,GDE,MVP,Stack Overflow,DevOps,cloud-native",
+          "Sajeetharan,Microsoft,Developer Tooling,Databases,Azure Cosmos DB,Cosmos DB,Developer Experience,Coding Agents,NoSQL,Copilot,GitHub,Azure,cloud,developer,fullstack,javascript,open-source,GDE,MVP,Stack Overflow,DevOps,cloud-native",
       },
       {
         name: "twitter:card",

@@ -54,6 +54,21 @@ const talks: TalkMetadata[] = [
     topics: ["AI", "Databases"],
   },
   {
+    title: "How MCP Unlocks Smarter Developer Workflows",
+    description:
+      "Discover how the Model Context Protocol (MCP) is transforming developer workflows by enabling AI agents to interact seamlessly with tools, data, and services. Learn how MCP unlocks smarter, more productive ways to build modern applications.",
+    events: [
+      {
+        name: "FOSSASIA Summit 2026",
+        location: "Bangkok, Thailand",
+        date: new Date(2026, 2, 13),
+      },
+    ],
+    recordingURL: "https://www.youtube.com/watch?v=bXvHFUDAIVY",
+    slidesURL: "",
+    topics: ["AI", "Conference"],
+  },
+  {
     title: "Supercharging AI Agents with the Azure Cosmos DB MCP Toolkit",
     description:
       "In this session, we'll explore the full toolkit experience, supported capabilities like CRUD operations, schema discovery, text search, and vector querying, and how it enables RAG and agent-driven workflows instantly. We'll walk through how the MCP toolkit integrates seamlessly with Microsoft Azure AI Foundry, allowing developers to build production-grade AI agents that can reason over real application data with enterprise security, Entra ID authentication, and minimal code.",
