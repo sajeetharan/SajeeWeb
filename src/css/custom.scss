@@ -225,6 +225,14 @@ h3 {
   }
 }
 
+/* Topic filter buttons on mobile */
+@media (max-width: 768px) {
+  .button.button--sm {
+    font-size: 0.75rem;
+    padding: 0.25rem 0.625rem;
+  }
+}
+
 /* DocSearch styling */
 .DocSearch {
   [data-theme="light"] & {

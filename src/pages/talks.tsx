@@ -231,7 +231,10 @@ export default function Talks(): JSX.Element {
         <h1>{title}</h1>
         <p>{description}</p>
 
-        <div className="margin-bottom--md">
+        <div
+          className="margin-bottom--md"
+          style={{ display: "flex", flexWrap: "wrap", gap: "0.25rem" }}
+        >
           <button
             className={`button button--sm margin-right--sm margin-bottom--sm ${
               selectedTopic === null
