@@ -9,6 +9,22 @@ import GraphQLInGoDescription from "./assets/talks/_graphql-in-go.md";
 
 const talks: TalkMetadata[] = [
   {
+    title:
+      "Turning Coding Agents into an Azure Cosmos DB Expert with the Agent Kit",
+    description:
+      "Learn how the Azure Cosmos DB Agent Kit transforms coding agents into database experts. In this session with Scott Hanselman on the Azure Developers show, we explore how AI-powered coding agents can leverage the Agent Kit to perform intelligent database operations, schema discovery, and query optimization with Azure Cosmos DB.",
+    events: [
+      {
+        name: "Azure Developers Show",
+        location: "Microsoft, Virtual Event",
+        date: new Date(2026, 6, 10),
+      },
+    ],
+    recordingURL: "https://www.youtube.com/watch?v=GWid8x3i9Cc",
+    slidesURL: "",
+    topics: ["AI", "Databases"],
+  },
+  {
     title: "Agentic Coding with Azure Cosmos DB: From Idea to Working App",
     description:
       "Discover how to leverage agentic coding workflows with Azure Cosmos DB to go from idea to a fully working application. Learn how AI-powered development tools can accelerate your database-driven app development process.",
