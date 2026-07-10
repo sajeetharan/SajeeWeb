@@ -69,6 +69,14 @@ html[data-theme="dark"] {
   }
 }
 
+.navbar__logo img {
+  height: 36px;
+  width: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: top center;
+}
+
 /* Mobile menu styles */
 .navbar-sidebar {
   background: var(--ifm-background-color) !important;
@@ -77,6 +85,7 @@ html[data-theme="dark"] {
 .navbar-sidebar__brand {
   background: var(--ifm-background-surface-color);
   padding: 1rem;
+  flex: 0 0 auto;
 }
 
 .navbar-sidebar__items {
@@ -105,7 +114,14 @@ html[data-theme="dark"] {
   }
 
   .navbar-sidebar {
-    display: block !important;
+    display: flex !important;
+    flex-direction: column;
+    height: 100vh;
+  }
+
+  .navbar-sidebar__items {
+    flex: 1;
+    overflow-y: auto;
   }
 
   .navbar-sidebar__items .menu__list {

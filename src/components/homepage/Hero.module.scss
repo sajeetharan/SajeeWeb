@@ -269,6 +269,18 @@
   }
 }
 
+.resumeButton {
+  min-width: auto;
+  border-color: var(--ifm-color-emphasis-300);
+  color: var(--ifm-font-color-base);
+  box-shadow: none;
+
+  &:hover {
+    border-color: var(--ifm-color-primary);
+    box-shadow: 0 4px 15px rgba(6, 182, 212, 0.15);
+  }
+}
+
 .tags {
   display: flex;
   flex-wrap: wrap;

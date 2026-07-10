@@ -13,6 +13,7 @@ import { Reviews } from "../components/homepage/Reviews";
 import { Contributions } from "../components/homepage/Contributions";
 import { TechStack } from "../components/homepage/TechStack";
 import { ScrollReveal } from "../components/homepage/ScrollReveal";
+import { FeaturedTalks } from "../components/homepage/FeaturedTalks";
 
 import avatar from "./assets/index/avatar.jpg";
 import AboutMeDesc from "./assets/index/_about-me.md";
@@ -109,6 +110,9 @@ export default function Home(): JSX.Element {
           <FeaturedSection />
         </ScrollReveal>
         <ScrollReveal delay={150}>
+          <FeaturedTalks />
+        </ScrollReveal>
+        <ScrollReveal delay={175}>
           <Reviews />
         </ScrollReveal>
         <ScrollReveal delay={200}>

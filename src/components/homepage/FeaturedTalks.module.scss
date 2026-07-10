@@ -1,0 +1,119 @@
+@import "../../css/mixins";
+
+.section {
+  padding: 5rem 0;
+  background: var(--ifm-background-color);
+
+  @include small-size {
+    padding: 3rem 0;
+  }
+}
+
+.sectionTitle {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 3rem;
+  color: var(--ifm-font-color-base);
+  font-family: "JetBrains Mono", monospace;
+
+  @include small-size {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+
+  @include small-size {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+}
+
+.card {
+  display: block;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  border-radius: 1.25rem;
+  border: 1px solid rgba(6, 182, 212, 0.12);
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  text-decoration: none !important;
+  color: inherit !important;
+
+  &:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 48px rgba(6, 182, 212, 0.15);
+    border-color: rgba(6, 182, 212, 0.4);
+
+    .playOverlay {
+      opacity: 1;
+    }
+  }
+
+  [data-theme="dark"] & {
+    background: rgba(18, 18, 26, 0.7);
+    border: 1px solid rgba(34, 211, 238, 0.1);
+
+    &:hover {
+      box-shadow: 0 16px 48px rgba(34, 211, 238, 0.1);
+      border-color: rgba(34, 211, 238, 0.3);
+    }
+  }
+}
+
+.thumbnail {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.playOverlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  color: white;
+}
+
+.info {
+  padding: 1.25rem;
+}
+
+.talkTitle {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  line-height: 1.4;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  color: var(--ifm-color-emphasis-600);
+}
+
+.viewAll {
+  text-align: center;
+  margin-top: 2rem;
+}

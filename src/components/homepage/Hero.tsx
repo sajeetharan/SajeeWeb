@@ -68,6 +68,18 @@ export const Hero: React.FC = () => {
             >
               Read My Blogs
             </Link>
+            <a
+              className={clsx(
+                "button button--outline button--lg",
+                styles.ctaButton,
+                styles.resumeButton,
+              )}
+              href="/resume-sajeetharan.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              📄 Resume
+            </a>
           </div>
 
           <div className={styles.tags}>

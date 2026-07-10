@@ -149,11 +149,12 @@ const config: Config = {
     },
     navbar: {
       hideOnScroll: false,
-      title: "Sajeetharan Sinnathruai",
+      title: "Sajeetharan Sinnathurai",
       logo: {
         alt: "Sajeetharan's Logo",
-        src: "img/logo.svg",
-        srcDark: "img/logo-white.svg",
+        src: "img/logo-sketch.png",
+        srcDark: "img/logo-sketch.png",
+        style: { borderRadius: "50%" },
       },
       items: [
         { to: "/projects", label: "Projects", position: "left" },

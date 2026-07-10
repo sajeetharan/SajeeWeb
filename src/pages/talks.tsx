@@ -232,6 +232,50 @@ export default function Talks(): JSX.Element {
         <p>{description}</p>
 
         <div
+          className="card margin-bottom--lg"
+          style={{
+            background:
+              "linear-gradient(135deg, rgba(6,182,212,0.1), rgba(124,58,237,0.1))",
+            border: "1px solid rgba(6,182,212,0.3)",
+            padding: "1.5rem",
+          }}
+        >
+          <h3 style={{ marginBottom: "0.75rem" }}>📅 Upcoming Events</h3>
+          <div
+            style={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}
+          >
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "space-between",
+                alignItems: "center",
+                flexWrap: "wrap",
+                gap: "0.5rem",
+              }}
+            >
+              <div>
+                <strong>Azure Cosmos DB Live — August 2026</strong>
+                <br />
+                <span
+                  style={{
+                    color: "var(--ifm-color-emphasis-600)",
+                    fontSize: "0.9rem",
+                  }}
+                >
+                  Azure Cosmos DB Live, Virtual Event
+                </span>
+              </div>
+              <span
+                className="badge badge--primary"
+                style={{ fontSize: "0.8rem" }}
+              >
+                Coming Soon
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <div
           className="margin-bottom--md"
           style={{ display: "flex", flexWrap: "wrap", gap: "0.25rem" }}
         >
