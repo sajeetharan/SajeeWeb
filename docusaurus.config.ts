@@ -157,11 +157,10 @@ const config: Config = {
         style: { borderRadius: "50%" },
       },
       items: [
-        { to: "/projects", label: "Projects", position: "left" },
-        { to: "/talks", label: "Talks", position: "left" },
-        { to: "/awards", label: "Awards", position: "left" },
-        { to: "/career", label: "Career Journey", position: "left" },
         { to: "/blogs", label: "Blogs", position: "left" },
+        { to: "/talks", label: "Talks", position: "left" },
+        { to: "/projects", label: "Projects", position: "left" },
+        { to: "/awards", label: "Awards", position: "left" },
         {
           href: "https://adplist.org/mentors/sajeetharan-sinnathurai?session=pathway-to-product-management-2a3a-mqkf9umx",
           label: "Get Mentored",
