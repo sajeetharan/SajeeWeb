@@ -23,7 +23,8 @@ tags:
   - oss
   - storagequeue
 coverImage: 7bf39-keda.jpg
-utcDate: '2025-04-24T09:52:37.855Z'
+utcDate: "2020-09-26T00:00:00.000Z"
+description: "Overview: This year I've started focusing deeply on the areas around App Modernization with various cloud native offerings with different cloud vendors. One..."
 ---
 
 ### **Overview:**

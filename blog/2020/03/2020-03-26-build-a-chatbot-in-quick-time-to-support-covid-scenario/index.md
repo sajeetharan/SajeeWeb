@@ -19,7 +19,8 @@ tags:
   - microsoft
   - teams
 coverImage: banner.png
-utcDate: '2025-04-24T09:52:37.773Z'
+utcDate: "2020-03-26T00:00:00.000Z"
+description: "Overview This is my 2nd post about a Chatbot solution to address the world wide problem \"CoronaVirus\" panademic. As it is now spreading across the world and..."
 ---
 
 ### Overview

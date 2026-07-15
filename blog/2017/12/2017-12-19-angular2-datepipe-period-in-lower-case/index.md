@@ -3,7 +3,8 @@ title: Angular2 - DatePipe period in lower case.
 Date: '2017-12-19'
 categories:
   - developer
-utcDate: '2025-04-24T09:52:37.469Z'
+utcDate: "2017-12-19T00:00:00.000Z"
+description: "There are several occasions customer would have requested to change the date format in your application to be in small case as follows. `` Tuesday, December..."
 ---
 
 There are several occasions customer would have requested to change the date format in your application to be in small case as follows.

@@ -5,7 +5,8 @@ categories:
   - developer
 tags:
   - new-year
-utcDate: '2025-04-24T09:52:37.323Z'
+utcDate: "2012-01-01T00:00:00.000Z"
+description: "That is a POSITIVE ATTITUDE , but we have to Respect Great Civilization...!! We entered the year with baby steps, Ending it with a weary trudge. So much has..."
 ---
 
 That is a POSITIVE ATTITUDE , but  we have to Respect  Great Civilization...!!

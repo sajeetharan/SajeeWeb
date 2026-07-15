@@ -13,7 +13,8 @@ tags:
   - nosql
   - vscode
 coverImage: stream.jpg
-utcDate: '2025-04-24T09:52:37.494Z'
+utcDate: "2018-03-18T00:00:00.000Z"
+description: "Recently I started experimenting with Azure's CosmosDB and developed few applications using the same. To start with it this blog will help all the..."
 ---
 
 Recently I started experimenting with Azure's CosmosDB and developed few applications using the same. To start with it this blog will help all the Azure/CosmosDB developers out there to easily setup with visual studio code. I will be sharing how to connect to Azure CosmosDB without using the portal in local machine.

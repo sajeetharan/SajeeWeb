@@ -3,7 +3,8 @@ title: Business Intelligence Solution for an Insurance Industry
 Date: '2016-05-01'
 categories:
   - developer
-utcDate: '2025-04-24T09:52:37.359Z'
+utcDate: "2016-05-01T00:00:00.000Z"
+description: "Business Intelligence and It's impacts: Hello! I am back, after what I realized was my first extended blog break in four years. This time something..."
 ---
 
 **Business Intelligence and It's impacts:**  

@@ -3,7 +3,8 @@ title: What to do with damaged CDs?
 Date: '2011-04-13'
 categories:
   - developer
-utcDate: '2025-04-24T09:52:37.309Z'
+utcDate: "2011-04-13T00:00:00.000Z"
+description: "I was wondering what could I do with CD's that I cannot use anymore.Here are some of the creative ideas that struck my mind! You can make some music deco's..."
 ---
 
 I was wondering what could I do with CD's that I cannot use anymore.Here are some of the creative ideas that struck my mind!  

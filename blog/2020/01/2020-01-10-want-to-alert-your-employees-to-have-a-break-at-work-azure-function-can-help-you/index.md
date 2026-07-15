@@ -16,7 +16,8 @@ tags:
   - reminderapp
   - twilio
 coverImage: twillio.jpg
-utcDate: '2025-04-24T09:52:37.682Z'
+utcDate: "2020-01-10T00:00:00.000Z"
+description: "A programmer can code for days continously without a break. I have done it when I started my career as a programmer. In IT field, it gets worse if you..."
 ---
 
 A programmer can code for days continously without a break. I have done it when I started my career as a programmer. In IT field, it gets worse if you continously work without taking 5 minutes break every 30 minutes. In this blog I will explain how you can find yourself to remind someone to get up and take that mandatory break.

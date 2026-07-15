@@ -6,7 +6,8 @@ categories:
   - developer
   - typescript
   - vscode
-utcDate: '2025-04-24T09:52:37.439Z'
+utcDate: "2017-07-15T00:00:00.000Z"
+description: "Angular version 4.3 has been released. This is a very minor release. What’s new? - It has HttpClient, a smaller, easier to use, and more powerful library..."
 ---
 
 Angular version 4.3 has been released. This is a very minor release.

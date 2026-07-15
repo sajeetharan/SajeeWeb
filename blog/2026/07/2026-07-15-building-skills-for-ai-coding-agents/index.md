@@ -9,7 +9,8 @@ tags:
   - evaluation
   - developer-tools
   - microsoft
-utcDate: "2026-07-15T09:00:00.000Z"
+utcDate: "2026-07-15T00:00:00.000Z"
+description: "Back in January, I started building skills for AI coding agents — domain-specific guidance that helps agents like GitHub Copilot, Claude, and others produce..."
 ---
 
 Back in January, I started building skills for AI coding agents — domain-specific guidance that helps agents like GitHub Copilot, Claude, and others produce better code in areas they'd otherwise struggle with. My domain happened to be Azure Cosmos DB, but the lessons apply to anyone writing skills for any technology.

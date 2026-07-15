@@ -15,7 +15,8 @@ tags:
   - microservices
   - serverless
 coverImage: dfrkf4nxoaajwn2.jpg
-utcDate: '2025-04-24T09:52:37.551Z'
+utcDate: "2019-03-03T00:00:00.000Z"
+description: "For the past one month , I have been experimenting with one of the promising serverless framework for creating serverless functions. With the modern..."
 ---
 
 For the past one month , I have been experimenting with one of the promising serverless framework for creating serverless functions.  With the modern applications moving to cloud with microservices this framework becomes very handy to create/manage your microservices in the form of functions.

@@ -3,7 +3,8 @@ title: Love your Job ! But.. Not your Company!
 Date: '2014-01-06'
 categories:
   - developer
-utcDate: '2025-04-24T09:52:37.336Z'
+utcDate: "2014-01-06T00:00:00.000Z"
+description: "Well, I am back here after a year, reasons why i have chose this topics are many. One of the reasons could be one fine day i got a call from my childhood..."
 ---
 
 Well, I am back here after a year, reasons why i have chose this topics are many. One of the reasons could be one fine day i got a call from my childhood friend who was working for a reputed company in India and was shocked to hear that he was fired from that company.

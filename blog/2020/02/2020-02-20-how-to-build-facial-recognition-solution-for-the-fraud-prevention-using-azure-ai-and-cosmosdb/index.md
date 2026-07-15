@@ -17,7 +17,8 @@ tags:
   - facerecognition
   - identification
 coverImage: appservice-1-1.jpg
-utcDate: '2025-04-24T09:52:37.743Z'
+utcDate: "2020-02-20T00:00:00.000Z"
+description: "Biometric Face Recognition is the process and ability of a bio metric machine to identify and recognize the face of an individual either to grant access to..."
 ---
 
 **Biometric Face Recognition** is the process and ability of a bio metric machine to identify and recognize the face of an individual either to grant access to a secured system or to find out the details of a person by matching the face with existing data in the machine’s system.

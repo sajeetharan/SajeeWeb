@@ -9,7 +9,8 @@ tags:
   - angularjs
   - components
   - directive
-utcDate: '2025-04-24T09:52:37.395Z'
+utcDate: "2017-01-27T00:00:00.000Z"
+description: "I am a big fan of AngularJS over the years and involved in developing enterprise applications using Angular1. To all the angular1.x developers out there, am..."
 ---
 
 I am a big fan of AngularJS over the years and involved in developing enterprise applications using Angular1. To all the angular1.x developers out there, am going to write about my experience on migrating from Angular 1.x to Angular 2. 

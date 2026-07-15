@@ -13,7 +13,8 @@ tags:
   - azureservices
   - knowledge
 coverImage: banner-e1576634940429.jpg
-utcDate: '2025-04-24T09:52:37.635Z'
+utcDate: "2019-12-18T00:00:00.000Z"
+description: "Technology is moving very fast and it’s hard to keep up, but you always gotta find a way to keep updated! Especially in the cloud's world it is mandatory to..."
 ---
 
 Technology is moving very fast and it’s hard to keep up, but you always gotta find a way to keep updated! Especially in the cloud's world it is mandatory to keep your knowledge updated everyday. Every social media is a great place to know about what’s happening around,new innovations and stuff. As there are many services/features been announced every day on Azure, This blog helps you to unleash the power of [AzureCharts](https://azurecharts.com/) which is a great resource that help to track Azure updates. AzureCharts is a set of auto-rebuilt charts to keep you updated on Azure changes, news, stats. Public updates, RSS channels and web pages are used as data sources.

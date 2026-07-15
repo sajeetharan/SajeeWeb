@@ -11,7 +11,8 @@ tags:
   - python
   - webpy
   - wsgi
-utcDate: '2025-04-24T09:52:37.377Z'
+utcDate: "2016-11-29T00:00:00.000Z"
+description: "There has been plenty of tutorials and blogs on how to configure webpy application with apache and mod\\wsgi, but none of them turned into successful one...."
 ---
 
 There has been plenty of tutorials and blogs on how to configure webpy application with apache and mod\_wsgi, but none of them turned into successful one. After 2 days of research i have found the solution and decided to write a blog on the same. Hope it will be useful for others.  

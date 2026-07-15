@@ -17,7 +17,8 @@ tags:
   - soready2help
   - stackoverflow
 coverImage: so.jpg
-utcDate: '2025-04-24T09:52:37.455Z'
+utcDate: "2017-09-09T00:00:00.000Z"
+description: "It's been so long since i wanted to write a blog on how to contribute on stackoverflow. Recently myself and one of my colleague had a small session on the..."
 ---
 
 It's been so long since i wanted to write a blog on how to contribute on stackoverflow. Recently myself and one of my colleague had a small session on the same topic and i decided to share the experience in this post and this is a good opportunity to address some misconceptions about Stack Overflow.  

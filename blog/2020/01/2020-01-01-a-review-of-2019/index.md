@@ -13,7 +13,8 @@ tags:
   - review
   - yearend
 coverImage: 2019.jpg
-utcDate: '2025-04-24T09:52:37.657Z'
+utcDate: "2020-01-01T00:00:00.000Z"
+description: "My first blog of the new born year 2020 and first of all Happy new year! Wish you all have a great time with your family and friends . So here i am again..."
 ---
 
 My first blog of the new born year 2020 and first of all **Happy new year**! Wish you all have a great time with your family and friends .

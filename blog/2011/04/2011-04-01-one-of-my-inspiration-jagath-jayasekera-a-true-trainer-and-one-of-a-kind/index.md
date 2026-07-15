@@ -3,7 +3,8 @@ title: 'One of My Inspiration: Jagath Jayasekera - A True Trainer and One of a K
 Date: '2011-04-01'
 categories:
   - developer
-utcDate: '2025-04-24T09:52:37.291Z'
+utcDate: "2011-04-01T00:00:00.000Z"
+description: "What comes to my mind first and foremost when I think of his name? when I try to visualize him my mind? When I still hear his voice ringing in my ears? ...."
 ---
 
 What comes to my mind first and foremost when I think of his name? when I try to visualize him my mind? When I still hear his voice ringing in my ears? . The image of someone who has truly earned a permanent place of respect, affection in my heart! Yes he is the one who is the head of Training & Development @ virtusa, Srilanka.  

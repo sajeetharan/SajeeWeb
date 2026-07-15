@@ -9,7 +9,8 @@ tags:
   - angularcli
   - typescript
 coverImage: angular_checklist.jpg
-utcDate: '2025-04-24T09:52:37.523Z'
+utcDate: "2018-08-04T00:00:00.000Z"
+description: "Hey guys, There has not been a proper resource to have a checklist to make sure that applicaiton is flawless.I decided to write a simple tips on checklist..."
 ---
 
 Hey guys, There has not been a  proper resource to have a checklist to make sure that applicaiton is flawless.I decided to write a simple tips on checklist items needed before you deploy your app to production.Following are a few Angular Code Review Checklists useful while doing a peer review of Angular code. Make sure to check these when you are building a production ready application

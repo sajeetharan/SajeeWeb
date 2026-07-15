@@ -13,7 +13,8 @@ tags:
   - azure
   - certification
 coverImage: banner1-1.jpg
-utcDate: '2025-04-24T09:52:37.647Z'
+utcDate: "2019-12-23T00:00:00.000Z"
+description: "Recently, I managed to acclaim the Azure Solutions Architect badge by completing AZ-300 and AZ-301 exams. > Earning the Azure Solutions Architect Expert..."
 ---
 
 Recently, I managed to acclaim the Azure Solutions Architect badge by completing [AZ-300](https://docs.microsoft.com/en-us/learn/certifications/exams/az-300) and [AZ-301](https://docs.microsoft.com/en-us/learn/certifications/exams/az-301) exams.

@@ -3,7 +3,8 @@ title: Team Theater Workshop - Memorable day!
 Date: '2011-04-15'
 categories:
   - developer
-utcDate: '2025-04-24T09:52:37.314Z'
+utcDate: "2011-04-15T00:00:00.000Z"
+description: "Morning alarm in my mobile rings at 6:45 am .I woke up in hurry and was disappointed to realize that the workshop is over and i need not to wake up early...."
 ---
 
   

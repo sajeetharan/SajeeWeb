@@ -13,7 +13,8 @@ tags:
   - sql
   - sqlapi
 coverImage: cosmos.jpg
-utcDate: "2025-04-24T09:52:37.971Z"
+utcDate: "2021-05-27T00:00:00.000Z"
+description: "Overview : In this blog post you will learn about the Azure Cosmos DB SQL API queries and How to get started with Cosmos DB SQL API. I recently published a..."
 ---
 
 ## Overview :

@@ -18,7 +18,8 @@ tags:
   - typescript
   - webapp
 coverImage: azure001.jpg
-utcDate: '2025-04-24T09:52:37.824Z'
+utcDate: "2020-05-31T00:00:00.000Z"
+description: "Overview : Before two weeks Ryan Dahl (Founder of Node.JS) announced the first version of Deno. As the tagline says A secure runtime for JavaScript and..."
 ---
 
 ## Overview :

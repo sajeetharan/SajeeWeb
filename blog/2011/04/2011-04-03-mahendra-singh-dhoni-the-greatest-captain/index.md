@@ -15,7 +15,8 @@ tags:
   - superhero
   - untold
   - worldcup
-utcDate: '2025-04-24T09:52:37.296Z'
+utcDate: "2011-04-03T00:00:00.000Z"
+description: "Now Indians have got 2nd god in cricket. One was/is sachin and now dhoni. He has given Indians a wonderful cup with the help of another god and mini gods.It..."
 ---
 
 [![](https://sajeetharan.wordpress.com/wp-content/uploads/2011/04/86cfb-indian-sport-star-mahendra-singh-dhoni2.jpg?w=225)](https://sajeetharan.wordpress.com/wp-content/uploads/2011/04/86cfb-indian-sport-star-mahendra-singh-dhoni2.jpg)  

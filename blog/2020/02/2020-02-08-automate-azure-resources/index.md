@@ -13,7 +13,8 @@ tags:
   - resources
   - virtualmachines
 coverImage: post1.jpg
-utcDate: '2025-04-24T09:52:37.720Z'
+utcDate: "2020-02-08T00:00:00.000Z"
+description: "Microsoft's Power Platform is a low code platform which enable the organization to analyse data from multiple sources, act on it through application and..."
 ---
 
 Microsoft's Power Platform is a low code platform which enable the organization to analyse data from multiple sources, act on it through application and automate business process. Power Platform contains 3 main aspects (Power Apps,Power BI and Microsoft Flow) and it also integrates two main ecosystems(Office 365 and Dynamics 365). In this blog we will see in detail about Power Apps which helps to quickly build apps that connects data and run on web and mobile devices.

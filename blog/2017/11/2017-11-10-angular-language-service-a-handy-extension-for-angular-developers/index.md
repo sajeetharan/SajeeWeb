@@ -11,7 +11,8 @@ tags:
   - typescript
   - vscode
   - webdevelopment
-utcDate: '2025-04-24T09:52:37.458Z'
+utcDate: "2017-11-10T00:00:00.000Z"
+description: "Even though there have been plenty of tools/extension to check the typescript/javascript code, but there have not been any extension to validate the HTML..."
 ---
 
 Even though there have been plenty of tools/extension to check the typescript/javascript code, but there have not been any extension to validate the HTML code or related features to it. [Angular Language Service](https://marketplace.visualstudio.com/items?itemName=Angular.ng-template) was released to make the developers more productive and reduce the errors by offering better code completion.

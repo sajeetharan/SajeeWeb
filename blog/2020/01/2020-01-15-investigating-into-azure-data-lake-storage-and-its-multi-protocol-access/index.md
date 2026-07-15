@@ -13,7 +13,8 @@ tags:
   - bigdata
   - blobstorage
 coverImage: blog34.jpg
-utcDate: '2025-04-24T09:52:37.697Z'
+utcDate: "2020-01-15T00:00:00.000Z"
+description: "We have a wide variety of options to store data in Microsoft Azure. Nevertheless, every storage option has a unique purpose for its existence. In this blog,..."
 ---
 
 We have a wide variety of options to store data in Microsoft Azure. Nevertheless, every storage option has a unique purpose for its existence. In this blog, we will discuss ADLS (Azure Data Lake Storage) and its multi-protocol access that Microsoft introduced in the year 2019.

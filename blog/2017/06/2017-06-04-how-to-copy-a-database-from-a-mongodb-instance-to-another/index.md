@@ -3,7 +3,8 @@ title: How to copy a Database from a MongoDB instance to another?
 Date: '2017-06-04'
 categories:
   - developer
-utcDate: '2025-04-24T09:52:37.426Z'
+utcDate: "2017-06-04T00:00:00.000Z"
+description: "While recently i was working in an application i had to copy the database from a mongoDB hosted in an mlab instance to my local. I will share an easy step..."
 ---
 
 While recently i was working in an application i had to copy the database from a mongoDB  hosted in an mlab instance to my local. I will share an easy step in MongoDB Shell which support to copy database from remote instance to current one with a single command.

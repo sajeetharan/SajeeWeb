@@ -17,7 +17,8 @@ tags:
   - problems
   - traffic
 coverImage: blog2.jpg
-utcDate: '2025-04-24T09:52:37.587Z'
+utcDate: "2019-06-13T00:00:00.000Z"
+description: "Road traffic is a very classic and burning problem in Sri Lanka and in most of the Asian countries. Personally I have to spend 2 hours on the road everyday..."
 ---
 
 Road traffic is a very classic and burning problem in Sri Lanka and in most of the Asian countries. Personally I have to spend 2 hours on the road everyday by just stuck in the traffic and I assume the same for other people who gets stuck for many hours with no way out.

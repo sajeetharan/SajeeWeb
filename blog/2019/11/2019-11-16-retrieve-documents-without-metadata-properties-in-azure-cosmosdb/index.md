@@ -15,7 +15,8 @@ tags:
   - nosql
   - sql
 coverImage: banner.jpg
-utcDate: '2025-04-24T09:52:37.614Z'
+utcDate: "2019-11-16T00:00:00.000Z"
+description: "One of the interesting queries that i got from my colleague is that how to get rid of the metadata properties when retrieving documents from Cosmosdb. It..."
 ---
 
 One of the interesting queries that i got from my colleague is that how to get rid of the [metadata properties](https://docs.microsoft.com/en-us/azure/cosmos-db/databases-containers-items) when retrieving documents from Cosmosdb. It seemed like a very reasonable expectation to have the option with the document "GET" API call to be able to retrieve exactly what he created using the document "POST" API call, without these Cosmosdb [Metadata properties](https://docs.microsoft.com/en-us/azure/cosmos-db/databases-containers-items) mixed in:

@@ -5,7 +5,8 @@ categories:
   - angular
   - developer
   - typescript
-utcDate: '2025-04-24T09:52:37.435Z'
+utcDate: "2017-06-11T00:00:00.000Z"
+description: "One of the most repeated questions with angular2 i have come across Stack overflow is \"how to generate a select dropdown with an array or object\". Hence, i..."
 ---
 
 One of the most repeated questions with angular2 i have come across Stack overflow is "how to generate a select dropdown with an array or object". Hence, i decided to write a sample post with sample code to ease the search.

@@ -16,7 +16,8 @@ tags:
   - visual-studio
   - vscode
 coverImage: visualstudio01.jpg
-utcDate: '2025-04-24T09:52:37.560Z'
+utcDate: "2019-04-03T00:00:00.000Z"
+description: "I just uninstalled Visual Studio 2017 and installed Visual Studio 2019 and the transition was very smooth. The installation just took 17 minutes and its..."
 ---
 
 I just uninstalled Visual Studio 2017 and installed Visual Studio 2019 and the transition was very smooth. The installation just took 17 minutes and its faster than the time it took to install earlier versions. I managed to explore few features and it looks quite impressive. I decided to list down the top features that i noticed after exploring them.

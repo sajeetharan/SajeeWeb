@@ -11,7 +11,8 @@ tags:
   - bash
   - resources
 coverImage: blog2.jpg
-utcDate: '2025-04-24T09:52:37.685Z'
+utcDate: "2020-01-11T00:00:00.000Z"
+description: "There are cases if you want to start/stop all VMs in particular resource group in parallel within Azure. You can set it up with Automation using Scheduled..."
 ---
 
 There are cases if you want to start/stop all VMs in particular resource group in parallel within Azure. You can set it up with Automation using Scheduled actions. Other way which you can do by using PowerShell or Azure CLI

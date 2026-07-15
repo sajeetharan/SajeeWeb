@@ -3,7 +3,8 @@ title: ESLint with Visual Studio Code (vscode)
 Date: '2017-06-04'
 categories:
   - developer
-utcDate: '2025-04-24T09:52:37.422Z'
+utcDate: "2017-06-04T00:00:00.000Z"
+description: "Poor code quality application can lead to many serious problems when the size of code grows. Linting is the process of checking the source code for..."
 ---
 
 Poor code quality application can lead to many serious problems when the size of code grows. **Linting** is the process of checking the source code for Programmatic as well as Stylistic errors. This is most helpful in identifying some common and uncommon mistakes that are made during coding. To do this process many linters are out there like eslint, jshint, jslint etc.    

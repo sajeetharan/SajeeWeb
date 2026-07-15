@@ -20,6 +20,8 @@ tags:
   - reference
   - serverless
 coverImage: 820b5-appservice-1-1.jpg
+utcDate: "2021-02-26T00:00:00.000Z"
+description: "Overview As per a survey, 57% of young individuals agreed they do not have the right connections to find a mentor and more than 50% of them couldn't find a..."
 ---
 
 ### Overview

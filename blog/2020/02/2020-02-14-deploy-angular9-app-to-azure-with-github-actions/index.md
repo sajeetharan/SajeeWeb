@@ -16,7 +16,8 @@ tags:
   - githubaction
   - hexa
 coverImage: appservice-1.jpg
-utcDate: '2025-04-24T09:52:37.732Z'
+utcDate: "2020-02-14T00:00:00.000Z"
+description: "It's been almost a week since Angular 9 was released which included several new features such as new Ivy Renderer, SSR, Type checking etc. In this post, i..."
 ---
 
 It's been almost a week since Angular 9 was released which included several new features such as new Ivy Renderer, SSR, Type checking etc. In this post, i will be going through on how to build and deploy an Angular9 application as a static website to Azure with GitHub Actions.

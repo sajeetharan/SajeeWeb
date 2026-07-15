@@ -8,7 +8,8 @@ categories:
 tags:
   - azure
 coverImage: as01.jpg
-utcDate: '2025-04-24T09:52:37.800Z'
+utcDate: "2020-04-22T00:00:00.000Z"
+description: "Overview : Azure Service Bus is being used as one of the most reliable enterprise messaging services across different domains like health care, finance etc...."
 ---
 
 **Overview :** 

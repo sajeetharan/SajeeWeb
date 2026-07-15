@@ -9,7 +9,8 @@ tags:
   - agent-kit
   - developer-tools
   - microsoft
-utcDate: "2026-07-10T09:00:00.000Z"
+utcDate: "2026-07-10T00:00:00.000Z"
+description: "I recently had the incredible opportunity to join Scott Hanselman on the Azure Developers Show to talk about something I've been deeply passionate about —..."
 ---
 
 I recently had the incredible opportunity to join **Scott Hanselman** on the [Azure Developers Show](https://www.youtube.com/watch?v=GWid8x3i9Cc) to talk about something I've been deeply passionate about — **turning coding agents into Azure Cosmos DB experts with the Agent Kit**.

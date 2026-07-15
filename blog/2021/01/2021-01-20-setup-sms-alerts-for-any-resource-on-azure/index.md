@@ -18,7 +18,8 @@ tags:
   - sms
   - twillio
 coverImage: 6e32c-tye_header-1.jpg
-utcDate: '2025-04-24T09:52:37.923Z'
+utcDate: "2021-01-20T00:00:00.000Z"
+description: "If you are hosting your application on any environment whether it's in cloud or on-prem, an effective monitoring helps to increase the uptime by proactively..."
 ---
 
 If you are hosting your application on any environment whether it's in cloud or on-prem, an effective monitoring helps to increase the uptime by proactively notifying us of critical issues so that you resolve them before they become problems. An effective monitoring is a part of Devops process which helps you to achieve the following,

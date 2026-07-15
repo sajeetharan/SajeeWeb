@@ -14,7 +14,8 @@ tags:
   - partitionkey
   - sdk
 coverImage: azure2.jpg
-utcDate: '2025-04-24T09:52:37.837Z'
+utcDate: "2020-06-15T00:00:00.000Z"
+description: "One of the most repeated question that i came across on stackoverflow on the tag #Cosmosdb is that how to resolve the error \"The partition key supplied in..."
 ---
 
 One of the most repeated question that i came across on stackoverflow on the tag #Cosmosdb is that how to resolve the error **"The partition key supplied in x-ms-partitionkey header has fewer components than defined in the the collection"**

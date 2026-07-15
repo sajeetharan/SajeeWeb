@@ -12,7 +12,8 @@ tags:
   - react
   - teams
 coverImage: azureblog.jpg
-utcDate: '2025-04-24T09:52:37.785Z'
+utcDate: "2020-04-09T00:00:00.000Z"
+description: "I was working with a partner recently in developing Apps and integrated them as a part of Teams. At times there are questions from customers whether they..."
 ---
 
 I was working with a partner recently in developing Apps and integrated them as a part of Teams. At times there are questions from customers whether they would be able to utilize the features of teams within their application. The simple answer for the will be [NO](https://stackoverflow.com/questions/45727094/integrating-microsoft-team-into-my-web-app) as Teams Platform Architecture is enabling developers to bring adoption to teams by building more applications from different industry verticals which can be embedded inside teams

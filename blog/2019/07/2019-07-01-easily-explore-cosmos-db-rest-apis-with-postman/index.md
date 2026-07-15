@@ -14,6 +14,8 @@ tags:
   - "restapi"
   - "tools"
 coverImage: "3.jpg"
+utcDate: "2019-07-01T00:00:00.000Z"
+description: "I have been working with Cosmos DB for almost 2 years and most of the time i have used SDKs to connect to Cosmos DB. In the recent times i started consuming..."
 ---
 
 I have been working with Cosmos DB for almost 2 years and most of the time i have used SDKs to connect to Cosmos DB. In the recent times i started consuming Rest API for my hybrid application. One of the tricky part in Cosmos DB is that connecting to it and running queries with REST API. In this blog post, I want to elaborate more on the repository i have created to test the APIs in one go. Also will discuss more on how to call Azure Cosmos DB by using its REST API. I will be using the [Cosmosdb account](https://docs.microsoft.com/en-us/azure/cosmos-db/sql/create-cosmosdb-resources-portal) and [Postman](https://www.postman.com/) tool.

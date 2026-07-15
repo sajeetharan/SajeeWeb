@@ -10,7 +10,8 @@ tags:
   - postman
   - rest
 coverImage: 3.jpg
-utcDate: '2025-04-24T09:52:37.984Z'
+utcDate: "2022-02-22T00:00:00.000Z"
+description: "Overview : In last November 2021, Cosmos DB team has announced support for patching documents with SQL API which was the top requested features in the user..."
 ---
 
 **Overview :**

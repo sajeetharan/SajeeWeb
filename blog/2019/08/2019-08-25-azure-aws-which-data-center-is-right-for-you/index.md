@@ -12,7 +12,8 @@ tags:
   - microsoft
   - tools
 coverImage: speeed.jpg
-utcDate: '2025-04-24T09:52:37.600Z'
+utcDate: "2019-08-25T00:00:00.000Z"
+description: "There are few cool speed test tools available out there which allows you to test network latencies and speed to data centers from different countries and..."
 ---
 
 There are few cool speed test tools available out there which allows you to test network latencies and speed to data centers from different countries and locations.  Along with finding the closest Datacenter near your location, it tests the storage latency as well as upload and download speeds. 

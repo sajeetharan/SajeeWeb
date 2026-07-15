@@ -12,7 +12,8 @@ tags:
   - profile
   - skills
 coverImage: github-pro.jpg
-utcDate: '2025-04-24T09:52:37.841Z'
+utcDate: "2020-07-10T00:00:00.000Z"
+description: "Since the acquisition by Microsoft, Github been so much better! They have added so many new features, made mobile app. GitHub recently made lot of..."
 ---
 
 Since the acquisition by Microsoft, Github been so much better! They have added so many new features, made mobile app. GitHub recently made lot of improvements on the UI aspects including adding a twitter handle to your profile. Also introduced a special feature for developers, that allows you to showcase yourself by pinning a `README.md` containing information about you, your work, portfolio and anything else on your GitHub profile.

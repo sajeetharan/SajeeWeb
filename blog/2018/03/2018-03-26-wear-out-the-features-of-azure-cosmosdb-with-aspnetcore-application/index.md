@@ -19,7 +19,8 @@ tags:
   - nosql
   - portal
   - sql
-utcDate: '2025-04-24T09:52:37.505Z'
+utcDate: "2018-03-26T00:00:00.000Z"
+description: "Azure CosmosDB (Azure Cosmos DB – Globally Distributed Database Service (formerly DocumentDB) | Microsoft Azure) is a super set of the service once known as..."
 ---
 
 Azure CosmosDB ([Azure Cosmos DB – Globally Distributed Database Service (formerly DocumentDB) | Microsoft Azure](https://azure.microsoft.com/en-us/services/cosmos-db/)) is a super set of the service once known as “Azure Document Db”. In short: “Azure CosmosDB ” = “Azure Document Db” + new data types + new APIs.

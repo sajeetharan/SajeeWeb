@@ -20,7 +20,8 @@ tags:
   - devops
   - ebook
 coverImage: banner03.jpg
-utcDate: '2025-04-24T09:52:37.673Z'
+utcDate: "2020-01-04T00:00:00.000Z"
+description: "You might have noticed my recent posts were mostly focused on how to get started and learn Azure in 2020. Want to become more productive with Azure?. There..."
 ---
 
 You might have noticed my recent posts were mostly focused on how to get started and learn Azure in 2020. Want to become more productive with Azure?. There are around 174 ebooks which can be downloadable from the Microsoft site as of now. I have listed the top 60 books which are recommended and liked,shared the most among the social mediums.

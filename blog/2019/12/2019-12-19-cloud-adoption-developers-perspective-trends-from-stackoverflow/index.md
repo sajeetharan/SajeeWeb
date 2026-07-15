@@ -13,7 +13,8 @@ tags:
   - stackoverflow
   - trends
 coverImage: banner1.jpg
-utcDate: '2025-04-24T09:52:37.638Z'
+utcDate: "2019-12-19T00:00:00.000Z"
+description: "I have been answering questions on Stackoverflow since 2011, and recently i started answering questions on #Azure. I was amazed to see the growth of Azure..."
 ---
 
 I have been answering questions on Stackoverflow since 2011, and recently i started answering questions on #Azure. I was amazed to see the growth of Azure in the last 3 years among developers which is almost 200%. More the questions means more are implementing solutions on Azure.

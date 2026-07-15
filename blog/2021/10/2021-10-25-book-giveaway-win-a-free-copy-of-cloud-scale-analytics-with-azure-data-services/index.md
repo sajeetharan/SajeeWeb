@@ -17,7 +17,8 @@ tags:
   - packt
   - spark
 coverImage: cosmos.jpg
-utcDate: '2025-04-24T09:52:37.975Z'
+utcDate: "2021-10-25T00:00:00.000Z"
+description: "Hello folks! Azure Data Lake is a big data solution which allows organizations to ingest multiple data sets covering structured, unstructured, and..."
 ---
 
 Hello folks!

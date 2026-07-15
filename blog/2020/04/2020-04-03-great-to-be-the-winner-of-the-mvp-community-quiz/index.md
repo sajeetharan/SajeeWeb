@@ -10,7 +10,8 @@ tags:
   - quize
   - winner
 coverImage: bg.jpg
-utcDate: '2025-04-24T09:52:37.777Z'
+utcDate: "2020-04-03T00:00:00.000Z"
+description: "The online MVP Community Quiz is an online quize program by Isidora Katanic, who is the organizer of the famous community events such as Experts Live Europe..."
 ---
 
 The online [MVP Community Quiz](https://www.isidorakatanic.com/post/mvp-community-quiz) is an online quize program by [Isidora Katanic](https://twitter.com/isidorakatanic), who is the organizer of the famous community events such as Experts Live Europe and Experts Live Switzerland.

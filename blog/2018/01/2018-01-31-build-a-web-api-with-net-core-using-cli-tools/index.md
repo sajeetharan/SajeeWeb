@@ -15,7 +15,8 @@ tags:
   - microsoft
   - netcore
   - vscode
-utcDate: '2025-04-24T09:52:37.489Z'
+utcDate: "2018-01-31T00:00:00.000Z"
+description: "In this blog i will start with an introduction to .NET Core CLI tools with an example of how to create a web API using the CLI tools provided with .NET..."
 ---
 
 In this blog i will start with an introduction to .NET Core CLI tools with an example of how to create a web API using the CLI tools provided with .NET Core. At the end we will set up a solution grouping an API project and a test project. Let's dive into the steps,

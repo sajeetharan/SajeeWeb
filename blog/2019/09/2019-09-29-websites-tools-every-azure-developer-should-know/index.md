@@ -11,7 +11,8 @@ tags:
   - microsoft
   - tools
 coverImage: cover23.jpg
-utcDate: '2025-04-24T09:52:37.607Z'
+utcDate: "2019-09-29T00:00:00.000Z"
+description: "There are few mandatory sites that every developer on azure should know. This post will contain a curated list of awesome websites which will definitely..."
 ---
 
 There are few mandatory sites that every developer on azure should know. This post will contain a curated list of awesome websites which will definitely help.

@@ -3,7 +3,8 @@ title: Look Back 2016 and Happy new year 2017
 Date: '2017-01-03'
 categories:
   - developer
-utcDate: '2025-04-24T09:52:37.392Z'
+utcDate: "2017-01-03T00:00:00.000Z"
+description: "Year 2016 turned out to be awesome for me! A very slow start of the year with lot of challenges somehow accelerated into very convenient series of events...."
 ---
 
 Year 2016 turned out to be awesome for me! A very slow start of the year with lot of challenges somehow accelerated into very convenient series of events.  

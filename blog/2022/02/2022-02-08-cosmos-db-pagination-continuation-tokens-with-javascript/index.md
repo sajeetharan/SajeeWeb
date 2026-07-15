@@ -7,7 +7,8 @@ tags:
   - developers
   - microsoft
 coverImage: cosmos.jpg
-utcDate: '2025-04-24T09:52:37.979Z'
+utcDate: "2022-02-08T00:00:00.000Z"
+description: "Overview: As a Developer, If you have a requirement to have list of work items which are approved to be displayed in a Grid View. You would tend to query..."
 ---
 
 #### **Overview:**

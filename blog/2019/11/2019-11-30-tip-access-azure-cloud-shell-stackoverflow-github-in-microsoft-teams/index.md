@@ -12,7 +12,8 @@ tags:
   - teams
   - tip
 coverImage: 123-1-1.jpg
-utcDate: '2025-04-24T09:52:37.629Z'
+utcDate: "2019-11-30T00:00:00.000Z"
+description: "One of the cool feature that Microsoft teams provide is that you can load any website as a tab on particular channel. One handy thing i noticed is that if..."
 ---
 
 One of the cool feature that Microsoft teams provide is that you can load any website as a tab on particular channel. One handy thing i noticed is that if you want to access azure cloud shell in teams you can just add it as a separate tab and manage the resources without navigating to the browser. With simple step you can access your azure portal as a tab in your teams.

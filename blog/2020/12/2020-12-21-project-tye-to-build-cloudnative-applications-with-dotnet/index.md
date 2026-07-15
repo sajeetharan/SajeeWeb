@@ -12,7 +12,8 @@ tags:
   - microservices
   - vscode
 coverImage: 6f01b-tye_header.jpg
-utcDate: '2025-04-24T09:52:37.902Z'
+utcDate: "2020-12-21T00:00:00.000Z"
+description: "Overview Are you are .Net developer interested in building Microservice based applications to the Cloud?. Recently i gave a talk about announcements on..."
 ---
 
 ## Overview

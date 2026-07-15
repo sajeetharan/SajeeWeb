@@ -23,7 +23,8 @@ tags:
   - kubernetes
   - node
 coverImage: aks_01.jpg
-utcDate: '2025-04-24T09:52:37.790Z'
+utcDate: "2020-04-18T00:00:00.000Z"
+description: "Quarantine, self isolation , social distancing for the past one month, I’m living with these words. While most of us are investing this time to learn new..."
 ---
 
 Quarantine, self isolation , social distancing for the past one month, I’m living with these words. While most of us are investing this time to learn new technologies/tools. I challenged myself to skill up myself and have deep knowledge on certain services on Azure.

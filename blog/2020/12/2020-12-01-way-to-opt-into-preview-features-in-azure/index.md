@@ -7,7 +7,8 @@ categories:
 tags:
   - azure-tip-developer-portal-preview
 coverImage: 5a3e1-bridgee.jpg
-utcDate: '2025-04-24T09:52:37.884Z'
+utcDate: "2020-12-01T00:00:00.000Z"
+description: "One of the hardest truth is that even as Microsoft employee, i have become very difficult to catch up with Azure updates. It can be said that Azure is..."
 ---
 
 One of the hardest truth is that even as Microsoft employee, i have become very difficult to catch up with Azure updates. It can be said that Azure is constantly evolving day by day.

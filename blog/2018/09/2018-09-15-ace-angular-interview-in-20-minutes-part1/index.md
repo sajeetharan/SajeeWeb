@@ -10,7 +10,8 @@ tags:
   - angularcli
   - interview
 coverImage: angular_interview.jpg
-utcDate: '2025-04-24T09:52:37.527Z'
+utcDate: "2018-09-15T00:00:00.000Z"
+description: "This should help all the Angular developers out there to test yourself on the knowledge on Angular. I have listed down the concepts/questions from various..."
 ---
 
 This should help all the Angular developers out there to test yourself on the knowledge on Angular. I have listed down the concepts/questions from various sources such as Stackoverflow,Medium etc. Will be continuing this with 2 more posts.

@@ -12,7 +12,8 @@ tags:
   - cursor
   - claude
 coverImage: images/angular-agent-kit.jpg
-utcDate: "2026-01-30T09:00:00.000Z"
+utcDate: "2026-01-30T00:00:00.000Z"
+description: "Overview: I'm excited to announce the release of Angular Agent Kit - a collection of AI coding agent skills designed specifically for Angular developers...."
 ---
 
 **Overview:**

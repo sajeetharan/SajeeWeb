@@ -14,7 +14,8 @@ tags:
   - microsoft
   - portal
   - visualstudio
-utcDate: '2025-04-24T09:52:37.465Z'
+utcDate: "2017-12-13T00:00:00.000Z"
+description: "This is my first blog and Azure and i am inspired to write this one after attending the Microsoft's workshop \"App innovation day\".There was a cool..."
 ---
 
 This is my first blog and Azure and i am inspired to write this one after attending the Microsoft's workshop "App innovation day".There was a cool technology **"Windows Workflow Foundation"** provided by Microsoft with dot net framework to create workflows to cater business logic in dot net applications. With Azure, The Logic Apps service fulfill the purpose to have business processes or workflows take shape of an app.

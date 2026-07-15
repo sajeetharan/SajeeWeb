@@ -18,7 +18,8 @@ tags:
   - devspaces
   - tools
 coverImage: 08c52-bridgee.jpg
-utcDate: '2025-04-24T09:52:37.864Z'
+utcDate: "2020-10-28T00:00:00.000Z"
+description: "Overview: Are you hearing the word Devspaces for the first time?. Let me put this way, Imagine a developer having to deal with a large application which has..."
 ---
 
 ### Overview:

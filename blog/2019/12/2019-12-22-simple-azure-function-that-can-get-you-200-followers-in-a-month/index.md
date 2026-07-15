@@ -15,7 +15,8 @@ tags:
   - monitor
   - python
 coverImage: bannerq.jpg
-utcDate: '2025-04-24T09:52:37.643Z'
+utcDate: "2019-12-22T00:00:00.000Z"
+description: "I have been using twitter for the past 10 years and it took nearly 5 years to get those 100 followers. I was not an active user till before 2 years. One..."
 ---
 
 I have been using twitter for the past 10 years and it took nearly 5 years to get those 100 followers. I was not an active user till before 2 years. One great tip i learnt in recent times is that first thing you need to do is to get a really complete and professional profile. Most users look at profiles before following. Another best way is to increase followers on Twitter is being consistent with posting quality content. Automating your posts will help a lot with this. In this blog, i will explain how you could build a simple function and deploy it on Azure to increase your followers count and to be consistent with quality content.

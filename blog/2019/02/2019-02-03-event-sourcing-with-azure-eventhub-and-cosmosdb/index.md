@@ -14,7 +14,8 @@ tags:
   - nosql
   - serverless
 coverImage: 234png.jpg
-utcDate: '2025-04-24T09:52:37.541Z'
+utcDate: "2019-02-03T00:00:00.000Z"
+description: "Traditional Architecture : In a traditional Application with the normal approach, transactional use-cases usually involve persisting data in a few SQL..."
 ---
 
 ### **Traditional Architecture :**

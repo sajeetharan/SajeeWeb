@@ -19,7 +19,8 @@ tags:
   - issues
   - report
 coverImage: appservice-e1580665144693.jpg
-utcDate: '2025-04-24T09:52:37.711Z'
+utcDate: "2020-02-02T00:00:00.000Z"
+description: "Many times you would have wanted to have one view/dashboard of all the Github issues created for your open source repositories. I have almost 150..."
 ---
 
 Many times you would have wanted to have one view/dashboard of all the Github issues created for your open source repositories. I have almost 150 repositories and it becomes really hard to find which are the priority ones to be fixed. In this post we will see how you can create a one dashboard/report to view all your github issues in a page using Azure Function(3.X with Typescript) and Azure CosmosDB.

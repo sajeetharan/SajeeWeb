@@ -10,7 +10,8 @@ tags:
   - education
   - web-development
 coverImage: images/angular-visual-storybook.jpg
-utcDate: "2025-12-15T09:00:00.000Z"
+utcDate: "2025-12-15T00:00:00.000Z"
+description: "Overview: I'm thrilled to introduce Angular Visual Storybook - an interactive learning resource that transforms complex Angular concepts into..."
 ---
 
 **Overview:**

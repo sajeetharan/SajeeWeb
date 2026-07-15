@@ -14,7 +14,8 @@ tags:
   - spas
   - staticwebapp
 coverImage: azure2.jpg
-utcDate: '2025-04-24T09:52:37.808Z'
+utcDate: "2020-05-19T00:00:00.000Z"
+description: "One of the highlight among the announcements made at Microsoft Build 2020 was announcement of the new Azure service in the keynote which is Azure App Static..."
 ---
 
 One of the highlight among the announcements made at Microsoft Build 2020 was announcement of the new Azure service in the keynote which is Azure App Static Web Apps. **Azure** **Static** **Web Apps** is a service that automatically builds and deploys full stack **web apps** to **Azure** from a GitHub repository. This service allow web developers to publish websites to a production environment by building apps from a GitHub repository for free. Developers can use modular and extensible patterns to deploy apps in minutes while taking advantage of the built-in scaling and cost-savings offered by serverless technologies.

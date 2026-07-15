@@ -10,7 +10,8 @@ categories:
 tags:
   - error
 coverImage: 0_lonwwnvxmmcfy-i6.png
-utcDate: '2025-04-24T09:52:37.533Z'
+utcDate: "2018-10-21T00:00:00.000Z"
+description: "After building my first production ready application with ASP.NET Core 2.1 and tested locally when i tried to deploy for the first time on Azure, I was..."
 ---
 
 After building my first production ready application with ASP.NET Core 2.1 and tested locally when i tried to deploy for the first time on Azure, I was stuck with the following page.

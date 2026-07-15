@@ -16,7 +16,8 @@ tags:
   - productivity
   - vscode
 coverImage: 70576-tip.jpg
-utcDate: '2025-04-24T09:52:37.910Z'
+utcDate: "2021-01-06T00:00:00.000Z"
+description: "Exactly a year ago, Github announced codespaces and gave the option to join the beta. If you are having your repository in github and need to contribute to..."
 ---
 
 Exactly a year ago, Github announced [codespaces](https://github.com/features/codespaces) and gave the option to join the beta. If you are having your repository in github and need to contribute to an open source project or if you want to commit something quickly to the repository this is one of the feature that you might be interested in, It supports developers to do it on the browser on any device.

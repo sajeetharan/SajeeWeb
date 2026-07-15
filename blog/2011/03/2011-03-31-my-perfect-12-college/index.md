@@ -8,7 +8,8 @@ tags:
   - love
   - perfect
   - sajeetharan
-utcDate: '2025-04-24T09:52:37.274Z'
+utcDate: "2011-03-31T00:00:00.000Z"
+description: "Life’s not that easy I know, Things never go in the way we think so. But still being a part of all that goes, Make me feel I’m special and it really shows...."
 ---
 
 [![](https://sajeetharan.wordpress.com/wp-content/uploads/2011/03/79251-4.png?w=300)](https://sajeetharan.wordpress.com/wp-content/uploads/2011/03/79251-4.png) Life’s not that easy I know, Things never go in the way we think so. But still being a part of all that goes, Make me feel I’m special and it really shows. This is because I found my new family, In my friends whom I met in college, coincidently. Being far away from family, You can’t always be happy. First day in college, Stranger’s I met, As if all the varieties in a single set. I chose the friends of mine, With a logo and a perfect sign. We were twelve and all of different kinds, And I name the group” The Perfect 12”. Initial perfect 12 members are as follows, And all the heads are shallow.

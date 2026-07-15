@@ -16,7 +16,8 @@ tags:
   - tool
   - visual-studio
   - vscode
-utcDate: '2025-04-24T09:52:37.374Z'
+utcDate: "2016-11-26T00:00:00.000Z"
+description: "I've been a .Net developer since the beta days of .Net 3.0, Now i find myself doing less and less coding related with .Net related stuffs. However, the new..."
 ---
 
 I've been a .Net developer since the beta days of .Net 3.0, Now i find myself doing less and less coding related with .Net related stuffs. However, the new strategy from Microsoft  encouraged all the developers including me to once again start doing some .Net work from time to time. One of the highlighting tool among them was the Visual Studio Code.

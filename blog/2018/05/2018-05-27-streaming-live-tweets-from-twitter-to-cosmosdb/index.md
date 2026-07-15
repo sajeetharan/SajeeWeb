@@ -13,7 +13,8 @@ tags:
   - tweets
   - twitter
 coverImage: stream.jpg
-utcDate: '2025-04-24T09:52:37.518Z'
+utcDate: "2018-05-27T00:00:00.000Z"
+description: "This is time for another blog on cosmosdb explaining how to stream tweets from twitter using hashtags and store them in cosmosdb in real time. You should be..."
 ---
 
 This is time for another blog on cosmosdb explaining how to stream tweets from twitter using hashtags and store them in cosmosdb in real time. You should be able to setup and run this demo within 15 minutes.

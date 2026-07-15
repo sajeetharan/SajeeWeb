@@ -13,7 +13,8 @@ tags:
   - cosmosdb
   - onprem
 coverImage: blog.jpg
-utcDate: '2025-04-24T09:52:37.569Z'
+utcDate: "2019-04-19T00:00:00.000Z"
+description: "Recently, I was involved in working with a customer who had their data in on prem SQL server. As they are shifting their soultion to Cloud(Azure) with..."
 ---
 
 Recently, I was involved in working with a customer who had their data in on prem SQL server. As they are shifting their soultion to Cloud(Azure) with Cosmosdb, the first requirement was to migrate the existing data to Cosmosdb. In this post, I will be explaining on how to do the migration and also how to do the data transformation as Cosmosdb stores the data as key value(JSON) format in the collection whereas MSSQL stores it as a row in the table.

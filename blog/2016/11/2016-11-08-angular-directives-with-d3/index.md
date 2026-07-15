@@ -15,7 +15,8 @@ tags:
   - node
   - sunburst
   - visualization
-utcDate: '2025-04-24T09:52:37.370Z'
+utcDate: "2016-11-08T00:00:00.000Z"
+description: "It's been exactly 2 years since i started to learn Angular and it's sad that i dint write even a single blog on the same. Finally decided to start a series..."
 ---
 
 It's been exactly 2 years since i started to learn Angular and it's sad that i dint write even a single blog on the same. Finally decided to start a series on the same topic. AngularJS is a JavaScript MVC Framework that integrates two-way data binding, web services, and build web components. There are enough number of blogs and tutorials to follow on the same.

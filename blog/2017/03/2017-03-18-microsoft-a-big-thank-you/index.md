@@ -3,7 +3,8 @@ title: Microsoft - A Big Thank You
 Date: '2017-03-18'
 categories:
   - developer
-utcDate: '2025-04-24T09:52:37.411Z'
+utcDate: "2017-03-18T00:00:00.000Z"
+description: "1/03/2017 was a huge day in my career as I was awarded my first (and hopefully not the last) Microsoft Most Valuable Professional award under the category..."
 ---
 
   

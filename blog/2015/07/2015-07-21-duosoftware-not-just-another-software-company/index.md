@@ -17,7 +17,8 @@ tags:
   - product-sme
   - sajeetharan
   - srilanka
-utcDate: '2025-04-24T09:52:37.353Z'
+utcDate: "2015-07-21T00:00:00.000Z"
+description: "Time has gone extremely fast, and I can still recall the day that I joined Duo. I can safely say that Duo is an awesome place to work at since I have had..."
 ---
 
 Time has gone extremely fast, and I can still recall the day that I joined Duo. I can safely say that Duo is an awesome place to work at since I have had the opportunity to work with awesome, highly motivated people who loves the company. I never had much trouble with work life balance as I only worked more when I felt like it, rather than someone telling me to do. It truly is a different experience working for a Product Company which gives you an environment (Innovation engine) and Core focus on developing cutting-edge components.

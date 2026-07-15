@@ -14,7 +14,8 @@ tags:
   - tricks
   - vscode
 coverImage: angular.jpg
-utcDate: '2025-04-24T09:52:37.536Z'
+utcDate: "2018-10-24T00:00:00.000Z"
+description: "The wait is over and Angular 7 is out, finally time has come to write about some tips to build fast angular application. In this blog i will share my..."
 ---
 
 The wait is over and Angular 7 is out, finally time has come to write about some tips to build fast angular application. In this blog i will share my experience with practices that you need to follow when you are starting a new project.

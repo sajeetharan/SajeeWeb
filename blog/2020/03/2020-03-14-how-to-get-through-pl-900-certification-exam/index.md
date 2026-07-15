@@ -17,7 +17,8 @@ tags:
   - powerplatform
   - powerplatformfundamentals
 coverImage: pl-900.jpg
-utcDate: '2025-04-24T09:52:37.760Z'
+utcDate: "2020-03-14T00:00:00.000Z"
+description: "In general, any certification offers practical experience to individuals from all the aspects to be a proficient worker.Certified professionals have more..."
 ---
 
 In general, any certification offers practical experience to individuals from all the aspects to be a proficient worker.Certified professionals have more beneficial and relevant networks that help them in setting career goals for themselves.Since last year I concentrated on the different Azure certifications. This year I have have a target to complete certifications on different areas too. As a start for this year, i did the certification PL-900 today and i would say it is one of the easiest exam if you have prior experience in building Mobile applications and have a general idea on how to solve business problems.

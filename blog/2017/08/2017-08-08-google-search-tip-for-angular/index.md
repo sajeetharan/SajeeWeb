@@ -7,7 +7,8 @@ categories:
   - typescript
 tags:
   - angular2angularjsjavascriptprogrammingfront-end-development
-utcDate: '2025-04-24T09:52:37.446Z'
+utcDate: "2017-08-08T00:00:00.000Z"
+description: "This tip is for Angular developers, whenever you are stuck with an issue on Angular you search something on google for angular, it will end up showing the..."
 ---
 
 This tip is for Angular developers, whenever you are stuck with an issue on Angular you search something on google for angular, it will end up showing the results with angularjs(1.x) aswell.

@@ -15,7 +15,8 @@ tags:
   - jobs
   - tables
   - tree
-utcDate: '2025-04-24T09:52:37.366Z'
+utcDate: "2016-09-02T00:00:00.000Z"
+description: "Well, i was one of the speaker at Colombo Big Data Meetup which was held yesterday and i spoke about Google's bigquery. Hence i have decided to write a blog..."
 ---
 
 Well, i was one of the speaker at Colombo Big Data Meetup which was held yesterday and i spoke about Google's bigquery. Hence i have decided to write a blog on that so that you could get benefited if you are a BigData Fan.  

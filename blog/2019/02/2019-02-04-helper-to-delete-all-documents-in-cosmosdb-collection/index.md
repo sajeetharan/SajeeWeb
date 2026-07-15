@@ -13,7 +13,8 @@ tags:
   - microsoft
   - nosql
 coverImage: node.jpg
-utcDate: '2025-04-24T09:52:37.545Z'
+utcDate: "2019-02-04T00:00:00.000Z"
+description: "I have been working with couple of applications built with CosmosDB and one of the things that surprised me was one cannot clear all documents in a..."
 ---
 
 I have been working with couple of applications built with CosmosDB and one of the things that surprised me was one cannot clear all documents in a collection from the [Azure web portal](https://azure.microsoft.com/en-gb/features/azure-portal/) or using the [Storage Explorer](https://azure.microsoft.com/en-us/features/storage-explorer/). As I was struggling to do this while doing some tests on the application I decided to write a blog on the solution I used. There are two ways to achieve the same
