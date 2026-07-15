@@ -24,8 +24,6 @@ The idea seemed simple enough: take deep expertise in a technology, write it dow
 
 So that's what we did. We wrote down everything — design patterns, common pitfalls, configuration recipes, SDK best practices, operational guidance. For Cosmos DB specifically, this meant partition key strategies, indexing decisions, query optimization, change feed patterns, vector search setup. Hundreds of rules, all carefully documented.
 
-{/_ 📸 IMAGE SUGGESTION: Screenshot of an early monolithic skill file — the massive markdown wall _/}
-
 It felt productive. We were _capturing knowledge_. Surely more knowledge = better outcomes?
 
 ## The "more is better" trap
@@ -35,8 +33,6 @@ We kept adding. Every edge case, every teammate's favorite gotcha, every "oh you
 Then newer models came out — and they were already pretty good at a lot of what we'd written. Without any skill at all, they'd handle basic scenarios correctly. They already knew common patterns from training data.
 
 Which raised the uncomfortable question: **were our skills actually helping, or were we just duplicating what models already knew?**
-
-{/_ 📸 IMAGE SUGGESTION: Before/after table — model performance with vs. without skills on specific tasks _/}
 
 We had no idea. We were operating on vibes.
 
@@ -55,8 +51,6 @@ We tested:
 
 Some results stung. There were scenarios where our carefully written guidance made _zero measurable difference_. A few cases where it actually made things _worse_ — the model spent attention budget processing our instructions instead of just solving the problem.
 
-{/_ 📸 IMAGE SUGGESTION: Bar chart showing pass rates across different skill configurations _/}
-
 But there were also clear wins. Complex, nuanced scenarios — things where even frontier models would make mistakes — showed real improvement with skills. The pattern was clear: **skills matter most where the model's training data is thin or the task requires precise, multi-step domain reasoning.**
 
 For Cosmos DB, that meant skills were invaluable for things like multi-container data modeling and vector search configuration, but unnecessary for basic CRUD operations or simple queries.
@@ -69,8 +63,6 @@ Sounded great. In practice? The agent loaded three of them for a single task, en
 
 The lesson: **splitting only helps if it changes what actually gets loaded per interaction.** Reorganizing files doesn't reduce context consumption. You need a mechanism that selectively loads only what's relevant for the current task.
 
-{/_ 📸 IMAGE SUGGESTION: Diagram — monolithic skill vs. router-based composition with selective loading _/}
-
 ## Context rot is real
 
 Here's something that caught me off guard. A skill that worked beautifully on one model (long context window) completely fell apart on another (tighter window). Same content, wildly different results.
@@ -78,8 +70,6 @@ Here's something that caught me off guard. A skill that worked beautifully on on
 There's [research on this phenomenon](https://trychroma.com/research/context-rot) — even if a model technically supports 200K tokens, its actual attention degrades well before that limit. Information in the middle gets lost. Instructions at the end carry less weight. A big context window is not the same as a big _useful_ context window.
 
 The takeaway: **how you package guidance matters as much as what's in it.** Skill design isn't just a content problem — it's a delivery problem.
-
-{/_ 📸 IMAGE SUGGESTION: Chart showing performance degradation as context length increases _/}
 
 ## Five principles that actually work
 
@@ -106,8 +96,6 @@ The fix: explicit scope boundaries and **negative triggers**. A good description
 
 We also found that skill registries degrade in selection accuracy past ~20-30 entries without a retrieval filter. Precise descriptions become doubly important as your skill library grows.
 
-{/_ 📸 IMAGE SUGGESTION: Side-by-side — vague skill description vs. optimized one with match accuracy stats _/}
-
 ### 3. Don't front-load everything
 
 We went from 2000+ lines to a ~400-line core backed by reference files that load on-demand. The core says _"For [specific topic], read `references/topic-details.md`"_ — and the agent only pulls that in when the task requires it.
@@ -119,8 +107,6 @@ Our empirical finding: performance degrades above ~800 lines regardless of model
 Any multi-step operation with dependencies between steps (setup flows, migrations, environment configuration) should be wrapped in a single executable script. Models routinely skip steps, reorder operations, or miss conditional branches when given sequential instructions.
 
 One script call = deterministic execution = no ambiguity. We apply this everywhere a task involves more than two sequential commands with dependencies.
-
-{/_ 📸 IMAGE SUGGESTION: Terminal showing clean single-command execution vs. the multi-step error-prone version _/}
 
 ### 5. Route, don't concatenate
 
@@ -137,8 +123,6 @@ Three things I'll carry with me:
 **Less is more.** Every token competes for attention. A focused 300-line skill covering what the model _doesn't already know_ beats a comprehensive 2000-line one that mostly repeats training data.
 
 **This is a new discipline.** Writing for AI agents isn't like writing docs, tutorials, or prompts. It's closer to writing a curriculum for a very fast, very literal student who reads everything once and has limited short-term memory. That mental model changes how you structure everything.
-
-{/_ 📸 IMAGE SUGGESTION: Evolution timeline — monolith → measurement → trimming → routing → continuous improvement _/}
 
 ## Hill-climbing: continuous improvement
 
