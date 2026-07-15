@@ -25,6 +25,38 @@ const talks: TalkMetadata[] = [
     topics: ["AI", "Databases"],
   },
   {
+    title:
+      "Build an AI Agent for Azure Cosmos DB in Minutes — MCP Toolkit Demo",
+    description:
+      "A quick demo showing how to build an AI Agent for Azure Cosmos DB in minutes using the MCP Toolkit.",
+    events: [
+      {
+        name: "YouTube Shorts",
+        location: "Virtual",
+        date: new Date(2026, 6, 15),
+      },
+    ],
+    recordingURL: "https://www.youtube.com/watch?v=OavlXIixpro",
+    slidesURL: "",
+    topics: ["AI", "Databases", "Shorts"],
+  },
+  {
+    title:
+      "Azure Cosmos DB Shell: From NuGet to MCP in 2 Minutes | Public Preview",
+    description:
+      "See how to go from NuGet to MCP in just 2 minutes with Azure Cosmos DB Shell, now in Public Preview.",
+    events: [
+      {
+        name: "YouTube Shorts",
+        location: "Virtual",
+        date: new Date(2026, 6, 15),
+      },
+    ],
+    recordingURL: "https://www.youtube.com/watch?v=yCWn0Qey978",
+    slidesURL: "",
+    topics: ["AI", "Databases", "Shorts"],
+  },
+  {
     title: "Agentic Coding with Azure Cosmos DB: From Idea to Working App",
     description:
       "Discover how to leverage agentic coding workflows with Azure Cosmos DB to go from idea to a fully working application. Learn how AI-powered development tools can accelerate your database-driven app development process.",
