@@ -98,7 +98,7 @@ const config: Config = {
         blog: {
           routeBasePath: "/blogs",
           showReadingTime: true,
-          postsPerPage: 5,
+          postsPerPage: "ALL",
           blogSidebarCount: 10,
           editUrl: "https://github.com/sajeetharan/website/tree/main/",
           feedOptions: {

@@ -1,19 +1,20 @@
 import React, { useState, useMemo } from "react";
 import clsx from "clsx";
-import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import {
   PageMetadata,
   HtmlClassNameProvider,
   ThemeClassNames,
 } from "@docusaurus/theme-common";
 import BlogLayout from "@theme/BlogLayout";
-import BlogListPaginator from "@theme/BlogListPaginator";
 import SearchMetadata from "@theme/SearchMetadata";
 import BlogPostItems from "@theme/BlogPostItems";
 import type { Props } from "@theme/BlogListPage";
 import styles from "./styles.module.scss";
 
 type ViewMode = "list" | "grid";
+
+const INITIAL_VISIBLE_TAGS = 15;
+const POSTS_PER_PAGE = 12;
 
 function BlogListPageMetadata(props: Props): JSX.Element {
   const { metadata } = props;
@@ -27,24 +28,32 @@ function BlogListPageMetadata(props: Props): JSX.Element {
 }
 
 function BlogListPageContent(props: Props): JSX.Element {
-  const { metadata, items } = props;
+  const { items } = props;
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
   const [selectedYear, setSelectedYear] = useState<string>("all");
   const [viewMode, setViewMode] = useState<ViewMode>("list");
+  const [showAllTags, setShowAllTags] = useState(false);
+  const [visibleCount, setVisibleCount] = useState(POSTS_PER_PAGE);
 
-  // Extract all unique tags and years from posts
-  const { allTags, allYears } = useMemo(() => {
-    const tags = new Set<string>();
+  // Extract all unique tags (with counts) and years from ALL posts
+  const { tagCounts, sortedTags, allYears } = useMemo(() => {
+    const tagMap = new Map<string, number>();
     const years = new Set<string>();
     items.forEach(({ content }) => {
-      const postTags = content.metadata.tags;
-      postTags.forEach((tag) => tags.add(tag.label));
+      content.metadata.tags.forEach((tag) => {
+        tagMap.set(tag.label, (tagMap.get(tag.label) || 0) + 1);
+      });
       const date = new Date(content.metadata.date);
       years.add(date.getFullYear().toString());
     });
+    // Sort tags by count (descending), then alphabetically
+    const sorted = Array.from(tagMap.entries()).sort(
+      (a, b) => b[1] - a[1] || a[0].localeCompare(b[0]),
+    );
     return {
-      allTags: Array.from(tags).sort(),
+      tagCounts: tagMap,
+      sortedTags: sorted,
       allYears: Array.from(years).sort((a, b) => Number(b) - Number(a)),
     };
   }, [items]);
@@ -60,7 +69,7 @@ function BlogListPageContent(props: Props): JSX.Element {
         const matchesTitle = title.toLowerCase().includes(query);
         const matchesDesc = description?.toLowerCase().includes(query) || false;
         const matchesTags = tags.some((tag) =>
-          tag.label.toLowerCase().includes(query)
+          tag.label.toLowerCase().includes(query),
         );
         if (!matchesTitle && !matchesDesc && !matchesTags) return false;
       }
@@ -84,27 +93,38 @@ function BlogListPageContent(props: Props): JSX.Element {
 
   const toggleTag = (tag: string) => {
     setSelectedTags((prev) =>
-      prev.includes(tag) ? prev.filter((t) => t !== tag) : [...prev, tag]
+      prev.includes(tag) ? prev.filter((t) => t !== tag) : [...prev, tag],
     );
+    setVisibleCount(POSTS_PER_PAGE);
   };
 
   const clearFilters = () => {
     setSearchQuery("");
     setSelectedTags([]);
     setSelectedYear("all");
+    setVisibleCount(POSTS_PER_PAGE);
   };
 
   const hasActiveFilters =
     searchQuery || selectedTags.length > 0 || selectedYear !== "all";
 
+  const visibleTags = showAllTags
+    ? sortedTags
+    : sortedTags.slice(0, INITIAL_VISIBLE_TAGS);
+  const hiddenTagCount = sortedTags.length - INITIAL_VISIBLE_TAGS;
+
+  const displayedItems = filteredItems.slice(0, visibleCount);
+  const hasMore = visibleCount < filteredItems.length;
+
   return (
     <BlogLayout>
       <div className={styles.blogListPage}>
-        {/* Header & Controls */}
+        {/* Header */}
         <div className={styles.header}>
           <h1 className={styles.title}>Blog</h1>
           <p className={styles.subtitle}>
-            Thoughts on developer tooling, Azure, coding agents, and more — writing since 2011.
+            {items.length} posts on developer tooling, Azure, coding agents, and
+            more — writing since 2011.
           </p>
         </div>
 
@@ -127,7 +147,10 @@ function BlogListPageContent(props: Props): JSX.Element {
               type="text"
               placeholder="Search posts..."
               value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
+              onChange={(e) => {
+                setSearchQuery(e.target.value);
+                setVisibleCount(POSTS_PER_PAGE);
+              }}
               className={styles.searchInput}
             />
           </div>
@@ -135,7 +158,10 @@ function BlogListPageContent(props: Props): JSX.Element {
           {/* Year Filter */}
           <select
             value={selectedYear}
-            onChange={(e) => setSelectedYear(e.target.value)}
+            onChange={(e) => {
+              setSelectedYear(e.target.value);
+              setVisibleCount(POSTS_PER_PAGE);
+            }}
             className={styles.yearSelect}
           >
             <option value="all">All Years</option>
@@ -151,12 +177,17 @@ function BlogListPageContent(props: Props): JSX.Element {
             <button
               className={clsx(
                 styles.viewBtn,
-                viewMode === "list" && styles.viewBtnActive
+                viewMode === "list" && styles.viewBtnActive,
               )}
               onClick={() => setViewMode("list")}
               title="List view"
             >
-              <svg viewBox="0 0 20 20" fill="currentColor" width="18" height="18">
+              <svg
+                viewBox="0 0 20 20"
+                fill="currentColor"
+                width="18"
+                height="18"
+              >
                 <path
                   fillRule="evenodd"
                   d="M3 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
@@ -167,38 +198,71 @@ function BlogListPageContent(props: Props): JSX.Element {
             <button
               className={clsx(
                 styles.viewBtn,
-                viewMode === "grid" && styles.viewBtnActive
+                viewMode === "grid" && styles.viewBtnActive,
               )}
               onClick={() => setViewMode("grid")}
               title="Grid view"
             >
-              <svg viewBox="0 0 20 20" fill="currentColor" width="18" height="18">
+              <svg
+                viewBox="0 0 20 20"
+                fill="currentColor"
+                width="18"
+                height="18"
+              >
                 <path d="M5 3a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2V5a2 2 0 00-2-2H5zM5 11a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2v-2a2 2 0 00-2-2H5zM11 5a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V5zM11 13a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" />
               </svg>
             </button>
           </div>
         </div>
 
-        {/* Tag Pills */}
-        {allTags.length > 0 && (
+        {/* Tag Cloud */}
+        {sortedTags.length > 0 && (
           <div className={styles.tagCloud}>
-            {allTags.slice(0, 20).map((tag) => (
-              <button
-                key={tag}
-                className={clsx(
-                  styles.tagPill,
-                  selectedTags.includes(tag) && styles.tagPillActive
-                )}
-                onClick={() => toggleTag(tag)}
-              >
-                {tag}
-              </button>
-            ))}
-            {allTags.length > 20 && (
-              <span className={styles.moreTagsHint}>
-                +{allTags.length - 20} more
-              </span>
-            )}
+            <div className={styles.tagCloudHeader}>
+              <span className={styles.tagCloudLabel}>Filter by tag</span>
+              {selectedTags.length > 0 && (
+                <button
+                  className={styles.clearTagsBtn}
+                  onClick={() => {
+                    setSelectedTags([]);
+                    setVisibleCount(POSTS_PER_PAGE);
+                  }}
+                >
+                  Clear ({selectedTags.length})
+                </button>
+              )}
+            </div>
+            <div className={styles.tagPills}>
+              {visibleTags.map(([tag, count]) => (
+                <button
+                  key={tag}
+                  className={clsx(
+                    styles.tagPill,
+                    selectedTags.includes(tag) && styles.tagPillActive,
+                  )}
+                  onClick={() => toggleTag(tag)}
+                >
+                  {tag}
+                  <span className={styles.tagCount}>{count}</span>
+                </button>
+              ))}
+              {!showAllTags && hiddenTagCount > 0 && (
+                <button
+                  className={styles.showMoreBtn}
+                  onClick={() => setShowAllTags(true)}
+                >
+                  +{hiddenTagCount} more
+                </button>
+              )}
+              {showAllTags && sortedTags.length > INITIAL_VISIBLE_TAGS && (
+                <button
+                  className={styles.showMoreBtn}
+                  onClick={() => setShowAllTags(false)}
+                >
+                  Show less
+                </button>
+              )}
+            </div>
           </div>
         )}
 
@@ -210,21 +274,36 @@ function BlogListPageContent(props: Props): JSX.Element {
               found
             </span>
             <button className={styles.clearBtn} onClick={clearFilters}>
-              Clear filters
+              Clear all filters
             </button>
           </div>
         )}
 
         {/* Blog Posts */}
-        {filteredItems.length > 0 ? (
-          <div
-            className={clsx(
-              styles.postsContainer,
-              viewMode === "grid" && styles.postsGrid
+        {displayedItems.length > 0 ? (
+          <>
+            <div
+              className={clsx(
+                styles.postsContainer,
+                viewMode === "grid" && styles.postsGrid,
+              )}
+            >
+              <BlogPostItems items={displayedItems} />
+            </div>
+            {hasMore && (
+              <div className={styles.loadMore}>
+                <button
+                  className={styles.loadMoreBtn}
+                  onClick={() =>
+                    setVisibleCount((prev) => prev + POSTS_PER_PAGE)
+                  }
+                >
+                  Load more posts ({filteredItems.length - visibleCount}{" "}
+                  remaining)
+                </button>
+              </div>
             )}
-          >
-            <BlogPostItems items={filteredItems} />
-          </div>
+          </>
         ) : (
           <div className={styles.emptyState}>
             <p>No posts match your filters.</p>
@@ -233,9 +312,6 @@ function BlogListPageContent(props: Props): JSX.Element {
             </button>
           </div>
         )}
-
-        {/* Only show paginator when no filters are active */}
-        {!hasActiveFilters && <BlogListPaginator metadata={metadata} />}
       </div>
     </BlogLayout>
   );
@@ -246,7 +322,7 @@ export default function BlogListPage(props: Props): JSX.Element {
     <HtmlClassNameProvider
       className={clsx(
         ThemeClassNames.wrapper.blogPages,
-        ThemeClassNames.page.blogListPage
+        ThemeClassNames.page.blogListPage,
       )}
     >
       <BlogListPageMetadata {...props} />
