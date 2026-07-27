@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useMemo } from "react";
 import Layout from "@theme/Layout";
 
 import { Project, ProjectData } from "../components/projects/Project";
@@ -97,7 +97,19 @@ const projects: ProjectData[] = [
 const title = "Projects";
 const description = "Featured Projects I was/am involved in.";
 
+const allRoles = Array.from(
+  new Set(projects.map((p) => p.role).filter(Boolean)),
+).sort();
+
 export default function Projects(): JSX.Element {
+  const [selectedRole, setSelectedRole] = useState<string | null>(null);
+
+  const filteredProjects = useMemo(
+    () =>
+      selectedRole ? projects.filter((p) => p.role === selectedRole) : projects,
+    [selectedRole],
+  );
+
   return (
     <Layout title={title} description={description}>
       <main className="container margin-vert--lg">
@@ -122,10 +134,53 @@ export default function Projects(): JSX.Element {
             >
               {description}
             </p>
+            <div style={{ marginTop: "1rem" }}>
+              <iframe
+                src="https://github.com/sponsors/sajeetharan/button"
+                title="Sponsor sajeetharan"
+                height={32}
+                width={114}
+                style={{ border: 0, borderRadius: "6px" }}
+              />
+            </div>
           </header>
 
+          <div
+            className="margin-bottom--md"
+            style={{
+              display: "flex",
+              flexWrap: "wrap",
+              gap: "0.25rem",
+              justifyContent: "center",
+            }}
+          >
+            <button
+              className={`button button--sm margin-right--sm margin-bottom--sm ${
+                selectedRole === null
+                  ? "button--primary"
+                  : "button--secondary button--outline"
+              }`}
+              onClick={() => setSelectedRole(null)}
+            >
+              All
+            </button>
+            {allRoles.map((role) => (
+              <button
+                key={role}
+                className={`button button--sm margin-right--sm margin-bottom--sm ${
+                  selectedRole === role
+                    ? "button--primary"
+                    : "button--secondary button--outline"
+                }`}
+                onClick={() => setSelectedRole(role)}
+              >
+                {role}
+              </button>
+            ))}
+          </div>
+
           <div className="row">
-            {projects.map((project) => (
+            {filteredProjects.map((project) => (
               <Project key={project.title} {...project} />
             ))}
           </div>
