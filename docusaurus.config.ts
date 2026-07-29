@@ -8,7 +8,7 @@ const config: Config = {
     "Sajeetharan Sinnathurai | Developer Tooling, Azure Cosmos DB & Coding Agents",
   tagline:
     "Principal PM at Microsoft empowering developers with Azure Cosmos DB, GitHub Copilot, coding agents, and NoSQL databases—from code to cloud.",
-  url: "https://sajeetharan.github.io/",
+  url: "https://www.sajeetharan.dev",
   baseUrl: "/",
   onBrokenLinks: "warn",
   onBrokenMarkdownLinks: "warn",

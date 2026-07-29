@@ -94,6 +94,111 @@ I'm happy to answer questions, provide demos, or help your team get set up. Let'
 
 ---
 
+---
+
+## A Note for New Team Members: "DocumentDB" Is Not Dead
+
+If you're new to the team and wondering why you keep seeing "DocumentDB" everywhere — you're not going crazy. Azure Cosmos DB was originally launched as **Azure DocumentDB** in 2015, then rebranded to **Azure Cosmos DB** in 2017. But the old name is permanently baked into many layers of the platform. Here's where you'll encounter it:
+
+### ARM Resource Provider Namespace
+
+The entire Cosmos DB service lives under `Microsoft.DocumentDB`. Every resource you create — accounts, databases, containers — uses this namespace:
+
+```
+Microsoft.DocumentDB/databaseAccounts
+Microsoft.DocumentDB/databaseAccounts/sqlDatabases
+Microsoft.DocumentDB/databaseAccounts/sqlDatabases/containers
+```
+
+### Bicep & ARM Templates
+
+Every Cosmos DB Bicep or ARM template declares resources with the old namespace:
+
+```bicep
+resource cosmosAccount 'Microsoft.DocumentDB/databaseAccounts@2026-04-01-preview' = {
+  name: 'my-cosmos-account'
+  kind: 'GlobalDocumentDB'   // <-- also "DocumentDB" here!
+  ...
+}
+```
+
+### Azure Verified Modules (AVM)
+
+The official Bicep module path uses `document-db`:
+
+```
+avm/res/document-db/database-account
+```
+
+### Terraform
+
+- **AzAPI provider**: Uses `Microsoft.DocumentDB/databaseAccounts` as the resource type
+- **azurerm provider**: The official docs literally say _"Manages a CosmosDB (formally DocumentDB) Account"_; the sidebar category is **CosmosDB (DocumentDB)**
+- **Terraform import**: `terraform import azurerm_cosmosdb_account.account1 /subscriptions/.../providers/Microsoft.DocumentDB/databaseAccounts/account1`
+
+### Azure CLI
+
+Restore source IDs expose the old name:
+
+```
+--restore-source /subscriptions/{sub}/providers/Microsoft.DocumentDB/locations/{loc}/restorableDatabaseAccounts/{name}
+```
+
+### Azure Quickstart Templates
+
+All Cosmos DB quickstart templates live under paths like:
+
+```
+quickstarts/microsoft.documentdb/cosmosdb-sql/
+quickstarts/microsoft.documentdb/cosmosdb-mongodb/
+quickstarts/microsoft.documentdb/cosmosdb-cassandra/
+quickstarts/microsoft.web/documentdb-webapp/
+```
+
+### Account Kind
+
+The default account kind for SQL/NoSQL API accounts is:
+
+```
+kind: 'GlobalDocumentDB'
+```
+
+(Not `GlobalCosmosDB` — it was never renamed.)
+
+### Account Endpoint URL
+
+Your Cosmos DB account endpoint uses the `documents` subdomain:
+
+```
+https://{account-name}.documents.azure.com:443/
+```
+
+### REST API
+
+The resource provider REST API is registered as:
+
+```
+Microsoft.DocumentDB — 2024-08-15 (and all prior versions)
+```
+
+### Azure Resource Graph / Portal
+
+When you query Azure Resource Graph or view resource JSON in the Portal, the `type` field always shows:
+
+```json
+"type": "Microsoft.DocumentDB/databaseAccounts"
+```
+
+### .NET SDK History
+
+The v2 SDK NuGet package was literally named `Microsoft.Azure.DocumentDB`. The v3 SDK rebranded to `Microsoft.Azure.Cosmos`, but internal namespaces and older migration docs still reference the old name.
+
+### Why This Matters
+
+If you're writing skills, prompts, or instructions for AI coding agents that work with Cosmos DB, your content needs to handle **both** names. An agent that only knows "Cosmos DB" will fail when it encounters `Microsoft.DocumentDB` in ARM templates or Terraform state. An agent that only knows "DocumentDB" will confuse users who know the product as Cosmos DB. The rename happened at the brand level, but the infrastructure layer never changed.
+
+---
+
 ## 1-Minute Narration Script
 
 "Today, I'm excited to announce that the Azure Cosmos DB Extension for Visual Studio Code is now Generally Available! This extension transforms developer productivity by bringing all essential database operations directly into VS Code—eliminating constant context switching between your editor and the Azure Portal. Browse and manage databases, execute NoSQL queries with IntelliSense, and edit documents with rich JSON formatting—all without leaving your IDE. The game-changer for AI-powered development is the context-aware instructions and prompt files that give GitHub Copilot and AI assistants full knowledge of your Cosmos DB schema and best practices, making it perfect for building agent applications and RAG systems. It's like having a Cosmos DB expert guiding your AI pair programmer. Getting started is simple: install from the VS Code marketplace, sign in with your Azure account, and you're ready to go—completely free for all Cosmos DB API types!"

@@ -9,6 +9,7 @@ tags:
   - developer-tools
   - github-copilot
   - microsoft
+coverImage: images/smart-prompting-framework.png
 utcDate: "2026-07-16T00:00:00.000Z"
 description: "Over the past few months, one prompting pattern has consistently produced better AI agents for me. Not bigger prompts. Not more skills. Just a better separation of responsibilities."
 ---
@@ -26,6 +27,8 @@ Just a better separation of responsibilities.
 ## The Framework
 
 My current approach boils down to three pillars:
+
+![Smart Prompting Framework](./images/smart-prompting-framework.png)
 
 ### ✅ Lean Prompts
 
@@ -88,19 +91,15 @@ I wrote about this journey in depth in my post [What Six Months of Building AI A
 
 The framework proved itself in real support scenarios. When a customer needed help understanding why they couldn't scale down their Cosmos DB autoscale throughput after a test, I used the best practices skill to quickly generate accurate, context-aware guidance. The skill provided the precise domain knowledge the agent needed — not a generic explanation, but the exact autoscale behavior rules. Lean prompt + rich context = accurate answer in seconds.
 
-### The MCP Toolkit — Composable by Design
+### Extending Skills for Customer-Specific Scenarios
 
-The [Azure Cosmos DB MCP Toolkit](https://github.com/AzureCosmosDB/MCPToolKit) is another example of this philosophy in action. Instead of one massive MCP server that does everything, we built focused tools — query execution, data modeling, natural language to NoSQL — each with a single responsibility. When we shipped the GA, the modular design made it straightforward to add new capabilities like hybrid search without touching existing tools.
+Enterprise customers like Walmart and Nike started asking for customized skills tailored to their specific use cases. This validated the modular approach — because each skill had a single responsibility, we could extend or compose them for customer scenarios without rewriting the core. A monolithic skill would have made this nearly impossible.
 
-### Building Dashboards and Mockups with Agents
+### Skill Descriptions Are Underrated
 
-I've used this pattern beyond skills authoring. When building ADX dashboards for tracking agent kit telemetry, I gave the agent a lean prompt ("build a dashboard for these KQL queries") with rich artifacts (the schema, query files, and dashboard conventions). The agent produced a working build script in one shot.
+One of the subtler lessons: **how you describe a skill matters as much as what's in it.** Our first skill description was vague — "Best practices for Cosmos DB." It got triggered for everything remotely related, including completely wrong contexts.
 
-Same pattern when prototyping the [Cosmos DB Data Modelling Workbench](https://cosmosdbmockup7822.z20.web.core.windows.net/mockup-data-modelling-flow-only.html) — a focused prompt with rich context artifacts, and the agent generated a complete interactive mockup.
-
-### Even Personal Projects Follow This Pattern
-
-I even applied this to non-work projects. My [fitness plan tracker](https://delightful-stone-0ebc7d41e.7.azurestaticapps.net/) deployed on Azure Static Web Apps was built entirely with an AI agent. Short prompts. A workout schema as context. Focused skills for deployment. The agent handled the rest.
+The fix was adding explicit scope boundaries and **negative triggers**. A good description says what the skill is for _and_ what it's not for. "Do NOT use for MongoDB, PostgreSQL, or DynamoDB" is surprisingly effective at preventing false matches. We also found that skill registries degrade in selection accuracy past ~20-30 entries without a retrieval filter.
 
 ## The Anti-Pattern: Why Long Prompts Fail
 
