@@ -9,7 +9,6 @@ tags:
   - developer-tools
   - github-copilot
   - microsoft
-coverImage: images/smart-prompting-framework.png
 utcDate: "2026-07-16T00:00:00.000Z"
 description: "Over the past few months, one prompting pattern has consistently produced better AI agents for me. Not bigger prompts. Not more skills. Just a better separation of responsibilities."
 ---
@@ -27,8 +26,6 @@ Just a better separation of responsibilities.
 ## The Framework
 
 My current approach boils down to three pillars:
-
-![Smart Prompting Framework](./images/smart-prompting-framework.png)
 
 ### ✅ Lean Prompts
 
