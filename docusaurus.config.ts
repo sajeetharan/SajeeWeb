@@ -161,11 +161,7 @@ const config: Config = {
         { to: "/talks", label: "Talks", position: "left" },
         { to: "/projects", label: "Projects", position: "left" },
         { to: "/awards", label: "Awards", position: "left" },
-        {
-          href: "https://adplist.org/mentors/sajeetharan-sinnathurai?session=pathway-to-product-management-2a3a-mqkf9umx",
-          label: "Get Mentored",
-          position: "left",
-        },
+        { to: "/mentored", label: "Get Mentored", position: "left" },
       ],
     },
     footer: {

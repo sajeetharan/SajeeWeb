@@ -6,6 +6,14 @@ import { Project, ProjectData } from "../components/projects/Project";
 const assetsDir = "./assets/projects";
 const projects: ProjectData[] = [
   {
+    title: "DevGlobe",
+    description:
+      "Interactive 3D globe showcasing 40,000+ top open-source contributors worldwide, ranked by GitHub stars, commits, and Stack Overflow impact. Powered by Azure Cosmos DB.",
+    url: "https://github.com/sajeetharan/devglobe",
+    image: require(`${assetsDir}/devglobe.png`),
+    role: "Author",
+  },
+  {
     title: "Angular Agent Kit",
     description:
       "A collection of AI coding agent skills for Angular development. Contains 45+ performance optimization rules across 8 categories. Works with GitHub Copilot, Claude Code, Cursor, and Gemini CLI.",
