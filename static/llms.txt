@@ -1,0 +1,27 @@
+# Sajeetharan Sinnathurai
+
+> Principal Program Manager at Microsoft focused on developer tooling, Azure Cosmos DB, coding agents, developer experience, and cloud platforms.
+
+This is the agent-readable index for https://www.sajeetharan.dev. Public resources are read-only and require no API key.
+
+## Primary pages
+
+- [Home](https://www.sajeetharan.dev/): Biography, focus areas, featured work, and community contributions.
+- [Developer portal](https://www.sajeetharan.dev/developers): Quickstarts, endpoint documentation, CLI usage, and a read-only sandbox.
+- [Blog](https://www.sajeetharan.dev/blogs): Long-form technical articles.
+- [Projects](https://www.sajeetharan.dev/projects): Open-source and developer-tooling projects.
+- [Talks](https://www.sajeetharan.dev/talks): Conference sessions and recordings.
+- [Awards](https://www.sajeetharan.dev/awards): Professional and community recognition.
+
+## Machine-readable resources
+
+- [Sitemap](https://www.sajeetharan.dev/sitemap.xml)
+- [RSS feed](https://www.sajeetharan.dev/blogs/rss.xml)
+- [Atom feed](https://www.sajeetharan.dev/blogs/atom.xml)
+- [JSON feed](https://www.sajeetharan.dev/blogs/feed.json)
+- [API catalog](https://www.sajeetharan.dev/.well-known/api-catalog)
+- [Agent skills](https://www.sajeetharan.dev/.well-known/agent-skills/index.json)
+
+## Content negotiation
+
+Pages support `Accept: text/markdown` and return `Content-Type: text/markdown; charset=utf-8`. Unsupported media types return HTTP 406.

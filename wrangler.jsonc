@@ -1,0 +1,15 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "sajeetharan-dev",
+  "main": "worker/index.mjs",
+  "compatibility_date": "2026-08-18",
+  "assets": {
+    "directory": "./build",
+    "binding": "ASSETS",
+    "run_worker_first": ["/**"],
+  },
+  "routes": [
+    { "pattern": "www.sajeetharan.dev", "custom_domain": true },
+    { "pattern": "sajeetharan.dev", "custom_domain": true },
+  ],
+}

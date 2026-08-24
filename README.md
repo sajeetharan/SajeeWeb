@@ -1,6 +1,6 @@
-# Sajeetahran Sinnathruai - Personal Website
+# Sajeetharan Sinnathurai - Personal Website
 
-This repository contains source code of the Sajee's personal website. To see it live, navigate to the [kosiec.dev](https://kosiec.dev) address.
+This repository contains the source for [sajeetharan.dev](https://www.sajeetharan.dev).
 
 ## Development
 
@@ -34,4 +34,10 @@ This command generates static content into the `build` directory and can be serv
 
 ### Deployment
 
-This site is deployed automatically from the `main` branch using [Cloudflare Pages](https://pages.cloudflare.com/).
+The static site is deployed from `main` with GitHub Pages. The optional
+Cloudflare Worker serves negotiated Markdown responses from the same build.
+
+To deploy the Worker, configure `CLOUDFLARE_API_TOKEN` and
+`CLOUDFLARE_ACCOUNT_ID` as GitHub Actions secrets, then dispatch **Deploy
+Cloudflare Worker**. To publish the CLI, configure `NPM_TOKEN`, increment the
+version in `cli/package.json`, and dispatch **Publish CLI**.

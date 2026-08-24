@@ -160,6 +160,7 @@ const config: Config = {
         { to: "/blogs", label: "Blogs", position: "left" },
         { to: "/talks", label: "Talks", position: "left" },
         { to: "/projects", label: "Projects", position: "left" },
+        { to: "/developers", label: "Developers", position: "left" },
         { to: "/awards", label: "Awards", position: "left" },
         { to: "/mentored", label: "Get Mentored", position: "left" },
       ],
