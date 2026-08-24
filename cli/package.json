@@ -1,0 +1,25 @@
+{
+  "name": "@sajeetharan/site-cli",
+  "version": "1.0.0",
+  "description": "Official command-line client for public sajeetharan.dev resources",
+  "type": "module",
+  "bin": {
+    "sajee": "./sajee.mjs"
+  },
+  "files": [
+    "sajee.mjs",
+    "README.md"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sajeetharan/SajeeWeb.git",
+    "directory": "cli"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

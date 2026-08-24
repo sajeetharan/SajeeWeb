@@ -4,15 +4,17 @@ Navigate and discover content on Sajeetharan's portfolio site.
 
 ## Pages
 
-- **Home**: https://sajeetharan.github.io/
-- **Projects**: https://sajeetharan.github.io/projects
-- **Talks**: https://sajeetharan.github.io/talks
-- **Awards**: https://sajeetharan.github.io/awards
-- **Blog**: https://sajeetharan.github.io/blogs
+- **Home**: https://www.sajeetharan.dev/
+- **Developers**: https://www.sajeetharan.dev/developers
+- **Projects**: https://www.sajeetharan.dev/projects
+- **Talks**: https://www.sajeetharan.dev/talks
+- **Awards**: https://www.sajeetharan.dev/awards
+- **Blog**: https://www.sajeetharan.dev/blogs
 
 ## Machine-Readable Resources
 
-- **Sitemap**: https://sajeetharan.github.io/sitemap.xml
-- **RSS Feed**: https://sajeetharan.github.io/blogs/rss.xml
-- **Atom Feed**: https://sajeetharan.github.io/blogs/atom.xml
-- **API Catalog**: https://sajeetharan.github.io/.well-known/api-catalog
+- **Agent Index**: https://www.sajeetharan.dev/llms.txt
+- **Sitemap**: https://www.sajeetharan.dev/sitemap.xml
+- **RSS Feed**: https://www.sajeetharan.dev/blogs/rss.xml
+- **Atom Feed**: https://www.sajeetharan.dev/blogs/atom.xml
+- **API Catalog**: https://www.sajeetharan.dev/.well-known/api-catalog

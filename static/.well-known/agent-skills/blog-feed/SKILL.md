@@ -4,9 +4,9 @@ Discover and consume blog content from Sajeetharan's personal site.
 
 ## Endpoints
 
-- **Blog page**: https://sajeetharan.github.io/blogs
-- **RSS feed**: https://sajeetharan.github.io/blogs/rss.xml
-- **Atom feed**: https://sajeetharan.github.io/blogs/atom.xml
+- **Blog page**: https://www.sajeetharan.dev/blogs
+- **RSS feed**: https://www.sajeetharan.dev/blogs/rss.xml
+- **Atom feed**: https://www.sajeetharan.dev/blogs/atom.xml
 
 ## Usage
 

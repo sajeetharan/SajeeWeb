@@ -5,15 +5,15 @@
       "name": "blog-feed",
       "type": "skill-md",
       "description": "Discover and consume blog content via RSS and Atom feeds",
-      "url": "https://sajeetharan.github.io/.well-known/agent-skills/blog-feed/SKILL.md",
-      "digest": "sha256:1d3c3eef770782676e95fbf8e81df39aa35aafc609ec7ef66c41e780819dd34a"
+      "url": "https://www.sajeetharan.dev/.well-known/agent-skills/blog-feed/SKILL.md",
+      "digest": "sha256:c6cd796f6b0b5b1d3870356c2ded799ae864c86179e05de20037e0bd37ef068a"
     },
     {
       "name": "site-navigation",
       "type": "skill-md",
       "description": "Navigate and discover content on the portfolio site",
-      "url": "https://sajeetharan.github.io/.well-known/agent-skills/site-navigation/SKILL.md",
-      "digest": "sha256:128a7ccde8af96a948325cddba9506c5f79bc40567783d2fef9a491b920a0940"
+      "url": "https://www.sajeetharan.dev/.well-known/agent-skills/site-navigation/SKILL.md",
+      "digest": "sha256:58215a6538faaf8ede99adaa2dc14a6a6eded215a5322e18d598cc32c48c0d04"
     }
   ]
 }

@@ -68,7 +68,7 @@ export default function Home(): JSX.Element {
     "@context": "https://schema.org",
     "@type": "Person",
     name: "Sajeetharan Sinnathurai",
-    url: "https://sajeetharan.github.io/",
+    url: "https://www.sajeetharan.dev/",
     jobTitle: "Principal Program Manager",
     worksFor: {
       "@type": "Organization",
