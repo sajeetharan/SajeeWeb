@@ -209,6 +209,39 @@ html[data-theme="dark"] {
   max-width: 1200px;
 }
 
+.blog-full-bleed {
+  position: relative;
+  z-index: 2;
+  width: calc(100vw - 2rem);
+  margin: 2rem 0 2.5rem calc(50% - 50vw + 1rem);
+  overflow: hidden;
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 1rem;
+  background: var(--ifm-background-surface-color);
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.16);
+
+  > p {
+    margin: 0;
+  }
+
+  a {
+    display: block;
+  }
+
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin: 0;
+  }
+
+  @media (max-width: 768px) {
+    width: calc(100vw - 1rem);
+    margin-left: calc(50% - 50vw + 0.5rem);
+    border-radius: 0.75rem;
+  }
+}
+
 h2 {
   font-size: 2.25rem;
   margin-bottom: 2rem;
