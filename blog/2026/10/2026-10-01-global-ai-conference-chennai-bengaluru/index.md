@@ -23,8 +23,6 @@ On September 26, I spoke at [MCP Community Connect in Bengaluru](https://globala
 
 The talks approached the question from different directions, but they arrived at the same conclusion: an agent is only as useful as the context, boundaries, and developer experience we build around it.
 
-**[Explore DevGlobe—the open-source talent graph for humans and AI agents →](https://devglobe.dev/)**
-
 <!-- truncate -->
 
 ## Stop one: MCP Community Connect, Bengaluru
@@ -33,9 +31,7 @@ MCP Community Connect was a full-day, community-run conference focused on taking
 
 My session, **"Beyond CRUD: Designing MCP Tools Around Trust and Consent,"** focused on a lesson I learned while building [DevGlobe](https://devglobe.dev): exposing data through MCP is relatively easy. Deciding what an agent should be allowed to discover, infer, and do is the real design challenge.
 
-[![DevGlobe Find People experience with skill, location, and GitHub username search over an interactive globe](/img/blog/devglobe-search.png)](https://devglobe.dev/)
-
-DevGlobe lets people search public developer evidence by skill, project, location, or GitHub username. The same experience also connects developers to contribution missions and opt-in live coding features.
+![Presenting Beyond CRUD at MCP Community Connect in Bengaluru](/img/talks/beyond-crud-mcp-trust-consent.jpg)
 
 ### Why a generic database tool was the wrong abstraction
 
@@ -75,9 +71,7 @@ The following day, I traveled to Chennai for the Global AI Conference, a free on
 
 My session was **"Building an Agent-First Experience for Azure Cosmos DB."**
 
-[![DevGlobe MCP setup page for connecting GitHub Copilot and other AI agents](/img/blog/devglobe-mcp-agent-setup.png)](https://devglobe.dev/agents)
-
-The [DevGlobe agent setup experience](https://devglobe.dev/agents) makes the hosted MCP endpoint easy to connect from GitHub Copilot, VS Code, Claude, Cursor, or a direct HTTP client. Public discovery works anonymously, while introductions remain authenticated and consent-gated.
+![Presenting Agentic Development with Azure Cosmos DB at the Global AI Conference in Chennai](/img/talks/agent-first-cosmos-db.jpg)
 
 ### The audience for developer guidance has changed
 
@@ -144,7 +138,4 @@ The agent-first future will not be built by agents alone. It will be built by co
 - [Global AI Conference Chennai](https://globalai.community/e/7f851feb)
 - [Beyond CRUD slides](https://mcpdeck260726.z13.web.core.windows.net/index.html#1)
 - [Agentic Development with Azure Cosmos DB slides](https://devglobeactivityfn.z13.web.core.windows.net/talks/agent-first-cosmos-db#1)
-- [Explore DevGlobe](https://devglobe.dev/)
-- [Search developers on DevGlobe](https://devglobe.dev/)
-- [Connect DevGlobe to GitHub Copilot or another AI agent](https://devglobe.dev/agents)
-- [Read the DevGlobe MCP documentation](https://devglobe.dev/docs/mcp-server)
+- [DevGlobe](https://devglobe.dev)

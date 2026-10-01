@@ -26,7 +26,9 @@ A GitHub profile can show repositories. Stack Overflow can show answers. A profe
 
 Those questions led me to build [DevGlobe](https://www.devglobe.dev), an open-source talent graph for humans and AI agents. What started as an interactive 3D map became a search, data, and consent problem—and Azure Cosmos DB became the foundation that connected those pieces.
 
-![DevGlobe connects developers and AI agents through an open talent graph](/img/blog/devglobe-product.png)
+[![DevGlobe connects developers and AI agents through an open talent graph](/img/blog/devglobe-product.png)](https://www.devglobe.dev/)
+
+**[Explore DevGlobe and discover developers, contribution opportunities, live coding activity, and agent-ready tools →](https://www.devglobe.dev/)**
 
 <!-- truncate -->
 
@@ -140,6 +142,10 @@ Someone may search for:
 
 Text search is strong when the query contains names, locations, languages, or exact technologies. Vector search is useful when the intent is expressed through related concepts rather than matching terms. DevGlobe supports text, vector, and hybrid modes so those strengths can complement each other.
 
+[![DevGlobe Find People experience with skill, location, and GitHub username search over an interactive globe](/img/blog/devglobe-search.png)](https://www.devglobe.dev/)
+
+The public [Find People experience](https://www.devglobe.dev/) brings those search modes together over the interactive globe. Visitors can search by skills, projects, locations, names, or GitHub usernames, then inspect the public evidence behind each result.
+
 At a high level, the flow is:
 
 1. Parse and normalize the query.
@@ -212,7 +218,9 @@ https://www.devglobe.dev/mcp
 
 The easy implementation would have been a generic Cosmos DB query tool. I deliberately did not build that.
 
-![Demonstrating DevGlobe and agent-first development with Azure Cosmos DB](/img/talks/agent-first-cosmos-db.jpg)
+[![DevGlobe MCP setup page for connecting GitHub Copilot and other AI agents](/img/blog/devglobe-mcp-agent-setup.png)](https://www.devglobe.dev/agents)
+
+The [agent setup experience](https://www.devglobe.dev/agents) provides connection instructions for GitHub Copilot, VS Code, Claude, Cursor, and direct HTTP clients. Public discovery works without credentials; introductions remain authenticated and consent-gated.
 
 Agents instead receive domain-specific capabilities such as:
 
@@ -233,8 +241,6 @@ Cosmos DB persists the workflow state, but the MCP server exposes the domain con
 ## Consent is data, not prompt text
 
 One of the most important lessons from DevGlobe is that prompts cannot enforce consent.
-
-![Explaining how DevGlobe MCP tools separate trust and consent](/img/talks/beyond-crud-mcp-trust-consent.jpg)
 
 A reliable introduction workflow needs durable state:
 
