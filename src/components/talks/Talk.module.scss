@@ -21,6 +21,16 @@
   padding-left: 0;
 }
 
+.talkImage {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  margin-bottom: 1.5rem;
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 0.75rem;
+  object-fit: cover;
+}
+
 .buttons {
   > a {
     @include small-size {

@@ -18,6 +18,7 @@ export interface TalkMetadata {
   slidesURL?: string;
   repoURL?: string;
   sessionURL?: string;
+  imageURL?: string;
 }
 
 export interface EventMetadata {
@@ -34,6 +35,7 @@ const Talk: FunctionComponent<TalkMetadata> = ({
   slidesURL,
   repoURL,
   sessionURL,
+  imageURL,
 }) => {
   const videoId = recordingURL ? getYouTubeVideoId(recordingURL) : null;
 
@@ -44,6 +46,14 @@ const Talk: FunctionComponent<TalkMetadata> = ({
           <h2>{title}</h2>
         </div>
         <div className="card__body">
+          {imageURL && (
+            <img
+              className={styles.talkImage}
+              src={imageURL}
+              alt={`${title} presentation`}
+              loading="lazy"
+            />
+          )}
           <div className="row">
             <div className="col col--7">{description}</div>
             <div className={clsx("col col--5", styles.eventDetailsContainer)}>

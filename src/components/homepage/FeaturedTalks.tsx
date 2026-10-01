@@ -7,6 +7,7 @@ interface FeaturedTalk {
   event: string;
   date: string;
   videoId?: string;
+  image?: string;
   topic?: string;
   url: string;
 }
@@ -24,6 +25,7 @@ const featuredTalks: FeaturedTalk[] = [
     title: "Beyond CRUD: Designing MCP Tools Around Trust and Consent",
     event: "Sessionize",
     date: "Latest session",
+    image: "/img/talks/beyond-crud-mcp-trust-consent.jpg",
     topic: "MCP · Trust · Consent",
     url: "https://sessionize.com/s/sajeetharan/beyond-crud-designing-mcp-tools-around-trust-and-c/188203",
   },
@@ -31,6 +33,7 @@ const featuredTalks: FeaturedTalk[] = [
     title: "Building an Agent-First Experience for Azure Cosmos DB",
     event: "Sessionize",
     date: "Latest session",
+    image: "/img/talks/agent-first-cosmos-db.jpg",
     topic: "Agents · MCP · Cosmos DB",
     url: "https://sessionize.com/s/sajeetharan/building-an-agent-first-experience-for-azure-cosmo/188204",
   },
@@ -65,7 +68,13 @@ export const FeaturedTalks: React.FC = () => {
               className={styles.card}
             >
               <div className={styles.thumbnail}>
-                {talk.videoId ? (
+                {talk.image ? (
+                  <img
+                    src={talk.image}
+                    alt={`${talk.title} presentation`}
+                    loading="lazy"
+                  />
+                ) : talk.videoId ? (
                   <>
                     <img
                       src={`https://img.youtube.com/vi/${talk.videoId}/mqdefault.jpg`}

@@ -25,6 +25,7 @@ const talks: TalkMetadata[] = [
     description:
       "Exposing data through MCP is straightforward. Deciding what an agent should be allowed to discover, infer, and act on is much harder. This session shares practical patterns for domain-specific MCP tools, bounded results, authentication, durable consent, and human approval as a real system boundary.",
     events: [],
+    imageURL: "/img/talks/beyond-crud-mcp-trust-consent.jpg",
     sessionURL:
       "https://sessionize.com/s/sajeetharan/beyond-crud-designing-mcp-tools-around-trust-and-c/188203",
     topics: ["AI", "MCP", "Developer Tools"],
@@ -34,6 +35,7 @@ const talks: TalkMetadata[] = [
     description:
       "A demo-driven session showing how MCP, tools, skills, and real database context can help coding agents understand data, generate queries, and take useful actions while keeping developers in control.",
     events: [],
+    imageURL: "/img/talks/agent-first-cosmos-db.jpg",
     sessionURL:
       "https://sessionize.com/s/sajeetharan/building-an-agent-first-experience-for-azure-cosmo/188204",
     topics: ["AI", "MCP", "Databases"],
