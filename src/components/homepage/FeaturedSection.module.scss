@@ -1,133 +1,208 @@
 @import "../../css/mixins";
 
 .featuredSection {
-  padding: 5rem 0;
+  padding: 7rem 0;
   background: var(--ifm-background-color);
 
   @include small-size {
-    padding: 3rem 0;
+    padding: 4.5rem 0;
+  }
+}
+
+.sectionHeader {
+  display: grid;
+  margin-bottom: 3.5rem;
+  grid-template-columns: minmax(0, 1.25fr) minmax(280px, 0.75fr);
+  column-gap: 5rem;
+  align-items: end;
+}
+
+.kicker {
+  grid-column: 1 / -1;
+  margin: 0 0 1rem;
+  color: #0e7490;
+  font-size: 0.72rem;
+  font-weight: 750;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+
+  [data-theme="dark"] & {
+    color: #67e8f9;
   }
 }
 
 .sectionTitle {
-  text-align: center;
-  font-size: 2.5rem;
-  font-weight: 800;
-  margin-bottom: 3rem;
-  color: var(--ifm-font-color-base);
-  font-family: "JetBrains Mono", monospace;
+  max-width: 730px;
+  margin: 0;
+  color: #0f172a;
+  font-family: "Inter", sans-serif;
+  font-size: clamp(2.35rem, 4.5vw, 4.25rem);
+  font-weight: 730;
+  letter-spacing: -0.05em;
+  line-height: 1.05;
 
-  @include small-size {
-    font-size: 2rem;
-    margin-bottom: 2rem;
+  [data-theme="dark"] & {
+    color: #f8fafc;
   }
 }
 
-/* Bento Grid */
+.sectionIntro {
+  margin: 0;
+  color: #64748b;
+  font-size: 1.02rem;
+  line-height: 1.7;
+
+  [data-theme="dark"] & {
+    color: #94a3b8;
+  }
+}
+
 .skillsGrid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: auto auto;
-  gap: 1.5rem;
+  border-top: 1px solid rgba(15, 23, 42, 0.12);
+  border-bottom: 1px solid rgba(15, 23, 42, 0.12);
+  grid-template-columns: repeat(3, 1fr);
 
-  @include small-size {
-    grid-template-columns: 1fr;
-    gap: 1.25rem;
+  [data-theme="dark"] & {
+    border-color: rgba(148, 163, 184, 0.15);
   }
 }
 
 .skillCard {
-  background: rgba(255, 255, 255, 0.7);
-  backdrop-filter: blur(12px);
-  border-radius: 1.25rem;
-  padding: 2rem;
-  border: 1px solid rgba(6, 182, 212, 0.12);
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  text-align: center;
   position: relative;
-  overflow: hidden;
+  display: flex;
+  min-height: 360px;
+  flex-direction: column;
+  padding: 2rem;
+  border-right: 1px solid rgba(15, 23, 42, 0.12);
+  transition: background 180ms ease;
 
-  &::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 3px;
-    background: linear-gradient(90deg, #06b6d4, #7c3aed);
-    opacity: 0;
-    transition: opacity 0.3s ease;
+  &:last-child {
+    border-right: 0;
   }
 
   &:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 16px 48px rgba(6, 182, 212, 0.15);
-    border-color: rgba(6, 182, 212, 0.4);
-
-    &::before {
-      opacity: 1;
-    }
+    background: #f4fafb;
   }
 
   [data-theme="dark"] & {
-    background: rgba(18, 18, 26, 0.7);
-    border: 1px solid rgba(34, 211, 238, 0.1);
+    border-color: rgba(148, 163, 184, 0.15);
 
     &:hover {
-      box-shadow: 0 16px 48px rgba(34, 211, 238, 0.1);
-      border-color: rgba(34, 211, 238, 0.3);
+      background: rgba(34, 211, 238, 0.045);
     }
-  }
-
-  @include small-size {
-    padding: 1.5rem;
   }
 }
 
-.skillIcon {
-  font-size: 3rem;
-  margin-bottom: 1rem;
+.cardNumber {
+  margin-bottom: 3rem;
+  color: #94a3b8;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.72rem;
+}
+
+.cardEyebrow {
+  margin: 0 0 0.6rem;
+  color: #0e7490;
+  font-size: 0.72rem;
+  font-weight: 750;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+
+  [data-theme="dark"] & {
+    color: #67e8f9;
+  }
 }
 
 .skillTitle {
-  font-size: 1.25rem;
+  margin: 0 0 1rem;
+  color: #0f172a;
+  font-family: "Inter", sans-serif;
+  font-size: 1.55rem;
   font-weight: 700;
-  margin-bottom: 1.25rem;
-  color: var(--ifm-font-color-base);
-  font-family: "JetBrains Mono", monospace;
+  letter-spacing: -0.03em;
+
+  [data-theme="dark"] & {
+    color: #f1f5f9;
+  }
 }
 
-.skillTags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  justify-content: center;
+.skillDescription {
+  margin: 0 0 2rem;
+  color: #64748b;
+  font-size: 0.96rem;
+  line-height: 1.68;
+
+  [data-theme="dark"] & {
+    color: #94a3b8;
+  }
 }
 
-.skillTag {
-  padding: 0.4rem 0.9rem;
-  background: rgba(6, 182, 212, 0.08);
-  color: #0891b2;
-  border-radius: 2rem;
-  font-size: 0.85rem;
-  font-weight: 500;
-  border: 1px solid rgba(6, 182, 212, 0.15);
-  transition: all 0.2s ease;
+.cardLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  margin-top: auto;
+  color: #0f172a;
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-decoration: none;
+
+  span {
+    transition: transform 180ms ease;
+  }
 
   &:hover {
-    background: rgba(6, 182, 212, 0.15);
-    border-color: rgba(6, 182, 212, 0.4);
-    transform: scale(1.05);
+    color: #0e7490;
+    text-decoration: none;
+
+    span {
+      transform: translateX(4px);
+    }
   }
 
   [data-theme="dark"] & {
-    background: rgba(34, 211, 238, 0.08);
-    color: #67e8f9;
-    border: 1px solid rgba(34, 211, 238, 0.15);
+    color: #e2e8f0;
 
     &:hover {
-      background: rgba(34, 211, 238, 0.15);
-      border-color: rgba(34, 211, 238, 0.4);
+      color: #67e8f9;
     }
+  }
+}
+
+@media (max-width: 996px) {
+  .sectionHeader {
+    grid-template-columns: 1fr;
+    row-gap: 1.5rem;
+  }
+
+  .skillsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .skillCard {
+    min-height: 0;
+    padding: 2rem 0;
+    border-right: 0;
+    border-bottom: 1px solid rgba(15, 23, 42, 0.12);
+
+    &:last-child {
+      border-bottom: 0;
+    }
+
+    &:hover {
+      background: transparent;
+    }
+  }
+
+  .cardNumber {
+    margin-bottom: 1.5rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skillCard,
+  .cardLink span {
+    transition: none;
   }
 }

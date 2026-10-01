@@ -100,7 +100,7 @@ export default function Home(): JSX.Element {
       <Head>
         <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
       </Head>
-      <Hero />
+      <Hero avatar={avatar} />
       <TechStack />
       <main>
         <ScrollReveal>
