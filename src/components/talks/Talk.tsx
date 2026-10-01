@@ -17,6 +17,7 @@ export interface TalkMetadata {
   recordingURL?: string;
   slidesURL?: string;
   repoURL?: string;
+  sessionURL?: string;
 }
 
 export interface EventMetadata {
@@ -32,6 +33,7 @@ const Talk: FunctionComponent<TalkMetadata> = ({
   recordingURL,
   slidesURL,
   repoURL,
+  sessionURL,
 }) => {
   const videoId = recordingURL ? getYouTubeVideoId(recordingURL) : null;
 
@@ -90,12 +92,23 @@ const Talk: FunctionComponent<TalkMetadata> = ({
               <a
                 href={repoURL}
                 target="_blank"
+                rel="noopener noreferrer"
                 className="button button--secondary button--outline"
               >
                 <span className="button__icon">
                   <RepositoryIcon />
                 </span>
                 See repository
+              </a>
+            )}
+            {sessionURL && (
+              <a
+                href={sessionURL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="button button--primary button--outline"
+              >
+                View session
               </a>
             )}
           </div>

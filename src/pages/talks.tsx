@@ -3,10 +3,6 @@ import Layout from "@theme/Layout";
 
 import Talk, { TalkMetadata } from "../components/talks/Talk";
 
-import BuildingGQLAPIForK8sResDescription from "./assets/talks/_building-gql-api-for-k8s-res.md";
-import DevTeamCollaborationGitBestPracticesDescription from "./assets/talks/_dev-team-collaboration-git-best-practices.md";
-import GraphQLInGoDescription from "./assets/talks/_graphql-in-go.md";
-
 const talks: TalkMetadata[] = [
   {
     title:
@@ -23,6 +19,24 @@ const talks: TalkMetadata[] = [
     recordingURL: "https://www.youtube.com/watch?v=GWid8x3i9Cc",
     slidesURL: "",
     topics: ["AI", "Databases"],
+  },
+  {
+    title: "Beyond CRUD: Designing MCP Tools Around Trust and Consent",
+    description:
+      "Exposing data through MCP is straightforward. Deciding what an agent should be allowed to discover, infer, and act on is much harder. This session shares practical patterns for domain-specific MCP tools, bounded results, authentication, durable consent, and human approval as a real system boundary.",
+    events: [],
+    sessionURL:
+      "https://sessionize.com/s/sajeetharan/beyond-crud-designing-mcp-tools-around-trust-and-c/188203",
+    topics: ["AI", "MCP", "Developer Tools"],
+  },
+  {
+    title: "Building an Agent-First Experience for Azure Cosmos DB",
+    description:
+      "A demo-driven session showing how MCP, tools, skills, and real database context can help coding agents understand data, generate queries, and take useful actions while keeping developers in control.",
+    events: [],
+    sessionURL:
+      "https://sessionize.com/s/sajeetharan/building-an-agent-first-experience-for-azure-cosmo/188204",
+    topics: ["AI", "MCP", "Databases"],
   },
   {
     title:
