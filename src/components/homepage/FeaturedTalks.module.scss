@@ -71,12 +71,69 @@
   width: 100%;
   aspect-ratio: 16 / 9;
   overflow: hidden;
+  background: #0f172a;
 
   img {
     width: 100%;
     height: 100%;
     object-fit: cover;
   }
+}
+
+.sessionVisual {
+  position: relative;
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1.5rem;
+  background: radial-gradient(
+      circle at 90% 10%,
+      rgba(34, 211, 238, 0.26),
+      transparent 45%
+    ),
+    linear-gradient(135deg, #0f172a, #102a34);
+  color: #f8fafc;
+
+  &::before {
+    position: absolute;
+    inset: 0;
+    background-image: linear-gradient(
+        rgba(148, 163, 184, 0.07) 1px,
+        transparent 1px
+      ),
+      linear-gradient(90deg, rgba(148, 163, 184, 0.07) 1px, transparent 1px);
+    background-size: 28px 28px;
+    content: "";
+  }
+
+  strong,
+  span {
+    position: relative;
+    z-index: 1;
+  }
+
+  strong {
+    max-width: 85%;
+    font-size: 1.1rem;
+    letter-spacing: -0.02em;
+    line-height: 1.35;
+  }
+}
+
+.sessionSource {
+  color: #67e8f9;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.sessionArrow {
+  position: absolute !important;
+  right: 1.35rem;
+  bottom: 1.2rem;
+  font-size: 1.35rem;
 }
 
 .playOverlay {

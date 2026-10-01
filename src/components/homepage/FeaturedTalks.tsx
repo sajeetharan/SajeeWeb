@@ -6,7 +6,8 @@ interface FeaturedTalk {
   title: string;
   event: string;
   date: string;
-  videoId: string;
+  videoId?: string;
+  topic?: string;
   url: string;
 }
 
@@ -18,6 +19,20 @@ const featuredTalks: FeaturedTalk[] = [
     date: "July 2026",
     videoId: "GWid8x3i9Cc",
     url: "https://www.youtube.com/watch?v=GWid8x3i9Cc",
+  },
+  {
+    title: "Beyond CRUD: Designing MCP Tools Around Trust and Consent",
+    event: "Sessionize",
+    date: "Latest session",
+    topic: "MCP · Trust · Consent",
+    url: "https://sessionize.com/s/sajeetharan/beyond-crud-designing-mcp-tools-around-trust-and-c/188203",
+  },
+  {
+    title: "Building an Agent-First Experience for Azure Cosmos DB",
+    event: "Sessionize",
+    date: "Latest session",
+    topic: "Agents · MCP · Cosmos DB",
+    url: "https://sessionize.com/s/sajeetharan/building-an-agent-first-experience-for-azure-cosmo/188204",
   },
   {
     title: "How MCP Unlocks Smarter Developer Workflows",
@@ -43,28 +58,41 @@ export const FeaturedTalks: React.FC = () => {
         <div className={styles.grid}>
           {featuredTalks.map((talk) => (
             <a
-              key={talk.videoId}
+              key={talk.url}
               href={talk.url}
               target="_blank"
               rel="noopener noreferrer"
               className={styles.card}
             >
               <div className={styles.thumbnail}>
-                <img
-                  src={`https://img.youtube.com/vi/${talk.videoId}/mqdefault.jpg`}
-                  alt={talk.title}
-                  loading="lazy"
-                />
-                <div className={styles.playOverlay}>
-                  <svg
-                    viewBox="0 0 24 24"
-                    fill="currentColor"
-                    width="48"
-                    height="48"
-                  >
-                    <path d="M8 5v14l11-7z" />
-                  </svg>
-                </div>
+                {talk.videoId ? (
+                  <>
+                    <img
+                      src={`https://img.youtube.com/vi/${talk.videoId}/mqdefault.jpg`}
+                      alt=""
+                      loading="lazy"
+                    />
+                    <div className={styles.playOverlay}>
+                      <svg
+                        viewBox="0 0 24 24"
+                        fill="currentColor"
+                        width="48"
+                        height="48"
+                        aria-hidden="true"
+                      >
+                        <path d="M8 5v14l11-7z" />
+                      </svg>
+                    </div>
+                  </>
+                ) : (
+                  <div className={styles.sessionVisual}>
+                    <span className={styles.sessionSource}>Sessionize</span>
+                    <strong>{talk.topic}</strong>
+                    <span className={styles.sessionArrow} aria-hidden="true">
+                      ↗
+                    </span>
+                  </div>
+                )}
               </div>
               <div className={styles.info}>
                 <h3 className={styles.talkTitle}>{talk.title}</h3>
