@@ -209,11 +209,10 @@ html[data-theme="dark"] {
   max-width: 1200px;
 }
 
-.blog-full-bleed {
-  position: relative;
-  z-index: 2;
-  width: calc(100vw - 2rem);
-  margin: 2rem 0 2.5rem calc(50% - 50vw + 1rem);
+.blog-media-frame {
+  width: 100%;
+  max-width: 100%;
+  margin: 2rem 0 2.5rem;
   overflow: hidden;
   border: 1px solid var(--ifm-color-emphasis-200);
   border-radius: 1rem;
@@ -233,11 +232,11 @@ html[data-theme="dark"] {
     width: 100%;
     height: auto;
     margin: 0;
+    object-fit: contain;
   }
 
   @media (max-width: 768px) {
-    width: calc(100vw - 1rem);
-    margin-left: calc(50% - 50vw + 0.5rem);
+    margin: 1.5rem 0 2rem;
     border-radius: 0.75rem;
   }
 }

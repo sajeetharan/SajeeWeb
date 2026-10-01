@@ -38,7 +38,7 @@ A GitHub profile can show repositories. Stack Overflow can show answers. A profe
 
 Those questions led me to build [DevGlobe](https://www.devglobe.dev), an open-source talent graph for humans and AI agents. What started as an interactive 3D map became a search, data, and consent problem—and Azure Cosmos DB became the foundation that connected those pieces.
 
-<div className="blog-full-bleed">
+<div className="blog-media-frame">
 
 [![DevGlobe connects developers and AI agents through an open talent graph](/img/blog/devglobe-product.png)](https://www.devglobe.dev/)
 
@@ -102,7 +102,7 @@ GitHub + Stack Overflow + public signals
            humans + AI agents
 ```
 
-<div className="blog-full-bleed">
+<div className="blog-media-frame">
 
 ![DevGlobe production architecture showing public signals, Azure Cosmos DB, Azure Functions, Blob Storage, Container Apps, humans, and AI agents](/img/blog/devglobe-architecture.svg)
 
@@ -162,7 +162,7 @@ Someone may search for:
 
 Text search is strong when the query contains names, locations, languages, or exact technologies. Vector search is useful when the intent is expressed through related concepts rather than matching terms. DevGlobe supports text, vector, and hybrid modes so those strengths can complement each other.
 
-<div className="blog-full-bleed">
+<div className="blog-media-frame">
 
 [![DevGlobe Find People experience with skill, location, and GitHub username search over an interactive globe](/img/blog/devglobe-search.png)](https://www.devglobe.dev/)
 
@@ -242,7 +242,7 @@ https://www.devglobe.dev/mcp
 
 The easy implementation would have been a generic Cosmos DB query tool. I deliberately did not build that.
 
-<div className="blog-full-bleed">
+<div className="blog-media-frame">
 
 [![DevGlobe MCP setup page for connecting GitHub Copilot and other AI agents](/img/blog/devglobe-mcp-agent-setup.png)](https://www.devglobe.dev/agents)
 
