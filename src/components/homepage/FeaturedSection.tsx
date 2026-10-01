@@ -1,45 +1,39 @@
 import React from "react";
-import clsx from "clsx";
+import Link from "@docusaurus/Link";
 import styles from "./FeaturedSection.module.scss";
 
 interface SkillCategory {
+  eyebrow: string;
   title: string;
-  icon: string;
-  skills: string[];
+  description: string;
+  link: string;
+  linkLabel: string;
 }
 
 const skillCategories: SkillCategory[] = [
   {
-    title: "Cloud & Infrastructure",
-    icon: "☁️",
-    skills: ["Azure", "Azure Cosmos DB", "Kubernetes", "Docker", "CI/CD"],
+    eyebrow: "Build",
+    title: "Developer-first products",
+    description:
+      "I translate real developer needs into tools, APIs, and experiences that make complex cloud and data workflows feel simple.",
+    link: "/projects",
+    linkLabel: "View selected projects",
   },
   {
-    title: "Development",
-    icon: "💻",
-    skills: ["JavaScript/TypeScript", "Python", "React", "Angular", "Node.js"],
+    eyebrow: "Teach",
+    title: "Practical technical guidance",
+    description:
+      "I share field-tested lessons about Azure, databases, developer tooling, and coding agents through articles and talks.",
+    link: "/blogs",
+    linkLabel: "Read the latest insights",
   },
   {
-    title: "Databases & Data",
-    icon: "🗄️",
-    skills: [
-      "NoSQL",
-      "SQL",
-      "Vector Search",
-      "Data Modeling",
-      "Performance Tuning",
-    ],
-  },
-  {
-    title: "AI & Innovation",
-    icon: "🤖",
-    skills: [
-      "AI/ML",
-      "Developer Tools",
-      "SDK Design",
-      "API Development",
-      "DevEx",
-    ],
+    eyebrow: "Grow",
+    title: "People and communities",
+    description:
+      "I mentor engineers and product leaders, contribute to open source, and create spaces where developers can learn together.",
+    link: "/mentored",
+    linkLabel: "Explore mentoring",
   },
 ];
 
@@ -47,20 +41,28 @@ export const FeaturedSection: React.FC = () => {
   return (
     <section className={styles.featuredSection}>
       <div className="container">
-        <h2 className={styles.sectionTitle}>Skills & Expertise</h2>
+        <div className={styles.sectionHeader}>
+          <p className={styles.kicker}>What I do</p>
+          <h2 className={styles.sectionTitle}>
+            Turning deep technology into developer impact.
+          </h2>
+          <p className={styles.sectionIntro}>
+            From product strategy to working code and community education, I
+            focus on the parts of technology that help developers move faster.
+          </p>
+        </div>
         <div className={styles.skillsGrid}>
           {skillCategories.map((category, idx) => (
-            <div key={idx} className={styles.skillCard}>
-              <div className={styles.skillIcon}>{category.icon}</div>
+            <article key={category.title} className={styles.skillCard}>
+              <div className={styles.cardNumber}>0{idx + 1}</div>
+              <p className={styles.cardEyebrow}>{category.eyebrow}</p>
               <h3 className={styles.skillTitle}>{category.title}</h3>
-              <div className={styles.skillTags}>
-                {category.skills.map((skill, skillIdx) => (
-                  <span key={skillIdx} className={styles.skillTag}>
-                    {skill}
-                  </span>
-                ))}
-              </div>
-            </div>
+              <p className={styles.skillDescription}>{category.description}</p>
+              <Link className={styles.cardLink} to={category.link}>
+                {category.linkLabel}
+                <span aria-hidden="true">→</span>
+              </Link>
+            </article>
           ))}
         </div>
       </div>

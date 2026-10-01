@@ -1,97 +1,74 @@
 @import "../../css/mixins";
 
-@keyframes scroll {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
-}
-
 .techSection {
-  padding: 2.5rem 0;
-  overflow: hidden;
-  background: var(--ifm-background-surface-color);
-  border-top: 1px solid rgba(6, 182, 212, 0.1);
-  border-bottom: 1px solid rgba(6, 182, 212, 0.1);
+  padding: 1.4rem 0;
+  border-top: 1px solid rgba(15, 23, 42, 0.08);
+  border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+  background: #0f172a;
 
   [data-theme="dark"] & {
-    border-top: 1px solid rgba(34, 211, 238, 0.1);
-    border-bottom: 1px solid rgba(34, 211, 238, 0.1);
+    border-color: rgba(148, 163, 184, 0.12);
+    background: #050a0e;
   }
 }
 
-.scrollContainer {
-  position: relative;
-  width: 100%;
-  mask-image: linear-gradient(
-    to right,
-    transparent,
-    black 10%,
-    black 90%,
-    transparent
-  );
-  -webkit-mask-image: linear-gradient(
-    to right,
-    transparent,
-    black 10%,
-    black 90%,
-    transparent
-  );
-}
-
-.scrollTrack {
+.content {
   display: flex;
+  align-items: center;
   gap: 2rem;
-  width: max-content;
-  animation: scroll 30s linear infinite;
+}
 
-  &:hover {
-    animation-play-state: paused;
-  }
+.label {
+  flex: 0 0 auto;
+  margin: 0;
+  color: #67e8f9;
+  font-size: 0.7rem;
+  font-weight: 750;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.techList {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  justify-content: space-between;
+  width: 100%;
 }
 
 .techItem {
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-  padding: 0.75rem 1.5rem;
-  background: rgba(255, 255, 255, 0.8);
-  backdrop-filter: blur(8px);
-  border-radius: 2rem;
-  border: 1px solid rgba(6, 182, 212, 0.15);
-  white-space: nowrap;
-  transition: all 0.3s ease;
-
-  &:hover {
-    border-color: rgba(6, 182, 212, 0.5);
-    transform: scale(1.05);
-    box-shadow: 0 4px 16px rgba(6, 182, 212, 0.15);
-  }
-
-  [data-theme="dark"] & {
-    background: rgba(18, 18, 26, 0.8);
-    border: 1px solid rgba(34, 211, 238, 0.15);
-
-    &:hover {
-      border-color: rgba(34, 211, 238, 0.5);
-      box-shadow: 0 4px 16px rgba(34, 211, 238, 0.1);
-    }
-  }
-}
-
-.techIcon {
-  font-size: 1.4rem;
-}
-
-.techName {
-  font-size: 0.95rem;
+  position: relative;
+  color: #d7e0ea;
+  font-size: 0.85rem;
   font-weight: 600;
-  font-family: "JetBrains Mono", monospace;
-  color: #334155;
+  white-space: nowrap;
 
-  [data-theme="dark"] & {
-    color: rgba(255, 255, 255, 0.9);
+  &:not(:last-child)::after {
+    position: absolute;
+    top: 50%;
+    right: clamp(-1.6rem, -2.4vw, -0.8rem);
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background: #475569;
+    content: "";
+  }
+}
+
+@media (max-width: 996px) {
+  .content {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0.9rem;
+  }
+
+  .techList {
+    flex-wrap: wrap;
+    gap: 0.65rem 1.25rem;
+    justify-content: flex-start;
+  }
+
+  .techItem:not(:last-child)::after {
+    right: -0.7rem;
   }
 }
