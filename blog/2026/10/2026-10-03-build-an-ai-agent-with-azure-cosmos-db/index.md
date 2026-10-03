@@ -1,5 +1,5 @@
 ---
-title: "From Zero to a Working AI Agent with Azure Cosmos DB"
+title: "Build an AI Agent with Azure Cosmos DB: End-to-End Guide"
 Date: "2026-10-03"
 slug: build-an-ai-agent-with-azure-cosmos-db
 authors:
@@ -21,17 +21,78 @@ keywords:
   - TypeScript AI agent
   - React AI application
   - multi-tenant AI agent
+  - production-ready AI agent
+image: /img/blog/build-ai-agent-cosmos-db-og.png
 utcDate: "2026-10-03T15:43:16.000Z"
-description: "A hands-on, end-to-end walkthrough of generating and running a TypeScript AI agent with durable memory, tenant isolation, diagnostics, tests, and an Azure production path."
+description: "Build a TypeScript AI agent with Azure Cosmos DB, React, durable memory, tenant isolation, diagnostics, tests, and a clear path from local development to Azure."
 ---
 
-Building an AI agent demo is easy. Building the application around that agent is the difficult part.
+import BlogPostSeo from "@site/src/components/BlogPostSeo";
+
+export const faqItems = [
+{
+question: "Can I build this Azure Cosmos DB AI agent without an Azure subscription?",
+answer:
+"Yes. The default local path uses a deterministic mock model and either in-memory storage or the Azure Cosmos DB Linux emulator, so no Azure subscription or model API key is required.",
+},
+{
+question: "Does the local sample require an AI model API key?",
+answer:
+"No. The mock provider produces deterministic development responses. You can later configure Azure OpenAI, OpenAI, or Ollama without changing the application contracts.",
+},
+{
+question: "How does the sample isolate agent memory?",
+answer:
+"Authentication context carries tenant and user identifiers through storage and retrieval. A memory saved for one user is not returned to another user, even within the same tenant.",
+},
+{
+question: "Is the Cosmos DB emulator equivalent to the Azure service?",
+answer:
+"No. It is ideal for local development, but request charges, vector indexing, performance, and hierarchical partition behavior can differ from Azure Cosmos DB.",
+},
+{
+question: "How do I move the generated agent to Azure?",
+answer:
+"Configure Microsoft Entra ID, an Azure OpenAI deployment, and the required azd environment values. Run create-cosmos-agent prepare-azure before azd up to validate readiness.",
+},
+];
+
+<BlogPostSeo
+title="Build an AI Agent with Azure Cosmos DB | Sajeetharan"
+headline="Build an AI Agent with Azure Cosmos DB: End-to-End Guide"
+description="Build a TypeScript AI agent with Azure Cosmos DB, React, durable memory, tenant isolation, diagnostics, tests, and a clear path from local development to Azure."
+path="/blogs/build-an-ai-agent-with-azure-cosmos-db"
+image="/img/blog/build-ai-agent-cosmos-db-og.png"
+imageAlt="Build an AI Agent with Azure Cosmos DB hands-on guide"
+datePublished="2026-10-03T15:43:16.000Z"
+dateModified="2026-10-03T18:30:00.000Z"
+keywords={[
+"Azure Cosmos DB",
+"AI agent",
+"TypeScript",
+"React",
+"agent memory",
+"Cosmos DB emulator",
+"multi-tenant AI agent",
+]}
+faq={faqItems}
+/>
+
+Building an AI agent with Azure Cosmos DB is easy to demonstrate. Building the secure, observable, and deployable application around that agent is the difficult part.
 
 A real customer-facing agent needs more than a prompt and a model endpoint. It needs durable memory, tenant isolation, authentication, citations, diagnostics, tests, deployment infrastructure, and a safe way to move from a local prototype to production.
 
 I wanted to see how much of that work could be removed from the critical path, so I tried the [`create-cosmos-agent`](https://github.com/sajeetharan/cosmos-agent-starter) starter from beginning to end. I generated a customer-support agent, ran it against the Azure Cosmos DB Linux emulator, stored a customer preference, retrieved it through the chat experience, verified user isolation, inspected diagnostics, and ran the complete validation suite.
 
 The result was a working full-stack application without an Azure subscription, model API key, or cloud resource.
+
+![Build an AI agent with Azure Cosmos DB using React, TypeScript, durable memory, tenant isolation, and the local emulator](/img/blog/build-ai-agent-cosmos-db-og.png)
+
+:::tip Quick answer
+
+`create-cosmos-agent` generates a React and TypeScript agent application with memory, tenant isolation, citations, diagnostics, tests, and Azure infrastructure. The default local path needs no Azure subscription or model key; choose the Cosmos DB emulator when you want durable local data.
+
+:::
 
 <!-- truncate -->
 
@@ -356,6 +417,28 @@ There are also practical caveats:
 
 Those are reasonable boundaries. The goal of a starter should be to remove repetitive work while keeping important production decisions explicit.
 
+## Frequently asked questions
+
+### Can I build this Azure Cosmos DB AI agent without an Azure subscription?
+
+Yes. The default local path uses a deterministic mock model and either in-memory storage or the Azure Cosmos DB Linux emulator. You do not need an Azure subscription or model API key for the first run.
+
+### Does the local sample require an AI model API key?
+
+No. The mock provider produces deterministic development responses. You can later configure Azure OpenAI, OpenAI, or Ollama without changing the application contracts.
+
+### How does the sample isolate agent memory?
+
+Authentication context carries tenant and user identifiers through storage and retrieval. A memory saved for one user is not returned to another user, even within the same tenant.
+
+### Is the Cosmos DB emulator equivalent to the Azure service?
+
+No. It is ideal for local development, but request charges, vector indexing, performance, and hierarchical partition behavior can differ from Azure Cosmos DB. Test representative workloads against Azure before making production capacity decisions.
+
+### How do I move the generated agent to Azure?
+
+Configure Microsoft Entra ID, an Azure OpenAI deployment, and the required `azd` environment values. Run `create-cosmos-agent prepare-azure` before `azd up` to validate readiness.
+
 ## Clean up
 
 Stop the development process with `Ctrl+C`, then stop and remove the emulator container:
@@ -385,3 +468,9 @@ npm run dev
 Open `http://localhost:5173`, save a preference, ask the agent to recall it, switch users, inspect the citation, and run the validation commands.
 
 That short workflow demonstrates the bigger idea behind the project: start with a zero-cost local agent, preserve the application contracts, and move deliberately toward a secure Azure deployment.
+
+## Related reading
+
+- [Building DevGlobe with Azure Cosmos DB and AI Agents](/blogs/building-devglobe-with-azure-cosmos-db)
+- [Turning Coding Agents into Azure Cosmos DB Experts with Scott Hanselman](/blogs/2026/07/10/2026/07/turning-coding-agents-cosmosdb-expert-scott-hanselman)
+- [What Six Months of Building AI Agent Skills Taught Me About Writing for Machines](/blogs/building-skills-for-ai-coding-agents)

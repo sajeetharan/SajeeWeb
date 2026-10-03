@@ -13,6 +13,11 @@ This is the agent-readable index for https://www.sajeetharan.dev. Public resourc
 - [Talks](https://www.sajeetharan.dev/talks): Conference sessions and recordings.
 - [Awards](https://www.sajeetharan.dev/awards): Professional and community recognition.
 
+## Featured technical guides
+
+- [Build an AI Agent with Azure Cosmos DB: End-to-End Guide](https://www.sajeetharan.dev/blogs/build-an-ai-agent-with-azure-cosmos-db): A tested TypeScript and React walkthrough covering local development, durable agent memory, tenant isolation, diagnostics, validation, and deployment to Azure.
+- [Azure Cosmos DB Agent Starter](https://github.com/sajeetharan/cosmos-agent-starter): Source code, scenarios, local emulator support, and production infrastructure used in the guide.
+
 ## Machine-readable resources
 
 - [Sitemap](https://www.sajeetharan.dev/sitemap.xml)
