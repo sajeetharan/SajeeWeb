@@ -29,7 +29,7 @@ Building an AI agent demo is easy. Building the application around that agent is
 
 A real customer-facing agent needs more than a prompt and a model endpoint. It needs durable memory, tenant isolation, authentication, citations, diagnostics, tests, deployment infrastructure, and a safe way to move from a local prototype to production.
 
-I wanted to see how much of that work could be removed from the critical path, so I tried the [`create-cosmos-agent`](https://github.com/AzureCosmosDB/azure-cosmos-agent-starter) starter from beginning to end. I generated a customer-support agent, ran it against the Azure Cosmos DB Linux emulator, stored a customer preference, retrieved it through the chat experience, verified user isolation, inspected diagnostics, and ran the complete validation suite.
+I wanted to see how much of that work could be removed from the critical path, so I tried the [`create-cosmos-agent`](https://github.com/sajeetharan/cosmos-agent-starter) starter from beginning to end. I generated a customer-support agent, ran it against the Azure Cosmos DB Linux emulator, stored a customer preference, retrieved it through the chat experience, verified user isolation, inspected diagnostics, and ran the complete validation suite.
 
 The result was a working full-stack application without an Azure subscription, model API key, or cloud resource.
 
@@ -370,9 +370,9 @@ The generated data remains local to the emulator container lifecycle. If you use
 
 Start with the repository and end-to-end demo:
 
-- [Azure Cosmos DB Agent Starter on GitHub](https://github.com/AzureCosmosDB/azure-cosmos-agent-starter)
-- [Watch the complete end-to-end video](https://raw.githubusercontent.com/AzureCosmosDB/azure-cosmos-agent-starter/main/docs/media/create-cosmos-agent-end-to-end.mp4)
-- [Download the captioned walkthrough](https://github.com/AzureCosmosDB/azure-cosmos-agent-starter/blob/main/docs/media/create-cosmos-agent-end-to-end.srt)
+- [Azure Cosmos DB Agent Starter on GitHub](https://github.com/sajeetharan/cosmos-agent-starter)
+- [Watch the complete end-to-end video](https://raw.githubusercontent.com/sajeetharan/cosmos-agent-starter/main/docs/media/create-cosmos-agent-end-to-end.mp4)
+- [Download the captioned walkthrough](https://github.com/sajeetharan/cosmos-agent-starter/blob/main/docs/media/create-cosmos-agent-end-to-end.srt)
 
 Then generate an application:
 
