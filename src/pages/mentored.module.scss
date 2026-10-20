@@ -7,7 +7,7 @@
 
 .header {
   text-align: center;
-  margin-bottom: 4rem;
+  margin-bottom: 3rem;
 
   h1 {
     font-size: 2.5rem;
@@ -21,6 +21,13 @@
   }
 }
 
+.eyebrow {
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--ifm-color-emphasis-700);
+}
+
 .subtitle {
   font-size: 1.15rem;
   color: var(--ifm-color-emphasis-700);
@@ -29,75 +36,94 @@
   line-height: 1.6;
 }
 
-.platformGrid {
+.sectionHeader {
+  max-width: 700px;
+  margin: 0 auto 2rem;
+  text-align: center;
+
+  p {
+    color: var(--ifm-color-emphasis-700);
+  }
+}
+
+.serviceGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-  gap: 2.5rem;
-  max-width: 900px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem;
+  max-width: 1000px;
   margin: 0 auto;
 
   @include small-size {
     grid-template-columns: 1fr;
-    gap: 2rem;
   }
 }
 
-.platformCard {
+.serviceCard {
   background: var(--ifm-background-surface-color);
   border-radius: 1rem;
-  overflow: hidden;
   border: 1px solid var(--ifm-color-emphasis-200);
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-  text-decoration: none;
-  color: inherit;
-  display: block;
-
-  &:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
-    text-decoration: none;
-    color: inherit;
-  }
-}
-
-.imageContainer {
-  width: 100%;
-  height: 220px;
-  overflow: hidden;
-  background: linear-gradient(135deg, #f8fafc, #e2e8f0);
-
-  [data-theme="dark"] & {
-    background: linear-gradient(135deg, #1e293b, #334155);
-  }
-}
-
-.platformImage {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-.cardContent {
   padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+
+  h3 {
+    font-size: 1.35rem;
+    line-height: 1.4;
+  }
 }
 
-.platformName {
-  font-size: 1.5rem;
-  font-weight: 700;
+.serviceMeta {
+  font-size: 0.85rem;
+  color: var(--ifm-color-emphasis-700);
   margin-bottom: 0.75rem;
 }
 
-.platformDescription {
+.serviceDescription {
   font-size: 0.95rem;
   color: var(--ifm-color-emphasis-700);
   line-height: 1.6;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
 }
 
 .cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 0.75rem 1rem;
+  margin-top: auto;
+  border-radius: var(--ifm-global-radius);
+  background: var(--ifm-color-primary);
+  color: var(--ifm-color-black);
   font-size: 1rem;
   font-weight: 600;
-  color: var(--ifm-color-primary);
+  text-align: center;
+
+  &:hover {
+    background: var(--ifm-color-primary-light);
+    color: var(--ifm-color-black);
+    text-decoration: none;
+  }
+}
+
+.mentoredPage a:focus-visible {
+  outline: 3px solid var(--ifm-font-color-base);
+  outline-offset: 4px;
+}
+
+.footer {
+  margin-top: 2.5rem;
+  text-align: center;
+
+  p {
+    margin-bottom: 0.25rem;
+  }
+
+  a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    color: var(--ifm-font-color-base);
+    text-decoration: underline;
+  }
 }

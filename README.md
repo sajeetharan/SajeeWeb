@@ -42,6 +42,18 @@ Three highlights appear initially; visitors can filter by platform, expand long
 reviews, or show all six. Original reviews and mentoring impact remain linked
 on each platform, and the booking link leads to `/mentored`.
 
+### Mentoring services
+
+The Get Mentored page (`src/pages/mentored.tsx`) promotes Topmate exclusively,
+with direct links to all five services: 1:1 Mentorship, PM Interview Prep,
+Pathway to Product Management, Ask me anything, and Discovery Call. Paid
+services appear before the introductory discovery call. Service names, formats,
+durations, and links were verified against the public Topmate profile on
+October 20, 2026; keep them aligned when offerings change. Pricing and
+availability are shown on Topmate rather than duplicated here.
+ADPList remains a source for existing homepage testimonials, not a booking
+option on the Get Mentored page.
+
 ### Homepage navigation and events
 
 The homepage uses sticky section shortcuts, concise work and talk previews, and
