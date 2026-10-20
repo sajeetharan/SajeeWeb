@@ -32,6 +32,16 @@ $ npm run build
 
 This command generates static content into the `build` directory and can be served using any static contents hosting service.
 
+### Mentoring reviews
+
+The homepage review cards in `src/components/homepage/Reviews.tsx` contain
+verbatim excerpts from the public ADPList and Topmate profiles (verified
+October 20, 2026). Keep author names, full text, and source links aligned with
+the originals when updating them. These are curated snapshots, not a live feed.
+Three highlights appear initially; visitors can filter by platform, expand long
+reviews, or show all six. Original reviews and mentoring impact remain linked
+on each platform, and the booking link leads to `/mentored`.
+
 ### Deployment
 
 The static site is deployed from `main` with GitHub Pages. The optional
