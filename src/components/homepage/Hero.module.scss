@@ -3,7 +3,7 @@
 .heroBanner {
   position: relative;
   overflow: hidden;
-  padding: 7.5rem 0 2.5rem;
+  padding: 3rem 0 1.75rem;
   background: radial-gradient(
       circle at 82% 15%,
       rgba(6, 182, 212, 0.14),
@@ -43,7 +43,7 @@
   }
 
   @include small-size {
-    padding: 4.5rem 0 2rem;
+    padding: 2rem 0 1.5rem;
   }
 }
 
@@ -58,6 +58,10 @@
 
 .heroCopy {
   max-width: 760px;
+}
+
+.mobilePortrait {
+  display: none;
 }
 
 .personName {
@@ -102,7 +106,7 @@
   margin: 0 0 1.5rem;
   color: #0f172a;
   font-family: "Inter", sans-serif;
-  font-size: clamp(3.25rem, 6.8vw, 6.5rem);
+  font-size: clamp(2.75rem, 4.6vw, 4.5rem);
   font-weight: 750;
   letter-spacing: -0.065em;
   line-height: 0.98;
@@ -204,7 +208,7 @@
 
 .visual {
   position: relative;
-  max-width: 430px;
+  max-width: 280px;
   justify-self: end;
 }
 
@@ -283,8 +287,8 @@
   position: relative;
   z-index: 1;
   display: grid;
-  margin-top: 6rem;
-  padding-top: 1.75rem;
+  margin-top: 2rem;
+  padding-top: 1.25rem;
   border-top: 1px solid rgba(15, 23, 42, 0.1);
   grid-template-columns: repeat(4, 1fr);
 
@@ -340,7 +344,7 @@
   }
 
   .title {
-    font-size: clamp(3.25rem, 7vw, 5rem);
+    font-size: clamp(2.75rem, 5vw, 3.5rem);
   }
 }
 
@@ -350,18 +354,48 @@
   }
 
   .title {
-    font-size: clamp(3rem, 14vw, 4.5rem);
+    clear: both;
+    font-size: clamp(2.5rem, 9vw, 3.5rem);
+    margin-bottom: 1rem;
+    line-height: 1.05;
+  }
+
+  .mobilePortrait {
+    display: block;
+    float: right;
+    width: 80px;
+    height: 80px;
+    margin: 0 0 1rem 1rem;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center top;
+  }
+
+  .eyebrow {
+    display: flex;
+    font-size: 0.7rem;
+    letter-spacing: 0.03em;
+    margin-bottom: 1rem;
+  }
+
+  .statusDot {
+    flex-shrink: 0;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1.25rem;
   }
 
   .visual {
-    width: min(88%, 430px);
-    justify-self: center;
+    display: none;
   }
 
   .proofBar {
-    margin-top: 4.5rem;
+    margin-top: 1.5rem;
     grid-template-columns: repeat(2, 1fr);
-    row-gap: 1.5rem;
+    gap: 1rem;
   }
 
   .proofItem {
@@ -390,18 +424,12 @@
   }
 
   .proofBar {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .proofItem {
-    padding: 0 0 1rem;
+    padding: 0;
     border-right: 0;
-    border-bottom: 1px solid rgba(15, 23, 42, 0.1);
-
-    &:last-child {
-      padding-bottom: 0;
-      border-bottom: 0;
-    }
   }
 }
 

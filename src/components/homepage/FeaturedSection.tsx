@@ -39,12 +39,17 @@ const skillCategories: SkillCategory[] = [
 
 export const FeaturedSection: React.FC = () => {
   return (
-    <section className={styles.featuredSection}>
+    <section
+      id="work"
+      tabIndex={-1}
+      className={styles.featuredSection}
+      aria-labelledby="work-title"
+    >
       <div className="container">
         <div className={styles.sectionHeader}>
           <p className={styles.kicker}>What I do</p>
-          <h2 className={styles.sectionTitle}>
-            Turning deep technology into developer impact.
+          <h2 id="work-title" className={styles.sectionTitle}>
+            Build. Learn. Grow.
           </h2>
           <p className={styles.sectionIntro}>
             From product strategy to working code and community education, I
@@ -52,9 +57,8 @@ export const FeaturedSection: React.FC = () => {
           </p>
         </div>
         <div className={styles.skillsGrid}>
-          {skillCategories.map((category, idx) => (
+          {skillCategories.map((category) => (
             <article key={category.title} className={styles.skillCard}>
-              <div className={styles.cardNumber}>0{idx + 1}</div>
               <p className={styles.cardEyebrow}>{category.eyebrow}</p>
               <h3 className={styles.skillTitle}>{category.title}</h3>
               <p className={styles.skillDescription}>{category.description}</p>

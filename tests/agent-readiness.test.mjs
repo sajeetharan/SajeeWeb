@@ -40,6 +40,55 @@ test("mentoring reviews render compact, source-linked highlights without embeds"
   assert.doesNotMatch(section, /<iframe\b/);
 });
 
+test("homepage offers direct section links and progressive disclosure", async () => {
+  const html = await readFile("build/index.html", "utf8");
+  assert.match(html, /<nav\b[^>]*aria-label="Homepage sections"/);
+  for (const section of ["work", "mentoring", "talks", "about", "connect"]) {
+    assert.ok(
+      html.includes(`href="#${section}"`),
+      `missing ${section} shortcut`,
+    );
+    assert.ok(html.includes(`id="${section}"`), `missing ${section} target`);
+  }
+  assert.match(html, /<details\b[^>]*><summary>Read my full story<\/summary>/);
+  const biography = html.match(/<details\b[^>]*>/)?.[0];
+  assert.ok(
+    biography && !/\bopen\b/.test(biography),
+    "biography starts collapsed",
+  );
+  const main = html.match(/<main\b[\s\S]*?<\/main>/)?.[0];
+  assert.ok(main);
+  assert.doesNotMatch(main, /opacity:0/);
+  assert.ok(
+    html.indexOf('id="mentoring"') < html.indexOf('id="about"'),
+    "reviews should appear before the full biography",
+  );
+  const recentTalks = html.match(
+    /<section\b[^>]*id="talks"[\s\S]*?<\/section>/,
+  )?.[0];
+  assert.ok(recentTalks);
+  assert.equal(
+    (recentTalks.match(/presentation"|mqdefault\.jpg/g) ?? []).length,
+    3,
+  );
+  assert.match(recentTalks, /href="\/talks"/);
+});
+
+test("upcoming conference details stay consistent on homepage and talks page", async () => {
+  for (const file of ["build/index.html", "build/talks/index.html"]) {
+    const html = await readFile(file, "utf8");
+    assert.match(html, /WeAreDevelopers Conference India/);
+    assert.match(html, /datetime="2026-11-25"/i);
+    assert.match(html, /datetime="2026-11-26"/i);
+    assert.match(html, /Bengaluru, India/);
+    assert.match(
+      html,
+      /href="https:\/\/www\.wearedevelopers\.com\/conference-india\/agenda"/,
+    );
+    assert.doesNotMatch(html, /Azure Cosmos DB Live — August 2026/);
+  }
+});
+
 test("build contains recovery, developer, and Markdown artifacts", async () => {
   const notFound = await readFile("build/404.html", "utf8");
   const developerPortal = await readFile("build/developers/index.html", "utf8");

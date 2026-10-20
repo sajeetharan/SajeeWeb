@@ -42,6 +42,15 @@ Three highlights appear initially; visitors can filter by platform, expand long
 reviews, or show all six. Original reviews and mentoring impact remain linked
 on each platform, and the booking link leads to `/mentored`.
 
+### Homepage navigation and events
+
+The homepage uses sticky section shortcuts, concise work and talk previews, and
+a native expandable biography to keep the initial page compact without hiding
+content behind JavaScript. The complete talk collection remains at `/talks`.
+Upcoming event details are shared by the homepage and talks page through
+`src/components/talks/UpcomingEvents.tsx`. Keep dates and the agenda link current;
+only add session titles or times when confirmed by the organizer.
+
 ### Deployment
 
 The static site is deployed from `main` with GitHub Pages. The optional

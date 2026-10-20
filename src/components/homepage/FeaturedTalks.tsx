@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "@docusaurus/Link";
+import { UpcomingEvents } from "../talks/UpcomingEvents";
 import styles from "./FeaturedTalks.module.scss";
 
 interface FeaturedTalk {
@@ -55,11 +56,19 @@ const featuredTalks: FeaturedTalk[] = [
 
 export const FeaturedTalks: React.FC = () => {
   return (
-    <section className={styles.section}>
+    <section
+      id="talks"
+      tabIndex={-1}
+      className={styles.section}
+      aria-labelledby="recent-talks-title"
+    >
       <div className="container">
-        <h2 className={styles.sectionTitle}>Recent Talks</h2>
+        <UpcomingEvents />
+        <h2 id="recent-talks-title" className={styles.sectionTitle}>
+          Recent Talks
+        </h2>
         <div className={styles.grid}>
-          {featuredTalks.map((talk) => (
+          {featuredTalks.slice(0, 3).map((talk) => (
             <a
               key={talk.url}
               href={talk.url}

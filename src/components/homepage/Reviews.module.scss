@@ -1,5 +1,6 @@
 .section {
-  padding: 4rem 0;
+  padding: 2.5rem 0;
+  scroll-margin-top: calc(var(--ifm-navbar-height) + 5rem);
   background: var(--ifm-background-surface-color);
 
   button,
@@ -92,7 +93,7 @@
 
 .card {
   min-width: 0;
-  padding: 1.5rem;
+  padding: 1.15rem;
   background: var(--ifm-background-color);
   border: 1px solid var(--ifm-color-emphasis-300);
   border-radius: 1rem;
@@ -203,6 +204,6 @@
   }
 
   .section {
-    padding: 3rem 0;
+    padding: 2rem 0;
   }
 }

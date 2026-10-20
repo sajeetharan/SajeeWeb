@@ -1,11 +1,12 @@
 @import "../../css/mixins";
 
 .section {
-  padding: 5rem 0;
+  padding: 2.5rem 0;
+  scroll-margin-top: calc(var(--ifm-navbar-height) + 5rem);
   background: var(--ifm-background-color);
 
   @include small-size {
-    padding: 3rem 0;
+    padding: 2rem 0;
   }
 }
 
@@ -13,13 +14,13 @@
   text-align: center;
   font-size: 2.5rem;
   font-weight: 800;
-  margin-bottom: 3rem;
+  margin-bottom: 1.5rem;
   color: var(--ifm-font-color-base);
   font-family: "JetBrains Mono", monospace;
 
   @include small-size {
     font-size: 2rem;
-    margin-bottom: 2rem;
+    margin-bottom: 1.25rem;
   }
 }
 
@@ -52,6 +53,11 @@
 
     .playOverlay {
       opacity: 1;
+    }
+
+    &:focus-visible {
+      outline: 3px solid var(--ifm-font-color-base);
+      outline-offset: 4px;
     }
   }
 
@@ -165,6 +171,8 @@
 
 .meta {
   display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 0.5rem;
   justify-content: space-between;
   font-size: 0.8rem;
   color: var(--ifm-color-emphasis-600);
@@ -172,5 +180,34 @@
 
 .viewAll {
   text-align: center;
-  margin-top: 2rem;
+  margin-top: 1.5rem;
+}
+
+@media (max-width: 996px) {
+  .card {
+    display: grid;
+    grid-template-columns: 100px minmax(0, 1fr);
+    align-items: center;
+  }
+
+  .thumbnail {
+    height: 100%;
+    aspect-ratio: auto;
+    min-height: 110px;
+  }
+
+  .info {
+    padding: 0.85rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card,
+  .playOverlay {
+    transition: none;
+  }
+
+  .card:hover {
+    transform: none;
+  }
 }

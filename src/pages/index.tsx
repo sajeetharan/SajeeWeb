@@ -12,8 +12,8 @@ import { Hero } from "../components/homepage/Hero";
 import { Reviews } from "../components/homepage/Reviews";
 import { Contributions } from "../components/homepage/Contributions";
 import { TechStack } from "../components/homepage/TechStack";
-import { ScrollReveal } from "../components/homepage/ScrollReveal";
 import { FeaturedTalks } from "../components/homepage/FeaturedTalks";
+import styles from "./index.module.scss";
 
 import avatar from "./assets/index/avatar.jpg";
 import AboutMeDesc from "./assets/index/_about-me.md";
@@ -100,29 +100,30 @@ export default function Home(): JSX.Element {
       <Head>
         <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
       </Head>
+      <nav className={styles.sectionNav} aria-label="Homepage sections">
+        <div className={`container ${styles.sectionLinks}`}>
+          <a href="#work">Work</a>
+          <a href="#mentoring">Mentoring</a>
+          <a href="#talks">Talks</a>
+          <a href="#about">About</a>
+          <a href="#connect">Connect</a>
+        </div>
+      </nav>
       <Hero avatar={avatar} />
       <TechStack />
       <main>
-        <ScrollReveal>
-          <AboutMe avatar={avatar} descriptionComponent={<AboutMeDesc />} />
-        </ScrollReveal>
-        <ScrollReveal delay={100}>
-          <FeaturedSection />
-        </ScrollReveal>
-        <ScrollReveal delay={150}>
-          <FeaturedTalks />
-        </ScrollReveal>
-        <ScrollReveal delay={175}>
-          <Reviews />
-        </ScrollReveal>
-        <ScrollReveal delay={200}>
-          <Contributions />
-        </ScrollReveal>
-        <ScrollReveal delay={250}>
-          <div className="container padding-vert--lg">
-            <SocialLinks data={socialLinks} />
-          </div>
-        </ScrollReveal>
+        <FeaturedSection />
+        <Reviews />
+        <FeaturedTalks />
+        <AboutMe descriptionComponent={<AboutMeDesc />} />
+        <Contributions />
+        <section
+          id="connect"
+          tabIndex={-1}
+          className={`container padding-vert--lg ${styles.connect}`}
+        >
+          <SocialLinks data={socialLinks} />
+        </section>
       </main>
     </Layout>
   );

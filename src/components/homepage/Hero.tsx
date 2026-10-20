@@ -16,6 +16,13 @@ export const Hero: React.FC<HeroProps> = ({ avatar }) => {
       <div className="container">
         <div className={styles.heroContent}>
           <div className={styles.heroCopy}>
+            <img
+              src={avatarSrc}
+              className={styles.mobilePortrait}
+              alt=""
+              width="80"
+              height="80"
+            />
             <h1 className={styles.personName}>Sajeetharan Sinnathurai</h1>
             <div className={styles.eyebrow}>
               <span className={styles.statusDot} aria-hidden="true" />
@@ -55,7 +62,7 @@ export const Hero: React.FC<HeroProps> = ({ avatar }) => {
                 </svg>
               </Link>
               <Link className={styles.secondaryCta} to="/mentored">
-                Work with me
+                Book mentoring
               </Link>
             </div>
             <p className={styles.availability}>
@@ -83,7 +90,7 @@ export const Hero: React.FC<HeroProps> = ({ avatar }) => {
 
         <div className={styles.proofBar} aria-label="Career highlights">
           <div className={styles.proofItem}>
-            <strong>13+ years</strong>
+            <strong>16+ years</strong>
             <span>building for developers</span>
           </div>
           <div className={styles.proofItem}>

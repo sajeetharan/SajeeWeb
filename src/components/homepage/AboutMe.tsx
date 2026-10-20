@@ -1,86 +1,39 @@
-import React, { FunctionComponent } from "react";
-import clsx from "clsx";
-import Image from "@theme/IdealImage";
+import React from "react";
 import styles from "./AboutMe.module.scss";
 
 export interface AboutMeProps {
-  avatar: string;
   descriptionComponent: React.ReactNode;
 }
 
-export const AboutMe: FunctionComponent<AboutMeProps> = ({
-  avatar,
-  descriptionComponent,
-}) => {
+export function AboutMe({ descriptionComponent }: AboutMeProps): JSX.Element {
   return (
-    <section className={styles.aboutSection}>
-      <div className={"container"}>
-        <h2 className={styles.sectionTitle}>About Me</h2>
+    <section
+      id="about"
+      tabIndex={-1}
+      className={styles.aboutSection}
+      aria-labelledby="about-title"
+    >
+      <div className="container">
         <div className={styles.aboutCard}>
-          <div className="row">
-            <div className={clsx("col col--7", styles.descriptionCol)}>
-              <div className={styles.terminal}>
-                <div className={styles.terminalHeader}>
-                  <div className={styles.terminalDots}>
-                    <span className={styles.dotRed}></span>
-                    <span className={styles.dotYellow}></span>
-                    <span className={styles.dotGreen}></span>
-                  </div>
-                  <span className={styles.terminalTitle}>~/about-me</span>
-                </div>
-                <div className={styles.terminalBody}>
-                  <div className={styles.terminalLine}>
-                    <span className={styles.prompt}>❯</span>
-                    <span className={styles.command}>cat intro.md</span>
-                  </div>
-                  <div className={styles.terminalOutput}>
-                    {descriptionComponent}
-                  </div>
-                </div>
-              </div>
-              <div className={styles.highlights}>
-                <div className={styles.highlightItem}>
-                  <div className={styles.highlightIcon}>🏆</div>
-                  <div>
-                    <div className={styles.highlightTitle}>Top Contributor</div>
-                    <div className={styles.highlightText}>
-                      #1 Stack Overflow contributor from Sri Lanka
-                    </div>
-                  </div>
-                </div>
-                <div className={styles.highlightItem}>
-                  <div className={styles.highlightIcon}>🎯</div>
-                  <div>
-                    <div className={styles.highlightTitle}>Expertise</div>
-                    <div className={styles.highlightText}>
-                      Cloud Platforms, Databases, Developer Tools
-                    </div>
-                  </div>
-                </div>
-                <div className={styles.highlightItem}>
-                  <div className={styles.highlightIcon}>🌍</div>
-                  <div>
-                    <div className={styles.highlightTitle}>Global Impact</div>
-                    <div className={styles.highlightText}>
-                      International speaker & OSS contributor
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className={clsx("col col--5", styles.avatarContainer)}>
-              <div className={styles.avatarWrapper}>
-                <div className={styles.avatar}>
-                  <Image img={avatar} />
-                </div>
-                <div className={styles.avatarBadge}>
-                  <span>🌟 GDE & MVP</span>
-                </div>
-              </div>
-            </div>
+          <div>
+            <h2 id="about-title">About Me</h2>
+            <p className={styles.intro}>
+              Developer turned product leader. Community builder at heart.
+            </p>
+          </div>
+          <div>
+            <p>
+              I&apos;m a Principal Product Manager at Microsoft, building
+              developer experiences around Azure Cosmos DB and AI. I share what
+              I learn through open source, speaking, and mentoring.
+            </p>
+            <details className={styles.biography}>
+              <summary>Read my full story</summary>
+              <div className={styles.fullStory}>{descriptionComponent}</div>
+            </details>
           </div>
         </div>
       </div>
     </section>
   );
-};
+}
