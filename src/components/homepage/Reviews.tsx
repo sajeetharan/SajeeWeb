@@ -120,6 +120,8 @@ export function Reviews(): JSX.Element {
 
   return (
     <section
+      id="mentoring"
+      tabIndex={-1}
       className={styles.section}
       aria-labelledby="mentoring-reviews-title"
     >

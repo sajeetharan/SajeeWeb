@@ -1,19 +1,20 @@
 @import "../../css/mixins";
 
 .featuredSection {
-  padding: 7rem 0;
+  padding: 2.5rem 0;
+  scroll-margin-top: calc(var(--ifm-navbar-height) + 5rem);
   background: var(--ifm-background-color);
 
   @include small-size {
-    padding: 4.5rem 0;
+    padding: 2rem 0;
   }
 }
 
 .sectionHeader {
   display: grid;
-  margin-bottom: 3.5rem;
+  margin-bottom: 1.5rem;
   grid-template-columns: minmax(0, 1.25fr) minmax(280px, 0.75fr);
-  column-gap: 5rem;
+  column-gap: 2rem;
   align-items: end;
 }
 
@@ -36,7 +37,7 @@
   margin: 0;
   color: #0f172a;
   font-family: "Inter", sans-serif;
-  font-size: clamp(2.35rem, 4.5vw, 4.25rem);
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
   font-weight: 730;
   letter-spacing: -0.05em;
   line-height: 1.05;
@@ -71,9 +72,9 @@
 .skillCard {
   position: relative;
   display: flex;
-  min-height: 360px;
+  min-height: 240px;
   flex-direction: column;
-  padding: 2rem;
+  padding: 1.25rem;
   border-right: 1px solid rgba(15, 23, 42, 0.12);
   transition: background 180ms ease;
 
@@ -94,13 +95,6 @@
   }
 }
 
-.cardNumber {
-  margin-bottom: 3rem;
-  color: #94a3b8;
-  font-family: "JetBrains Mono", monospace;
-  font-size: 0.72rem;
-}
-
 .cardEyebrow {
   margin: 0 0 0.6rem;
   color: #0e7490;
@@ -118,7 +112,7 @@
   margin: 0 0 1rem;
   color: #0f172a;
   font-family: "Inter", sans-serif;
-  font-size: 1.55rem;
+  font-size: 1.25rem;
   font-weight: 700;
   letter-spacing: -0.03em;
 
@@ -128,7 +122,7 @@
 }
 
 .skillDescription {
-  margin: 0 0 2rem;
+  margin: 0 0 1rem;
   color: #64748b;
   font-size: 0.96rem;
   line-height: 1.68;
@@ -140,6 +134,7 @@
 
 .cardLink {
   display: inline-flex;
+  min-height: 44px;
   align-items: center;
   gap: 0.55rem;
   margin-top: auto;
@@ -159,6 +154,11 @@
     span {
       transform: translateX(4px);
     }
+
+    &:focus-visible {
+      outline: 3px solid var(--ifm-font-color-base);
+      outline-offset: 3px;
+    }
   }
 
   [data-theme="dark"] & {
@@ -173,7 +173,7 @@
 @media (max-width: 996px) {
   .sectionHeader {
     grid-template-columns: 1fr;
-    row-gap: 1.5rem;
+    row-gap: 0.75rem;
   }
 
   .skillsGrid {
@@ -182,7 +182,7 @@
 
   .skillCard {
     min-height: 0;
-    padding: 2rem 0;
+    padding: 1rem 0;
     border-right: 0;
     border-bottom: 1px solid rgba(15, 23, 42, 0.12);
 
@@ -193,10 +193,6 @@
     &:hover {
       background: transparent;
     }
-  }
-
-  .cardNumber {
-    margin-bottom: 1.5rem;
   }
 }
 

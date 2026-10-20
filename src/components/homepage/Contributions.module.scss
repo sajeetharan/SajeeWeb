@@ -1,11 +1,11 @@
 @import "../../css/mixins";
 
 .contributions {
-  padding: 5rem 0;
+  padding: 2.5rem 0;
   background: var(--ifm-background-color);
 
   @include small-size {
-    padding: 3rem 0;
+    padding: 2rem 0;
   }
 }
 
@@ -13,7 +13,7 @@
   text-align: center;
   font-size: 2.5rem;
   font-weight: 800;
-  margin-bottom: 3rem;
+  margin-bottom: 1.5rem;
   color: var(--ifm-font-color-base);
   font-family: "JetBrains Mono", monospace;
 
