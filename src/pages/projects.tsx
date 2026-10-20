@@ -6,6 +6,15 @@ import { Project, ProjectData } from "../components/projects/Project";
 const assetsDir = "./assets/projects";
 const projects: ProjectData[] = [
   {
+    title: "Cosmos Agent Starter",
+    description:
+      "Build production-oriented AI agents with Azure Cosmos DB using a guided CLI and ready-to-use templates.",
+    url: "https://github.com/sajeetharan/cosmos-agent-starter",
+    image:
+      "https://opengraph.githubassets.com/1/sajeetharan/cosmos-agent-starter",
+    role: "Author",
+  },
+  {
     title: "DevGlobe",
     description:
       "Interactive 3D globe showcasing 40,000+ top open-source contributors worldwide, ranked by GitHub stars, commits, and Stack Overflow impact. Powered by Azure Cosmos DB.",

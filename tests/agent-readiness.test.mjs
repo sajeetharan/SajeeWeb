@@ -18,6 +18,28 @@ test("homepage is meaningful without JavaScript", async () => {
   );
 });
 
+test("mentoring reviews render compact, source-linked highlights without embeds", async () => {
+  const html = await readFile("build/index.html", "utf8");
+  const section = html.match(
+    /<section\b[^>]*aria-labelledby="mentoring-reviews-title"[\s\S]*?<\/section>/,
+  )?.[0];
+  assert.ok(section, "expected the mentoring reviews section");
+  assert.equal((section.match(/<article\b/g) ?? []).length, 3);
+  assert.match(section, /Review by Hirish/);
+  assert.match(section, /Review by Shruti Solanki/);
+  assert.match(section, /Review by Tharu Tharujan/);
+  assert.match(
+    section,
+    /https:\/\/adplist\.org\/mentors\/sajeetharan-sinnathurai/,
+  );
+  assert.match(section, /https:\/\/topmate\.io\/sajeetharan/);
+  assert.match(section, /href="\/mentored"/);
+  assert.match(section, /Show 3 more reviews/);
+  assert.match(section, /Read full review/);
+  assert.match(section, /aria-pressed="true"/);
+  assert.doesNotMatch(section, /<iframe\b/);
+});
+
 test("build contains recovery, developer, and Markdown artifacts", async () => {
   const notFound = await readFile("build/404.html", "utf8");
   const developerPortal = await readFile("build/developers/index.html", "utf8");
