@@ -73,6 +73,17 @@ To deploy the Worker, configure `CLOUDFLARE_API_TOKEN` and
 Cloudflare Worker**. To publish the CLI, configure `NPM_TOKEN`, increment the
 version in `cli/package.json`, and dispatch **Publish CLI**.
 
+### AdSense ownership verification
+
+The global `headTags` in `docusaurus.config.ts` include the public
+`google-adsense-account` meta tag for publisher `ca-pub-7456507971681343`.
+After deployment, select **Meta tag** in AdSense's site ownership verification,
+confirm the tag is placed, and click **Verify**. Complete the site review steps
+in AdSense. This tag verifies ownership only: it does not load advertising
+scripts, enable Auto ads, or mean that Google has approved the site.
+Before enabling ad serving, publish an accurate site privacy notice and
+configure the consent messages/CMP required for the regions being served.
+
 ### Blog search visibility
 
 The blog title and description are configured in `docusaurus.config.ts`.
