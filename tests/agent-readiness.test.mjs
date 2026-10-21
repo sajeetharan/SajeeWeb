@@ -3,6 +3,45 @@ import { createHash } from "node:crypto";
 import { readFile } from "node:fs/promises";
 import test from "node:test";
 
+test("privacy and contact disclosures are public, crawlable, and linked from the footer", async () => {
+  for (const file of ["build/index.html", "build/blogs/index.html"]) {
+    const html = await readFile(file, "utf8");
+    const footer = html.match(/<footer\b[\s\S]*?<\/footer>/g)?.at(-1);
+    assert.ok(footer, `missing footer in ${file}`);
+    assert.match(footer, /href="\/privacy"/);
+    assert.match(footer, /href="\/contact"/);
+  }
+  const privacy = await readFile("build/privacy/index.html", "utf8");
+  assert.match(privacy, /<h1[^>]*>Privacy Policy<\/h1>/);
+  assert.match(privacy, /Google Analytics/);
+  assert.match(privacy, /Google AdSense ownership-verification meta tag/);
+  assert.match(privacy, /does not itself load an ad script/);
+  assert.match(privacy, /third parties, including Google/);
+  assert.match(
+    privacy,
+    /https:\/\/policies\.google\.com\/technologies\/partner-sites/,
+  );
+  assert.match(privacy, /href="mailto:sajeefx@gmail\.com"/);
+  assert.doesNotMatch(
+    privacy,
+    /<meta\b[^>]*name="robots"[^>]*content="noindex/,
+  );
+  const contact = await readFile("build/contact/index.html", "utf8");
+  assert.match(contact, /<h1[^>]*>Contact<\/h1>/);
+  assert.match(contact, /Sajeetharan Sinnathurai/);
+  assert.match(contact, /href="mailto:sajeefx@gmail\.com"/);
+  assert.match(contact, /href="\/privacy"/);
+  const sitemap = await readFile("build/sitemap.xml", "utf8");
+  for (const page of ["privacy", "contact"]) {
+    assert.ok(
+      sitemap.includes(`<loc>https://www.sajeetharan.dev/${page}</loc>`),
+      `${page} missing from sitemap`,
+    );
+    const markdown = await readFile(`build/${page}/index.md`, "utf8");
+    assert.match(markdown, /sajeefx@gmail\.com/);
+  }
+});
+
 test("AdSense ownership is verifiable without loading advertising scripts", async () => {
   for (const file of [
     "build/index.html",

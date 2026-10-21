@@ -84,6 +84,40 @@ scripts, enable Auto ads, or mean that Google has approved the site.
 Before enabling ad serving, publish an accurate site privacy notice and
 configure the consent messages/CMP required for the regions being served.
 
+### AdSense review readiness and privacy disclosures
+
+The footer links to `/privacy` and `/contact`. Their Markdown sources live in
+`src/pages/privacy.md` and `src/pages/contact.md`. The public enquiry/privacy
+email is `sajeefx@gmail.com`, confirmed by the site owner. The privacy notice
+describes the currently configured Analytics, hosting/proxy providers, external
+content, and AdSense verification-only status. No ad scripts or CMP are enabled
+by these pages; do not treat publishing a policy as collecting consent.
+
+Before serving ads:
+
+- Review the notice for accuracy and obtain jurisdiction-specific advice where
+  necessary. Confirm Analytics consent requirements too; its existing script
+  is not newly gated by this PR.
+- In AdSense **Privacy & messaging**, configure a Google-certified CMP and
+  publish applicable consent messages for EEA, UK, and Swiss visitors, plus
+  any other applicable regional requirements. Confirm behavior before enabling
+  ads; a generic homemade cookie banner is not equivalent to a certified CMP.
+- Follow any `ads.txt` instructions supplied by the AdSense account. The meta
+  tag proves ownership but does not authorize sellers through `ads.txt`.
+- Review original authorship, image permissions, code completeness, and broken
+  resources across archived posts. A migrated archive is not automatically
+  compliant, and this change does not certify every article or external image.
+- Keep ads off redirects, error pages, and screens without sufficient publisher
+  content. Decide appropriate article placements only after review/approval.
+- Complete any identity, address, payment, and policy tasks requested in AdSense.
+  Never click your own ads or ask readers to click them.
+
+Google's [site readiness guidance](https://support.google.com/adsense/answer/7299563)
+and [eligibility requirements](https://support.google.com/adsense/answer/9724)
+prioritize original, useful content and navigation. There is no approval
+guarantee from these technical changes; site ownership verification and search
+indexability are not AdSense approval.
+
 ### Blog search visibility
 
 The blog title and description are configured in `docusaurus.config.ts`.

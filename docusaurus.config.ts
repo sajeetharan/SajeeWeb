@@ -26,7 +26,7 @@ const config: Config = {
       firstNameFieldName: "FNAME",
       submitButtonName: "subscribe",
       tosURL: "https://mailchimp.com/legal/terms/",
-      privacyPolicyURL: "https://www.intuit.com/privacy/statement/",
+      privacyPolicyURL: "/privacy",
       serviceName: "Mailchimp",
     },
   },
@@ -209,6 +209,14 @@ const config: Config = {
             {
               label: "Blogs",
               to: "/blogs",
+            },
+            {
+              label: "Contact",
+              to: "/contact",
+            },
+            {
+              label: "Privacy Policy",
+              to: "/privacy",
             },
           ],
         },
