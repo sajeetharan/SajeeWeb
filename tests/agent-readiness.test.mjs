@@ -3,6 +3,20 @@ import { createHash } from "node:crypto";
 import { readFile } from "node:fs/promises";
 import test from "node:test";
 
+test("ads.txt authorizes only the configured Google publisher", async () => {
+  const ads = await readFile("build/ads.txt", "utf8");
+  assert.equal(
+    ads.trim(),
+    "google.com, pub-7456507971681343, DIRECT, f08c47fec0942fa0",
+  );
+  const html = await readFile("build/index.html", "utf8");
+  assert.match(
+    html,
+    /name="google-adsense-account" content="ca-pub-7456507971681343"/,
+  );
+  assert.doesNotMatch(html, /<script\b[^>]*src="[^"]*adsbygoogle\.js/);
+});
+
 test("privacy and contact disclosures are public, crawlable, and linked from the footer", async () => {
   for (const file of ["build/index.html", "build/blogs/index.html"]) {
     const html = await readFile(file, "utf8");
