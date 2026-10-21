@@ -104,6 +104,13 @@ Before serving ads:
   ads; a generic homemade cookie banner is not equivalent to a certified CMP.
 - Follow any `ads.txt` instructions supplied by the AdSense account. The meta
   tag proves ownership but does not authorize sellers through `ads.txt`.
+  `static/ads.txt` publishes Google's documented direct-seller entry for
+  `pub-7456507971681343`, matching the ownership tag. It does not turn on ads
+  or represent account approval. After deployment, verify both
+  `https://sajeetharan.dev/ads.txt` (through the apex redirect) and
+  `https://www.sajeetharan.dev/ads.txt`, then use **Check for updates** in
+  AdSense if an ads.txt warning is present. Compare the entry with the account's
+  own snippet; other ad networks need their own authorized entries.
 - Review original authorship, image permissions, code completeness, and broken
   resources across archived posts. A migrated archive is not automatically
   compliant, and this change does not certify every article or external image.
