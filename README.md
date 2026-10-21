@@ -95,6 +95,8 @@ these with **HTTP 200 plus an immediate meta refresh and canonical link**, not
 a server-side 301. A small script also preserves query parameters and fragments;
 the meta refresh and ordinary link work without JavaScript.
 Aliases are excluded from the sitemap and Markdown export.
+The Markdown post-build step also computes skill discovery digests from the
+actual built files so Windows and Linux line endings cannot invalidate them.
 The blog listing links to the complete server-rendered archive so older
 articles do not depend on the JavaScript-only Load more button for discovery.
 Imported article cross-links now use their canonical destinations directly
