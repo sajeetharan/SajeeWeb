@@ -2,7 +2,7 @@
 title: >-
   Build a BOT in quick time to support COVID Scenario and place it with Teams
   and Your Website!
-Date: '2020-03-26'
+Date: "2020-03-26"
 categories:
   - aibuilder
   - appinsights
@@ -20,12 +20,12 @@ tags:
   - teams
 coverImage: banner.png
 utcDate: "2020-03-26T00:00:00.000Z"
-description: "Overview This is my 2nd post about a Chatbot solution to address the world wide problem \"CoronaVirus\" panademic. As it is now spreading across the world and..."
+description: 'Overview This is my 2nd post about a Chatbot solution to address the world wide problem "CoronaVirus" panademic. As it is now spreading across the world and...'
 ---
 
 ### Overview
 
-This is my 2nd post about a Chatbot solution to address the world wide problem "CoronaVirus" panademic. As it is now spreading across the world and its really vital to provide all citizens of the countries with up-to-date information. As we know it has come to a level that certain countries are in lockdown mode , more and more people are started to practice social distancing and work from home. As we have seen in the previous blog about the [sentiment analysis of employees working form home](https://sajeetharan.wordpress.com/2020/03/20/how-i-built-an-application-in-10-minutes-to-see-how-world-reacts-to-work-from-home-using-serverless-with-azure/), in this blog i will explain about how to build a chat bot to provides answers to most of the queries related to health information and latest learning. Chatbot is a platform which can be integrated with Web inteface or any collaboration tools such as MS Teams, Slack or Telegram and it can be operated 24\*7 without any downtime.
+This is my 2nd post about a Chatbot solution to address the world wide problem "CoronaVirus" panademic. As it is now spreading across the world and its really vital to provide all citizens of the countries with up-to-date information. As we know it has come to a level that certain countries are in lockdown mode , more and more people are started to practice social distancing and work from home. As we have seen in the previous blog about the [sentiment analysis of employees working form home](https://www.sajeetharan.dev/blogs/2020/03/20/2020/03/how-world-reacts-to-work-from-home-using-serverless-with-azure), in this blog i will explain about how to build a chat bot to provides answers to most of the queries related to health information and latest learning. Chatbot is a platform which can be integrated with Web inteface or any collaboration tools such as MS Teams, Slack or Telegram and it can be operated 24\*7 without any downtime.
 
 ### Prerequisites:
 
@@ -394,7 +394,7 @@ MS teams on running state
 
 Now, switch to Microsoft Teams client, select "App Studio" from the left navigation bar if you dont have App studio, just install it from [here](https://docs.microsoft.com/en-us/microsoftteams/platform/concepts/build-and-test/app-studio-overview)
 
-Click "**Manifest Editor**" tab and then click "**Create a new app**" button. 
+Click "**Manifest Editor**" tab and then click "**Create a new app**" button.
 
 <figure>
 

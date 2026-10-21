@@ -30,6 +30,7 @@ function mainContent(html) {
 for (const htmlFile of await findHtmlFiles(buildDirectory)) {
   if (path.basename(htmlFile) === "404.html") continue;
   const html = await readFile(htmlFile, "utf8");
+  if (/<meta http-equiv="refresh"/i.test(html)) continue;
   const markdown = `${turndown.turndown(mainContent(html)).trim()}\n`;
   const markdownFile = htmlFile.replace(/\.html$/, ".md");
   await writeFile(markdownFile, markdown, "utf8");

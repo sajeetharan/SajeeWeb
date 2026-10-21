@@ -2,7 +2,7 @@
 title: >-
   Azure static web app is simply AWESOME : Deployed an Angular app in 10
   seconds!
-Date: '2020-05-19'
+Date: "2020-05-19"
 categories:
   - azurefunction
   - ci-cd
@@ -62,7 +62,7 @@ In this step you’ll fill out the Static Web Apps form and sign-in to your Gith
 - Create a [Resource Group](https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/manage-resource-groups-portal)
 - Name your app , in my case its meme4fun
 - Select a region (as of now its not available in all regions)
-- Sign-in to Github and select your org, repo, and branch. 
+- Sign-in to Github and select your org, repo, and branch.
 
 Once you’re done filling out the form click the **Next: Build >** button.
 
@@ -112,20 +112,20 @@ Overview
 
 </figure>
 
-It has the urls of the [Github Actions](https://sajeetharan.wordpress.com/2019/11/24/build-and-deploy-angular-applications-to-the-cloud-with-github-actions/) and as well as Github source code and also the url of the application deployed. If you’d like to see the build in action on Github, click the **Workflow file** above.
+It has the urls of the [Github Actions](https://www.sajeetharan.dev/blogs/2019/11/24/2019/11/build-and-deploy-angular-applications-to-the-cloud-with-github-actions) and as well as Github source code and also the url of the application deployed. If you’d like to see the build in action on Github, click the **Workflow file** above.
 
 You can access the meme generator application and create your own memes from [https://lively-forest-0fd67f010.azurestaticapps.net/](https://lively-forest-0fd67f010.azurestaticapps.net/)
 
-Here are some great links you can visit to learn more. 
+Here are some great links you can visit to learn more.
 
 - Static Web Apps docs:   
-    [https://aka.ms/swadocs](https://aka.ms/swadocs)  
+   [https://aka.ms/swadocs](https://aka.ms/swadocs)
 - Static Web Apps Learn modules (Angular, React, Svelte, or Vue JavaScript app and API):   
-    [https://aka.ms/swaframeworks](https://aka.ms/swaframeworks)  
+   [https://aka.ms/swaframeworks](https://aka.ms/swaframeworks)
 - Static web app with the Gatsby static site generator:   
-    [https://aka.ms/staticsitegen](https://aka.ms/staticsitegen)  
+   [https://aka.ms/staticsitegen](https://aka.ms/staticsitegen)
 - Blog post:   
-    [https://aka.ms/swapreview](https://aka.ms/swapreview)  
+   [https://aka.ms/swapreview](https://aka.ms/swapreview)
 
 The above app is also available in the [Microsoft's sample static web app Gallery.](https://github.com/microsoft/static-web-apps-gallery-code-samples)
 

@@ -1,6 +1,9 @@
 name: Deploy to GitHub Pages
 
 on:
+  pull_request:
+    branches:
+      - main
   push:
     branches:
       - main
@@ -24,14 +27,18 @@ jobs:
         run: yarn install --frozen-lockfile
       - name: Build website
         run: yarn build
+      - name: Test generated site and migration redirects
+        run: yarn test
 
       - name: Upload Build Artifact
+        if: github.event_name == 'push'
         uses: actions/upload-pages-artifact@v3
         with:
           path: build
 
   deploy:
     name: Deploy to GitHub Pages
+    if: github.event_name == 'push'
     needs: build
 
     # Grant GITHUB_TOKEN the permissions required to make a Pages deployment

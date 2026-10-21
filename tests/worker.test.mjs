@@ -2,6 +2,7 @@ import assert from "node:assert/strict";
 import test from "node:test";
 
 import worker, { markdownPath, preferredType } from "../worker/index.mjs";
+import redirects from "../worker/blog-redirects.mjs";
 
 function mockAssets(files) {
   return {
@@ -99,5 +100,63 @@ test("preserves well-known resource media types", async () => {
   assert.equal(
     response.headers.get("Content-Type"),
     "application/linkset+json",
+  );
+});
+
+test("every legacy WordPress article redirects permanently in one hop", async () => {
+  for (const [source, destination] of Object.entries(redirects)) {
+    for (const origin of [
+      "https://www.sajeetharan.dev",
+      "http://www.sajeetharan.dev",
+      "https://sajeetharan.dev",
+      "http://sajeetharan.dev",
+    ]) {
+      for (const suffix of ["", "/"]) {
+        const response = await worker.fetch(
+          new Request(`${origin}${source}${suffix}?utm_source=wordpress`, {
+            headers: { Accept: "text/markdown" },
+          }),
+          { ASSETS: assets },
+        );
+        assert.equal(response.status, 301, `${origin}${source}${suffix}`);
+        assert.equal(
+          response.headers.get("Location"),
+          `https://www.sajeetharan.dev${destination}?utm_source=wordpress`,
+        );
+      }
+    }
+  }
+});
+
+test("encoded legacy paths are case-insensitive and unknown articles remain 404", async () => {
+  const angular = Object.keys(redirects).find((source) =>
+    source.includes("%E2%80%8A"),
+  );
+  assert.ok(angular);
+  const response = await worker.fetch(
+    new Request(`https://www.sajeetharan.dev${angular.toLowerCase()}`),
+    { ASSETS: assets },
+  );
+  assert.equal(response.status, 301);
+  assert.equal(
+    response.headers.get("Location"),
+    `https://www.sajeetharan.dev${redirects[angular]}`,
+  );
+  const missing = await worker.fetch(
+    new Request("https://www.sajeetharan.dev/2017/08/10/not-a-real-article"),
+    { ASSETS: assets },
+  );
+  assert.equal(missing.status, 404);
+});
+
+test("canonicalizes HTTP on the www domain without losing the query", async () => {
+  const response = await worker.fetch(
+    new Request("http://www.sajeetharan.dev/blogs?source=wordpress"),
+    { ASSETS: assets },
+  );
+  assert.equal(response.status, 308);
+  assert.equal(
+    response.headers.get("Location"),
+    "https://www.sajeetharan.dev/blogs?source=wordpress",
   );
 });

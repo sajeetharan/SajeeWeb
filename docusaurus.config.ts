@@ -97,6 +97,9 @@ const config: Config = {
         docs: false,
         blog: {
           routeBasePath: "/blogs",
+          blogTitle: "Developer Tooling, Azure & AI Engineering Blog",
+          blogDescription:
+            "Practical guides to Azure Cosmos DB, AI agents, GitHub Copilot, JavaScript, and developer tooling by Sajeetharan Sinnathurai, Principal PM at Microsoft.",
           showReadingTime: true,
           postsPerPage: "ALL",
           blogSidebarCount: 10,

@@ -1,6 +1,6 @@
 ---
 title: How i built Serverless App 'MentorMe' with Azure Functions and Cosmosdb
-Date: '2021-02-26'
+Date: "2021-02-26"
 categories:
   - appinsights
   - azure-monitor
@@ -38,10 +38,10 @@ As an Azure fan, i have used Azure as the cloud platform to deploy this solution
 
 As i explained in the previous posts, [Cosmosdb](https://docs.microsoft.com/en-us/azure/cosmos-db/introduction) and [Azure Functions](https://docs.microsoft.com/en-us/azure/azure-functions/functions-create-serverless-api) are great combo to build applications and deploy in quick time without worrying about underlying infrastructure. You can read about some of the reference architectures i have posted in the past from the below links,
 
-- [Game with Cosmosdb](https://sajeetharan.wordpress.com/2020/02/28/covid-escape-game-with-cosmosdb-and-python/)
-- [How Azure CosmosDB + Functions + IOT hub + PowerBI could solve the burning Traffic problem](https://sajeetharan.wordpress.com/2019/06/13/how-azure-cosmosdb-functions-powerbi-iot-hub-could-solve-the-burning-traffic-problem/)
-- [Facial Recognition solution for the fraud prevention using Azure AI and Cosmosdb](https://sajeetharan.wordpress.com/2020/02/20/how-to-build-facial-recognition-solution/)
-- [Github Issue Reporter with Azure Function and CosmosDB](https://sajeetharan.wordpress.com/2020/02/02/create-github-issue-report-with-azure/)
+- [Game with Cosmosdb](https://www.sajeetharan.dev/blogs/2020/02/28/2020/02/covid-escape-game-with-cosmosdb-and-python)
+- [How Azure CosmosDB + Functions + IOT hub + PowerBI could solve the burning Traffic problem](https://www.sajeetharan.dev/blogs/2019/06/13/2019/06/how-azure-cosmosdb-functions-powerbi-iot-hub-could-solve-the-burning-traffic-problem)
+- [Facial Recognition solution for the fraud prevention using Azure AI and Cosmosdb](https://www.sajeetharan.dev/blogs/2020/02/20/2020/02/how-to-build-facial-recognition-solution)
+- [Github Issue Reporter with Azure Function and CosmosDB](https://www.sajeetharan.dev/blogs/2020/02/02/2020/02/create-github-issue-report-with-azure)
 
 Let me dive into each component in the architecture of 'MentorLab'.
 

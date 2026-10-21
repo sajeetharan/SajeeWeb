@@ -1,6 +1,6 @@
 ---
 title: Build hybrid apps with Cosmosdb + Ionic
-Date: '2019-06-12'
+Date: "2019-06-12"
 categories:
   - ionic
   - javascript
@@ -20,7 +20,7 @@ tags:
   - windows
 coverImage: cosmos.jpg
 utcDate: "2019-06-12T00:00:00.000Z"
-description: "I was at the Global Azure Bootcamp recently concluded last week, one of the participant came and asked me, \"Hey what is Cosmos DB\" I casually responded..."
+description: 'I was at the Global Azure Bootcamp recently concluded last week, one of the participant came and asked me, "Hey what is Cosmos DB" I casually responded...'
 ---
 
 I was at the Global Azure Bootcamp recently concluded last week, one of the participant came and asked me, "Hey what is Cosmos DB" I casually responded “Well, that’s Microsoft’s globally distributed, massively scalable, horizontally partitioned, low latency, fully indexed, multi-model NoSQL database". The immediate question came after that was whether it supports hybrid applications. In this blog I will be explaining how to leverage the features of cosmos db when you're building hybrid applications.
@@ -53,7 +53,7 @@ The aim is to create a simple ToDo application which displays lists of tasks, an
 
 Lets create a blank project with the command
 
- **ionic start cosmosdbApp tabs**
+**ionic start cosmosdbApp tabs**
 
 ![](images/2.png)
 
@@ -81,7 +81,7 @@ We need to create an cosmosdb account and use the Endpoint and SecretKey in our 
 
 Blog on how to create it from the azure portal
 
-[https://sajeetharan.wordpress.com/2018/03/26/wear-out-the-features-of-azure-cosmosdb-with-aspnetcore-application/](https://sajeetharan.wordpress.com/2018/03/26/wear-out-the-features-of-azure-cosmosdb-with-aspnetcore-application/)
+[https://www.sajeetharan.dev/blogs/2018/03/26/2018/03/wear-out-the-features-of-azure-cosmosdb-with-aspnetcore-application](https://www.sajeetharan.dev/blogs/2018/03/26/2018/03/wear-out-the-features-of-azure-cosmosdb-with-aspnetcore-application)
 
 Create a database named "**ToDoList**" and containeras "**Items**".
 

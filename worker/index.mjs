@@ -112,7 +112,19 @@ async function assetResponse(request, assets) {
 export default {
   async fetch(request, environment) {
     const url = new URL(request.url);
-    if (url.hostname === "sajeetharan.dev") {
+    const legacyPath = url.pathname
+      .replace(/\/$/, "")
+      .replace(/%[a-f\d]{2}/gi, (escape) => escape.toUpperCase());
+    const article = Object.hasOwn(blogRedirects, legacyPath)
+      ? blogRedirects[legacyPath]
+      : undefined;
+    if (article) {
+      url.protocol = "https:";
+      url.hostname = "www.sajeetharan.dev";
+      url.pathname = article;
+      return Response.redirect(url, 301);
+    }
+    if (url.hostname === "sajeetharan.dev" || url.protocol !== "https:") {
       url.protocol = "https:";
       url.hostname = "www.sajeetharan.dev";
       return Response.redirect(url, 308);
@@ -170,3 +182,4 @@ export default {
     return response;
   },
 };
+import blogRedirects from "./blog-redirects.mjs";

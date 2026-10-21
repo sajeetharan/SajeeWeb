@@ -1,4 +1,6 @@
+import React from "react";
 import Head from "@docusaurus/Head";
+import { useBlogPost } from "@docusaurus/theme-common/internal";
 
 type FaqItem = {
   question: string;
@@ -31,7 +33,12 @@ export default function BlogPostSeo({
   dateModified,
   keywords,
   faq,
-}: BlogPostSeoProps): JSX.Element {
+}: BlogPostSeoProps): JSX.Element | null {
+  const { isBlogPostPage } = useBlogPost();
+  if (!isBlogPostPage) {
+    return null;
+  }
+
   const url = new URL(path, siteUrl).toString();
   const imageUrl = new URL(image, siteUrl).toString();
   const structuredData = {
