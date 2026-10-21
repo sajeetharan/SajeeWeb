@@ -1,6 +1,6 @@
 ---
 title: Cosmic Clone - An amazing Cosmosdb Utility Tool
-Date: '2019-04-30'
+Date: "2019-04-30"
 categories:
   - c
   - cosmosdb
@@ -49,7 +49,7 @@ Cosmic Clone help to ease the above process and aid in the copy and anonymizatio
 
 **Step 1: Provide source connection details.**
 
-Obtain the connection string and the keys from the source cosmosdb account and enter it as below. if you are not sure how to obtain them, read my earlier blog [here](https://sajeetharan.wordpress.com/2018/03/18/setting-up-azure-cosmosdb-with-visual-studio-code-in-local-environment/). You should see a notification as Validation passed once you set up the connection details.
+Obtain the connection string and the keys from the source cosmosdb account and enter it as below. if you are not sure how to obtain them, read my earlier blog [here](https://www.sajeetharan.dev/blogs/2018/03/18/2018/03/setting-up-azure-cosmosdb-with-visual-studio-code-in-local-environment). You should see a notification as Validation passed once you set up the connection details.
 
 ![](images/1-2.png)
 

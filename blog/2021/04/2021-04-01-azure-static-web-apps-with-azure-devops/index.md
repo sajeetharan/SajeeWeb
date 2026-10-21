@@ -1,6 +1,6 @@
 ---
 title: Publish an Angular Application to Azure static web apps with Azure Devops
-Date: '2021-04-01'
+Date: "2021-04-01"
 categories:
   - azuredevops
   - azurefunction
@@ -17,12 +17,12 @@ tags:
   - staticwebapps
 coverImage: 9ac37-azure2.jpg
 utcDate: "2021-04-01T00:00:00.000Z"
-description: "Microsoft introduced App Service Static Web Apps in Preview at Build 2020 as\"Azure static web apps\", a service which allows web developers to build and..."
+description: 'Microsoft introduced App Service Static Web Apps in Preview at Build 2020 as"Azure static web apps", a service which allows web developers to build and...'
 ---
 
 Microsoft introduced App Service Static Web Apps in Preview at Build 2020 as"[Azure static web apps](https://azure.microsoft.com/en-us/services/app-service/static/)", a service which allows web developers to build and deploy website to any environment from Github repository for free. Developers can deploy applications in minute while taking the advantage of scaling and cost savings offered by azure functions as backend. One of the frequent questions that i heard from the developers was the availability of Azure Devops support with Azure static web apps.
 
-I have already published an article which demonstrates how to deploy to Azure Static Web Apps using [GithubActions](https://sajeetharan.wordpress.com/2020/05/20/azure-static-web-apps/). Azure static web apps team announced the public preview of [Azure Devops with Azure static web apps](https://azure.microsoft.com/en-us/updates/public-preview-azure-static-web-apps-now-supports-deployment-with-azure-devops/) yesterday.
+I have already published an article which demonstrates how to deploy to Azure Static Web Apps using [GithubActions](https://www.sajeetharan.dev/blogs/2020/05/19/2020/05/azure-static-web-apps). Azure static web apps team announced the public preview of [Azure Devops with Azure static web apps](https://azure.microsoft.com/en-us/updates/public-preview-azure-static-web-apps-now-supports-deployment-with-azure-devops/) yesterday.
 
 In this post you I will walk you through on how to deploy an angular application to Azure static web apps using Azure [Devops](https://dev.azure.com/).
 
@@ -152,14 +152,14 @@ steps:
   displayName: 'npm install and build'
 - task: AzureStaticWebApp@0
   inputs:
-      app_location: "/" 
+      app_location: "/"
       api_location: "api"
       output_location: "dist/meme4fun"
   env:
       azure_static_web_apps_api_token: $(deployment_token)
 ```
 
-Next step is to provide the The `**azure_static_web_apps_api_token**` value is self managed and is manually configured. Select Variables in the pipeline and create a new variable named as "deployment\_token"(matching the name in the workflow) below.
+Next step is to provide the The `**azure_static_web_apps_api_token**` value is self managed and is manually configured. Select Variables in the pipeline and create a new variable named as "deployment_token"(matching the name in the workflow) below.
 
 <figure>
 
@@ -179,7 +179,7 @@ Add new Variable
 
 <figcaption>
 
-Paste the deployment\_token value which was copied from Azure portal
+Paste the deployment_token value which was copied from Azure portal
 
 </figcaption>
 

@@ -1,4 +1,5 @@
 import React, { useState, useMemo } from "react";
+import Link from "@docusaurus/Link";
 import clsx from "clsx";
 import {
   PageMetadata,
@@ -18,10 +19,10 @@ const POSTS_PER_PAGE = 12;
 
 function BlogListPageMetadata(props: Props): JSX.Element {
   const { metadata } = props;
-  const { blogDescription } = metadata;
+  const { blogTitle, blogDescription } = metadata;
   return (
     <>
-      <PageMetadata title="Blog" description={blogDescription} />
+      <PageMetadata title={blogTitle} description={blogDescription} />
       <SearchMetadata tag="blog_posts_list" />
     </>
   );
@@ -37,7 +38,7 @@ function BlogListPageContent(props: Props): JSX.Element {
   const [visibleCount, setVisibleCount] = useState(POSTS_PER_PAGE);
 
   // Extract all unique tags (with counts) and years from ALL posts
-  const { tagCounts, sortedTags, allYears } = useMemo(() => {
+  const { sortedTags, allYears } = useMemo(() => {
     const tagMap = new Map<string, number>();
     const years = new Set<string>();
     items.forEach(({ content }) => {
@@ -52,7 +53,6 @@ function BlogListPageContent(props: Props): JSX.Element {
       (a, b) => b[1] - a[1] || a[0].localeCompare(b[0]),
     );
     return {
-      tagCounts: tagMap,
       sortedTags: sorted,
       allYears: Array.from(years).sort((a, b) => Number(b) - Number(a)),
     };
@@ -126,6 +126,9 @@ function BlogListPageContent(props: Props): JSX.Element {
             {items.length} posts on developer tooling, Azure, coding agents, and
             more — writing since 2011.
           </p>
+          <Link className={styles.archiveLink} to="/blogs/archive">
+            Browse the complete blog archive
+          </Link>
         </div>
 
         {/* Filter Bar */}

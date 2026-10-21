@@ -2,7 +2,7 @@
 title: >-
   Architecture reference for Facial Recognition solution for the fraud
   prevention using Azure AI and Cosmosdb
-Date: '2020-02-20'
+Date: "2020-02-20"
 categories:
   - ai
   - azure
@@ -27,7 +27,7 @@ description: "Biometric Face Recognition is the process and ability of a bio met
 
 Facial recognition is full of potential and can be easily incorporated to increase the security measures of any device/object. Apart from all the excitement, this technology is still developing, the more faces are fed in the algorithm, the more accurate it becomes. Therefore, there’s no need to be afraid of facial technology as it is being used for good ethical uses and safe practices.
 
-Industries around the globe have already started to use face detection for several purposes. As a series of my ideas, [continuation with Architecture for traffic problem.](https://sajeetharan.wordpress.com/2019/06/13/how-azure-cosmosdb-functions-powerbi-iot-hub-could-solve-the-burning-traffic-problem/)
+Industries around the globe have already started to use face detection for several purposes. As a series of my ideas, [continuation with Architecture for traffic problem.](https://www.sajeetharan.dev/blogs/2019/06/13/2019/06/how-azure-cosmosdb-functions-powerbi-iot-hub-could-solve-the-burning-traffic-problem)
 
 This post focuses on one of the solution with Azure by using various services such as Cognitive Service, Blob Storage, Event Grid, Azure Functions and Cosmosdb to build the right architecture that would solve the above mentioned use case.
 

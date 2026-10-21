@@ -1,6 +1,6 @@
 ---
 title: Create Github Issue Reporter with Azure Function and CosmosDB
-Date: '2020-02-02'
+Date: "2020-02-02"
 categories:
   - appinsights
   - azurefunction
@@ -51,7 +51,7 @@ CosmosDB Creation
 
 ### Step 3:  Create the Function app
 
-If you have noticed my [previous blog](https://sajeetharan.wordpress.com/2020/01/10/want-to-alert-your-employees-to-have-a-break-at-work-azure-function-can-help-you/), i have mentioned about how to create an Azure function. Here is an image of the Function App i created.
+If you have noticed my [previous blog](https://www.sajeetharan.dev/blogs/2020/01/10/2020/01/want-to-alert-your-employees-to-have-a-break-at-work-azure-function-can-help-you), i have mentioned about how to create an Azure function. Here is an image of the Function App i created.
 
 <figure>
 
@@ -81,7 +81,7 @@ Create Typescript Function
 
 </figure>
 
- Select the template as Timer trigger as we need to run every 5 minutes and you need to configure the cron expression (0 \*/5 \* \* \* \*) as well. (You can have custom time)
+Select the template as Timer trigger as we need to run every 5 minutes and you need to configure the cron expression (0 \*/5 \* \* \* \*) as well. (You can have custom time)
 
 ![](https://sajeetharan.wordpress.com/wp-content/uploads/2019/12/new-2.jpg?w=865)
 
@@ -164,7 +164,7 @@ export function index(context: any, myTimer: any) {
     at: new Date().toISOString()
   };
 
-  context.log('Issues for ' + repoOwner + '/' + repoName, timeStamp);   
+  context.log('Issues for ' + repoOwner + '/' + repoName, timeStamp);
   repo.loadAllIssues().then(() => {
     var promises = labels.map(label => {
       var filterCollection = new FilterCollection();
@@ -256,7 +256,7 @@ Function App Settings
 
 ### Step 9: Verify the Output Binding
 
-Just to make sure that our settings in the function.json has been reflected or not navigate to the Functions and select the Function and make sure all the binding values are correct. If not create a new binding to cosmosdb account you created as mentioned in the step [Step 3](https://sajeetharan.wordpress.com/2020/01/10/want-to-alert-your-employees-to-have-a-break-at-work-azure-function-can-help-you/) (Instead of Twilio select Cosmosdb)
+Just to make sure that our settings in the function.json has been reflected or not navigate to the Functions and select the Function and make sure all the binding values are correct. If not create a new binding to cosmosdb account you created as mentioned in the step [Step 3](https://www.sajeetharan.dev/blogs/2020/01/10/2020/01/want-to-alert-your-employees-to-have-a-break-at-work-azure-function-can-help-you) (Instead of Twilio select Cosmosdb)
 
 ### Step 10 : Run and Test the Function
 
@@ -320,6 +320,6 @@ Cosmosdb collection with Github repository Issues
 
 </figure>
 
-Now you can modify this function to retrieve the issues from all of your repositories and use the data stored in the cosmosdb collection to build a dashboard to show the issues with priority. Also you can make use of [this post](https://sajeetharan.wordpress.com/2020/01/10/want-to-alert-your-employees-to-have-a-break-at-work-azure-function-can-help-you/) to send a notification to someone about the issue as well.
+Now you can modify this function to retrieve the issues from all of your repositories and use the data stored in the cosmosdb collection to build a dashboard to show the issues with priority. Also you can make use of [this post](https://www.sajeetharan.dev/blogs/2020/01/10/2020/01/want-to-alert-your-employees-to-have-a-break-at-work-azure-function-can-help-you) to send a notification to someone about the issue as well.
 
 Hope [this simple function](https://github.com/sajeetharan/gh-reporter) will help someone to build a dashboard out of the data collected and make them more productive.Cheers!

@@ -3,6 +3,42 @@ import { createHash } from "node:crypto";
 import { readFile } from "node:fs/promises";
 import test from "node:test";
 
+test("blog listings keep their own metadata instead of an excerpt's article SEO", async () => {
+  const html = await readFile("build/blogs/index.html", "utf8");
+  const title = html.match(/<title\b[^>]*>([\s\S]*?)<\/title>/)?.[1];
+  assert.ok(title);
+  assert.match(title, /Developer Tooling, Azure &amp; AI Engineering Blog/);
+  assert.doesNotMatch(title, /Build an AI Agent with Azure Cosmos DB/);
+  assert.match(
+    html,
+    /<meta\b[^>]*name="description"[^>]*content="Practical guides to Azure Cosmos DB/,
+  );
+  assert.doesNotMatch(html, /"@type":"(?:BlogPosting|FAQPage)"/);
+  assert.doesNotMatch(html, /property="article:published_time"/);
+});
+
+test("individual articles retain their SEO and crawlers can discover the sitemap", async () => {
+  const html = await readFile(
+    "build/blogs/build-an-ai-agent-with-azure-cosmos-db/index.html",
+    "utf8",
+  );
+  assert.match(
+    html,
+    /<title\b[^>]*>Build an AI Agent with Azure Cosmos DB \| Sajeetharan<\/title>/,
+  );
+  assert.match(html, /"@type":"BlogPosting"/);
+  assert.match(html, /property="article:published_time"/);
+  assert.match(
+    html,
+    /rel="canonical" href="https:\/\/www\.sajeetharan\.dev\/blogs\/build-an-ai-agent-with-azure-cosmos-db"/,
+  );
+  const robots = await readFile("build/robots.txt", "utf8");
+  assert.match(
+    robots,
+    /^Sitemap: https:\/\/www\.sajeetharan\.dev\/sitemap\.xml$/m,
+  );
+});
+
 test("homepage is meaningful without JavaScript", async () => {
   const html = await readFile("build/index.html", "utf8");
   const text = html

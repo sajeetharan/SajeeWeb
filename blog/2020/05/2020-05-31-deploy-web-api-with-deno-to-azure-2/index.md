@@ -1,6 +1,6 @@
 ---
 title: Deploy Deno App to Azure with Github Actions
-Date: '2020-05-31'
+Date: "2020-05-31"
 categories:
   - angular
   - architecture
@@ -132,7 +132,7 @@ router.get("/delete/:id", delete_product);
 export default router;
 ```
 
-The final step is to create the code for the logic of those each routes. You need to implement the methods which are defined in those routes. For example **get\_products** would look like
+The final step is to create the code for the logic of those each routes. You need to implement the methods which are defined in those routes. For example **get_products** would look like
 
 ```
 
@@ -184,7 +184,7 @@ Now we are good with the first step and you can see the app running successfully
 
 **Create a ResourceGroup Named Deno-Demo**
 
-You can navigate to [Azure Portal](https://portal.azure.com/) and search for Resource Group in the search bar and create a new one as defined [here](https://sajeetharan.wordpress.com/2020/03/20/how-i-built-an-application-in-10-minutes-to-see-how-world-reacts-to-work-from-home-using-serverless-with-azure/)!
+You can navigate to [Azure Portal](https://portal.azure.com/) and search for Resource Group in the search bar and create a new one as defined [here](https://www.sajeetharan.dev/blogs/2020/03/20/2020/03/how-world-reacts-to-work-from-home-using-serverless-with-azure)!
 
 Next step is to create the Web App , as we are going to deploy this app to a Linux environment, you can set the configuration as follows,
 
@@ -229,13 +229,13 @@ jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
-    
+
     - uses: actions/checkout@v2
 
     - uses: azure/login@v1.1
       with:
         creds: ${{ secrets.AZURE_CREDENTIALS }}
-    
+
     - name: Set up Deno
       uses: denolib/setup-deno@master
       with:
@@ -278,7 +278,7 @@ Generate Service Principal
 
 </figure>
 
-You can copy and paste the JSON under the secret named "AZURE\_CREDENTIALS" ,
+You can copy and paste the JSON under the secret named "AZURE_CREDENTIALS" ,
 
 <figure>
 

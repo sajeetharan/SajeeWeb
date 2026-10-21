@@ -20,6 +20,20 @@
   margin: 0;
 }
 
+.archiveLink {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  margin-top: 0.5rem;
+  color: var(--ifm-font-color-base);
+  text-decoration: underline;
+
+  &:focus-visible {
+    outline: 3px solid var(--ifm-color-primary);
+    outline-offset: 3px;
+  }
+}
+
 /* Filter Bar */
 .filterBar {
   display: flex;

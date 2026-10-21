@@ -1,6 +1,6 @@
 ---
-title: 'No more DevSpaces, time to move to Bridge to Kubernetes'
-Date: '2020-10-28'
+title: "No more DevSpaces, time to move to Bridge to Kubernetes"
+Date: "2020-10-28"
 categories:
   - appinsights
   - architecture
@@ -24,7 +24,7 @@ description: "Overview: Are you hearing the word Devspaces for the first time?. 
 
 ### Overview:
 
-Are you hearing the word Devspaces for the first time?. Let me put this way, Imagine a developer having to deal with a large application which has [chunks of Microservices](https://sajeetharan.wordpress.com/2020/09/26/scale-your-applications-with-kuberenetes-based-event-driven-autoscaling/) and want to get some functionality done?. There will be many risks and one of them would be dealing with right environments. As we know the best way to counter this issue within a team would be to containerize and host it on cloud. Which will let the developer to work on the particular feature and debug the container without creating the environment locally. That is what exactly Azure Dev Spaces does.
+Are you hearing the word Devspaces for the first time?. Let me put this way, Imagine a developer having to deal with a large application which has [chunks of Microservices](https://www.sajeetharan.dev/blogs/2020/09/26/2020/09/scale-your-applications-with-kuberenetes-based-event-driven-autoscaling) and want to get some functionality done?. There will be many risks and one of them would be dealing with right environments. As we know the best way to counter this issue within a team would be to containerize and host it on cloud. Which will let the developer to work on the particular feature and debug the container without creating the environment locally. That is what exactly Azure Dev Spaces does.
 
 **What is Devspaces?**
 

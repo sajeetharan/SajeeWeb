@@ -2,7 +2,7 @@
 title: >-
   Want to alert your boyfriend/girlfriend to have break at work? Azure function
   can help you!
-Date: '2020-01-10'
+Date: "2020-01-10"
 categories:
   - appservice
   - azurefunction
@@ -140,8 +140,6 @@ Environment variables
 
 </figcaption>
 
-
-
 </figure>
 
 You can create the first envrionment variable by clicking on the New Application Setting and repeat the same for rest of those variables as shown above,
@@ -158,7 +156,7 @@ New appsettings Configuration
 
 </figure>
 
-Add the first setting TWILIO\_SID
+Add the first setting TWILIO_SID
 
 <figure>
 
@@ -166,13 +164,13 @@ Add the first setting TWILIO\_SID
 
 <figcaption>
 
-TWILIO\_SID Environment Variable
+TWILIO_SID Environment Variable
 
 </figcaption>
 
 </figure>
 
-Once you are done with each setting value click OK. When you are adding both SENDER\_NUMBER and RECIPIENT\_NUMBER be extra careful as it can be tricky and make sure to use the E.164 format referenced above. After all environment variables have been added click **Save** to save the updates that were made to the **Application Settings**.
+Once you are done with each setting value click OK. When you are adding both SENDER_NUMBER and RECIPIENT_NUMBER be extra careful as it can be tricky and make sure to use the E.164 format referenced above. After all environment variables have been added click **Save** to save the updates that were made to the **Application Settings**.
 
 ### Step 5 : Timer settings
 
@@ -192,7 +190,7 @@ CRON Expression
 
 </figure>
 
-If you're creating the Function App using Visual Studio code, follow this [sample app to create a timer function](https://sajeetharan.wordpress.com/2019/12/22/simple-azure-function-that-can-get-you-200-followers-in-a-month/) which is more easier with Visual Studio Code.
+If you're creating the Function App using Visual Studio code, follow this [sample app to create a timer function](https://www.sajeetharan.dev/blogs/2019/12/22/2019/12/simple-azure-function-that-can-get-you-200-followers-in-a-month) which is more easier with Visual Studio Code.
 
 ### Step 6: Modify function.json File
 
@@ -203,7 +201,7 @@ You will see two files:
 - function.json
 - index.js
 
-Click **function.json** to open the file. Since the file is currently missing the **“to”:** “**RECIPIENT\_NUMBER”**, we’ll need to add this to our file.
+Click **function.json** to open the file. Since the file is currently missing the **“to”:** “**RECIPIENT_NUMBER”**, we’ll need to add this to our file.
 
 Now we need to add the logic to create the message and send the message using the Twilio to the relevant reciever.
 
@@ -242,7 +240,7 @@ const twiAccountSid = process.env.TWILIO_SID;
 const twiAuthToken = process.env.TWILIO_TOKEN;
 const client = require('twilio')(twiAccountSid, twiAuthToken);
 module.exports = async function (context, myTimer) {
-    var timeStamp = new Date().toISOString();    
+    var timeStamp = new Date().toISOString();
     if (myTimer.IsPastDue)
     {
         context.log('JavaScript is running late!');
@@ -252,7 +250,7 @@ module.exports = async function (context, myTimer) {
            body: "Time to have cofee and take a break for 5 minutes!",
            to: process.env.RECIPIENT_NUMBER
        })
-        .then(message => {             
+        .then(message => {
            context.log("Message sent");
            context.res = {
                body: 'Text successfully sent'
@@ -355,7 +353,7 @@ Install Dependencies Twilio
 
 </figure>
 
-You will also notice a new **node\_modules** folder added to the file structure. Back in the **Overview** tab for the function app, click **Start**.
+You will also notice a new **node_modules** folder added to the file structure. Back in the **Overview** tab for the function app, click **Start**.
 
 <figure>
 
@@ -363,7 +361,7 @@ You will also notice a new **node\_modules** folder added to the file structur
 
 <figcaption>
 
-node\_modules Folder
+node_modules Folder
 
 </figcaption>
 
@@ -375,8 +373,8 @@ Back in the **Overview** tab for the function app, click **Start**. App and c
 
 ![](https://sajeetharan.wordpress.com/wp-content/uploads/2020/01/run_fun.jpg?w=1024)
 
-If everything was successful, the personshould receive a text message after 20 minutes with your message!  
-  
+If everything was successful, the personshould receive a text message after 20 minutes with your message!
+
 You can change the frequency for your timer by heading back to **Integrate** and changing the **Schedule** field. Be sure to read up on [CRON expressions](https://docs.microsoft.com/en-us/azure/azure-functions/functions-bindings-timer#cron-expressions) before entering a new frequency.
 
 If you’re curious to learn more about Azure Functions, I would suggest taking [this](https://docs.microsoft.com/en-us/learn/paths/create-serverless-applications/) Microsoft Learn module. You can access complete source code from [here](https://github.com/sajeetharan/az-func-doc247). If you want to learn more on Azure visit [http://azure360.info/](http://azure360.info/) .Happy Coding!
