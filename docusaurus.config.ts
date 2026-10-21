@@ -33,6 +33,13 @@ const config: Config = {
 
   headTags: [
     {
+      tagName: "meta",
+      attributes: {
+        name: "google-adsense-account",
+        content: "ca-pub-7456507971681343",
+      },
+    },
+    {
       tagName: "link",
       attributes: {
         rel: "api-catalog",

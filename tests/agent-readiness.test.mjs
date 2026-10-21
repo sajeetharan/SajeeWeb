@@ -3,6 +3,22 @@ import { createHash } from "node:crypto";
 import { readFile } from "node:fs/promises";
 import test from "node:test";
 
+test("AdSense ownership is verifiable without loading advertising scripts", async () => {
+  for (const file of [
+    "build/index.html",
+    "build/blogs/index.html",
+    "build/blogs/build-an-ai-agent-with-azure-cosmos-db/index.html",
+  ]) {
+    const html = await readFile(file, "utf8");
+    const head = html.match(/<head\b[^>]*>([\s\S]*?)<\/head>/)?.[1];
+    assert.ok(head, `missing head in ${file}`);
+    const tags = head.match(/<meta\b[^>]*name="google-adsense-account"[^>]*>/g);
+    assert.equal(tags?.length, 1, `expected one AdSense tag in ${file}`);
+    assert.match(tags[0], /content="ca-pub-7456507971681343"/);
+    assert.doesNotMatch(html, /<script\b[^>]*src="[^"]*adsbygoogle\.js/);
+  }
+});
+
 test("blog listings keep their own metadata instead of an excerpt's article SEO", async () => {
   const html = await readFile("build/blogs/index.html", "utf8");
   const title = html.match(/<title\b[^>]*>([\s\S]*?)<\/title>/)?.[1];
