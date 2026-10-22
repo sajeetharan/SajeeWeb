@@ -12,7 +12,7 @@ const config: Config = {
   baseUrl: "/",
   onBrokenLinks: "warn",
   onBrokenMarkdownLinks: "warn",
-  favicon: "img/favicon.ico",
+  favicon: "favicon.ico",
 
   // GitHub pages deployment config
   organizationName: "sajeetharan",
@@ -32,6 +32,32 @@ const config: Config = {
   },
 
   headTags: [
+    {
+      tagName: "link",
+      attributes: {
+        rel: "icon",
+        type: "image/png",
+        sizes: "32x32",
+        href: "/img/favicon-32x32.png",
+      },
+    },
+    {
+      tagName: "link",
+      attributes: {
+        rel: "icon",
+        type: "image/svg+xml",
+        sizes: "any",
+        href: "/img/sajee-mark.svg",
+      },
+    },
+    {
+      tagName: "link",
+      attributes: {
+        rel: "apple-touch-icon",
+        sizes: "180x180",
+        href: "/img/apple-touch-icon.png",
+      },
+    },
     {
       tagName: "meta",
       attributes: {
