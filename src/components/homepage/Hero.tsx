@@ -94,8 +94,10 @@ export const Hero: React.FC<HeroProps> = ({ avatar }) => {
             <span>building for developers</span>
           </div>
           <div className={styles.proofItem}>
-            <strong>Global top 10</strong>
-            <span>Stack Overflow expertise</span>
+            <a href="https://stackoverflow.com/users/1749403/sajeetharan">
+              <strong>Top 10 in key tags</strong>
+              <span>Stack Overflow: Azure, Angular, Cosmos DB</span>
+            </a>
           </div>
           <div className={styles.proofItem}>
             <strong>International</strong>

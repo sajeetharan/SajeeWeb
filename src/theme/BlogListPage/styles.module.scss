@@ -38,15 +38,28 @@
 .filterBar {
   display: flex;
   gap: 0.75rem;
-  align-items: center;
+  align-items: flex-end;
   margin-bottom: 1rem;
   flex-wrap: wrap;
 }
 
-.searchWrapper {
-  position: relative;
+.searchField {
   flex: 1;
   min-width: 200px;
+}
+
+.searchField,
+.yearField {
+  label {
+    display: block;
+    margin-bottom: 0.35rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+  }
+}
+
+.searchWrapper {
+  position: relative;
 }
 
 .searchIcon {
@@ -56,12 +69,13 @@
   transform: translateY(-50%);
   width: 16px;
   height: 16px;
-  color: var(--ifm-color-emphasis-500);
+  color: var(--ifm-color-emphasis-700);
   pointer-events: none;
 }
 
 .searchInput {
   width: 100%;
+  min-height: 44px;
   padding: 0.6rem 0.75rem 0.6rem 2.25rem;
   border: 1px solid var(--ifm-color-emphasis-300);
   border-radius: 8px;
@@ -79,11 +93,12 @@
   }
 
   &::placeholder {
-    color: var(--ifm-color-emphasis-500);
+    color: var(--ifm-color-emphasis-700);
   }
 }
 
 .yearSelect {
+  min-height: 44px;
   padding: 0.6rem 2rem 0.6rem 0.75rem;
   border: 1px solid var(--ifm-color-emphasis-300);
   border-radius: 8px;
@@ -109,17 +124,18 @@
   display: flex;
   border: 1px solid var(--ifm-color-emphasis-300);
   border-radius: 8px;
-  overflow: hidden;
 }
 
 .viewBtn {
   display: flex;
   align-items: center;
   justify-content: center;
+  min-width: 44px;
+  min-height: 44px;
   padding: 0.5rem 0.65rem;
   border: none;
   background: var(--ifm-background-surface-color);
-  color: var(--ifm-color-emphasis-500);
+  color: var(--ifm-color-emphasis-700);
   cursor: pointer;
   transition:
     background 0.2s,
@@ -136,7 +152,7 @@
 
 .viewBtnActive {
   background: var(--ifm-color-primary);
-  color: #fff;
+  color: var(--ifm-background-color);
 
   &:hover {
     background: var(--ifm-color-primary-dark);
@@ -172,7 +188,7 @@
   border-radius: 4px;
   border: none;
   background: var(--ifm-color-primary);
-  color: #fff;
+  color: var(--ifm-background-color);
   font-size: 0.75rem;
   cursor: pointer;
   transition: background 0.2s;
@@ -211,17 +227,17 @@
 .tagPillActive {
   background: var(--ifm-color-primary);
   border-color: var(--ifm-color-primary);
-  color: #fff;
+  color: var(--ifm-background-color);
 
   &:hover {
     background: var(--ifm-color-primary-dark);
     border-color: var(--ifm-color-primary-dark);
-    color: #fff;
+    color: var(--ifm-background-color);
   }
 
   .tagCount {
     background: rgba(255, 255, 255, 0.25);
-    color: #fff;
+    color: var(--ifm-background-color);
   }
 }
 
@@ -240,7 +256,7 @@
   border-radius: 20px;
   border: 1px dashed var(--ifm-color-emphasis-400);
   background: transparent;
-  color: var(--ifm-color-emphasis-500);
+  color: var(--ifm-color-emphasis-700);
   font-size: 0.8rem;
   cursor: pointer;
   transition: all 0.2s;
@@ -350,8 +366,17 @@
 
   &:hover {
     background: var(--ifm-color-primary);
-    color: #fff;
+    color: var(--ifm-background-color);
   }
+}
+
+.blogListPage button {
+  min-height: 44px;
+}
+
+.blogListPage :is(button, input, select):focus-visible {
+  outline: 3px solid var(--ifm-font-color-base);
+  outline-offset: 3px;
 }
 
 /* Responsive */
@@ -361,7 +386,7 @@
     align-items: stretch;
   }
 
-  .searchWrapper {
+  .searchField {
     min-width: unset;
   }
 

@@ -162,17 +162,17 @@ const config: Config = {
       title: "Sajeetharan Sinnathurai",
       logo: {
         alt: "Sajeetharan's Logo",
-        src: "img/logo-sketch.png",
-        srcDark: "img/logo-sketch.png",
+        src: "img/logo-sketch-96.webp",
+        srcDark: "img/logo-sketch-96.webp",
         style: { borderRadius: "50%" },
       },
       items: [
         { to: "/blogs", label: "Blogs", position: "left" },
         { to: "/talks", label: "Talks", position: "left" },
         { to: "/projects", label: "Projects", position: "left" },
-        { to: "/developers", label: "Developers", position: "left" },
         { to: "/awards", label: "Awards", position: "left" },
         { to: "/mentored", label: "Get Mentored", position: "left" },
+        { to: "/developers", label: "Developers", position: "left" },
       ],
     },
     footer: {
@@ -225,8 +225,27 @@ const config: Config = {
     },
 
     prism: {
-      theme: themes.github,
-      darkTheme: themes.dracula,
+      theme: {
+        ...themes.github,
+        styles: [
+          ...themes.github.styles,
+          {
+            types: ["comment", "prolog", "doctype", "cdata"],
+            style: { color: "#59636e" },
+          },
+          { types: ["variable"], style: { color: "#146967" } },
+        ],
+      },
+      darkTheme: {
+        ...themes.dracula,
+        styles: [
+          ...themes.dracula.styles,
+          {
+            types: ["comment", "prolog", "doctype", "cdata"],
+            style: { color: "#9ba9cf" },
+          },
+        ],
+      },
     },
   } satisfies Preset.ThemeConfig,
 };
