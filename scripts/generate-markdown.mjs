@@ -10,7 +10,15 @@ const turndown = new TurndownService({
   headingStyle: "atx",
 });
 
-turndown.remove(["script", "style", "svg", "button", "nav", "footer"]);
+turndown.remove([
+  "script",
+  "style",
+  "svg",
+  "button",
+  "nav",
+  "footer",
+  "dialog",
+]);
 
 async function findHtmlFiles(directory) {
   const entries = await readdir(directory, { withFileTypes: true });

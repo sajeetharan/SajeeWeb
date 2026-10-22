@@ -1,0 +1,227 @@
+.launcher {
+  position: fixed;
+  right: max(1rem, env(safe-area-inset-right));
+  bottom: max(1rem, env(safe-area-inset-bottom));
+  z-index: calc(var(--ifm-z-index-fixed) - 1);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 50px;
+  padding: 0.65rem 1rem;
+  border: 1px solid var(--ifm-color-primary);
+  border-radius: 2rem;
+  background: var(--ifm-color-primary);
+  color: var(--ifm-background-color);
+  box-shadow: var(--ifm-global-shadow-md);
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-decoration: none;
+
+  &:hover {
+    background: var(--ifm-color-primary-dark);
+    color: var(--ifm-background-color);
+    text-decoration: none;
+  }
+
+  svg {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+.panel {
+  position: fixed;
+  inset: auto max(1rem, env(safe-area-inset-right))
+    max(1rem, env(safe-area-inset-bottom)) auto;
+  width: min(400px, calc(100% - 2rem));
+  max-height: calc(100dvh - 2rem);
+  margin: 0;
+  padding: 0;
+  border: 1px solid var(--ifm-color-emphasis-400);
+  border-radius: 1rem;
+  background: var(--ifm-background-color);
+  color: var(--ifm-font-color-base);
+  box-shadow: var(--ifm-global-shadow-tl);
+  overflow-wrap: anywhere;
+  overflow: hidden;
+
+  &[open] {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &::backdrop {
+    background: rgba(0, 0, 0, 0.35);
+  }
+}
+
+.content {
+  min-height: 0;
+  overflow-y: auto;
+}
+
+.header {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem;
+  border-bottom: 1px solid var(--ifm-color-emphasis-300);
+  background: var(--ifm-background-color);
+
+  h2 {
+    margin: 0 0 0.25rem;
+    font-size: 1.2rem;
+  }
+
+  p {
+    margin: 0;
+    color: var(--ifm-color-emphasis-700);
+    font-size: 0.8rem;
+  }
+}
+
+.close,
+.back {
+  display: inline-flex;
+  min-width: 44px;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  border-radius: 0.5rem;
+  background: transparent;
+  color: var(--ifm-font-color-base);
+  font: inherit;
+  cursor: pointer;
+
+  &:hover {
+    background: var(--ifm-background-surface-color);
+  }
+}
+
+.close {
+  flex-shrink: 0;
+
+  svg {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+.back {
+  margin-bottom: 0.5rem;
+  padding: 0.5rem;
+  font-size: 0.85rem;
+}
+
+.body {
+  padding: 1rem;
+  font-size: 0.95rem;
+
+  p {
+    margin-bottom: 1rem;
+  }
+}
+
+.stepTitle {
+  margin: 0 0 1rem;
+  font-size: 1.05rem;
+  line-height: 1.5;
+}
+
+.options {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 0.65rem;
+}
+
+.option {
+  display: flex;
+  min-height: 44px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.25rem;
+  width: 100%;
+  padding: 0.85rem;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 0.75rem;
+  background: var(--ifm-background-surface-color);
+  color: var(--ifm-font-color-base);
+  font: inherit;
+  text-align: left;
+  text-decoration: none;
+  cursor: pointer;
+
+  &:hover {
+    border-color: var(--ifm-color-primary);
+    color: var(--ifm-font-color-base);
+    text-decoration: none;
+  }
+
+  span {
+    color: var(--ifm-color-emphasis-700);
+    font-size: 0.85rem;
+  }
+}
+
+.primary {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+  padding: 0.65rem 1rem;
+  border: 1px solid var(--ifm-color-primary);
+  border-radius: 0.5rem;
+  background: var(--ifm-color-primary);
+  color: var(--ifm-background-color);
+  font-weight: 700;
+  text-decoration: none;
+
+  &:hover {
+    background: var(--ifm-color-primary-dark);
+    color: var(--ifm-background-color);
+    text-decoration: none;
+  }
+}
+
+.note {
+  color: var(--ifm-color-emphasis-700);
+  font-size: 0.85rem;
+}
+
+.email {
+  overflow-wrap: anywhere;
+}
+
+.footer {
+  padding: 1rem;
+  border-top: 1px solid var(--ifm-color-emphasis-300);
+  color: var(--ifm-color-emphasis-700);
+  font-size: 0.75rem;
+
+  a {
+    display: inline-flex;
+    min-height: 44px;
+    align-items: center;
+    color: var(--ifm-font-color-base);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+}
+
+.launcher:focus-visible,
+.panel :is(a, button, h3):focus-visible {
+  outline: 3px solid var(--ifm-font-color-base);
+  outline-offset: 3px;
+}
+
+@media print {
+  .launcher,
+  .panel {
+    display: none;
+  }
+}

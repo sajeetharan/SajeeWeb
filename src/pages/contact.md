@@ -21,6 +21,14 @@ specific material and provide relevant ownership or licensing details.
 Please do not send passwords, payment information, or other sensitive details.
 There is no guaranteed response time.
 
+## Ask Sajee contact guide
+
+Use the **Ask Sajee** launcher to choose a Topmate service or open an email draft
+for speaking, collaboration, article questions, and corrections. It is not live
+chat: nothing is sent automatically, and questions are not forwarded to Topmate.
+Review any pricing and availability on Topmate before paying or booking.
+If no email app opens, copy the address above into your email service.
+
 ## Mentoring
 
 For available mentoring services and bookings, visit [Get Mentored](/mentored).
