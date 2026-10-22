@@ -2,7 +2,7 @@
 title: >-
   BOOK GIVEAWAY: Win a free copy of  "Cloud Scale Analytics with Azure Data
   Services "
-Date: '2021-10-25'
+Date: "2021-10-25"
 tags:
   - adls
   - analytics
@@ -27,7 +27,7 @@ Hello folks!
 
 <figure>
 
-[![](https://sajeetharan.wordpress.com/wp-content/uploads/2021/10/cloud-scale-analytics-with-azure-data-services.png?w=619)](https://www.amazon.com/Cloud-Scale-Analytics-Azure-Services/dp/1800562934/?maas=maas_adg_67481E3150DB21080DF715A863452FA7_afap_abs&ref_=aa_maas)
+[![Cloud Scale Analytics with Azure Data Services book cover](https://sajeetharan.wordpress.com/wp-content/uploads/2021/10/cloud-scale-analytics-with-azure-data-services.png?w=619)](https://www.amazon.com/Cloud-Scale-Analytics-Azure-Services/dp/1800562934/?maas=maas_adg_67481E3150DB21080DF715A863452FA7_afap_abs&ref_=aa_maas)
 
 <figcaption>
 

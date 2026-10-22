@@ -65,7 +65,7 @@ function BlogListPageContent(props: Props): JSX.Element {
 
       // Search filter
       if (searchQuery) {
-        const query = searchQuery.toLowerCase();
+        const query = searchQuery.trim().toLowerCase();
         const matchesTitle = title.toLowerCase().includes(query);
         const matchesDesc = description?.toLowerCase().includes(query) || false;
         const matchesTags = tags.some((tag) =>
@@ -134,49 +134,64 @@ function BlogListPageContent(props: Props): JSX.Element {
         {/* Filter Bar */}
         <div className={styles.filterBar}>
           {/* Search */}
-          <div className={styles.searchWrapper}>
-            <svg
-              className={styles.searchIcon}
-              viewBox="0 0 20 20"
-              fill="currentColor"
-            >
-              <path
-                fillRule="evenodd"
-                d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
-                clipRule="evenodd"
+          <div className={styles.searchField}>
+            <label htmlFor="blog-search">Search posts</label>
+            <div className={styles.searchWrapper}>
+              <svg
+                className={styles.searchIcon}
+                viewBox="0 0 20 20"
+                fill="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  fillRule="evenodd"
+                  d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
+                  clipRule="evenodd"
+                />
+              </svg>
+              <input
+                id="blog-search"
+                type="search"
+                aria-controls="blog-posts"
+                placeholder="Search posts..."
+                value={searchQuery}
+                onChange={(e) => {
+                  setSearchQuery(e.target.value);
+                  setVisibleCount(POSTS_PER_PAGE);
+                }}
+                className={styles.searchInput}
               />
-            </svg>
-            <input
-              type="text"
-              placeholder="Search posts..."
-              value={searchQuery}
-              onChange={(e) => {
-                setSearchQuery(e.target.value);
-                setVisibleCount(POSTS_PER_PAGE);
-              }}
-              className={styles.searchInput}
-            />
+            </div>
           </div>
 
           {/* Year Filter */}
-          <select
-            value={selectedYear}
-            onChange={(e) => {
-              setSelectedYear(e.target.value);
-              setVisibleCount(POSTS_PER_PAGE);
-            }}
-            className={styles.yearSelect}
-          >
-            <option value="all">All Years</option>
-            {allYears.map((year) => (
-              <option key={year} value={year}>
-                {year}
-              </option>
-            ))}
-          </select>
+          <div className={styles.yearField}>
+            <label htmlFor="blog-year">Year</label>
+            <select
+              id="blog-year"
+              aria-controls="blog-posts"
+              value={selectedYear}
+              onChange={(e) => {
+                setSelectedYear(e.target.value);
+                setVisibleCount(POSTS_PER_PAGE);
+              }}
+              className={styles.yearSelect}
+            >
+              <option value="all">All Years</option>
+              {allYears.map((year) => (
+                <option key={year} value={year}>
+                  {year}
+                </option>
+              ))}
+            </select>
+          </div>
 
           {/* View Toggle */}
-          <div className={styles.viewToggle}>
+          <div
+            className={styles.viewToggle}
+            role="group"
+            aria-label="Post layout"
+          >
             <button
               className={clsx(
                 styles.viewBtn,
@@ -184,12 +199,16 @@ function BlogListPageContent(props: Props): JSX.Element {
               )}
               onClick={() => setViewMode("list")}
               title="List view"
+              aria-label="List view"
+              aria-pressed={viewMode === "list"}
+              aria-controls="blog-posts"
             >
               <svg
                 viewBox="0 0 20 20"
                 fill="currentColor"
                 width="18"
                 height="18"
+                aria-hidden="true"
               >
                 <path
                   fillRule="evenodd"
@@ -205,12 +224,16 @@ function BlogListPageContent(props: Props): JSX.Element {
               )}
               onClick={() => setViewMode("grid")}
               title="Grid view"
+              aria-label="Grid view"
+              aria-pressed={viewMode === "grid"}
+              aria-controls="blog-posts"
             >
               <svg
                 viewBox="0 0 20 20"
                 fill="currentColor"
                 width="18"
                 height="18"
+                aria-hidden="true"
               >
                 <path d="M5 3a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2V5a2 2 0 00-2-2H5zM5 11a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2v-2a2 2 0 00-2-2H5zM11 5a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V5zM11 13a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" />
               </svg>
@@ -235,7 +258,12 @@ function BlogListPageContent(props: Props): JSX.Element {
                 </button>
               )}
             </div>
-            <div className={styles.tagPills}>
+            <div
+              id="blog-tags"
+              className={styles.tagPills}
+              role="group"
+              aria-label="Filter by tag"
+            >
               {visibleTags.map(([tag, count]) => (
                 <button
                   key={tag}
@@ -244,6 +272,8 @@ function BlogListPageContent(props: Props): JSX.Element {
                     selectedTags.includes(tag) && styles.tagPillActive,
                   )}
                   onClick={() => toggleTag(tag)}
+                  aria-pressed={selectedTags.includes(tag)}
+                  aria-controls="blog-posts"
                 >
                   {tag}
                   <span className={styles.tagCount}>{count}</span>
@@ -253,6 +283,8 @@ function BlogListPageContent(props: Props): JSX.Element {
                 <button
                   className={styles.showMoreBtn}
                   onClick={() => setShowAllTags(true)}
+                  aria-expanded="false"
+                  aria-controls="blog-tags"
                 >
                   +{hiddenTagCount} more
                 </button>
@@ -261,6 +293,8 @@ function BlogListPageContent(props: Props): JSX.Element {
                 <button
                   className={styles.showMoreBtn}
                   onClick={() => setShowAllTags(false)}
+                  aria-expanded="true"
+                  aria-controls="blog-tags"
                 >
                   Show less
                 </button>
@@ -270,51 +304,58 @@ function BlogListPageContent(props: Props): JSX.Element {
         )}
 
         {/* Active Filters Summary */}
-        {hasActiveFilters && (
-          <div className={styles.activeFilters}>
-            <span className={styles.resultCount}>
-              {filteredItems.length} post{filteredItems.length !== 1 ? "s" : ""}{" "}
-              found
-            </span>
+        <div className={styles.activeFilters}>
+          <span
+            className={styles.resultCount}
+            role="status"
+            aria-live="polite"
+            aria-atomic="true"
+          >
+            Showing {displayedItems.length} of {filteredItems.length} post
+            {filteredItems.length !== 1 ? "s" : ""}
+          </span>
+          {hasActiveFilters && (
             <button className={styles.clearBtn} onClick={clearFilters}>
               Clear all filters
             </button>
-          </div>
-        )}
+          )}
+        </div>
 
         {/* Blog Posts */}
-        {displayedItems.length > 0 ? (
-          <>
-            <div
-              className={clsx(
-                styles.postsContainer,
-                viewMode === "grid" && styles.postsGrid,
-              )}
-            >
-              <BlogPostItems items={displayedItems} />
-            </div>
-            {hasMore && (
-              <div className={styles.loadMore}>
-                <button
-                  className={styles.loadMoreBtn}
-                  onClick={() =>
-                    setVisibleCount((prev) => prev + POSTS_PER_PAGE)
-                  }
-                >
-                  Load more posts ({filteredItems.length - visibleCount}{" "}
-                  remaining)
-                </button>
+        <div id="blog-posts">
+          {displayedItems.length > 0 ? (
+            <>
+              <div
+                className={clsx(
+                  styles.postsContainer,
+                  viewMode === "grid" && styles.postsGrid,
+                )}
+              >
+                <BlogPostItems items={displayedItems} />
               </div>
-            )}
-          </>
-        ) : (
-          <div className={styles.emptyState}>
-            <p>No posts match your filters.</p>
-            <button className={styles.clearBtn} onClick={clearFilters}>
-              Clear all filters
-            </button>
-          </div>
-        )}
+              {hasMore && (
+                <div className={styles.loadMore}>
+                  <button
+                    className={styles.loadMoreBtn}
+                    onClick={() =>
+                      setVisibleCount((prev) => prev + POSTS_PER_PAGE)
+                    }
+                  >
+                    Load more posts ({filteredItems.length - visibleCount}{" "}
+                    remaining)
+                  </button>
+                </div>
+              )}
+            </>
+          ) : (
+            <div className={styles.emptyState}>
+              <p>No posts match your filters.</p>
+              <button className={styles.clearBtn} onClick={clearFilters}>
+                Clear all filters
+              </button>
+            </div>
+          )}
+        </div>
       </div>
     </BlogLayout>
   );

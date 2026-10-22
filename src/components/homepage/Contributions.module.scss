@@ -35,7 +35,7 @@
 }
 
 .card {
-  background: rgba(255, 255, 255, 0.7);
+  background: var(--ifm-background-surface-color);
   backdrop-filter: blur(12px);
   border-radius: 1.25rem;
   padding: 2rem;
@@ -49,7 +49,7 @@
   }
 
   [data-theme="dark"] & {
-    background: rgba(18, 18, 26, 0.7);
+    background: var(--ifm-background-surface-color);
     border: 1px solid rgba(34, 211, 238, 0.1);
 
     &:hover {
@@ -87,7 +87,7 @@
   margin: 0 0 1.5rem;
 
   a {
-    color: #06b6d4;
+    color: var(--ifm-color-primary);
     text-decoration: none;
     font-weight: 600;
     font-size: 0.95rem;
@@ -137,7 +137,7 @@
 .highlightLabel {
   font-size: 1.25rem;
   font-weight: 800;
-  color: #06b6d4;
+  color: var(--ifm-color-primary);
   font-family: "JetBrains Mono", monospace;
 
   [data-theme="dark"] & {
@@ -147,7 +147,7 @@
 
 .highlightDesc {
   font-size: 0.85rem;
-  color: #64748b;
+  color: var(--ifm-color-emphasis-600);
 
   [data-theme="dark"] & {
     color: rgba(255, 255, 255, 0.6);
@@ -161,13 +161,13 @@
 .viewProfile {
   font-size: 0.9rem;
   font-weight: 600;
-  color: #06b6d4;
+  color: var(--ifm-color-primary);
   text-decoration: none;
   font-family: "JetBrains Mono", monospace;
 
   &:hover {
     text-decoration: underline;
-    color: #0891b2;
+    color: var(--ifm-color-primary-dark);
   }
 
   [data-theme="dark"] & {

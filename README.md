@@ -63,6 +63,38 @@ Upcoming event details are shared by the homepage and talks page through
 `src/components/talks/UpcomingEvents.tsx`. Keep dates and the agenda link current;
 only add session titles or times when confirmed by the organizer.
 
+### Awards, accessibility, and image budgets
+
+The Awards & Recognition page opens with four curated highlights: Microsoft
+MVP, Google Developer Expert, HackerNoon Noonies, and the Microsoft Global
+Hackathon 2021 Challenge Winner badge. Category filters expose the complete
+collection, including all 42 public Credly badges verified October 22, 2026.
+Issued and expiry dates are historical records, not claims of active certification.
+The previous undated "Active" trainer card is replaced by the dated Credly records.
+
+Refresh the checked-in snapshot with `node scripts/sync-credly-badges.mjs`.
+This explicitly fetches the public profile's badge data, validates ownership and
+pagination, and writes only display metadata to `src/data/credly-badges.json`.
+Review source changes and highlight/category choices before committing. Neither
+the build nor visitors fetch the Credly API; badge artwork loads lazily from
+Credly's sized image endpoint, with individual verification links.
+
+Award image previews use local WebP thumbnails; original photos load only when
+the native image dialog is opened. Keep the navbar's 96px WebP below 10 KB and
+local award thumbnails below 100 KB each. Do not restore the full-resolution
+logo in navigation. Regression tests enforce these budgets.
+
+Blog controls have visible labels, pressed states, live result counts, and
+44px minimum heights. Preserve those semantics when changing filters. The
+awards image dialog supports Escape, keyboard focus containment, and focus
+restoration through the native browser dialog behavior. Global focus indicators,
+contrast-safe light-theme primary colors, and reduced-motion styles apply
+across these surfaces.
+Muted text, contribution/social cards, and code highlighting also use
+contrast-safe colors in both themes. In the initial blog listing, the archived
+pagination article has a sequential heading outline, and the book-giveaway
+article's linked cover has descriptive alternative text.
+
 ### Deployment
 
 The static site is deployed from `main` with GitHub Pages. The optional

@@ -91,7 +91,7 @@ export default function Home(): JSX.Element {
       "https://www.linkedin.com/in/sajeetharan/",
       "https://twitter.com/kokkisajee",
       "https://github.com/sajeetharan",
-      "https://stackoverflow.com/users/3785469/sajeetharan",
+      "https://stackoverflow.com/users/1749403/sajeetharan",
     ],
   };
 
@@ -109,9 +109,9 @@ export default function Home(): JSX.Element {
           <a href="#connect">Connect</a>
         </div>
       </nav>
-      <Hero avatar={avatar} />
-      <TechStack />
       <main>
+        <Hero avatar={avatar} />
+        <TechStack />
         <FeaturedSection />
         <Reviews />
         <FeaturedTalks />
