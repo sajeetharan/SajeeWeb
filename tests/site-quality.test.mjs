@@ -38,7 +38,9 @@ test("award previews stay below their image budget", async () => {
 });
 
 test("awards default to four top highlights with accessible filters and dialog", async () => {
-  const html = await readFile("build/awards/index.html", "utf8");
+  const page = await readFile("build/awards/index.html", "utf8");
+  const html = page.match(/<main\b[^>]*>[\s\S]*?<\/main>/)?.[0];
+  assert.ok(html);
   assert.equal((html.match(/<article\b/g) ?? []).length, 4);
   for (const title of [
     "Microsoft Most Valuable Professional",

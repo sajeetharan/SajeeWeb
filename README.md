@@ -54,6 +54,31 @@ availability are shown on Topmate rather than duplicated here.
 ADPList remains a source for existing homepage testimonials, not a booking
 option on the Get Mentored page.
 
+### Ask Sajee contact guide
+
+`src/theme/Root.tsx` mounts the lightweight Ask Sajee launcher across the site.
+The launcher opens a native dialog only when activated; without JavaScript its
+ordinary link falls back to `/contact`. The dialog routes visitors to a paid
+Topmate priority DM, four mentoring/video services, or an email draft for speaking,
+collaboration, article questions, and corrections. It is not live chat or AI.
+No message form, backend, external chat script, custom analytics events, or
+conversation storage is added.
+
+`src/data/mentoring.ts` is the shared source for Topmate service details and
+links used by both the widget and Get Mentored page. Keep current pricing and
+response terms on Topmate, not in the widget. Visitors type their question there
+instead of repeating it after a handoff.
+
+Email drafts use `sajeefx@gmail.com`, a suggested subject, and the current
+canonical page path without query parameters or fragments. They open in the
+visitor's email app and require the visitor to send manually; no delivery
+confirmation is implied. The address remains visible for manual copying.
+
+The dialog supports Escape, a close button, backdrop dismissal, keyboard focus
+containment/restoration, and Back navigation between contact options. It closes
+on site-path changes, and print output hides both widget controls. Hidden dialogs are excluded
+from generated Markdown so global contact prompts do not pollute article exports.
+
 ### Homepage navigation and events
 
 The homepage uses sticky section shortcuts, concise work and talk previews, and

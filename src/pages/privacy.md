@@ -5,7 +5,7 @@ description: "How Sajeetharan Sinnathurai's personal website uses analytics, hos
 
 # Privacy Policy
 
-Last updated: October 21, 2026
+Last updated: October 22, 2026
 
 This notice covers [www.sajeetharan.dev](https://www.sajeetharan.dev/),
 the personal website and blog of Sajeetharan Sinnathurai. For privacy questions,
@@ -84,6 +84,22 @@ you provide to them under their own privacy policies.
 - [Topmate](https://topmate.io/) (see its current privacy terms before booking)
 
 ## Information you send directly
+
+### Ask Sajee contact guide
+
+The Ask Sajee widget is a guided contact menu, not live chat or an AI assistant.
+It does not collect or store message text, send messages automatically, or forward
+questions to Topmate. Topmate links open its own service pages, where you review
+pricing and availability and enter any messages or booking details.
+
+The email option opens a draft in your configured email app with a suggested
+subject and a link to the current page. The link excludes search parameters and
+fragments. You compose, review, and send the message yourself; opening a draft
+does not deliver an email. A plain email address is provided if no app opens.
+The widget adds no custom analytics events or conversation storage; the site's
+existing analytics and external-service policies still apply.
+
+### Email correspondence
 
 If you contact me by email, I receive the email address, message, and attachments
 you send. I use them to respond to your enquiry and keep relevant correspondence.
