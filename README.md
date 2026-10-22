@@ -32,6 +32,18 @@ $ npm run build
 
 This command generates static content into the `build` directory and can be served using any static contents hosting service.
 
+### Browser-tab icon
+
+The custom Sajee interlock mark uses two cyan geometric ribbons on a dark-navy
+tile, hinting at an S and code brackets without relying on text at small sizes.
+Its editable source is [`static/img/sajee-mark.svg`](static/img/sajee-mark.svg).
+The site advertises the SVG, a 32px PNG fallback, and a 180px Apple touch icon.
+The multi-resolution [`static/favicon.ico`](static/favicon.ico) contains 16px,
+32px, and 48px versions; `static/img/favicon.ico` retains the legacy URL with
+the same artwork. Keep raster exports aligned with the SVG when editing the
+mark. The Apple icon has an opaque background so devices can apply their own mask.
+This branding applies to browser/bookmark icons, not the navbar portrait.
+
 ### Mentoring reviews
 
 The homepage review cards in `src/components/homepage/Reviews.tsx` contain
