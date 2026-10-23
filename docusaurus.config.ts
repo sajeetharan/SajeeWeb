@@ -4,8 +4,7 @@ import type { Config } from "@docusaurus/types";
 import type * as Preset from "@docusaurus/preset-classic";
 
 const config: Config = {
-  title:
-    "Sajeetharan Sinnathurai | Developer Tooling, Azure Cosmos DB & Coding Agents",
+  title: "Sajeetharan Sinnathurai",
   tagline:
     "Principal PM at Microsoft empowering developers with Azure Cosmos DB, GitHub Copilot, coding agents, and NoSQL databases—from code to cloud.",
   url: "https://www.sajeetharan.dev",
@@ -106,6 +105,7 @@ const config: Config = {
     locales: ["en"],
   },
   plugins: [
+    require.resolve("./plugins/topic-hubs.cjs"),
     "docusaurus-plugin-sass",
     [
       "@docusaurus/plugin-ideal-image",
@@ -132,7 +132,7 @@ const config: Config = {
           routeBasePath: "/blogs",
           blogTitle: "Developer Tooling, Azure & AI Engineering Blog",
           blogDescription:
-            "Practical guides to Azure Cosmos DB, AI agents, GitHub Copilot, JavaScript, and developer tooling by Sajeetharan Sinnathurai, Principal PM at Microsoft.",
+            "Practical guides to Azure Cosmos DB, Azure, AI agents, MCP, and agent skills by Sajeetharan Sinnathurai, Principal Product Manager at Microsoft.",
           showReadingTime: true,
           postsPerPage: "ALL",
           blogSidebarCount: 10,
@@ -235,6 +235,10 @@ const config: Config = {
             {
               label: "Blogs",
               to: "/blogs",
+            },
+            {
+              label: "Azure, AI & Agent Topics",
+              to: "/topics",
             },
             {
               label: "Contact",

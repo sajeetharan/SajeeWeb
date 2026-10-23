@@ -13,6 +13,7 @@ import { Reviews } from "../components/homepage/Reviews";
 import { Contributions } from "../components/homepage/Contributions";
 import { TechStack } from "../components/homepage/TechStack";
 import { FeaturedTalks } from "../components/homepage/FeaturedTalks";
+import TopicLinks from "../components/topics/TopicLinks";
 import styles from "./index.module.scss";
 
 import avatar from "./assets/index/avatar.jpg";
@@ -86,6 +87,9 @@ export default function Home(): JSX.Element {
       "GitHub",
       "Cloud Computing",
       "Azure",
+      "Artificial Intelligence",
+      "Model Context Protocol",
+      "Agent Skills",
     ],
     sameAs: [
       "https://www.linkedin.com/in/sajeetharan/",
@@ -96,7 +100,10 @@ export default function Home(): JSX.Element {
   };
 
   return (
-    <Layout title="Home" description={siteConfig.tagline}>
+    <Layout
+      title="Azure Cosmos DB, AI Agents & Developer Tooling"
+      description={siteConfig.tagline}
+    >
       <Head>
         <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
       </Head>
@@ -112,6 +119,17 @@ export default function Home(): JSX.Element {
       <main>
         <Hero avatar={avatar} />
         <TechStack />
+        <section
+          className="container padding-vert--lg"
+          aria-labelledby="explore-topics"
+        >
+          <h2 id="explore-topics">Azure, AI, and agent engineering guides</h2>
+          <p>
+            Hands-on projects and lessons on Azure Cosmos DB, AI agents, Model
+            Context Protocol, and reusable agent skills.
+          </p>
+          <TopicLinks />
+        </section>
         <FeaturedSection />
         <Reviews />
         <FeaturedTalks />

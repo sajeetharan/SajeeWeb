@@ -1,0 +1,60 @@
+.page {
+  max-width: 960px;
+  overflow-wrap: anywhere;
+
+  section {
+    margin-block: 2.5rem;
+  }
+}
+
+.lead {
+  font-size: 1.15rem;
+  line-height: 1.7;
+}
+
+.topicLinks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+  margin-block: 1rem;
+  align-items: center;
+
+  a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    text-decoration: underline;
+  }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
+  gap: 1rem;
+}
+
+.card {
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: var(--ifm-global-radius);
+  padding: 1.5rem;
+  background: var(--ifm-background-surface-color);
+}
+
+.posts {
+  padding-left: 1.5rem;
+
+  li {
+    padding-left: 0.5rem;
+    margin-block: 1.5rem;
+  }
+
+  h3 {
+    font-size: 1.15rem;
+    margin-bottom: 0.5rem;
+  }
+
+  time {
+    color: var(--ifm-color-emphasis-600);
+    font-size: 0.9rem;
+  }
+}

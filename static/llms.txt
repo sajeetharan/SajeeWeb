@@ -9,6 +9,13 @@ This is the agent-readable index for https://www.sajeetharan.dev. Public resourc
 - [Home](https://www.sajeetharan.dev/): Biography, focus areas, featured work, and community contributions.
 - [Developer portal](https://www.sajeetharan.dev/developers): Quickstarts, endpoint documentation, CLI usage, and a read-only sandbox.
 - [Blog](https://www.sajeetharan.dev/blogs): Long-form technical articles.
+- [Topic hub](https://www.sajeetharan.dev/topics): Curated starting points and complete article collections.
+- [Azure](https://www.sajeetharan.dev/topics/azure): Cloud development and application projects.
+- [Azure Cosmos DB](https://www.sajeetharan.dev/topics/cosmos-db): Data, vector retrieval, and agent memory.
+- [AI agents](https://www.sajeetharan.dev/topics/agents): Agent applications and coding workflows.
+- [AI engineering](https://www.sajeetharan.dev/topics/ai): Application case studies and evaluation.
+- [MCP](https://www.sajeetharan.dev/topics/mcp): Model Context Protocol project experiences.
+- [Agent skills](https://www.sajeetharan.dev/topics/skills): Domain guidance and regression evaluation.
 - [Projects](https://www.sajeetharan.dev/projects): Open-source and developer-tooling projects.
 - [Talks](https://www.sajeetharan.dev/talks): Conference sessions and recordings.
 - [Awards](https://www.sajeetharan.dev/awards): Professional and community recognition.

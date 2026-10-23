@@ -1,0 +1,92 @@
+[
+  {
+    "slug": "azure",
+    "title": "Azure",
+    "description": "Azure development guides and real-world projects covering serverless applications, cloud deployment, developer tooling, and AI workloads.",
+    "intro": "Explore Azure through applications built and lessons learned, rather than a catalog of services. Start with a local AI application, follow its path to the cloud, and explore the serverless and data services behind real projects.",
+    "focus": "For each architecture, consider how identity, observability, deployment, and cost change between a prototype and a deployed application. Older walkthroughs remain available as historical references; check their publication dates and current service documentation before reusing commands.",
+    "tags": [
+      "azure",
+      "azure-functions",
+      "azurefunctions",
+      "azurefunction",
+      "azure-cosmos-db",
+      "cosmosdb",
+      "cosmos-db"
+    ],
+    "startHere": [
+      "build-an-ai-agent-with-azure-cosmos-db",
+      "building-devglobe-with-azure-cosmos-db"
+    ]
+  },
+  {
+    "slug": "cosmos-db",
+    "title": "Azure Cosmos DB",
+    "description": "Azure Cosmos DB guides on application architecture, vector search, durable AI agent memory, local development, and developer tools.",
+    "intro": "Follow Azure Cosmos DB from a local development database to the data layer of an AI application. These guides connect storage decisions to working software: durable agent memory, tenant isolation, vector retrieval, and a developer discovery platform.",
+    "focus": "Start with the end-to-end agent walkthrough for a hands-on example, then explore the DevGlobe architecture to see how a different workload uses the database. Historical articles cover earlier SDKs and service capabilities and should be read in their original context.",
+    "tags": ["azure-cosmos-db", "cosmosdb", "cosmos-db", "azure-cosmosdb"],
+    "startHere": [
+      "build-an-ai-agent-with-azure-cosmos-db",
+      "building-devglobe-with-azure-cosmos-db"
+    ]
+  },
+  {
+    "slug": "agents",
+    "title": "AI Agents",
+    "description": "Build and improve AI agents with practical guides to memory, tool integration, prompting, coding workflows, and evaluation.",
+    "intro": "An agent needs more than a model call. This collection explores the application around it: memory, tools, user boundaries, prompts, and tests. It also covers coding agents, where the output is a change to software rather than a conversational answer.",
+    "focus": "Begin by building an agent locally, then examine how instructions and skills affect its behavior. Treat a working demo as a starting point: compare outcomes against a baseline and investigate failures before introducing more tools or guidance.",
+    "tags": ["ai-agents", "coding-agents", "agents", "agent-kit"],
+    "startHere": [
+      "build-an-ai-agent-with-azure-cosmos-db",
+      "smart-prompting-stronger-ai-agent-outcomes",
+      "building-skills-for-ai-coding-agents"
+    ]
+  },
+  {
+    "slug": "ai",
+    "title": "AI Engineering",
+    "description": "Practical AI engineering through application case studies, vector retrieval, prompting experiments, and agent evaluation.",
+    "intro": "Explore AI engineering through concrete projects and experiments. The emphasis is on connecting models to useful applications and checking whether a change actually improves results, rather than adding AI features without a measurable purpose.",
+    "focus": "Read the application case studies for implementation context, then explore prompting and skill evaluation for lessons about reliability. The AI agent, MCP, and skills collections provide narrower paths when you want to focus on orchestration, tool access, or reusable domain guidance.",
+    "tags": [
+      "ai",
+      "artificial-intelligence",
+      "ai-agents",
+      "coding-agents",
+      "vector-search",
+      "github-copilot"
+    ],
+    "startHere": [
+      "building-devglobe-with-azure-cosmos-db",
+      "smart-prompting-stronger-ai-agent-outcomes",
+      "the-regression-tax-when-agent-skills-hurt"
+    ]
+  },
+  {
+    "slug": "mcp",
+    "title": "Model Context Protocol (MCP)",
+    "description": "Model Context Protocol articles and project case studies on connecting AI agents to tools and developer discovery workflows.",
+    "intro": "Model Context Protocol connects AI applications to tools and context. This collection follows MCP in real projects and conference discussions, with an emphasis on the capabilities exposed to an agent and the boundaries around their use.",
+    "focus": "Start with DevGlobe to see where MCP fits into a developer discovery application. Read the conference reflections for the trusted-tool perspective. These are project experiences, not a complete protocol reference; use the linked source projects and protocol documentation for implementation details.",
+    "tags": ["mcp", "model-context-protocol"],
+    "startHere": [
+      "building-devglobe-with-azure-cosmos-db",
+      "global-ai-conference-chennai-bengaluru-2026"
+    ]
+  },
+  {
+    "slug": "skills",
+    "title": "Agent Skills",
+    "description": "Lessons from building AI coding agent skills: reusable domain guidance, focused instructions, baseline evaluation, and regression testing.",
+    "intro": "Agent skills package reusable guidance for tasks that need domain knowledge. The central question is not how much expertise a skill contains, but whether an agent performs better with it than without it.",
+    "focus": "Start with the lessons from six months of skill development, then read the regression analysis before expanding your own guidance. The prompting article explores how separating responsibilities can help. Together, these articles offer a practical path from writing instructions to evaluating their effect.",
+    "tags": ["skills", "agent-skills", "agent-kit"],
+    "startHere": [
+      "building-skills-for-ai-coding-agents",
+      "the-regression-tax-when-agent-skills-hurt",
+      "smart-prompting-stronger-ai-agent-outcomes"
+    ]
+  }
+]
