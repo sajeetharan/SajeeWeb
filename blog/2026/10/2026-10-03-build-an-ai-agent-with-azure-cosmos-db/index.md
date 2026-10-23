@@ -24,6 +24,7 @@ keywords:
   - production-ready AI agent
 image: /img/blog/build-ai-agent-cosmos-db-og.png
 utcDate: "2026-10-03T15:43:16.000Z"
+dateModified: "2026-10-03T18:30:00.000Z"
 description: "Build a TypeScript AI agent with Azure Cosmos DB, React, durable memory, tenant isolation, diagnostics, tests, and a clear path from local development to Azure."
 ---
 
@@ -59,22 +60,9 @@ answer:
 
 <BlogPostSeo
 title="Build an AI Agent with Azure Cosmos DB | Sajeetharan"
-headline="Build an AI Agent with Azure Cosmos DB: End-to-End Guide"
-description="Build a TypeScript AI agent with Azure Cosmos DB, React, durable memory, tenant isolation, diagnostics, tests, and a clear path from local development to Azure."
 path="/blogs/build-an-ai-agent-with-azure-cosmos-db"
 image="/img/blog/build-ai-agent-cosmos-db-og.png"
 imageAlt="Build an AI Agent with Azure Cosmos DB hands-on guide"
-datePublished="2026-10-03T15:43:16.000Z"
-dateModified="2026-10-03T18:30:00.000Z"
-keywords={[
-"Azure Cosmos DB",
-"AI agent",
-"TypeScript",
-"React",
-"agent memory",
-"Cosmos DB emulator",
-"multi-tenant AI agent",
-]}
 faq={faqItems}
 />
 

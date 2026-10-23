@@ -200,6 +200,69 @@ The blog title and description are configured in `docusaurus.config.ts`.
 `BlogPostSeo` must emit article-specific metadata only on individual post pages,
 not blog or tag listings that render post excerpts. Keep its `isBlogPostPage`
 guard when adding SEO fields. `static/robots.txt` advertises the sitemap.
+The site title is the author's name rather than a repeated keyword-heavy suffix;
+the homepage, blog, and topic pages supply their own descriptive titles.
+
+#### Article metadata and topic hubs
+
+Every individual article receives one `BlogPosting` and a `BreadcrumbList` from
+`src/theme/BlogPostPage/Metadata/index.tsx`, alongside Docusaurus's standard
+canonical, description, Open Graph, and publication metadata. The author falls
+back to this site's owner for legacy posts without an explicit author; a visible
+byline links to the biography. Images use the article image when supplied and
+the site image otherwise. `BlogPostSeo` is only for the existing article's custom
+social title/image and visible FAQ, not a second article schema.
+Use `dateModified` (a quoted ISO timestamp in front matter) only after a real
+article update; builds do not invent freshness dates.
+
+`plugins/topic-hubs.cjs` generates `/topics` and six server-rendered collections:
+Azure, Azure Cosmos DB, AI agents, AI engineering, MCP, and agent skills.
+`src/data/topics.json` owns their introductions, accepted tag aliases, and
+curated starting points. Collections use Docusaurus's actual article permalinks,
+sort newest first, and exclude draft/unlisted posts. A missing curated article
+fails the build. The hub, articles, homepage, blog listing, footer, sitemap, and
+agent-readable index link these pages without requiring client-side filtering.
+Keep the current theme tokens, visible focus styles, and 44px topic link targets.
+
+For a new article:
+
+1. Write a specific title and original description that answer a reader's task.
+2. Set `authors: [Sajeetharan]`, relevant tags from the topic definitions, and
+   a descriptive social image. Preserve established slugs when updating articles.
+3. Explain prerequisites, tested versions, reproducible steps, and limitations.
+   Include original evidence or results, not just a paraphrase of documentation.
+4. Add contextual links to the most useful related articles. Update a topic's
+   `startHere` only when the article is a good entry point, not just because it
+   is newest. Legacy tag aliases keep older posts discoverable.
+5. Run `npm run typecheck`, `npm run build`, and `npm test`. SEO tests validate
+   generated HTML, all article schemas, topic links, sitemap entries, and Markdown.
+
+#### Building topical authority
+
+The topic pages organize existing work; they do not claim to be comprehensive
+courses. MCP in particular currently has project experiences and conference
+reflections rather than a full implementation series. Prioritize original,
+tested articles to close those gaps:
+
+- **Azure:** local-to-cloud deployment, identity, observability, and measured cost.
+- **Cosmos DB:** partition design with workload evidence, RU measurements, and
+  vector retrieval quality using a reproducible dataset.
+- **Agents / AI:** memory isolation, tool failure recovery, and baseline versus
+  changed-agent evaluations with published test cases.
+- **MCP:** a minimal working server, permission boundaries, and integration tests.
+- **Skills:** one focused skill, an evaluation dataset, and measured regressions
+  across model or instruction changes.
+
+Publish at a sustainable cadence and maintain the best guides as products evolve.
+After deployment, submit the sitemap in Google Search Console, inspect the hub
+and representative articles, and validate article markup with Google's
+[Rich Results Test](https://search.google.com/test/rich-results).
+Track non-branded query impressions, clicks, CTR, and average position by topic
+over successive 28-day periods. Use the actual queries to prioritize follow-ups
+and refreshes; no structured data, keyword list, or `llms.txt` guarantees rankings
+or inclusion in AI answers. FAQ rich results are generally restricted to
+authoritative government and health sites, so the existing FAQ is not a promised
+search enhancement.
 
 The old WordPress.com site is a separate host: changes in this repository
 cannot redirect its articles. The checked-in `worker/blog-redirects.mjs`

@@ -10,7 +10,7 @@ tags:
   - developer-tools
   - microsoft
 utcDate: "2026-07-15T00:00:00.000Z"
-description: "Back in January, I started building skills for AI coding agents — domain-specific guidance that helps agents like GitHub Copilot, Claude, and others produce..."
+description: "Lessons from six months building AI coding agent skills: focused domain guidance, realistic evaluation, and knowing when more instructions make outcomes worse."
 ---
 
 Back in January, I started building skills for AI coding agents — domain-specific guidance that helps agents like GitHub Copilot, Claude, and others produce better code in areas they'd otherwise struggle with. My domain happened to be Azure Cosmos DB, but the lessons apply to anyone writing skills for any technology.

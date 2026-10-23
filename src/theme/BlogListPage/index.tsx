@@ -11,6 +11,7 @@ import SearchMetadata from "@theme/SearchMetadata";
 import BlogPostItems from "@theme/BlogPostItems";
 import type { Props } from "@theme/BlogListPage";
 import styles from "./styles.module.scss";
+import TopicLinks from "../../components/topics/TopicLinks";
 
 type ViewMode = "list" | "grid";
 
@@ -129,6 +130,7 @@ function BlogListPageContent(props: Props): JSX.Element {
           <Link className={styles.archiveLink} to="/blogs/archive">
             Browse the complete blog archive
           </Link>
+          <TopicLinks />
         </div>
 
         {/* Filter Bar */}

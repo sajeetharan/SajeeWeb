@@ -1,7 +1,7 @@
 ---
 title: SQL 2012 Built In Functions
-Date: '2014-02-24'
-author: Sajeetharan
+Date: "2014-02-24"
+authors: [Sajeetharan]
 utcDate: "2014-02-24T00:00:00.000Z"
 description: "Well, I have decided to write on technologies finally. It was one of the good sessions from the SQL meetup held at Microsoft Sri Lanka this month. I learned..."
 ---
@@ -39,13 +39,14 @@ SQL Server 2012 introduces many new rich built-in functions that offer more solu
 In SQL 2008, to find a trend, we were using CTE functions. For example, to find the trend in 2008:
 
 ```sql
-WITH CTE AS (  
-    SELECT rownum = ROW_NUMBER() OVER (ORDER BY WorkOrderID), OrderQty 
+WITH CTE AS (
+    SELECT rownum = ROW_NUMBER() OVER (ORDER BY WorkOrderID), OrderQty
     FROM [AdventureWorks].[Production].[WorkOrder]
 )
-SELECT CASE 
+SELECT CASE
            WHEN CTE.OrderQty - PREVCTE.OrderQty > 0 THEN 'UP'
            WHEN CTE.OrderQty - PREVCTE.OrderQty <= 0 THEN 'NA'
        END AS Trend
-FROM CTE 
+FROM CTE
 LEFT OUTER JOIN CTE AS PREVCTE ON PREVCTE.rownum = CTE.rownum - 1
+```
