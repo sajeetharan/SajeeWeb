@@ -7,7 +7,7 @@
     "binding": "AI",
   },
   "vars": {
-    "HIRE_ASSISTANT_ENABLED": "false",
+    "HIRE_ASSISTANT_ENABLED": "true",
   },
   "ratelimits": [
     {

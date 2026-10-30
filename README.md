@@ -164,8 +164,9 @@ To enable:
    disclosures, and the selected Llama model's license.
 2. Verify that rate-limit namespace IDs `1001` and `1002` in `wrangler.jsonc` do
    not conflict with existing limiters on that account; change them if needed.
-3. Set `HIRE_ASSISTANT_ENABLED` to `"true"` in `wrangler.jsonc`. It is deliberately
-   `"false"` until the owner opts in. The `AI` binding uses Cloudflare's account
+3. Set `HIRE_ASSISTANT_ENABLED` to `"true"` in `wrangler.jsonc` to opt in to AI
+   inference after deploying the Worker; GitHub Pages alone cannot enable it.
+   The `AI` binding uses Cloudflare's account
    authentication; no model API key belongs in the browser or repository.
 4. Authenticate Wrangler locally (`npx wrangler login`) and run
    `npm run deploy:worker`, or use the existing Cloudflare deployment workflow.
