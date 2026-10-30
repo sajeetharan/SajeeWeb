@@ -5,7 +5,7 @@ description: "How Sajeetharan Sinnathurai's personal website uses analytics, hos
 
 # Privacy Policy
 
-Last updated: October 22, 2026
+Last updated: October 29, 2026
 
 This notice covers [www.sajeetharan.dev](https://www.sajeetharan.dev/),
 the personal website and blog of Sajeetharan Sinnathurai. For privacy questions,
@@ -84,6 +84,40 @@ you provide to them under their own privacy policies.
 - [Topmate](https://topmate.io/) (see its current privacy terms before booking)
 
 ## Information you send directly
+
+### Hire Me AI assistant
+
+The [Hire Me page](/hire-me) offers an optional AI assistant, separate from the
+Ask Sajee contact guide. Before sending a question, you must select the processing
+consent checkbox. Your question and up to three recent exchanges are sent through
+this site's Cloudflare Worker to Cloudflare Workers AI. Long conversations may
+include fewer exchanges to stay within the request-size limit. The assistant uses
+curated public professional facts, not private employer records or a private CV.
+Do not submit confidential, personal, or sensitive information.
+
+The site adds no chat database, transcript logging, custom chat analytics events,
+or persistent conversation storage. Messages stay in page memory until you clear
+them, leave the page, or reload it. Clear chat cannot withdraw a request already
+processed by Cloudflare. Cloudflare processes requests and technical metadata
+under its own terms; this site does not promise deletion periods for
+provider-controlled records. IP addresses are used for short-window rate limiting.
+See [Cloudflare's Workers AI data usage documentation](https://developers.cloudflare.com/workers-ai/platform/data-usage/)
+and [Cloudflare's privacy policy](https://www.cloudflare.com/privacypolicy/).
+
+Voice input and read-aloud use browser speech features, not ElevenLabs or a clone
+of Sajeetharan's voice. Microphone capture starts only when you choose **Use
+microphone**, requires browser permission, and stops after one utterance or up to
+30 seconds. Speech recognition may send audio to your browser provider's service.
+Read-aloud may use a local or provider-hosted voice. Availability and processing
+depend on your browser, device, and provider settings. You can type instead.
+Recognized speech fills the question box for you to review; it is not automatically
+sent to the AI. This site does not record or store audio.
+
+AI may produce incorrect answers despite its instructions. Verify answers against
+the public sources and contact Sajeetharan for hiring decisions, terms, and
+availability. The assistant has no tools and cannot book, negotiate, or act on
+anyone's behalf. If the free AI allowance is exhausted or the endpoint is not
+enabled, the page's public FAQs and contact links remain available.
 
 ### Ask Sajee contact guide
 

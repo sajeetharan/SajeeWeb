@@ -93,12 +93,121 @@ from generated Markdown so global contact prompts do not pollute article exports
 
 ### Homepage navigation and events
 
-The homepage uses sticky section shortcuts, concise work and talk previews, and
-a native expandable biography to keep the initial page compact without hiding
+The site uses warm ivory surfaces, ink text, and burnt-orange accents, with
+charcoal surfaces and apricot accents in dark mode. Shared theme tokens live in
+`src/css/custom.scss`; homepage highlights and blog controls use those tokens
+rather than hard-coded cyan. Existing browser-tab artwork is unchanged.
+
+The enlarged homepage portrait uses nine supplied expression photos, cropped
+from the user's 3-by-3 expression grid into `static/img/expressions/*.webp`.
+The original attachment is not changed. Each crop is 480 by 320 pixels, without
+the grid's white gutters; all nine main images load up front to avoid flashes.
+`src/data/portrait-reactions.ts` maps the Navarasa names and six props to the
+photos: slap, pinch, boxing glove, feather, flower, and spider. Tool use counts
+are independent. Repeated pinches deepen localized cheek redness; punches
+alternate angry/sad photos. A small, non-graphic nosebleed appears after three
+boxing-glove uses automatically, without a settings checkbox.
+Gentle props clear redness and injury effects on contact. The "Nine moods, one
+developer" playground grows to 600px wide on desktop and stacks below the copy
+on tablet/mobile. All nine expressions are reached through the props, without
+a separate expression picker. Only the photo and labeled props are visible:
+no selected-tool text, reaction counter, captions, action/reset buttons, or
+how-to instructions. Accessible labels and screen-reader-only expression
+announcements remain.
+
+Click, tap, horizontal swipe, and Enter/Space on the photo are equivalent
+ways to apply a prop. Vertical touch scrolling is preserved and a swipe counts
+once, not again on its synthesized click. Reloading starts a fresh scene.
+One scene is shared across responsive layouts; the small mobile portrait links
+to it below the hero copy. Reduced-motion mode retains photos, skin effects,
+and accessible expression announcements without movement. Photos and shaded vector props stay
+local: no AI service, image uploads, sound, tracking events, or API calls.
+
+The homepage keeps the main navbar without a second sticky section menu.
+Section IDs remain available for direct links. Concise work and talk previews
+and a native expandable biography keep the initial page compact without hiding
 content behind JavaScript. The complete talk collection remains at `/talks`.
 Upcoming event details are shared by the homepage and talks page through
 `src/components/talks/UpcomingEvents.tsx`. Keep dates and the agenda link current;
 only add session titles or times when confirmed by the organizer.
+
+### Hire Me page and free-tier AI
+
+`/hire-me` combines an original recruiter landing page, public FAQs, contact
+links, and an optional text AI assistant with browser speech input/read-aloud.
+One sitewide header combines the logo, navigation, GitHub, LinkedIn, X/Twitter,
+email, a single Hire Me button, and the theme toggle. Social icons use a custom
+Docusaurus navbar item so the same links appear inside the mobile hamburger
+menu; there is no separate utility bar. The existing Ask Sajee widget remains a separate non-AI contact guide on
+other pages; it is hidden on Hire Me to avoid two competing assistant controls.
+
+`src/data/hire-me.json` is the shared source for the visible FAQs and the
+server-side assistant knowledge. Keep facts and source links aligned with the
+published career/project pages. Do not copy another person's career claims,
+invent metrics, or imply job-search status or availability. The assistant uses
+curated public facts rather than private documents; update them when the portfolio changes.
+The site does not publish a downloadable CV.
+
+The AI requires the existing Cloudflare Worker; GitHub Pages alone cannot run it.
+There are no new packages, client-side API keys, ElevenLabs subscription, or paid
+voice calls. Cloudflare Workers AI currently includes 10,000 Neurons/day across
+the account, resetting at 00:00 UTC. On **Workers Free**, exhausted quotas fail
+rather than incur overage charges. This is not a fixed number of conversations
+or an unlimited service. Keep the account on the Free plan: Paid plans can bill
+usage beyond the allowance. Check the current
+[Workers AI pricing](https://developers.cloudflare.com/workers-ai/platform/pricing/)
+before enabling the feature.
+
+To enable:
+
+1. Use a Cloudflare Workers **Free** account and review Workers AI terms, privacy
+   disclosures, and the selected Llama model's license.
+2. Verify that rate-limit namespace IDs `1001` and `1002` in `wrangler.jsonc` do
+   not conflict with existing limiters on that account; change them if needed.
+3. Set `HIRE_ASSISTANT_ENABLED` to `"true"` in `wrangler.jsonc`. It is deliberately
+   `"false"` until the owner opts in. The `AI` binding uses Cloudflare's account
+   authentication; no model API key belongs in the browser or repository.
+4. Authenticate Wrangler locally (`npx wrangler login`) and run
+   `npm run deploy:worker`, or use the existing Cloudflare deployment workflow.
+   The configured custom domains must route through this Worker, not only
+   GitHub Pages. Deployment changes your live hosting; review those routes first.
+5. Check `GET /api/hire-me` returns `{"available":true}`. Test a real text question,
+   an unknown fact, an identity question, private-information requests, and
+   attempts to override the instructions. Model behavior is probabilistic;
+   mocked unit tests do not establish live guardrail quality.
+
+For static development use `npm start`; AI shows an honest unavailable state.
+To exercise the Worker after building, use `npx wrangler dev --local-protocol https`
+(trust the local development certificate in your browser). HTTP requests intentionally
+redirect to the production HTTPS domain. Actual Workers AI
+inference uses the account's remote service/allowance and requires authentication.
+The server accepts same-origin JSON POSTs with explicit processing consent,
+1-7 alternating user/assistant messages of up to 1200 characters each, an 8 KB
+body limit, and at most 240 generated tokens. Model replies are rendered as text,
+never HTML. Only public facts enter the system prompt; there are no tools or secrets.
+Prompts instruct it to identify as AI, preserve attribution/numbers, decline
+private topics, and defer unknown facts/terms to direct contact. These are
+instructions, not a guarantee of correct or jailbreak-proof output.
+
+Limits are approximately five requests per visitor per minute and 30 requests
+per minute across the page, **per Cloudflare location**, not strict global caps.
+Origin checks reduce browser cross-site use but are not authentication or bot
+protection; non-browser clients can spoof them. Provider quotas remain the Free
+plan spending boundary. Errors and exhausted quotas are explicit, with FAQ and
+contact recovery. Set the enable flag back to `"false"` and redeploy to disable AI.
+
+The page asks for processing consent before text or microphone use. Audio
+recognition is browser-dependent, may use a browser provider's servers, runs for
+one utterance/up to 30 seconds, and only fills a draft; sending is a separate
+action. Read-aloud is opt-in and uses a browser voice, not voice cloning.
+No transcripts/audio are stored by this site, and no chat analytics events are
+added; existing site analytics and provider policies still apply. The last three
+completed exchanges live only in page memory. See `/privacy#hire-me-ai-assistant`.
+
+Validation: `npm run typecheck`, `npm run build`, then
+`node --test tests/hire-me.test.mjs tests/worker.test.mjs tests/site-quality.test.mjs tests/contact-widget.test.mjs`.
+Endpoint tests mock inference; a live Cloudflare smoke test is still required
+after account setup and deployment.
 
 ### Awards, accessibility, and image budgets
 

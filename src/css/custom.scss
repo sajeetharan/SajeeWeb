@@ -11,18 +11,34 @@ h5 {
 
 /* You can override the default Infima variables here. */
 :root {
-  --ifm-color-primary: #0e7490;
-  --ifm-color-primary-dark: #0c657d;
-  --ifm-color-primary-darker: #0a586d;
-  --ifm-color-primary-darkest: #084858;
-  --ifm-color-primary-light: #107f9c;
-  --ifm-color-primary-lighter: #1189a8;
-  --ifm-color-primary-lightest: #1394b5;
+  --ifm-color-primary: #c2410c;
+  --ifm-color-primary-dark: #ad390b;
+  --ifm-color-primary-darker: #9a3412;
+  --ifm-color-primary-darkest: #7c2d12;
+  --ifm-color-primary-light: #c7460f;
+  --ifm-color-primary-lighter: #ca4810;
+  --ifm-color-primary-lightest: #ce4c13;
 
-  --ifm-color-secondary-accent: #7c3aed;
-  --ifm-background-color: #ffffff;
-  --ifm-background-surface-color: #f6f9fa;
-  --ifm-color-emphasis-600: #526071;
+  --ifm-color-secondary-accent: #9a3412;
+  --ifm-background-color: #fffaf2;
+  --ifm-background-surface-color: #f5ede2;
+  --ifm-font-color-base: #292522;
+  --ifm-color-content: var(--ifm-font-color-base);
+  --ifm-color-content-secondary: var(--ifm-color-emphasis-600);
+  --ifm-color-emphasis-100: #f5ede2;
+  --ifm-color-emphasis-200: #e9ded0;
+  --ifm-color-emphasis-300: #d8cbbd;
+  --ifm-color-emphasis-400: #b9a694;
+  --ifm-color-emphasis-500: #8e7966;
+  --ifm-color-emphasis-600: #665c54;
+  --ifm-color-emphasis-700: #554a41;
+  --ifm-color-emphasis-800: #40372f;
+  --ifm-color-emphasis-900: #292522;
+  --site-accent-rgb: 194, 65, 12;
+  --site-on-accent: #ffffff;
+  --site-ink: #292522;
+  --site-on-ink: #fff4e6;
+  --site-accent-on-ink: #ffb073;
 
   --ifm-code-font-size: 95%;
   --ifm-font-family-base: "Inter", sans-serif;
@@ -37,6 +53,7 @@ h5 {
   --ifm-line-height-base: 1.6;
 
   --ifm-heading-font-weight: 700;
+  --ifm-navbar-height: 68px;
   --ifm-navbar-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
@@ -46,21 +63,33 @@ h5 {
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
-[data-theme="dark"] {
-  --ifm-color-primary: #22d3ee;
-  --ifm-color-primary-dark: #06b6d4;
-  --ifm-color-primary-darker: #0891b2;
-  --ifm-color-primary-darkest: #0e7490;
-  --ifm-color-primary-light: #67e8f9;
-  --ifm-color-primary-lighter: #a5f3fc;
-  --ifm-color-primary-lightest: #cffafe;
-  --ifm-color-emphasis-600: #9aa8b8;
+:root[data-theme="dark"] {
+  --ifm-color-primary: #ffb073;
+  --ifm-color-primary-dark: #ff9a4f;
+  --ifm-color-primary-darker: #fb923c;
+  --ifm-color-primary-darkest: #f97316;
+  --ifm-color-primary-light: #ffc294;
+  --ifm-color-primary-lighter: #ffd3b3;
+  --ifm-color-primary-lightest: #ffe4cf;
+  --ifm-color-secondary-accent: #ffc294;
+  --ifm-font-color-base: #fff4e6;
+  --ifm-color-emphasis-100: #221d18;
+  --ifm-color-emphasis-200: #352c24;
+  --ifm-color-emphasis-300: #514338;
+  --ifm-color-emphasis-400: #796657;
+  --ifm-color-emphasis-500: #a18a77;
+  --ifm-color-emphasis-600: #bfae9e;
+  --ifm-color-emphasis-700: #d6c6b7;
+  --ifm-color-emphasis-800: #eddfd1;
+  --ifm-color-emphasis-900: #fff4e6;
+  --site-accent-rgb: 255, 176, 115;
+  --site-on-accent: #181512;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
 
 html[data-theme="dark"] {
-  --ifm-background-color: #0a0a0f;
-  --ifm-background-surface-color: #12121a;
+  --ifm-background-color: #181512;
+  --ifm-background-surface-color: #221d18;
 
   .navbar {
     border-bottom: 1px solid var(--ifm-color-emphasis-200);
@@ -70,12 +99,12 @@ html[data-theme="dark"] {
 /* Navigation styling */
 .navbar {
   backdrop-filter: blur(16px);
-  background: rgba(255, 255, 255, 0.85);
+  background: rgba(255, 250, 242, 0.92);
   box-shadow: var(--ifm-navbar-shadow);
   min-height: 68px;
 
   [data-theme="dark"] & {
-    background: rgba(10, 10, 15, 0.85);
+    background: rgba(24, 21, 18, 0.92);
   }
 
   .navbar__title {
@@ -84,9 +113,41 @@ html[data-theme="dark"] {
     letter-spacing: -0.02em;
   }
 
+  .clean-btn {
+    min-width: 44px;
+    min-height: 44px;
+  }
+
   .navbar__link {
+    min-height: 44px;
+    align-items: center;
+    padding-inline: clamp(0.35rem, 0.6vw, 0.75rem);
     font-size: 0.88rem;
     font-weight: 600;
+    white-space: nowrap;
+
+    @media (min-width: 997px) {
+      display: inline-flex;
+    }
+  }
+
+  .header-hire-link {
+    margin-inline: 0.4rem;
+    padding-inline: 1rem;
+    border-radius: 0.6rem;
+    background: var(--ifm-color-primary);
+    color: var(--site-on-accent);
+
+    &:hover,
+    &:focus-visible {
+      background: var(--ifm-color-primary-dark);
+      color: var(--site-on-accent);
+      text-decoration: none;
+    }
+  }
+
+  .navbar-sidebar .header-hire-link {
+    margin: 0.75rem 1rem;
   }
 
   :focus-visible {
@@ -182,13 +243,17 @@ html[data-theme="dark"] {
 }
 
 /* Button styles */
+.button--primary:not(.button--outline) {
+  --ifm-button-color: var(--site-on-accent);
+}
+
 .button--outline {
   &:focus {
     --ifm-button-background-color: var(--ifm-button-border-color);
   }
 
   &.button--primary:focus {
-    --ifm-button-color: var(--ifm-font-color-base-inverse);
+    --ifm-button-color: var(--site-on-accent);
   }
 }
 
@@ -281,24 +346,24 @@ h3 {
 .card {
   border-radius: 1rem;
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
-  border: 1px solid rgba(6, 182, 212, 0.15);
-  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(var(--site-accent-rgb), 0.15);
+  background: var(--ifm-background-surface-color);
   backdrop-filter: blur(12px);
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 
   &:hover {
     transform: translateY(-6px);
-    box-shadow: 0 12px 40px rgba(6, 182, 212, 0.15);
-    border-color: rgba(6, 182, 212, 0.4);
+    box-shadow: 0 12px 40px rgba(var(--site-accent-rgb), 0.15);
+    border-color: rgba(var(--site-accent-rgb), 0.4);
   }
 
   [data-theme="dark"] & {
-    background: rgba(18, 18, 26, 0.7);
-    border: 1px solid rgba(34, 211, 238, 0.1);
+    background: var(--ifm-background-surface-color);
+    border: 1px solid rgba(var(--site-accent-rgb), 0.1);
 
     &:hover {
-      box-shadow: 0 12px 40px rgba(34, 211, 238, 0.1);
-      border-color: rgba(34, 211, 238, 0.3);
+      box-shadow: 0 12px 40px rgba(var(--site-accent-rgb), 0.1);
+      border-color: rgba(var(--site-accent-rgb), 0.3);
     }
   }
 }

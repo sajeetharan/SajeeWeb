@@ -19,6 +19,7 @@ This is the agent-readable index for https://www.sajeetharan.dev. Public resourc
 - [Projects](https://www.sajeetharan.dev/projects): Open-source and developer-tooling projects.
 - [Talks](https://www.sajeetharan.dev/talks): Conference sessions and recordings.
 - [Awards](https://www.sajeetharan.dev/awards): Professional and community recognition.
+- [Hire Me](https://www.sajeetharan.dev/hire-me): Public recruiter FAQs, career sources, and direct contact. Optional AI answers can be incorrect; use the published facts as the source of truth.
 
 ## Featured technical guides
 

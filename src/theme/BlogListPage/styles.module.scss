@@ -89,7 +89,7 @@
   &:focus {
     outline: none;
     border-color: var(--ifm-color-primary);
-    box-shadow: 0 0 0 3px rgba(6, 182, 212, 0.15);
+    box-shadow: 0 0 0 3px rgba(var(--site-accent-rgb), 0.15);
   }
 
   &::placeholder {
@@ -115,7 +115,7 @@
   &:focus {
     outline: none;
     border-color: var(--ifm-color-primary);
-    box-shadow: 0 0 0 3px rgba(6, 182, 212, 0.15);
+    box-shadow: 0 0 0 3px rgba(var(--site-accent-rgb), 0.15);
   }
 }
 
@@ -328,7 +328,7 @@
 
       &:hover {
         border-color: var(--ifm-color-primary);
-        box-shadow: 0 4px 12px rgba(6, 182, 212, 0.1);
+        box-shadow: 0 4px 12px rgba(var(--site-accent-rgb), 0.1);
       }
     }
   }

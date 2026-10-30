@@ -1,0 +1,49 @@
+{
+  "name": "Sajeetharan Sinnathurai",
+  "role": "Principal Product Manager at Microsoft",
+  "summary": "I build for developers, at the intersection of developer tools, databases, and AI agents. My work spans product strategy, cloud engineering, open source, and helping developers turn complex technology into practical solutions.",
+  "sections": [
+    {
+      "title": "Product leadership",
+      "question": "What does Sajeetharan work on?",
+      "answer": "Sajeetharan is a Principal Product Manager at Microsoft. His published career page describes leading Azure Cosmos DB developer experience, SDK design, and tooling, and driving product strategy for developer tools and extensions.",
+      "source": "/career",
+      "sourceLabel": "Career journey"
+    },
+    {
+      "title": "AI agents and MCP",
+      "question": "What has he built with AI agents and MCP?",
+      "answer": "His project portfolio lists him as author of Cosmos Agent Starter, Azure Cosmos DB MCP Toolkit, Azure Cosmos DB Agent Kit, Angular Agent Kit, and an Azure Cosmos DB MCP server sample. It lists him as a contributor to the Banking Multi Agent Workshop. These projects cover agent templates, coding-agent skills, and developer access to Cosmos DB through MCP. The portfolio does not establish adoption metrics or internal business results.",
+      "source": "/projects",
+      "sourceLabel": "Projects and contribution roles"
+    },
+    {
+      "title": "Engineering background",
+      "question": "What is his career background?",
+      "answer": "His published career timeline lists Principal Product Manager at Microsoft (2020 - Present), Cloud Solution Architect at Microsoft (2019 - 2020), Technical Lead at 99X Technology (2016 - 2019), and Software Engineer at DuoSoftware (2011 - 2016). His engineering experience includes cloud-native architecture, enterprise software, full-stack development, and cloud-based SaaS products.",
+      "source": "/career",
+      "sourceLabel": "Published career timeline"
+    },
+    {
+      "title": "Open-source contributions",
+      "question": "Which open-source projects has he contributed to?",
+      "answer": "The project portfolio identifies Sajeetharan as a contributor to Azure SDK for JavaScript, Data API Builder, the Banking Multi Agent Workshop, and Developer.AzureCosmosDB.com. It identifies him as author of DevGlobe, Angular Visual Storybook, and several Cosmos DB and agent-tooling projects. Author and contributor are different roles; the portfolio does not claim he built every project alone.",
+      "source": "/projects",
+      "sourceLabel": "Open-source portfolio"
+    },
+    {
+      "title": "Speaking and mentoring",
+      "question": "Does he speak and mentor?",
+      "answer": "His site includes conference talks, recordings, and community sessions. His mentoring page links to Topmate services for mentorship, PM interview preparation, pathways into product management, focused questions, and discovery calls. Current pricing and booking availability are provided by Topmate, not by this assistant.",
+      "source": "/talks",
+      "sourceLabel": "Talks and recordings"
+    },
+    {
+      "title": "Roles and next steps",
+      "question": "What roles is he looking for, and when can he start?",
+      "answer": "His published focus areas are developer experience, product management, cloud platforms, databases, and AI agents. This page does not confirm an active job search, preferred next role, relocation, compensation, contract terms, or a start date. Contact Sajeetharan directly to discuss a specific opportunity.",
+      "source": "/contact",
+      "sourceLabel": "Discuss an opportunity"
+    }
+  ]
+}

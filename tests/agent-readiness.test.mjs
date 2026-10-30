@@ -145,14 +145,10 @@ test("mentoring reviews render compact, source-linked highlights without embeds"
   assert.doesNotMatch(section, /<iframe\b/);
 });
 
-test("homepage offers direct section links and progressive disclosure", async () => {
+test("homepage preserves section targets and progressive disclosure without a second menu", async () => {
   const html = await readFile("build/index.html", "utf8");
-  assert.match(html, /<nav\b[^>]*aria-label="Homepage sections"/);
+  assert.doesNotMatch(html, /<nav\b[^>]*aria-label="Homepage sections"/);
   for (const section of ["work", "mentoring", "talks", "about", "connect"]) {
-    assert.ok(
-      html.includes(`href="#${section}"`),
-      `missing ${section} shortcut`,
-    );
     assert.ok(html.includes(`id="${section}"`), `missing ${section} target`);
   }
   assert.match(html, /<details\b[^>]*><summary>Read my full story<\/summary>/);

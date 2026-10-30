@@ -21,6 +21,9 @@ test("navigation puts Developers last and uses a lightweight logo", async () => 
     previous = position;
   }
   assert.match(navbar, /logo-sketch-96\.webp/);
+  assert.equal((navbar.match(/href="\/hire-me"/g) ?? []).length, 1);
+  assert.match(navbar, /aria-label="Social profiles"/);
+  assert.doesNotMatch(html, /aria-label="Connect with Sajeetharan"/);
   assert.doesNotMatch(navbar, /logo-sketch\.png/);
   const logo = await readFile("build/img/logo-sketch-96.webp");
   assert.equal(logo.toString("ascii", 8, 12), "WEBP");
@@ -143,6 +146,41 @@ test("homepage hero and topic strip are inside the main landmark", async () => {
   assert.ok(main);
   assert.match(main, /<h1\b[^>]*>Sajeetharan Sinnathurai<\/h1>/);
   assert.match(main, /Working across/);
+  assert.doesNotMatch(html, /aria-label="Homepage sections"/);
+  assert.match(html, /class="navbar\b/);
+  for (const id of ["work", "mentoring", "talks", "about", "connect"]) {
+    assert.ok(html.includes(`id="${id}"`), `retain the #${id} deep link`);
+  }
+});
+
+test("the production theme includes ivory, ink, and accessible orange button colors", async () => {
+  const files = await readdir("build/assets/css");
+  const css = (
+    await Promise.all(
+      files
+        .filter((file) => file.endsWith(".css"))
+        .map((file) => readFile(`build/assets/css/${file}`, "utf8")),
+    )
+  ).join("\n");
+  for (const token of [
+    "--ifm-background-color:#fffaf2",
+    "--ifm-background-color:#181512",
+    "--ifm-color-primary:#c2410c",
+    "--ifm-color-primary:#ffb073",
+    "--site-on-accent:#fff",
+    "--site-on-accent:#181512",
+  ]) {
+    assert.ok(css.includes(token), `missing theme token: ${token}`);
+  }
+  assert.match(
+    css,
+    /\.button--primary:not\(\.button--outline\)\{--ifm-button-color:var\(--site-on-accent\)\}/,
+  );
+  assert.match(
+    css,
+    /:root\[data-theme=(?:"dark"|dark)\]\{[^}]*--ifm-color-emphasis-600:#bfae9e/,
+    "dark neutral tokens must override Infima's :root[data-theme] defaults",
+  );
 });
 
 test("initial archive excerpts have sequential headings and a named cover link", async () => {

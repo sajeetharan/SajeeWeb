@@ -1,0 +1,42 @@
+.links {
+  display: flex;
+  align-items: center;
+}
+
+.item {
+  padding: 0;
+}
+
+.mobile {
+  margin-top: 0.75rem;
+  padding: 0.75rem 1rem;
+  border-top: 1px solid var(--ifm-color-emphasis-200);
+}
+
+.links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  min-height: 44px;
+  color: var(--ifm-font-color-base);
+  border-radius: 6px;
+  transition: background-color 150ms;
+
+  &:hover {
+    background: var(--ifm-color-emphasis-200);
+    text-decoration: none;
+  }
+
+  svg {
+    width: 18px;
+    height: 18px;
+    fill: currentColor;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .links a {
+    transition: none;
+  }
+}

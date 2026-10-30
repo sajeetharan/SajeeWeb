@@ -107,15 +107,6 @@ export default function Home(): JSX.Element {
       <Head>
         <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
       </Head>
-      <nav className={styles.sectionNav} aria-label="Homepage sections">
-        <div className={`container ${styles.sectionLinks}`}>
-          <a href="#work">Work</a>
-          <a href="#mentoring">Mentoring</a>
-          <a href="#talks">Talks</a>
-          <a href="#about">About</a>
-          <a href="#connect">Connect</a>
-        </div>
-      </nav>
       <main>
         <Hero avatar={avatar} />
         <TechStack />

@@ -1,6 +1,7 @@
 import clsx from "clsx";
 import React from "react";
 import Link from "@docusaurus/Link";
+import { PortraitPlayground } from "./PortraitPlayground";
 
 import styles from "./Hero.module.scss";
 
@@ -16,13 +17,13 @@ export const Hero: React.FC<HeroProps> = ({ avatar }) => {
       <div className="container">
         <div className={styles.heroContent}>
           <div className={styles.heroCopy}>
-            <img
-              src={avatarSrc}
+            <a
+              href="#slap-portrait"
               className={styles.mobilePortrait}
-              alt=""
-              width="80"
-              height="80"
-            />
+              aria-label="Play with my nine-expression portrait"
+            >
+              <img src={avatarSrc} alt="" width="80" height="80" />
+            </a>
             <h1 className={styles.personName}>Sajeetharan Sinnathurai</h1>
             <div className={styles.eyebrow}>
               <span className={styles.statusDot} aria-hidden="true" />
@@ -70,16 +71,8 @@ export const Hero: React.FC<HeroProps> = ({ avatar }) => {
             </p>
           </div>
 
-          <div className={styles.visual}>
-            <div className={styles.imageFrame}>
-              <img
-                src={avatarSrc}
-                className={styles.portrait}
-                alt="Sajeetharan Sinnathurai"
-                width="430"
-                height="538"
-              />
-            </div>
+          <div id="slap-portrait" tabIndex={-1} className={styles.visual}>
+            <PortraitPlayground />
             <div className={styles.profileCard}>
               <span className={styles.profileLabel}>Recognized expertise</span>
               <strong>Google Developer Expert · Microsoft MVP</strong>

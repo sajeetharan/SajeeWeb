@@ -199,6 +199,13 @@ const config: Config = {
         { to: "/awards", label: "Awards", position: "left" },
         { to: "/mentored", label: "Get Mentored", position: "left" },
         { to: "/developers", label: "Developers", position: "left" },
+        { type: "custom-socialLinks", position: "right" },
+        {
+          to: "/hire-me",
+          label: "Hire Me",
+          position: "right",
+          className: "header-hire-link",
+        },
       ],
     },
     footer: {
@@ -243,6 +250,10 @@ const config: Config = {
             {
               label: "Contact",
               to: "/contact",
+            },
+            {
+              label: "Hire Me",
+              to: "/hire-me",
             },
             {
               label: "Privacy Policy",

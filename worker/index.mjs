@@ -1,3 +1,5 @@
+import { handleHireMe } from "./hire-me.mjs";
+
 const STATIC_EXTENSION =
   /\.(?:css|js|mjs|map|md|png|jpe?g|webp|gif|svg|avif|ico|woff2?|ttf|otf|eot|xml|txt|json|pdf|mp4|webm|mp3|wav|ogg|zip)$/i;
 
@@ -128,6 +130,10 @@ export default {
       url.protocol = "https:";
       url.hostname = "www.sajeetharan.dev";
       return Response.redirect(url, 308);
+    }
+
+    if (url.pathname === "/api/hire-me") {
+      return handleHireMe(request, environment);
     }
 
     if (

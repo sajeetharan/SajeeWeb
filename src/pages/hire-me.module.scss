@@ -1,0 +1,243 @@
+.page {
+  padding: 4rem 0;
+  overflow-wrap: anywhere;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
+  align-items: center;
+  gap: clamp(2rem, 5vw, 5rem);
+  padding-bottom: 4rem;
+  border-bottom: 1px solid var(--ifm-color-emphasis-300);
+}
+
+.eyebrow,
+.tag {
+  font-family: var(--ifm-font-family-monospace);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: var(--ifm-color-primary);
+}
+
+.intro {
+  h1 {
+    font-size: clamp(2.2rem, 3.8vw, 3.5rem);
+    letter-spacing: -0.045em;
+    line-height: 1.12;
+    margin: 1.25rem 0 1.5rem;
+    text-wrap: balance;
+
+    span {
+      color: var(--ifm-color-primary);
+    }
+  }
+
+  > p {
+    max-width: 62ch;
+    color: var(--ifm-color-emphasis-700);
+  }
+
+  .name {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--ifm-font-color-base);
+    margin-bottom: 0.75rem;
+  }
+
+  .role {
+    font-size: 0.85rem;
+    font-weight: 600;
+  }
+
+  .disclaimer {
+    font-size: 0.78rem;
+    margin: 1.25rem 0 0;
+  }
+}
+
+.ctas {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.75rem;
+
+  a {
+    min-height: 44px;
+    font-size: 0.9rem;
+  }
+}
+
+.profile {
+  background: var(--ifm-background-surface-color);
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-top: 3px solid var(--ifm-color-primary);
+  border-radius: 20px;
+  padding: 2rem;
+
+  img {
+    display: block;
+    border-radius: 50%;
+    margin-bottom: 1.75rem;
+  }
+
+  h2 {
+    margin-top: 1rem;
+    font-size: 1.65rem;
+    letter-spacing: -0.035em;
+  }
+
+  ul {
+    padding-left: 1.1rem;
+    color: var(--ifm-color-emphasis-700);
+    font-size: 0.9rem;
+    line-height: 2;
+  }
+}
+
+.content {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  align-items: start;
+  gap: 3rem;
+  padding: 4rem 0;
+}
+
+.work {
+  h2 {
+    margin: 0.75rem 0;
+    font-size: 2rem;
+    letter-spacing: -0.035em;
+  }
+
+  > p,
+  article p {
+    font-size: 0.92rem;
+    color: var(--ifm-color-emphasis-700);
+  }
+
+  article {
+    padding: 1.5rem 0;
+    border-bottom: 1px solid var(--ifm-color-emphasis-300);
+  }
+
+  h3 {
+    margin: 0.75rem 0;
+    font-size: 1.2rem;
+  }
+
+  a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    gap: 0.5rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+  }
+}
+
+.faq {
+  max-width: 850px;
+  margin: 0 auto;
+  scroll-margin-top: 90px;
+
+  h2 {
+    font-size: 2rem;
+    margin-top: 0.75rem;
+    letter-spacing: -0.035em;
+  }
+
+  > p {
+    color: var(--ifm-color-emphasis-700);
+  }
+
+  details {
+    border-bottom: 1px solid var(--ifm-color-emphasis-300);
+    padding: 0.75rem 0;
+  }
+
+  summary {
+    min-height: 44px;
+    padding-block: 0.5rem;
+    font-weight: 600;
+    cursor: pointer;
+  }
+
+  details p {
+    margin-top: 0.75rem;
+    font-size: 0.94rem;
+  }
+
+  details a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    font-size: 0.85rem;
+  }
+}
+
+.guardrails {
+  max-width: 850px;
+  margin: 3rem auto;
+  padding: 1.75rem;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 16px;
+  background: var(--ifm-background-surface-color);
+  font-size: 0.88rem;
+
+  h2 {
+    font-size: 1.3rem;
+  }
+
+  li + li {
+    margin-top: 0.5rem;
+  }
+}
+
+.contact {
+  border-top: 1px solid var(--ifm-color-emphasis-300);
+  padding-top: 3rem;
+  text-align: center;
+
+  h2 {
+    font-size: clamp(1.6rem, 3vw, 2.2rem);
+    letter-spacing: -0.035em;
+    text-wrap: balance;
+  }
+
+  a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    margin: 0.5rem;
+    gap: 0.5rem;
+  }
+}
+
+@media (max-width: 996px) {
+  .hero,
+  .content {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 2rem;
+  }
+
+  .profile {
+    display: none;
+  }
+
+  .page {
+    padding-top: 2.5rem;
+  }
+
+  .content {
+    padding-top: 2rem;
+  }
+}
+
+@media print {
+  .content {
+    display: block;
+  }
+}
