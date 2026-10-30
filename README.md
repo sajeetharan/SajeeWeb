@@ -170,8 +170,11 @@ To enable:
    authentication; no model API key belongs in the browser or repository.
 4. Authenticate Wrangler locally (`npx wrangler login`) and run
    `npm run deploy:worker`, or use the existing Cloudflare deployment workflow.
-   The configured custom domains must route through this Worker, not only
-   GitHub Pages. Deployment changes your live hosting; review those routes first.
+   The configured Worker routes intercept only `/api/hire-me*` on the www and
+   apex hostnames. Keep the existing Cloudflare-proxied DNS records pointing
+   to GitHub Pages; do not delete A/CNAME records or add Worker Custom Domains.
+   The website stays on GitHub Pages, so normal website updates continue
+   automatically. Redeploy the Worker when its backend or configuration changes.
    The workflow preflight verifies token visibility, zone ownership against
    `CLOUDFLARE_ACCOUNT_ID`, and active zone status before building or uploading.
    An invisible zone requires checking `Zone > Zone > Read` and token resource
@@ -250,8 +253,11 @@ article's linked cover has descriptive alternative text.
 
 ### Deployment
 
-The static site is deployed from `main` with GitHub Pages. The optional
-Cloudflare Worker serves negotiated Markdown responses from the same build.
+The static site is deployed from `main` with GitHub Pages. The Cloudflare Worker
+is routed only to the Hire Me AI API; it does not take over website hosting or
+modify the existing DNS records. Its code also supports negotiated Markdown and
+legacy article redirects, but those features are not activated by the current
+API-only routes.
 
 To deploy the Worker, configure `CLOUDFLARE_API_TOKEN` and
 `CLOUDFLARE_ACCOUNT_ID` as GitHub Actions secrets, then dispatch **Deploy
@@ -405,9 +411,9 @@ instead of sending readers back to WordPress; original media URLs are retained.
 The optional Cloudflare Worker uses the same snapshot for **HTTP 301 redirects**,
 before content negotiation. It preserves queries and canonicalizes the domain
 and HTTPS in the same hop. Unknown articles still return 404, not the homepage.
-The Worker must actually be deployed and serving the domain for these
-server-side redirects to take effect; a GitHub Pages deployment alone does not
-activate it. Do not deploy an old Worker build over a newer Pages build.
+The Worker must actually be deployed and explicitly routed to article paths for
+these server-side redirects to take effect. The current API-only routes do not
+activate them; GitHub Pages continues to serve the static HTML redirect fallback.
 
 To refresh the mapping after importing more old posts, run `npx docusaurus build`,
 then `npm run sync:blog-redirects`, then `npm run build` and `npm test`.
@@ -420,12 +426,13 @@ ambiguous destinations instead of inventing redirects.
 1. Merge this PR and wait for the GitHub Pages deployment to succeed. Test
    `/2020/07/10/how-to-build-a-rocking-github-profile/` on the new domain:
    it must reach the matching article, not a 404.
-2. For server-side 301s, configure `CLOUDFLARE_API_TOKEN` and
+2. To enable the Hire Me AI API, configure `CLOUDFLARE_API_TOKEN` and
    `CLOUDFLARE_ACCOUNT_ID`, then run the **Deploy Cloudflare Worker** workflow
-   from the merged `main` branch. Confirm the Worker owns/serves both configured
-   custom domains. Test both HTTP/HTTPS and www/non-www with `curl -I`.
-   If retaining GitHub Pages without the Worker, the HTML redirect fallback
-   remains functional, but it is not an HTTP 301.
+   from the merged `main` branch. Confirm `/api/hire-me` returns
+   `{"available":true}` and that normal website paths remain on GitHub Pages.
+   The API-only routes do not enable server-side article 301s. The HTML redirect
+   fallback remains functional, but it is not an HTTP 301; expanding the Worker
+   routes for server-side redirects is a separate hosting decision.
 3. In the WordPress.com account, enable a
    [Site Redirect](https://wordpress.com/support/domains/site-redirect/) to
    `www.sajeetharan.dev` (the root, **not** `/blogs`). This is an account-level,

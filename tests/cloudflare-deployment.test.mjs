@@ -1,6 +1,7 @@
 import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
 import test from "node:test";
+import ts from "typescript";
 import { verifyCloudflareZone } from "../scripts/check-cloudflare-zone.mjs";
 
 const credentials = {
@@ -147,4 +148,23 @@ test("Cloudflare preflight runs before building and uploading the Worker", async
   assert.ok(preflight < workflow.indexOf("npm ci"));
   assert.ok(preflight < workflow.indexOf("npm run build"));
   assert.ok(preflight < workflow.indexOf("npx wrangler deploy"));
+});
+
+test("Cloudflare routes intercept only the AI API without taking over existing DNS", async () => {
+  const { config, error } = ts.parseConfigFileTextToJson(
+    "wrangler.jsonc",
+    await readFile("wrangler.jsonc", "utf8"),
+  );
+  assert.equal(error, undefined);
+  assert.equal(config.workers_dev, false);
+  assert.deepEqual(config.routes, [
+    {
+      pattern: "www.sajeetharan.dev/api/hire-me*",
+      zone_name: "sajeetharan.dev",
+    },
+    {
+      pattern: "sajeetharan.dev/api/hire-me*",
+      zone_name: "sajeetharan.dev",
+    },
+  ]);
 });

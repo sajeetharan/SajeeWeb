@@ -2,6 +2,7 @@
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "sajeetharan-dev",
   "main": "worker/index.mjs",
+  "workers_dev": false,
   "compatibility_date": "2026-08-18",
   "ai": {
     "binding": "AI",
@@ -27,7 +28,13 @@
     "run_worker_first": ["/**"],
   },
   "routes": [
-    { "pattern": "www.sajeetharan.dev", "custom_domain": true },
-    { "pattern": "sajeetharan.dev", "custom_domain": true },
+    {
+      "pattern": "www.sajeetharan.dev/api/hire-me*",
+      "zone_name": "sajeetharan.dev",
+    },
+    {
+      "pattern": "sajeetharan.dev/api/hire-me*",
+      "zone_name": "sajeetharan.dev",
+    },
   ],
 }
