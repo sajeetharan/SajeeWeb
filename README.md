@@ -172,6 +172,12 @@ To enable:
    `npm run deploy:worker`, or use the existing Cloudflare deployment workflow.
    The configured custom domains must route through this Worker, not only
    GitHub Pages. Deployment changes your live hosting; review those routes first.
+   The workflow preflight verifies token visibility, zone ownership against
+   `CLOUDFLARE_ACCOUNT_ID`, and active zone status before building or uploading.
+   An invisible zone requires checking `Zone > Zone > Read` and token resource
+   scope; an account mismatch requires the domain's Account ID, not its Zone ID.
+   The preflight does not print credentials, account IDs, or API response bodies
+   and does not change DNS.
 5. Check `GET /api/hire-me` returns `{"available":true}`. Test a real text question,
    an unknown fact, an identity question, private-information requests, and
    attempts to override the instructions. Model behavior is probabilistic;
