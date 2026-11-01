@@ -1,6 +1,7 @@
 import assert from "node:assert/strict";
 import { readFile, readdir, stat } from "node:fs/promises";
 import test from "node:test";
+import redirects from "../worker/blog-redirects.mjs";
 
 test("navigation puts Developers last and uses a lightweight logo", async () => {
   const html = await readFile("build/index.html", "utf8");
@@ -183,12 +184,18 @@ test("the production theme includes ivory, ink, and accessible orange button col
   );
 });
 
-test("initial archive excerpts have sequential headings and a named cover link", async () => {
+test("blog excerpts have sequential headings and the archived book cover link stays named", async () => {
   const html = await readFile("build/blogs/index.html", "utf8");
   assert.match(html, /<h2\b[^>]*id="overview"/);
   assert.doesNotMatch(html, /<h4\b[^>]*id="overview"/);
+  const bookUrl =
+    redirects[
+      "/2021/10/25/book-giveaway-win-a-free-copy-of-cloud-scale-analytics-with-azure-data-services"
+    ];
+  assert.ok(bookUrl);
+  const book = await readFile(`build${bookUrl}/index.html`, "utf8");
   assert.match(
-    html,
+    book,
     /alt="Cloud Scale Analytics with Azure Data Services book cover"/,
   );
 });

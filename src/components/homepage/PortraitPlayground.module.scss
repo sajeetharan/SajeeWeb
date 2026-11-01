@@ -82,6 +82,28 @@
   height: 100%;
 }
 
+.tearDrop {
+  animation: tear-roll 1800ms ease-in 180ms both;
+}
+
+.tearEye:nth-child(2) .tearDrop {
+  animation-delay: 380ms;
+}
+
+@keyframes tear-roll {
+  from {
+    transform: translateY(0);
+    opacity: 0.5;
+  }
+  35% {
+    opacity: 1;
+  }
+  to {
+    transform: translateY(24px);
+    opacity: 0.7;
+  }
+}
+
 .handPosition {
   position: absolute;
   top: var(--hand-y, 68%);
@@ -131,19 +153,6 @@
 .portrait[data-tool="flower"] .hit .hand,
 .portrait[data-tool="spider"] .hit .hand {
   animation-name: offer-prop;
-}
-
-.expressionBadge {
-  position: absolute;
-  left: 0.65rem;
-  bottom: 0.65rem;
-  padding: 0.35rem 0.65rem;
-  border-radius: 0.4rem;
-  background: #17212b;
-  color: #f8fafc;
-  font-size: 0.75rem;
-  font-weight: 700;
-  pointer-events: none;
 }
 
 .feedback {
@@ -297,7 +306,8 @@
 @media (prefers-reduced-motion: reduce) {
   .portrait .hit .face,
   .portrait .hit .hand,
-  .portrait .hit .handPosition {
+  .portrait .hit .handPosition,
+  .portrait .tearDrop {
     animation: none;
   }
 }

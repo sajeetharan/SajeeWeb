@@ -17,7 +17,7 @@ function printHelp() {
 
 Commands:
   resources [--json]  List public site resources
-  fetch <name|path>   Fetch a resource; requests Markdown for web pages
+  fetch <name|path>   Fetch a resource; uses static Markdown files for web pages
   help                Show this help`);
 }
 
@@ -52,6 +52,16 @@ async function main() {
     const resourceUrl = new URL(resourcePath, baseUrl);
     if (resourceUrl.origin !== new URL(baseUrl).origin) {
       throw new Error("fetch only accepts sajeetharan.dev resource paths");
+    }
+    const pathname = resourceUrl.pathname.replace(/\/$/, "");
+    if (pathname.endsWith(".html")) {
+      resourceUrl.pathname = pathname.replace(/\.html$/, ".md");
+    } else if (
+      !pathname.startsWith("/.well-known/") &&
+      !pathname.startsWith("/api/") &&
+      !/\.[^/]+$/.test(pathname)
+    ) {
+      resourceUrl.pathname = `${pathname}/index.md`;
     }
     const response = await fetch(resourceUrl, {
       headers: { Accept: "text/markdown, text/plain;q=0.9, */*;q=0.1" },

@@ -107,11 +107,14 @@ photos: slap, pinch, boxing glove, feather, flower, and spider. Tool use counts
 are independent. Repeated pinches deepen localized cheek redness; punches
 alternate angry/sad photos. A small, non-graphic nosebleed appears after three
 boxing-glove uses automatically, without a settings checkbox.
+Slaps and punches also add watery lower eyelids and translucent tears anchored
+to the active photo's eyes. Drops roll down once per contact; reduced-motion
+mode keeps them still. Other props clear the tears on contact.
 Gentle props clear redness and injury effects on contact. The "Nine moods, one
 developer" playground grows to 600px wide on desktop and stacks below the copy
 on tablet/mobile. All nine expressions are reached through the props, without
 a separate expression picker. Only the photo and labeled props are visible:
-no selected-tool text, reaction counter, captions, action/reset buttons, or
+no mood-name badge, selected-tool text, reaction counter, captions, action/reset buttons, or
 how-to instructions. Accessible labels and screen-reader-only expression
 announcements remain.
 
@@ -317,6 +320,26 @@ guarantee from these technical changes; site ownership verification and search
 indexability are not AdSense approval.
 
 ### Blog search visibility
+
+The October 2026 content-quality pass expands the historical ESLint and Angular
+search notes with usable examples and explicit update dates, while preserving
+their original publication dates and URLs. The portfolio implementation guide
+documents this repository's actual portrait, AI boundaries, and API-only routing;
+it is linked from Projects and Developers. Article edit links target this
+repository so readers can propose corrections.
+
+The Developer portal and CLI use the generated static Markdown files, not
+content negotiation on GitHub Pages. The sandbox reports non-2xx failures with
+a recovery action. Keep `static/llms.txt` consistent with the production routing.
+Validate these surfaces with `tests/content-quality.test.mjs` and
+`tests/cli.test.mjs` after building.
+
+These are content and usability improvements, not a resolution certified by
+Google. Continue reviewing the remaining image-led tips, outdated instructions,
+and personal announcements for original value and rights to embedded material.
+Do not refresh publication dates, generate filler, or remove/index-block posts
+solely to reach a word-count target. Request AdSense review only after the
+published site has been checked; no article count guarantees approval.
 
 The blog title and description are configured in `docusaurus.config.ts`.
 `BlogPostSeo` must emit article-specific metadata only on individual post pages,

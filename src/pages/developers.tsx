@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Layout from "@theme/Layout";
+import Heading from "@theme/Heading";
 import Link from "@docusaurus/Link";
 
 import styles from "./developers.module.scss";
@@ -24,9 +25,14 @@ export default function Developers(): JSX.Element {
       const response = await fetch(endpoint, {
         headers: { Accept: "text/plain, application/json, application/xml" },
       });
+      if (!response.ok) {
+        throw new Error(`Request failed with HTTP ${response.status}.`);
+      }
       setResult(await response.text());
     } catch (error) {
-      setResult(error instanceof Error ? error.message : "Request failed.");
+      const message =
+        error instanceof Error ? error.message : "Request failed.";
+      setResult(`${message} Try again or open the resource link above.`);
     } finally {
       setIsLoading(false);
     }
@@ -47,7 +53,7 @@ export default function Developers(): JSX.Element {
               stable, read-only resources designed for scripts and agents.
             </p>
             <div className={styles.actions}>
-              <Link className="button button--primary" to="/developers">
+              <Link className="button button--primary" to="#resources-heading">
                 Browse resources
               </Link>
               <a
@@ -73,7 +79,9 @@ export default function Developers(): JSX.Element {
 
         <section className={styles.section} aria-labelledby="resources-heading">
           <div className="container">
-            <h2 id="resources-heading">Machine-readable resources</h2>
+            <Heading as="h2" id="resources-heading">
+              Machine-readable resources
+            </Heading>
             <div className={styles.resourceGrid}>
               {endpoints.map((item) => (
                 <a
@@ -92,14 +100,26 @@ export default function Developers(): JSX.Element {
         <section className={styles.section} aria-labelledby="quickstart">
           <div className="container">
             <h2 id="quickstart">Quickstart</h2>
-            <p>Request a clean Markdown representation of the homepage:</p>
+            <p>
+              Request the published Markdown file directly. The website is
+              served by GitHub Pages; an Accept header on a page URL does not
+              switch it to Markdown.
+            </p>
             <pre>
-              <code>{`curl -H "Accept: text/markdown" https://www.sajeetharan.dev/`}</code>
+              <code>{`curl https://www.sajeetharan.dev/index.md`}</code>
             </pre>
-            <p>Run the CLI directly from its package directory:</p>
+            <p>From the root of a local clone of the site repository:</p>
             <pre>
               <code>{`node cli/sajee.mjs resources --json`}</code>
             </pre>
+            <p>
+              For an implementation example, read{" "}
+              <Link to="/blogs/building-playful-portfolio-with-consent-first-ai">
+                how this site combines a photographic portrait with an optional
+                AI assistant
+              </Link>
+              .
+            </p>
           </div>
         </section>
 
@@ -131,7 +151,11 @@ export default function Developers(): JSX.Element {
                 {isLoading ? "Running..." : "Run request"}
               </button>
             </div>
-            <pre className={styles.output} aria-live="polite">
+            <pre
+              className={styles.output}
+              aria-live="polite"
+              aria-busy={isLoading}
+            >
               <code>{result}</code>
             </pre>
           </div>

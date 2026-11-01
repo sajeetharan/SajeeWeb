@@ -101,6 +101,7 @@
   }
 
   select {
+    min-width: 0;
     min-height: 44px;
     padding: 0 0.75rem;
     border: 1px solid var(--ifm-color-emphasis-400);
@@ -129,6 +130,6 @@
   }
 
   .sandboxControls {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
   }
 }

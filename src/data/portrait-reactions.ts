@@ -17,6 +17,7 @@ export const EXPRESSIONS = [
     id: "sadness",
     rasa: "Karuna",
     label: "Sadness",
+    eyes: [200, 161, 264, 146],
     nose: [232, 191],
     cheeks: [187, 200, 278, 181],
   },
@@ -24,6 +25,7 @@ export const EXPRESSIONS = [
     id: "anger",
     rasa: "Raudra",
     label: "Anger",
+    eyes: [209, 162, 279, 157],
     nose: [248, 201],
     cheeks: [202, 195, 297, 192],
   },
@@ -31,6 +33,7 @@ export const EXPRESSIONS = [
     id: "wonder",
     rasa: "Adbhuta",
     label: "Wonder",
+    eyes: [211, 146, 283, 144],
     nose: [245, 196],
     cheeks: [199, 193, 292, 192],
   },
@@ -127,5 +130,6 @@ export function getPortraitReaction(toolId: PortraitToolId, uses: number) {
           ? Math.min(uses * 0.12, 0.45)
           : 0,
     bleeding: toolId === "punch" && uses >= 3,
+    tears: toolId === "slap" || toolId === "punch",
   };
 }

@@ -47,8 +47,20 @@ test("every prop has deterministic expression reactions with independent use cou
         "bleeding",
         "expression",
         "redness",
+        "tears",
       ]);
       assert.ok(reaction.redness >= 0 && reaction.redness <= 0.75);
+      assert.equal(reaction.tears, tool.id === "slap" || tool.id === "punch");
+      if (reaction.tears) {
+        const expression = EXPRESSIONS.find(
+          (item) => item.id === reaction.expression,
+        );
+        assert.equal(expression.eyes?.length, 4);
+        expression.eyes.forEach((value, index) => {
+          assert.ok(Number.isFinite(value));
+          assert.ok(value > 0 && value < (index % 2 === 0 ? 480 : 320));
+        });
+      }
     }
     const reachable = new Set(
       PORTRAIT_TOOLS.flatMap((tool) =>
@@ -89,6 +101,13 @@ test("homepage exposes accessible props and nine photos without settings or inst
   assert.match(html, /<h2\b[^>]*>Nine moods, one developer<\/h2>/);
   assert.match(html, /aria-label="Slap my photo"/);
   assert.match(html, /role="status" aria-atomic="true"/);
+  assert.doesNotMatch(html, /expressionBadge_/);
+  for (const expression of EXPRESSIONS) {
+    assert.ok(
+      !html.includes(`${expression.rasa} / ${expression.label}`),
+      "expression names must not appear as a visible photo badge",
+    );
+  }
   assert.doesNotMatch(
     html,
     /Explore all nine expressions|Navarasa expressions/,
@@ -112,6 +131,7 @@ test("homepage exposes accessible props and nine photos without settings or inst
     /Reset scene|My face has entered the chat|feature request I can love|>\d+ reactions?[.<]/,
   );
   assert.doesNotMatch(html, /data-nosebleed/);
+  assert.doesNotMatch(html, /data-tears/);
   for (const expression of EXPRESSIONS) {
     assert.ok(html.includes(`/img/expressions/${expression.id}.webp`));
   }
@@ -135,5 +155,19 @@ test("active portrait visibility survives production CSS optimization", async ()
     css,
     /@keyframes\s+[\w-]+\s*\{(?:[^{}]*\{[^{}]*\})*[^{}]*@keyframes/,
     "contact animations must not be nested inside other keyframes",
+  );
+  const tearAnimation = css.match(/\.tearDrop_[\w-]+\{animation:([^;}]+)/)?.[1];
+  assert.ok(tearAnimation);
+  assert.doesNotMatch(tearAnimation, /none|infinite/);
+  const reducedMotionRules = [
+    ...css.matchAll(
+      /@media\s*\(prefers-reduced-motion:\s*reduce\)\{((?:[^{}]*\{[^{}]*\})*)\}/g,
+    ),
+  ];
+  assert.ok(
+    reducedMotionRules.some(([, rules]) =>
+      /\.tearDrop_[\w-]+[^{}]*\{[^{}]*animation:none/.test(rules),
+    ),
+    "reduced-motion mode must keep tears still",
   );
 });

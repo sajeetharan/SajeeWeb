@@ -1,5 +1,6 @@
 import React, { useState, useMemo } from "react";
 import Layout from "@theme/Layout";
+import Link from "@docusaurus/Link";
 
 import { Project, ProjectData } from "../components/projects/Project";
 
@@ -161,6 +162,35 @@ export default function Projects(): JSX.Element {
               />
             </div>
           </header>
+
+          <section
+            className="margin-bottom--lg"
+            aria-labelledby="implementation-guides"
+          >
+            <h2 id="implementation-guides">Read the implementation guides</h2>
+            <p>
+              Go beyond the project summaries: explore architecture choices,
+              working examples, and limitations in these walkthroughs.
+            </p>
+            <ul>
+              <li>
+                <Link to="/blogs/building-devglobe-with-azure-cosmos-db">
+                  DevGlobe: data flow, architecture, and developer discovery
+                </Link>
+              </li>
+              <li>
+                <Link to="/blogs/build-an-ai-agent-with-azure-cosmos-db">
+                  Cosmos Agent Starter: local setup and an end-to-end agent
+                </Link>
+              </li>
+              <li>
+                <Link to="/blogs/building-playful-portfolio-with-consent-first-ai">
+                  This website: nine photographic moods and a consent-first AI
+                  assistant
+                </Link>
+              </li>
+            </ul>
+          </section>
 
           <div
             className="margin-bottom--md"

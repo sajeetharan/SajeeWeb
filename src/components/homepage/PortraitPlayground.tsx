@@ -19,6 +19,7 @@ interface Scene {
   uses: Record<PortraitToolId, number>;
   redness: number;
   bleeding: boolean;
+  tears: boolean;
   active: boolean;
 }
 
@@ -30,6 +31,7 @@ const INITIAL_SCENE: Scene = {
   uses: { slap: 0, pinch: 0, punch: 0, tickle: 0, flower: 0, spider: 0 },
   redness: 0,
   bleeding: false,
+  tears: false,
   active: false,
 };
 
@@ -182,6 +184,11 @@ export function PortraitPlayground(): JSX.Element {
                   <stop stopColor="#ce3434" stopOpacity="0.85" />
                   <stop offset="1" stopColor="#ce3434" stopOpacity="0" />
                 </radialGradient>
+                <radialGradient id={`${id}-tear`} cx="35%" cy="30%" r="75%">
+                  <stop stopColor="#f1fcff" stopOpacity="0.9" />
+                  <stop offset="0.5" stopColor="#c5e8f3" stopOpacity="0.65" />
+                  <stop offset="1" stopColor="#74b3cc" stopOpacity="0.4" />
+                </radialGradient>
               </defs>
               <g opacity={scene.redness} data-cheek-redness>
                 <ellipse
@@ -199,6 +206,53 @@ export function PortraitPlayground(): JSX.Element {
                   fill={`url(#${id}-blush)`}
                 />
               </g>
+              {scene.tears && "eyes" in expression && (
+                <g data-tears>
+                  {[
+                    [expression.eyes[0], expression.eyes[1]],
+                    [expression.eyes[2], expression.eyes[3]],
+                  ].map(([x, y], index) => (
+                    <g
+                      key={index}
+                      className={styles.tearEye}
+                      transform={`translate(${x} ${y})`}
+                    >
+                      <path
+                        d="M-10-3Q0 3 10-3"
+                        fill="none"
+                        stroke="#effbff"
+                        strokeWidth="1.6"
+                        strokeLinecap="round"
+                        opacity="0.8"
+                      />
+                      <path
+                        d="M0 2Q-2 12 0 26"
+                        fill="none"
+                        stroke="#d2edf6"
+                        strokeWidth="1.4"
+                        strokeLinecap="round"
+                        opacity="0.45"
+                      />
+                      <g className={styles.tearDrop}>
+                        <path
+                          d="M0 1C-1 5-4 9-3 13C-2 17 3 17 4 13C5 9 1 5 0 1Z"
+                          fill={`url(#${id}-tear)`}
+                          stroke="#e4f7ff"
+                          strokeWidth="0.5"
+                        />
+                        <path
+                          d="M-1 9Q-3 13 0 14"
+                          fill="none"
+                          stroke="#ffffff"
+                          strokeWidth="0.9"
+                          strokeLinecap="round"
+                          opacity="0.85"
+                        />
+                      </g>
+                    </g>
+                  ))}
+                </g>
+              )}
               {scene.bleeding && (
                 <g
                   transform={`translate(${expression.nose[0]} ${expression.nose[1]})`}
@@ -219,9 +273,6 @@ export function PortraitPlayground(): JSX.Element {
           <span className={styles.handPosition} aria-hidden="true">
             <PortraitTool tool={scene.tool} className={styles.hand} />
           </span>
-        </span>
-        <span className={styles.expressionBadge} aria-hidden="true">
-          {expression.rasa} / {expression.label}
         </span>
       </button>
       <div className={styles.feedback}>

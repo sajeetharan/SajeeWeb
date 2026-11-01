@@ -136,7 +136,7 @@ const config: Config = {
           showReadingTime: true,
           postsPerPage: "ALL",
           blogSidebarCount: 10,
-          editUrl: "https://github.com/sajeetharan/website/tree/main/",
+          editUrl: "https://github.com/sajeetharan/SajeeWeb/edit/main/",
           feedOptions: {
             type: "all",
             copyright: `Copyright © ${new Date().getFullYear()} Sajeetharan`,

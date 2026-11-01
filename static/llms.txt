@@ -35,6 +35,6 @@ This is the agent-readable index for https://www.sajeetharan.dev. Public resourc
 - [API catalog](https://www.sajeetharan.dev/.well-known/api-catalog)
 - [Agent skills](https://www.sajeetharan.dev/.well-known/agent-skills/index.json)
 
-## Content negotiation
+## Markdown files
 
-Pages support `Accept: text/markdown` and return `Content-Type: text/markdown; charset=utf-8`. Unsupported media types return HTTP 406.
+The website is served by GitHub Pages. Request the static Markdown files directly: `/index.md` for the homepage, or append `/index.md` to a canonical page path, such as `/developers/index.md` and `/blogs/build-an-ai-agent-with-azure-cosmos-db/index.md`. An `Accept: text/markdown` header on the HTML page URL does not switch formats with the current API-only Worker routes.
