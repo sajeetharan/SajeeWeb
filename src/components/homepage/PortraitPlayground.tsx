@@ -4,6 +4,7 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
 import {
   EXPRESSIONS,
   PORTRAIT_TOOLS,
+  getPortraitFeedback,
   getPortraitReaction,
   type ExpressionId,
   type PortraitToolId,
@@ -47,6 +48,9 @@ export function PortraitPlayground(): JSX.Element {
   const tool = PORTRAIT_TOOLS.find((item) => item.id === scene.tool);
   if (!expression || !tool)
     throw new Error("Invalid portrait scene selection.");
+  const feedback = getPortraitFeedback(scene.tool, scene.count);
+  const caption = scene.active ? feedback.caption : undefined;
+  const announcement = [expression.label, caption].filter(Boolean).join(". ");
 
   useEffect(() => {
     return () => {
@@ -274,6 +278,11 @@ export function PortraitPlayground(): JSX.Element {
             <PortraitTool tool={scene.tool} className={styles.hand} />
           </span>
         </span>
+        {caption && (
+          <span className={styles.quip} aria-hidden="true" data-portrait-quip>
+            {caption}
+          </span>
+        )}
       </button>
       <div className={styles.feedback}>
         <div
@@ -307,7 +316,7 @@ export function PortraitPlayground(): JSX.Element {
         role="status"
         aria-atomic="true"
       >
-        {expression.label}
+        {announcement}
       </p>
     </div>
   );

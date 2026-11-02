@@ -74,46 +74,69 @@ export const PORTRAIT_TOOLS = [
     id: "slap",
     label: "Slap",
     action: "Slap my photo",
+    quip: "That code review came with impact.",
     reactions: ["wonder", "anger", "sadness"],
   },
   {
     id: "pinch",
     label: "Pinch",
     action: "Pinch my cheek",
+    quip: "Just squeezing in one more feature.",
     reactions: ["wonder", "anger", "disgust"],
   },
   {
     id: "punch",
     label: "Boxing glove",
     action: "Punch my photo",
+    quip: "Stress testing the developer, not the code.",
     reactions: ["anger", "sadness"],
   },
   {
     id: "tickle",
     label: "Feather",
     action: "Tickle my photo",
+    quip: "Finally, a gentle code review.",
     reactions: ["joy"],
   },
   {
     id: "flower",
     label: "Flower",
     action: "Give me a flower",
+    quip: "Your feature request has been prioritized.",
     reactions: ["affection", "calm"],
   },
   {
     id: "spider",
     label: "Spider",
     action: "Show me the spider",
+    quip: "Found the production bug.",
     reactions: ["fear", "disgust", "courage"],
   },
 ] as const satisfies readonly {
   id: string;
   label: string;
   action: string;
+  quip: string;
   reactions: readonly ExpressionId[];
 }[];
 
 export type PortraitToolId = (typeof PORTRAIT_TOOLS)[number]["id"];
+
+export function getPortraitFeedback(
+  toolId: PortraitToolId,
+  interactions: number,
+) {
+  if (!Number.isInteger(interactions) || interactions < 0) {
+    throw new RangeError(
+      "Portrait interaction count must be a non-negative integer.",
+    );
+  }
+  const tool = PORTRAIT_TOOLS.find((item) => item.id === toolId);
+  if (!tool) throw new Error(`Unknown portrait tool: ${toolId}`);
+  return {
+    caption: interactions > 0 && interactions % 3 === 0 ? tool.quip : undefined,
+  };
+}
 
 export function getPortraitReaction(toolId: PortraitToolId, uses: number) {
   if (!Number.isInteger(uses) || uses < 1) {

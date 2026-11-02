@@ -6,6 +6,7 @@ import DiscoverIcon from "./assets/icon-discover.svg";
 import styles from "./Project.module.scss";
 
 export interface ProjectData {
+  id?: string;
   title: string;
   description: string;
   role?: string;
@@ -19,6 +20,7 @@ export const Project: FunctionComponent<ProjectData> = ({
   url,
   role,
   image,
+  id,
 }) => {
   return (
     <div className={clsx("col col--6", styles.cardContainer)}>
@@ -37,6 +39,10 @@ export const Project: FunctionComponent<ProjectData> = ({
             target="_blank"
             rel="noopener noreferrer"
             className={clsx("button", styles.discoverButton)}
+            data-portfolio-project={id ?? title}
+            data-portfolio-action={
+              url.startsWith("https://github.com/") ? "source" : "demo"
+            }
           >
             <DiscoverIcon className={styles.icon} />
             <span>Discover</span>

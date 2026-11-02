@@ -3,25 +3,18 @@ import Layout from "@theme/Layout";
 import Link from "@docusaurus/Link";
 
 import { Project, ProjectData } from "../components/projects/Project";
+import { featuredProjects } from "../data/featured-projects";
 
 const assetsDir = "./assets/projects";
 const projects: ProjectData[] = [
   {
-    title: "Cosmos Agent Starter",
-    description:
-      "Build production-oriented AI agents with Azure Cosmos DB using a guided CLI and ready-to-use templates.",
-    url: "https://github.com/sajeetharan/cosmos-agent-starter",
+    ...featuredProjects[0],
     image:
       "https://opengraph.githubassets.com/1/sajeetharan/cosmos-agent-starter",
-    role: "Author",
   },
   {
-    title: "DevGlobe",
-    description:
-      "Interactive 3D globe showcasing 40,000+ top open-source contributors worldwide, ranked by GitHub stars, commits, and Stack Overflow impact. Powered by Azure Cosmos DB.",
-    url: "https://github.com/sajeetharan/devglobe",
+    ...featuredProjects[1],
     image: require(`${assetsDir}/devglobe.png`),
-    role: "Author",
   },
   {
     title: "Angular Agent Kit",
@@ -48,12 +41,8 @@ const projects: ProjectData[] = [
     role: "Contributor",
   },
   {
-    title: "Azure Cosmos DB MCP Toolkit",
-    description:
-      "A comprehensive toolkit for Azure Cosmos DB that provides tools, utilities, and resources to enhance developer productivity and streamline database operations.",
-    url: "https://github.com/AzureCosmosDB/MCPToolKit",
+    ...featuredProjects[2],
     image: "/img/cosmos-toolkit.png",
-    role: "Author",
   },
   {
     title: "Azure Cosmos DB Agent Kit",

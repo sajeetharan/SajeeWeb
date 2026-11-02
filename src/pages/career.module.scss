@@ -28,6 +28,28 @@
   margin: 0 auto;
 }
 
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.overview {
+  max-width: 800px;
+  margin: 3rem auto;
+
+  li {
+    margin-bottom: 0.75rem;
+  }
+}
+
+.experienceTitle {
+  max-width: 800px;
+  margin: 0 auto 1.5rem;
+}
+
 .timeline {
   position: relative;
   max-width: 800px;

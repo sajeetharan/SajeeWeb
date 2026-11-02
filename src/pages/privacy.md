@@ -5,7 +5,7 @@ description: "How Sajeetharan Sinnathurai's personal website uses analytics, hos
 
 # Privacy Policy
 
-Last updated: October 29, 2026
+Last updated: November 2, 2026
 
 This notice covers [www.sajeetharan.dev](https://www.sajeetharan.dev/),
 the personal website and blog of Sajeetharan Sinnathurai. For privacy questions,
@@ -32,6 +32,14 @@ sources and to improve its content. Analytics may use cookies and process
 information about your browser, device, pages visited, interactions, and
 approximate location. Reports available to the site owner are not a complete
 record of every visit; browser settings and blocking tools can affect collection.
+
+Portfolio analytics also records career-page views, selected project source/demo/
+walkthrough clicks, and clicks on the recruiting, collaboration, and speaking
+email links on the Contact page. Custom event fields contain only fixed project
+identifiers, action labels, and audience categories, not email addresses, draft
+subjects or bodies, chat messages, or visitor-entered text. An email-link click
+does not confirm that an enquiry was sent. The mood playground and Ask Sajee
+contact guide do not emit these custom events.
 
 The site also uses browser storage for interface preferences, such as your
 selected light or dark theme.

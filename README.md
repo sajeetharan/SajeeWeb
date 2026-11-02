@@ -113,10 +113,14 @@ mode keeps them still. Other props clear the tears on contact.
 Gentle props clear redness and injury effects on contact. The "Nine moods, one
 developer" playground grows to 600px wide on desktop and stacks below the copy
 on tablet/mobile. All nine expressions are reached through the props, without
-a separate expression picker. Only the photo and labeled props are visible:
-no mood-name badge, selected-tool text, reaction counter, captions, action/reset buttons, or
-how-to instructions. Accessible labels and screen-reader-only expression
-announcements remain.
+a separate expression picker. Every third photo interaction shows a short,
+prop-specific developer joke over the lower edge of the photo. The caption
+clears on the next interaction or prop selection, rather than appearing on
+every tap. The caption leaves the photo and prop controls in place, without
+a popup, timer, sound, project promotion, or automatic navigation.
+The existing screen-reader status announces the current expression and occasional
+caption without moving focus. There is still no mood-name badge,
+selected-tool text, visible counter, reset button, or how-to instructions.
 
 Click, tap, horizontal swipe, and Enter/Space on the photo are equivalent
 ways to apply a prop. Vertical touch scrolling is preserved and a swipe counts
@@ -125,6 +129,40 @@ One scene is shared across responsive layouts; the small mobile portrait links
 to it below the hero copy. Reduced-motion mode retains photos, skin effects,
 and accessible expression announcements without movement. Photos and shaded vector props stay
 local: no AI service, image uploads, sound, tracking events, or API calls.
+
+### Recruiter and collaborator paths
+
+The homepage retains its original layout, visible interactive portrait, and
+links to projects and mentoring. Recruiter and collaborator details live on
+the career and Contact pages rather than adding more homepage sections.
+Featured project facts live in `src/data/featured-projects.ts` and are shared by
+the career page and project listing. Keep contribution roles and shipped deliverables
+grounded in public evidence; do not invent adoption or business-impact metrics.
+The Contact page has stable `#recruiters`, `#collaboration`, and `#speaking`
+anchors with email drafts, a visible fallback address, and no delivery promise.
+
+`src/theme/Root.tsx` sends custom GA4 events through the existing `gtag` integration:
+
+- `career_view`: each client-side entry to `/career` (including a direct load).
+- `project_click`: marked project links, with `project_id` and `action`
+  (`source`, `demo`, or `guide`).
+- `contact_click`: marked email links on Contact, with `audience`
+  (`recruiter`, `collaborator`, or `speaking`).
+
+Custom payloads do not include link URLs, email drafts, message text, or query
+parameters. The widget and playground remain untracked by custom events. Missing
+or blocked analytics never prevents navigation; there is no retry or alternate
+tracking provider. Project source links elsewhere on the site are not inferred.
+GA4's existing automatic collection settings remain separate.
+
+To validate production collection, use GA4 Realtime/DebugView with your normal
+debug setup: enter Career, follow a marked project source/demo link, then click
+one of the Contact email links. Register `project_id`, `action`, and `audience` as
+event-scoped custom dimensions if needed for reports. An email click measures
+intent, not a confirmed enquiry. Use campaign links such as
+`?utm_source=linkedin&utm_medium=social&utm_campaign=portfolio` when sharing a
+project; do not attach personal information to campaign parameters. Compare
+qualified actions and engaged sessions by source rather than raw page views.
 
 The homepage keeps the main navbar without a second sticky section menu.
 Section IDs remain available for direct links. Concise work and talk previews

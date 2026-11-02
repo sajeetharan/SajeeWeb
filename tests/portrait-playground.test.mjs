@@ -10,9 +10,48 @@ const { outputText } = ts.transpileModule(source, {
     target: ts.ScriptTarget.ES2020,
   },
 });
-const { EXPRESSIONS, PORTRAIT_TOOLS, getPortraitReaction } = await import(
+const {
+  EXPRESSIONS,
+  PORTRAIT_TOOLS,
+  getPortraitReaction,
+  getPortraitFeedback,
+} = await import(
   `data:text/javascript;base64,${Buffer.from(outputText).toString("base64")}`
 );
+
+test("portrait jokes appear only every third interaction without a project promotion", () => {
+  for (const tool of PORTRAIT_TOOLS) {
+    assert.ok(tool.quip.length > 0 && tool.quip.length <= 60);
+    for (let count = 0; count <= 12; count++) {
+      const feedback = getPortraitFeedback(tool.id, count);
+      assert.equal(
+        feedback.caption,
+        count > 0 && count % 3 === 0 ? tool.quip : undefined,
+      );
+      assert.deepEqual(Object.keys(feedback), ["caption"]);
+    }
+  }
+  assert.equal(
+    getPortraitFeedback("tickle", 3).caption,
+    "Finally, a gentle code review.",
+  );
+  assert.equal(
+    getPortraitFeedback("flower", 6).caption,
+    "Your feature request has been prioritized.",
+  );
+  assert.equal(
+    getPortraitFeedback("spider", 9).caption,
+    "Found the production bug.",
+  );
+  assert.equal(new Set(PORTRAIT_TOOLS.map((tool) => tool.quip)).size, 6);
+  for (const invalid of [-1, 0.5, NaN, Infinity]) {
+    assert.throws(() => getPortraitFeedback("slap", invalid), RangeError);
+  }
+  assert.throws(
+    () => getPortraitFeedback("unknown", 0),
+    /Unknown portrait tool/,
+  );
+});
 
 test("all nine portraits are distinct optimized WebP crops without missing expressions", async () => {
   assert.equal(EXPRESSIONS.length, 9);
@@ -132,6 +171,7 @@ test("homepage exposes accessible props and nine photos without settings or inst
   );
   assert.doesNotMatch(html, /data-nosebleed/);
   assert.doesNotMatch(html, /data-tears/);
+  assert.doesNotMatch(html, /data-portrait-quip|data-portrait-project/);
   for (const expression of EXPRESSIONS) {
     assert.ok(html.includes(`/img/expressions/${expression.id}.webp`));
   }
