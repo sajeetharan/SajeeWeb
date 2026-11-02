@@ -3,6 +3,9 @@
 const baseUrl = process.env.SAJEE_SITE_URL ?? "https://www.sajeetharan.dev";
 const resources = {
   home: "/",
+  career: "/career",
+  profile: "/profile.json",
+  contact: "/contact",
   developers: "/developers",
   blogs: "/blogs",
   projects: "/projects",

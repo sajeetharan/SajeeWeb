@@ -36,8 +36,8 @@ test("the homepage keeps the original visible interactive portrait and simple wo
 });
 
 test("featured project evidence is shared and crawlable with explicit source actions", async () => {
-  const { featuredProjects } = await loadTypeScript(
-    "src/data/featured-projects.ts",
+  const { projects: featuredProjects } = JSON.parse(
+    await readFile("static/profile.json", "utf8"),
   );
   assert.equal(featuredProjects.length, 3);
   assert.equal(new Set(featuredProjects.map((project) => project.id)).size, 3);

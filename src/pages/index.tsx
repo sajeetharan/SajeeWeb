@@ -2,6 +2,7 @@ import React from "react";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Layout from "@theme/Layout";
 import Head from "@docusaurus/Head";
+import { personSchema } from "../data/profile";
 import { AboutMe } from "../components/homepage/AboutMe";
 import { FeaturedSection } from "../components/homepage/FeaturedSection";
 import {
@@ -67,36 +68,7 @@ export default function Home(): JSX.Element {
 
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "Person",
-    name: "Sajeetharan Sinnathurai",
-    url: "https://www.sajeetharan.dev/",
-    jobTitle: "Principal Program Manager",
-    worksFor: {
-      "@type": "Organization",
-      name: "Microsoft",
-    },
-    knowsAbout: [
-      "Developer Tooling",
-      "Azure Cosmos DB",
-      "Cosmos DB",
-      "Databases",
-      "NoSQL",
-      "Developer Experience",
-      "Coding Agents",
-      "GitHub Copilot",
-      "GitHub",
-      "Cloud Computing",
-      "Azure",
-      "Artificial Intelligence",
-      "Model Context Protocol",
-      "Agent Skills",
-    ],
-    sameAs: [
-      "https://www.linkedin.com/in/sajeetharan/",
-      "https://twitter.com/kokkisajee",
-      "https://github.com/sajeetharan",
-      "https://stackoverflow.com/users/1749403/sajeetharan",
-    ],
+    ...personSchema,
   };
 
   return (
@@ -105,7 +77,9 @@ export default function Home(): JSX.Element {
       description={siteConfig.tagline}
     >
       <Head>
-        <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
+        <script type="application/ld+json">
+          {JSON.stringify(jsonLd).replace(/</g, "\\u003c")}
+        </script>
       </Head>
       <main>
         <Hero avatar={avatar} />

@@ -1,6 +1,21 @@
 {
   "linkset": [
     {
+      "anchor": "https://www.sajeetharan.dev/profile.json",
+      "service-desc": [
+        {
+          "href": "https://www.sajeetharan.dev/profile.json",
+          "type": "application/json"
+        }
+      ],
+      "service-doc": [
+        {
+          "href": "https://www.sajeetharan.dev/career",
+          "type": "text/html"
+        }
+      ]
+    },
+    {
       "anchor": "https://www.sajeetharan.dev/blogs/rss.xml",
       "service-desc": [
         {

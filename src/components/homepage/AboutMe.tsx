@@ -1,4 +1,5 @@
 import React from "react";
+import { profile } from "../../data/profile";
 import styles from "./AboutMe.module.scss";
 
 export interface AboutMeProps {
@@ -23,7 +24,7 @@ export function AboutMe({ descriptionComponent }: AboutMeProps): JSX.Element {
           </div>
           <div>
             <p>
-              I&apos;m a Principal Product Manager at Microsoft, building
+              I&apos;m a {profile.jobTitle} at {profile.employer.name}, building
               developer experiences around Azure Cosmos DB and AI. I share what
               I learn through open source, speaking, and mentoring.
             </p>

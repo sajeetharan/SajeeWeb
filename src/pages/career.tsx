@@ -1,76 +1,22 @@
 import React from "react";
 import Layout from "@theme/Layout";
 import Link from "@docusaurus/Link";
+import Head from "@docusaurus/Head";
 import { featuredProjects } from "../data/featured-projects";
+import { careerSchema, profile } from "../data/profile";
 import styles from "./career.module.scss";
 
-interface CareerEntry {
-  role: string;
-  company: string;
-  period: string;
-  location: string;
-  description: string[];
-  type: "work" | "education";
-}
-
-const careerTimeline: CareerEntry[] = [
-  {
-    role: "Principal Product Manager",
-    company: "Microsoft",
-    period: "2020 - Present",
-    location: "Bangalore, India",
-    description: [
-      "Leading Azure Cosmos DB developer experience, SDK design, and tooling",
-      "Driving product strategy for developer tools and extensions",
-      "Building world-class developer experiences for distributed databases",
-    ],
-    type: "work",
-  },
-  {
-    role: "Cloud Solution Architect",
-    company: "Microsoft",
-    period: "2019 - 2020",
-    location: "Sri Lanka",
-    description: [
-      "Helped enterprise customers adopt Azure cloud solutions",
-      "Designed and implemented cloud-native architectures",
-      "Mentored developers and led community initiatives",
-    ],
-    type: "work",
-  },
-  {
-    role: "Technical Lead",
-    company: "99X Technology",
-    period: "2016 - 2019",
-    location: "Sri Lanka",
-    description: [
-      "Led development teams building enterprise software solutions",
-      "Architected scalable applications for global clients",
-      "Received Technology Leadership Award in 2018",
-    ],
-    type: "work",
-  },
-  {
-    role: "Software Engineer",
-    company: "DuoSoftware",
-    period: "2011 - 2016",
-    location: "Sri Lanka",
-    description: [
-      "Full-stack development with modern web technologies",
-      "Built cloud-based SaaS products",
-      "Contributed to open source projects",
-    ],
-    type: "work",
-  },
-];
-
 const title = "Career Journey";
-const description =
-  "My professional journey from software engineering to leading product at Microsoft.";
+const description = profile.summary;
 
 export default function Career(): JSX.Element {
   return (
     <Layout title={title} description={description}>
+      <Head>
+        <script type="application/ld+json">
+          {JSON.stringify(careerSchema).replace(/</g, "\\u003c")}
+        </script>
+      </Head>
       <main className={styles.careerPage}>
         <div className="container">
           <header className={styles.header}>
@@ -92,8 +38,8 @@ export default function Career(): JSX.Element {
           >
             <h2 id="expertise-title">Engineering depth. Product leadership.</h2>
             <p>
-              Principal Product Manager at Microsoft, focused on developer
-              experience, Azure Cosmos DB, SDK design, and tooling. My
+              {profile.jobTitle} at {profile.employer.name}, focused on
+              developer experience, Azure Cosmos DB, SDK design, and tooling. My
               background spans software engineering, technical leadership, and
               cloud architecture.
             </p>
@@ -132,7 +78,7 @@ export default function Career(): JSX.Element {
               Professional experience
             </h2>
             <div className={styles.timeline}>
-              {careerTimeline.map((entry, idx) => (
+              {profile.careerHistory.map((entry, idx) => (
                 <div key={idx} className={styles.timelineItem}>
                   <div className={styles.timelineDot} />
                   <div className={styles.timelineContent}>
@@ -164,6 +110,22 @@ export default function Career(): JSX.Element {
             <Link className="button button--primary" to="/contact#recruiters">
               Contact me about a role
             </Link>
+            <p>
+              <a href="/profile.json" type="application/json">
+                Public professional profile (JSON)
+              </a>{" "}
+              &mdash; updated{" "}
+              <time dateTime={profile.lastUpdated}>{profile.lastUpdated}</time>.
+            </p>
+            <p>
+              Official profiles:{" "}
+              {Object.entries(profile.profiles).map(([label, url], index) => (
+                <React.Fragment key={url}>
+                  {index > 0 && " / "}
+                  <a href={url}>{label}</a>
+                </React.Fragment>
+              ))}
+            </p>
           </section>
         </div>
       </main>

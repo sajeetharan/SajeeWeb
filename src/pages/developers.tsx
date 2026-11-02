@@ -7,6 +7,7 @@ import styles from "./developers.module.scss";
 
 const endpoints = [
   { label: "Agent index", value: "/llms.txt" },
+  { label: "Professional profile (JSON)", value: "/profile.json" },
   { label: "API catalog", value: "/.well-known/api-catalog" },
   { label: "XML sitemap", value: "/sitemap.xml" },
   { label: "RSS feed", value: "/blogs/rss.xml" },
@@ -50,7 +51,9 @@ export default function Developers(): JSX.Element {
             <h1>Build with the public content on sajeetharan.dev</h1>
             <p className={styles.intro}>
               Discover articles, talks, projects, and site metadata through
-              stable, read-only resources designed for scripts and agents.
+              stable, read-only resources designed for scripts and agents. For
+              professional identity and evidence, start with the{" "}
+              <Link to="/career">career profile</Link>.
             </p>
             <div className={styles.actions}>
               <Link className="button button--primary" to="#resources-heading">
@@ -108,6 +111,18 @@ export default function Developers(): JSX.Element {
             <pre>
               <code>{`curl https://www.sajeetharan.dev/index.md`}</code>
             </pre>
+            <p>
+              Fetch the public professional profile as JSON, including
+              expertise, contribution roles, evidence links, and its update
+              date:
+            </p>
+            <pre>
+              <code>{`curl https://www.sajeetharan.dev/profile.json`}</code>
+            </pre>
+            <p>
+              This is a site-specific read-only resource, not a universal agent
+              registration or a guarantee of search indexing or recommendations.
+            </p>
             <p>From the root of a local clone of the site repository:</p>
             <pre>
               <code>{`node cli/sajee.mjs resources --json`}</code>

@@ -15,6 +15,9 @@ test("CLI lists canonical resources as JSON", async () => {
   const resources = JSON.parse(stdout);
   assert.equal(resources.home, "https://www.sajeetharan.dev/");
   assert.equal(resources.llms, "https://www.sajeetharan.dev/llms.txt");
+  assert.equal(resources.profile, "https://www.sajeetharan.dev/profile.json");
+  assert.equal(resources.career, "https://www.sajeetharan.dev/career");
+  assert.equal(resources.contact, "https://www.sajeetharan.dev/contact");
 });
 
 test("CLI rejects unknown commands", async () => {
@@ -41,6 +44,9 @@ test("CLI fetches static Markdown on Pages and preserves non-page resources", as
   const options = { env: { ...process.env, SAJEE_SITE_URL: baseUrl } };
   const cases = [
     ["home", "/index.md"],
+    ["profile", "/profile.json"],
+    ["career", "/career/index.md"],
+    ["contact", "/contact/index.md"],
     ["/developers/", "/developers/index.md"],
     ["/blogs/example?source=cli", "/blogs/example/index.md?source=cli"],
     ["/example.html", "/example.md"],

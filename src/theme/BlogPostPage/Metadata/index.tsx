@@ -3,6 +3,7 @@ import Head from "@docusaurus/Head";
 import OriginalMetadata from "@theme-original/BlogPostPage/Metadata";
 import { useBlogPost } from "@docusaurus/theme-common/internal";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
+import { profile } from "../../../data/profile";
 
 export default function BlogPostMetadata(): JSX.Element {
   const { metadata, assets } = useBlogPost();
@@ -22,12 +23,18 @@ export default function BlogPostMetadata(): JSX.Element {
           "@type": "Person",
           name: item.name,
           ...(item.url && { url: new URL(item.url, siteConfig.url).href }),
+          ...(item.name === profile.name &&
+            (!item.url ||
+              new URL(item.url, siteConfig.url).href === profile.url) && {
+              "@id": profile.id,
+            }),
         }))
       : [
           {
             "@type": "Person",
-            name: "Sajeetharan Sinnathurai",
-            url: siteConfig.url,
+            "@id": profile.id,
+            name: profile.name,
+            url: profile.url,
           },
         ];
   const schema = {
@@ -47,8 +54,9 @@ export default function BlogPostMetadata(): JSX.Element {
         author,
         publisher: {
           "@type": "Person",
-          name: "Sajeetharan Sinnathurai",
-          url: siteConfig.url,
+          "@id": profile.id,
+          name: profile.name,
+          url: profile.url,
         },
         keywords: frontMatter.keywords ?? tags.map((tag) => tag.label),
         inLanguage: "en",

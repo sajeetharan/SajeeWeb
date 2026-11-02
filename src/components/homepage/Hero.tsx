@@ -2,6 +2,7 @@ import clsx from "clsx";
 import React from "react";
 import Link from "@docusaurus/Link";
 import { PortraitPlayground } from "./PortraitPlayground";
+import { profile } from "../../data/profile";
 
 import styles from "./Hero.module.scss";
 
@@ -27,7 +28,7 @@ export const Hero: React.FC<HeroProps> = ({ avatar }) => {
             <h1 className={styles.personName}>Sajeetharan Sinnathurai</h1>
             <div className={styles.eyebrow}>
               <span className={styles.statusDot} aria-hidden="true" />
-              Principal Product Manager at Microsoft
+              {profile.jobTitle} at {profile.employer.name}
             </div>
             <h2 className={styles.title}>
               I help developers build what&apos;s next.

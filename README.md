@@ -135,8 +135,9 @@ local: no AI service, image uploads, sound, tracking events, or API calls.
 The homepage retains its original layout, visible interactive portrait, and
 links to projects and mentoring. Recruiter and collaborator details live on
 the career and Contact pages rather than adding more homepage sections.
-Featured project facts live in `src/data/featured-projects.ts` and are shared by
-the career page and project listing. Keep contribution roles and shipped deliverables
+Featured project facts are exported by `src/data/featured-projects.ts` from
+`static/profile.json` and shared by the career page and project listing.
+Keep contribution roles and shipped deliverables
 grounded in public evidence; do not invent adoption or business-impact metrics.
 The Contact page has stable `#recruiters`, `#collaboration`, and `#speaking`
 anchors with email drafts, a visible fallback address, and no delivery promise.
@@ -163,6 +164,63 @@ intent, not a confirmed enquiry. Use campaign links such as
 `?utm_source=linkedin&utm_medium=social&utm_campaign=portfolio` when sharing a
 project; do not attach personal information to campaign parameters. Compare
 qualified actions and engaged sessions by source rather than raw page views.
+
+### Professional identity and search discovery
+
+`static/profile.json` is the canonical public professional profile and is copied
+unchanged to `/profile.json` by Docusaurus. It supplies the current role,
+professional summary, expertise, career timeline, featured project facts, official
+profile links, and contact URL. Only publish professional facts already supported
+by the linked public career/project pages. Keep `lastUpdated` accurate when
+editing these facts; it is an editorial update date, not proof of employment
+verification or an automatically refreshed timestamp. Do not add private contact
+details, confidential results, or inferred job-search status.
+
+`src/data/profile.ts` derives the shared Person identity
+`https://www.sajeetharan.dev/#person` and the career ProfilePage schema. The homepage,
+career page, article authors/publisher, and official profile links connect to that
+identity. The career page renders the same timeline and project evidence as JSON.
+The Hire Me FAQs and `blog/authors.yml` retain their existing formats; keep their
+name, role, and claims aligned with this source. Regression tests check identity,
+schema links, and public resource discovery.
+
+The JSON is advertised in sitewide HTML head links, the career/developer pages,
+`llms.txt`, the API catalog, the site-navigation skill, and CLI resource aliases.
+It is a site-specific format, not a standardized agent registration, a search
+submission, or a guarantee of indexing, rich results, recruiter matching, or AI
+recommendations. No new chat, MCP server, or homepage redesign is required.
+GitHub Pages serves the `.json` file directly; `_headers` is only relevant to
+hosting configurations that support it, not evidence that Pages sets those headers.
+
+After deployment, the site owner still needs to:
+
+1. Verify the domain in [Google Search Console](https://search.google.com/search-console/)
+   and [Bing Webmaster Tools](https://www.bing.com/webmasters/), submit
+   `https://www.sajeetharan.dev/sitemap.xml`, and inspect the canonical homepage
+   and career page. Account verification requires the owner's credentials or
+   provider-issued verification token; do not invent tokens or claim completion.
+2. Use [Google's Rich Results Test](https://search.google.com/test/rich-results)
+   and URL Inspection for the deployed career page. Valid JSON-LD alone does not
+   guarantee a supported result or eligibility.
+3. Check Cloudflare security events for legitimate Googlebot, Bingbot, and
+   OAI-SearchBot requests. A public request with a crawler user-agent only tests
+   basic reachability, not verified crawler IP access or account-level WAF rules.
+   The existing `robots.txt` allows crawling; retain its training-preference
+   signal. OpenAI's OAI-SearchBot search control is separate from GPTBot training
+   access. Do not enable training as a supposed discovery requirement.
+4. Align LinkedIn and GitHub with the public positioning:
+   "Principal Product Manager specializing in developer experience, databases,
+   and AI agents, with a hands-on engineering background." Link the canonical
+   career page and project evidence. Change recruiter-visibility settings only
+   deliberately; this site does not declare job availability or modify external
+   accounts.
+5. Monitor Search Console impressions/clicks for the name and relevant expertise,
+   and qualified project/contact actions in GA4. Search appearance is not the
+   same as confirmed recruiter interest.
+
+Official guidance: [Google AI search features](https://developers.google.com/search/docs/appearance/ai-features),
+[ProfilePage structured data](https://developers.google.com/search/docs/appearance/structured-data/profile-page),
+and [OpenAI crawlers](https://developers.openai.com/api/docs/bots).
 
 The homepage keeps the main navbar without a second sticky section menu.
 Section IDs remain available for direct links. Concise work and talk previews

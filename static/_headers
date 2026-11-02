@@ -2,6 +2,7 @@
   X-Content-Type-Options: nosniff
 
 /
+  Link: </profile.json>; rel="describedby"; type="application/json"
   Link: </.well-known/api-catalog>; rel="api-catalog"
   Link: </blogs/rss.xml>; rel="alternate"; type="application/rss+xml"; title="Blog RSS Feed"
   Link: </blogs/atom.xml>; rel="alternate"; type="application/atom+xml"; title="Blog Atom Feed"
@@ -15,3 +16,6 @@
 
 /llms.txt
   Content-Type: text/plain; charset=utf-8
+
+/profile.json
+  Content-Type: application/json; charset=utf-8

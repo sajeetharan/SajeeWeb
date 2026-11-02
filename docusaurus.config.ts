@@ -1,12 +1,12 @@
 import { themes } from "prism-react-renderer";
+import profile from "./static/profile.json";
 
 import type { Config } from "@docusaurus/types";
 import type * as Preset from "@docusaurus/preset-classic";
 
 const config: Config = {
-  title: "Sajeetharan Sinnathurai",
-  tagline:
-    "Principal PM at Microsoft empowering developers with Azure Cosmos DB, GitHub Copilot, coding agents, and NoSQL databases—from code to cloud.",
+  title: profile.name,
+  tagline: `${profile.jobTitle} at ${profile.employer.name} empowering developers with Azure Cosmos DB, GitHub Copilot, coding agents, and NoSQL databases—from code to cloud.`,
   url: "https://www.sajeetharan.dev",
   baseUrl: "/",
   onBrokenLinks: "warn",
@@ -31,6 +31,15 @@ const config: Config = {
   },
 
   headTags: [
+    {
+      tagName: "link",
+      attributes: {
+        rel: "describedby",
+        href: "/profile.json",
+        type: "application/json",
+        title: "Public professional profile",
+      },
+    },
     {
       tagName: "link",
       attributes: {
