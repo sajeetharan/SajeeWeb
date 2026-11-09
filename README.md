@@ -57,20 +57,29 @@ on each platform, and the booking link leads to `/mentored`.
 ### Mentoring services
 
 The Get Mentored page (`src/pages/mentored.tsx`) promotes Topmate exclusively,
-with direct links to all five services: 1:1 Mentorship, PM Interview Prep,
-Pathway to Product Management, Ask me anything, and Discovery Call. Paid
-services appear before the introductory discovery call. Service names, formats,
-durations, and links were verified against the public Topmate profile on
-October 20, 2026; keep them aligned when offerings change. Pricing and
-availability are shown on Topmate rather than duplicated here.
+with direct links to all five services, led by the free 15-minute Discovery Call,
+followed by 1:1 Mentorship, PM Interview Prep, Pathway to Product Management,
+and Ask me anything. The page focuses on engineer-to-PM transitions and
+interview preparation, with service audiences, practical takeaways, preparation
+guidance, and two permission-approved Topmate testimonial excerpts.
+Service names, formats, durations, links, and the free discovery call were
+verified against the public Topmate profile on November 9, 2026; keep them
+aligned when offerings change. Other pricing and availability remain on Topmate.
 ADPList remains a source for existing homepage testimonials, not a booking
 option on the Get Mentored page.
+
+The homepage and SkillGraph award link to mentoring. Blog posts opt into a
+career mentoring CTA with `mentoring: true` in front matter; technical posts
+and blog-list previews do not show it. The CTA points to the PM pathway card.
+Existing Google Analytics receives `mentoring_view` and `mentoring_click`
+events with fixed placement/action labels only. These measure visits and
+interest, not confirmed bookings; no new analytics provider is added.
 
 ### Ask Sajee contact guide
 
 `src/theme/Root.tsx` mounts the lightweight Ask Sajee launcher across the site.
 The launcher opens a native dialog only when activated; without JavaScript its
-ordinary link falls back to `/contact`. The dialog routes visitors to a paid
+ordinary link falls back to `/contact`. The dialog routes visitors to a
 Topmate priority DM, four mentoring/video services, or an email draft for speaking,
 collaboration, article questions, and corrections. It is not live chat or AI.
 No message form, backend, external chat script, custom analytics events, or
@@ -320,8 +329,11 @@ after account setup and deployment.
 
 ### Awards, accessibility, and image budgets
 
-The Awards & Recognition page opens with four curated highlights: Microsoft
-MVP, Google Developer Expert, HackerNoon Noonies, and the Microsoft Global
+The Awards & Recognition page opens with five curated highlights, led by
+SkillGraph's first-place win in the 2026 Microsoft Global Hackathon Executive
+Challenge, awarded November 6, 2026. Its certificate is available in the image
+dialog. The other highlights are Microsoft MVP, Google Developer Expert,
+HackerNoon Noonies, and the Microsoft Global
 Hackathon 2021 Challenge Winner badge. Category filters expose the complete
 collection, including all 42 public Credly badges verified October 22, 2026.
 Issued and expiry dates are historical records, not claims of active certification.

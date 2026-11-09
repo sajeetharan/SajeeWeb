@@ -29,7 +29,7 @@ test("Ask Sajee is available site-wide without automatically opening", async () 
   }
 });
 
-test("contact guide routes before collecting messages and discloses paid guidance", async () => {
+test("contact guide routes before collecting messages and defers pricing to Topmate", async () => {
   const html = await readFile("build/index.html", "utf8");
   const dialog = html.match(
     /<dialog\b[^>]*id="ask-sajee-dialog"[\s\S]*?<\/dialog>/,
@@ -44,7 +44,8 @@ test("contact guide routes before collecting messages and discloses paid guidanc
     assert.ok(dialog.includes(intent), `missing intent: ${intent}`);
   }
   assert.match(dialog, /A contact guide, not live chat\./);
-  assert.match(dialog, /paid Topmate DM/);
+  assert.match(dialog, /Check current terms on Topmate/);
+  assert.doesNotMatch(dialog, /paid Topmate DM/);
   assert.match(
     dialog,
     /No AI chat, message storage, or automatic forwarding\./,

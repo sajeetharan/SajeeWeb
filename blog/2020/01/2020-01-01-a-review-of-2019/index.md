@@ -1,11 +1,12 @@
 ---
 title: 2019 in Review and Happy New Year 2020
-Date: '2020-01-01'
+mentoring: true
+Date: "2020-01-01"
 categories:
   - azure
   - developer
 tags:
-  - '2019'
+  - "2019"
   - career
   - happy
   - new-year
@@ -21,7 +22,7 @@ My first blog of the new born year 2020 and first of all **Happy new year**! Wis
 
 ![](https://sajeetharan.wordpress.com/wp-content/uploads/2020/01/1577812389722.gif?w=640)
 
-So here i am again just concluded an awesome 2019, and over the last two years I've done a "Year in Review" blog post and I want to do another for this year. Some pretty awesome stuff happened to me in the year 2019. 
+So here i am again just concluded an awesome 2019, and over the last two years I've done a "Year in Review" blog post and I want to do another for this year. Some pretty awesome stuff happened to me in the year 2019.
 
 ### Summary of the year 2019
 

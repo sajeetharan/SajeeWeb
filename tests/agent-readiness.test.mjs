@@ -183,11 +183,11 @@ test("Get Mentored lists all services with Topmate-only booking links", async ()
   assert.doesNotMatch(main, /adplist|<iframe\b/i);
   const cards = main.match(/<article\b[\s\S]*?<\/article>/g) ?? [];
   const services = [
+    ["Discovery Call", "2235628", "15 minutes"],
     ["1:1 Mentorship", "2235625", "30 minutes"],
     ["PM Interview Prep", "2333442", "30 minutes"],
     ["Pathway to Product Management", "2255580", "30 minutes"],
     ["Ask me anything", "2333453/pay", "Reply within 2 days"],
-    ["Discovery Call", "2235628", "15 minutes"],
   ];
   assert.equal(cards.length, services.length);
   for (const [index, [name, id, duration]] of services.entries()) {
@@ -199,9 +199,13 @@ test("Get Mentored lists all services with Topmate-only booking links", async ()
     );
     assert.match(cards[index], /target="_blank" rel="noopener noreferrer"/);
     assert.match(cards[index], /aria-label="[^"]+on Topmate/);
+    assert.match(cards[index], /Your next step:/);
+    assert.match(cards[index], /data-mentoring-source="mentoring"/);
   }
-  const links = [...main.matchAll(/<a\b[^>]*href="([^"]+)"/g)];
-  assert.equal(links.length, services.length + 1);
+  const links = [...main.matchAll(/<a\b[^>]*href="([^"]+)"/g)].filter(
+    ([, href]) => !href.startsWith("#"),
+  );
+  assert.equal(links.length, services.length + 3);
   for (const [, href] of links) {
     assert.equal(new URL(href).hostname, "topmate.io");
   }

@@ -63,12 +63,18 @@ export const Hero: React.FC<HeroProps> = ({ avatar }) => {
                   />
                 </svg>
               </Link>
-              <Link className={styles.secondaryCta} to="/mentored">
-                Book mentoring
+              <Link
+                className={styles.secondaryCta}
+                to="/mentored"
+                data-mentoring-source="homepage"
+                data-mentoring-action="explore"
+              >
+                Start with a free discovery call
               </Link>
             </div>
             <p className={styles.availability}>
-              Speaking, mentoring, and community collaborations
+              Engineer-to-PM transitions, interview preparation, and career
+              guidance
             </p>
           </div>
 

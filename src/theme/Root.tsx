@@ -16,6 +16,7 @@ export default function Root({
 
   useEffect(() => {
     if (path === "/career") trackPortfolioEvent({ name: "career_view" });
+    if (path === "/mentored") trackPortfolioEvent({ name: "mentoring_view" });
   }, [path]);
 
   useEffect(() => {

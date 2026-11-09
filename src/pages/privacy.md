@@ -5,7 +5,7 @@ description: "How Sajeetharan Sinnathurai's personal website uses analytics, hos
 
 # Privacy Policy
 
-Last updated: November 2, 2026
+Last updated: November 9, 2026
 
 This notice covers [www.sajeetharan.dev](https://www.sajeetharan.dev/),
 the personal website and blog of Sajeetharan Sinnathurai. For privacy questions,
@@ -40,6 +40,13 @@ identifiers, action labels, and audience categories, not email addresses, draft
 subjects or bodies, chat messages, or visitor-entered text. An email-link click
 does not confirm that an enquiry was sent. The mood playground and Ask Sajee
 contact guide do not emit these custom events.
+
+Mentoring analytics records mentoring-page views and clicks on selected
+mentoring links. Event fields contain only fixed placement labels (homepage,
+awards, article, or mentoring) and service-action categories. These clicks
+measure interest and booking handoffs, not completed Topmate bookings or
+payments. No testimonial text or visitor-entered information is sent in these
+events.
 
 The site also uses browser storage for interface preferences, such as your
 selected light or dark theme.

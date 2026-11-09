@@ -10,7 +10,11 @@
   margin-bottom: 3rem;
 
   h1 {
-    font-size: 2.5rem;
+    max-width: 850px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: clamp(2rem, 5vw, 3rem);
+    text-wrap: balance;
     font-weight: 800;
     margin-bottom: 1rem;
     color: var(--ifm-font-color-base);
@@ -18,6 +22,68 @@
     @include small-size {
       font-size: 2rem;
     }
+  }
+}
+
+.credibility {
+  max-width: 650px;
+  margin: 1rem auto 1.5rem;
+  color: var(--ifm-color-emphasis-700);
+}
+
+.bookingNote {
+  max-width: 600px;
+  margin: 0.75rem auto 0;
+  font-size: 0.9rem;
+  color: var(--ifm-color-emphasis-700);
+}
+
+.testimonials {
+  max-width: 1000px;
+  margin: 0 auto 3rem;
+}
+
+.testimonialGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem;
+
+  @include small-size {
+    grid-template-columns: 1fr;
+  }
+}
+
+.testimonial {
+  min-width: 0;
+  margin: 0;
+  padding: 1.5rem;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 1rem;
+  background: var(--ifm-background-surface-color);
+
+  blockquote {
+    border: 0;
+    padding: 0;
+    color: var(--ifm-font-color-base);
+  }
+
+  figcaption {
+    font-size: 0.9rem;
+    color: var(--ifm-color-emphasis-700);
+  }
+}
+
+.reviewSource {
+  margin: 1rem 0 0;
+  text-align: center;
+
+  a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    color: var(--ifm-font-color-base);
+    text-decoration: underline;
+    text-underline-offset: 4px;
   }
 }
 
@@ -59,6 +125,7 @@
 }
 
 .serviceCard {
+  min-width: 0;
   background: var(--ifm-background-surface-color);
   border-radius: 1rem;
   border: 1px solid var(--ifm-color-emphasis-200);
@@ -67,8 +134,32 @@
   flex-direction: column;
 
   h3 {
+    scroll-margin-top: calc(var(--ifm-navbar-height) + 1rem);
     font-size: 1.35rem;
     line-height: 1.4;
+  }
+}
+
+.discoveryCard {
+  grid-column: 1 / -1;
+  border-color: var(--ifm-color-primary);
+}
+
+.audience {
+  font-weight: 600;
+}
+
+.takeaway {
+  margin-bottom: 1.5rem;
+  color: var(--ifm-color-emphasis-700);
+}
+
+.expectations {
+  max-width: 700px;
+  margin: 3rem auto 0;
+
+  p {
+    color: var(--ifm-color-emphasis-700);
   }
 }
 

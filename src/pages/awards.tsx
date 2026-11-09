@@ -1,5 +1,6 @@
 import React, { useRef, useState } from "react";
 import Layout from "@theme/Layout";
+import Link from "@docusaurus/Link";
 import credly from "../data/credly-badges.json";
 import styles from "./awards.module.scss";
 
@@ -47,6 +48,20 @@ function badgeCategory(title: string): Category {
 }
 
 const awards: Award[] = [
+  {
+    id: "skillgraph-2026",
+    title:
+      "Microsoft Global Hackathon 2026 - 1st Place Executive Challenge Winner",
+    organization: "Microsoft",
+    year: "2026",
+    issuedAt: "2026-11-06",
+    description:
+      'First-place winner as a member of SkillGraph in the Executive Challenge: "Agentic Expert Networking: A Talent Acceleration Engine for All Employees." Certificate presented on November 6, 2026, and signed by Satya Nadella, Chairman and CEO.',
+    image: "/img/awards/thumbnails/skillgraph_2026.webp",
+    fullImage: "/img/awards/skillgraph_2026.webp",
+    category: "award",
+    featured: true,
+  },
   {
     id: "mvp",
     title: "Microsoft Most Valuable Professional",
@@ -240,6 +255,20 @@ export default function Awards(): JSX.Element {
                     </p>
                   )}
                   <p className={styles.description}>{award.description}</p>
+                  {award.id === "skillgraph-2026" && (
+                    <p className={styles.description}>
+                      Building your next career move in AI or product
+                      management?{" "}
+                      <Link
+                        to="/mentored"
+                        className={styles.awardLink}
+                        data-mentoring-source="awards"
+                        data-mentoring-action="explore"
+                      >
+                        Explore 1:1 mentoring &rarr;
+                      </Link>
+                    </p>
+                  )}
                   {award.link && (
                     <a href={award.link} className={styles.awardLink}>
                       {award.issuedAt ? "Verify on Credly" : "View details"}{" "}

@@ -1,5 +1,17 @@
 type PortfolioEvent =
   | { name: "career_view" }
+  | { name: "mentoring_view" }
+  | {
+      name: "mentoring_click";
+      source: "homepage" | "awards" | "article" | "mentoring";
+      action:
+        | "explore"
+        | "discovery"
+        | "mentorship"
+        | "interview"
+        | "pathway"
+        | "question";
+    }
   | {
       name: "project_click";
       project_id: string;
@@ -32,6 +44,8 @@ export function trackPortfolioClick(data: DOMStringMap): void {
     portfolioProject: project,
     portfolioAction: action,
     portfolioContact: audience,
+    mentoringSource,
+    mentoringAction,
   } = data;
   if (
     project &&
@@ -44,5 +58,22 @@ export function trackPortfolioClick(data: DOMStringMap): void {
     audience === "speaking"
   ) {
     trackPortfolioEvent({ name: "contact_click", audience });
+  } else if (
+    (mentoringSource === "homepage" ||
+      mentoringSource === "awards" ||
+      mentoringSource === "article" ||
+      mentoringSource === "mentoring") &&
+    (mentoringAction === "explore" ||
+      mentoringAction === "discovery" ||
+      mentoringAction === "mentorship" ||
+      mentoringAction === "interview" ||
+      mentoringAction === "pathway" ||
+      mentoringAction === "question")
+  ) {
+    trackPortfolioEvent({
+      name: "mentoring_click",
+      source: mentoringSource,
+      action: mentoringAction,
+    });
   }
 }

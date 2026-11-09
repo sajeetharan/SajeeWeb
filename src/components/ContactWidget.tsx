@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { useLocation } from "@docusaurus/router";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import {
+  discoveryCall,
   mentoringServices,
   priorityDmService as priorityDm,
   topmateServiceUrl,
@@ -18,7 +19,8 @@ const intents: {
   {
     step: "question",
     title: "Ask a focused question",
-    detail: "Personalized technical or career guidance via a paid Topmate DM.",
+    detail:
+      "Personalized technical or career guidance via a Topmate DM. Check current terms on Topmate.",
   },
   {
     step: "mentoring",
@@ -173,16 +175,16 @@ export default function ContactWidget(): JSX.Element {
                   or career question without scheduling a call.
                 </p>
                 <p className={styles.note}>
-                  This is a paid priority DM service. Review current pricing and
-                  response terms on Topmate before paying. Write your question
-                  there; this guide does not forward messages.
+                  Review current pricing and response terms on Topmate before
+                  continuing. Write your question there; this guide does not
+                  forward messages.
                 </p>
                 <a
                   className={styles.primary}
                   href={topmateServiceUrl(priorityDm.id)}
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label="Continue to paid priority DM on Topmate (opens in a new tab)"
+                  aria-label="Continue to priority DM on Topmate (opens in a new tab)"
                 >
                   Continue to Topmate &rarr;
                 </a>
@@ -209,6 +211,7 @@ export default function ContactWidget(): JSX.Element {
                     >
                       <strong>{service.name}</strong>
                       <span>
+                        {service.id === discoveryCall.id && "Free · "}
                         {service.format} &middot; {service.duration}
                       </span>
                     </a>

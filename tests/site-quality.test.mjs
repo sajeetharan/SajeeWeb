@@ -41,12 +41,13 @@ test("award previews stay below their image budget", async () => {
   }
 });
 
-test("awards default to four top highlights with accessible filters and dialog", async () => {
+test("awards default to five top highlights with accessible filters and dialog", async () => {
   const page = await readFile("build/awards/index.html", "utf8");
   const html = page.match(/<main\b[^>]*>[\s\S]*?<\/main>/)?.[0];
   assert.ok(html);
-  assert.equal((html.match(/<article\b/g) ?? []).length, 4);
+  assert.equal((html.match(/<article\b/g) ?? []).length, 5);
   for (const title of [
+    "Microsoft Global Hackathon 2026 - 1st Place Executive Challenge Winner",
     "Microsoft Most Valuable Professional",
     "Google Developer Expert",
     "Most Outstanding Educator in Technology",
@@ -60,9 +61,9 @@ test("awards default to four top highlights with accessible filters and dialog",
   assert.match(html, /role="status" aria-live="polite" aria-atomic="true"/);
   assert.match(
     html.replace(/<!--[\s\S]*?-->/g, ""),
-    /Showing 4 of 47 recognitions/,
+    /Showing 5 of 48 recognitions/,
   );
-  assert.equal((html.match(/aria-haspopup="dialog"/g) ?? []).length, 4);
+  assert.equal((html.match(/aria-haspopup="dialog"/g) ?? []).length, 5);
   assert.match(html, /<dialog\b[^>]*aria-labelledby="award-image-title"/);
   assert.doesNotMatch(html, /<dialog\b[^>]*\bopen(?:=|\s|>)/);
   assert.doesNotMatch(html, /protected.*download|Click to view full size/);
@@ -70,12 +71,33 @@ test("awards default to four top highlights with accessible filters and dialog",
   const previews = images.filter((image) =>
     /awards\/thumbnails|images\.credly/.test(image),
   );
-  assert.equal(previews.length, 4);
+  assert.equal(previews.length, 5);
   for (const image of previews) {
     assert.match(image, /width="360" height="240"/);
     assert.match(image, /loading="lazy"/);
   }
   assert.doesNotMatch(html, /<img\b[^>]*src="\/img\/awards\/[^/"]+\.jpg"/);
+});
+
+test("SkillGraph's first-place certificate is the leading award highlight", async () => {
+  const html = await readFile("build/awards/index.html", "utf8");
+  const firstAward = html.match(/<article\b[^>]*>[\s\S]*?<\/article>/)?.[0];
+  assert.ok(firstAward);
+  assert.match(
+    firstAward,
+    /Microsoft Global Hackathon 2026 - 1st Place Executive Challenge Winner/,
+  );
+  assert.match(firstAward, /SkillGraph/);
+  assert.match(firstAward, /Agentic Expert Networking/);
+  assert.match(firstAward, /<time datetime="2026-11-06">2026-11-06<\/time>/);
+  assert.match(firstAward, /Satya Nadella/);
+  assert.match(
+    firstAward,
+    /src="\/img\/awards\/thumbnails\/skillgraph_2026\.webp"/,
+  );
+  assert.doesNotMatch(firstAward, /Verify on Credly/);
+  const certificate = await readFile("build/img/awards/skillgraph_2026.webp");
+  assert.equal(certificate.toString("ascii", 8, 12), "WEBP");
 });
 
 test("Credly snapshot preserves unique verification links and historical dates", async () => {

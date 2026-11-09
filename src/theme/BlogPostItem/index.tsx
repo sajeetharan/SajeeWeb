@@ -21,6 +21,27 @@ export default function BlogPostItem(props: Props): JSX.Element {
             </p>
           )}
           <TopicLinks permalink={metadata.permalink} />
+          {metadata.frontMatter.mentoring === true && (
+            <div
+              className="margin-top--lg padding--md"
+              data-mentoring-promotion="true"
+            >
+              <h2>Find your next career step</h2>
+              <p>
+                Considering a move from engineering into Product Management?
+                Explore your transferable skills and practical next steps in a
+                1:1 session.
+              </p>
+              <Link
+                to="/mentored#service-2255580"
+                className="button button--secondary"
+                data-mentoring-source="article"
+                data-mentoring-action="explore"
+              >
+                Explore my PM pathway &rarr;
+              </Link>
+            </div>
+          )}
         </aside>
       )}
     </>
