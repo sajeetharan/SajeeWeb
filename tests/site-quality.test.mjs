@@ -207,7 +207,8 @@ test("the production theme includes ivory, ink, and accessible orange button col
 });
 
 test("blog excerpts have sequential headings and the archived book cover link stays named", async () => {
-  const html = await readFile("build/blogs/index.html", "utf8");
+  // The tag listing keeps this fixture visible as newer posts enter the main list.
+  const html = await readFile("build/blogs/tags/cosmosdb/index.html", "utf8");
   assert.match(html, /<h2\b[^>]*id="overview"/);
   assert.doesNotMatch(html, /<h4\b[^>]*id="overview"/);
   const bookUrl =
