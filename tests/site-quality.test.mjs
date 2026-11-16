@@ -154,6 +154,10 @@ test("blog controls have visible labels, toggle states, and live result feedback
 
 test("homepage identity and Stack Overflow ranking are consistent and qualified", async () => {
   const html = await readFile("build/index.html", "utf8");
+  assert.doesNotMatch(
+    html,
+    /Recognized expertise|First developer from Sri Lanka to earn both honors/,
+  );
   assert.doesNotMatch(html, /stackoverflow\.com\/users\/3785469|Global top 10/);
   assert.match(html, /Top 10 in key tags/);
   assert.match(html, /Stack Overflow: Azure, Angular, Cosmos DB/);

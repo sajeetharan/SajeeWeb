@@ -80,11 +80,6 @@ export const Hero: React.FC<HeroProps> = ({ avatar }) => {
 
           <div id="slap-portrait" tabIndex={-1} className={styles.visual}>
             <PortraitPlayground />
-            <div className={styles.profileCard}>
-              <span className={styles.profileLabel}>Recognized expertise</span>
-              <strong>Google Developer Expert · Microsoft MVP</strong>
-              <span>First developer from Sri Lanka to earn both honors</span>
-            </div>
           </div>
         </div>
 
