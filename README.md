@@ -370,6 +370,15 @@ contrast-safe colors in both themes. In the blog tag listing, the archived
 pagination article has a sequential heading outline, and the book-giveaway
 article's linked cover has descriptive alternative text.
 
+Individual blog articles use a distraction-reduced reading layout. The
+`BlogPostPage` wrapper omits the recent-post sidebar without changing tag or
+archive pages. Article-only styles in `src/css/custom.scss` constrain the reading
+column to 42rem, use 18px body type with 1.75 line height, and give section
+headings more separation. A quieter contents panel remains on screens wider
+than 996px; narrower screens use a single reading column. Keep article content,
+author details, source links, code blocks, tables, pagination, and SEO metadata
+intact when adjusting this layout. Listing styles are separate.
+
 ### Deployment
 
 The static site is deployed from `main` with GitHub Pages. The Cloudflare Worker

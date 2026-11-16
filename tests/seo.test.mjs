@@ -57,6 +57,11 @@ test("all canonical blog articles have exactly one accurate article schema", asy
     const breadcrumb = data.find((item) => item["@type"] === "BreadcrumbList");
     assert.equal(breadcrumb.itemListElement.at(-1).item, url);
     assert.ok(html.includes('aria-label="Article author and topics"'));
+    assert.doesNotMatch(
+      html,
+      /aria-label="Blog recent posts navigation"/,
+      `recent-post sidebar crowds the article at ${url}`,
+    );
     assert.ok(html.includes('href="/topics"'));
   }
   assert.ok(articles >= 124, `only checked ${articles} articles`);

@@ -342,6 +342,124 @@ h3 {
   text-underline-offset: 3px;
 }
 
+.blog-post-page {
+  .main-wrapper > .container {
+    max-width: 62rem;
+    margin-block: 3rem 5rem;
+    padding-inline: 1.5rem;
+
+    > .row {
+      justify-content: center;
+      flex-wrap: nowrap;
+      gap: 3rem;
+      margin-inline: 0;
+
+      > main {
+        flex: 1 1 0;
+        width: 100%;
+        min-width: 0;
+        max-width: 42rem;
+        margin-inline: 0;
+        padding-inline: 0;
+      }
+
+      > .col--2 {
+        flex: 0 0 12rem;
+        max-width: 12rem;
+        padding-inline: 0;
+      }
+    }
+  }
+
+  article {
+    > header {
+      margin-bottom: 2rem;
+
+      h1 {
+        max-width: 26ch;
+        margin-bottom: 1.25rem;
+        font-size: clamp(1.8rem, 3.8vw, 2.65rem);
+        line-height: 1.2;
+        letter-spacing: -0.025em;
+        text-wrap: balance;
+        overflow-wrap: anywhere;
+      }
+    }
+
+    .markdown {
+      font-size: 18px;
+      line-height: 1.75;
+      overflow-wrap: break-word;
+
+      > p,
+      > ul,
+      > ol {
+        margin-bottom: 1.35em;
+      }
+
+      h2 {
+        margin-top: 2.75rem;
+        margin-bottom: 1rem;
+        font-size: clamp(1.4rem, 2.5vw, 1.8rem);
+        line-height: 1.35;
+        text-wrap: balance;
+      }
+
+      h3 {
+        margin-top: 2rem;
+        margin-bottom: 0.75rem;
+        font-size: 1.3rem;
+        line-height: 1.4;
+      }
+
+      li + li {
+        margin-top: 0.5rem;
+      }
+
+      table {
+        max-width: 100%;
+        font-size: 0.9em;
+        line-height: 1.6;
+      }
+
+      pre {
+        font-size: 0.85rem;
+        line-height: 1.65;
+        overflow-wrap: normal;
+      }
+    }
+  }
+
+  .table-of-contents {
+    max-height: calc(100vh - var(--ifm-navbar-height) - 4rem);
+    overflow-y: auto;
+    border-left-color: var(--ifm-color-emphasis-200);
+    font-size: 0.8rem;
+    line-height: 1.6;
+
+    a {
+      display: block;
+      min-height: 44px;
+      padding-block: 0.4rem;
+    }
+  }
+
+  @media (max-width: 996px) {
+    .main-wrapper > .container {
+      margin-block: 2rem 3rem;
+      padding-inline: 1.25rem;
+
+      > .row {
+        gap: 0;
+
+        > .col--2 {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
 /* Card styling - Glassmorphism */
 .card {
   border-radius: 1rem;
