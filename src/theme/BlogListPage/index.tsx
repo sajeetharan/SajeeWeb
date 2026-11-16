@@ -8,7 +8,6 @@ import {
 } from "@docusaurus/theme-common";
 import BlogLayout from "@theme/BlogLayout";
 import SearchMetadata from "@theme/SearchMetadata";
-import BlogPostItems from "@theme/BlogPostItems";
 import type { Props } from "@theme/BlogListPage";
 import styles from "./styles.module.scss";
 import TopicLinks from "../../components/topics/TopicLinks";
@@ -37,6 +36,7 @@ function BlogListPageContent(props: Props): JSX.Element {
   const [viewMode, setViewMode] = useState<ViewMode>("list");
   const [showAllTags, setShowAllTags] = useState(false);
   const [visibleCount, setVisibleCount] = useState(POSTS_PER_PAGE);
+  const [showFilters, setShowFilters] = useState(false);
 
   // Extract all unique tags (with counts) and years from ALL posts
   const { sortedTags, allYears } = useMemo(() => {
@@ -108,6 +108,8 @@ function BlogListPageContent(props: Props): JSX.Element {
 
   const hasActiveFilters =
     searchQuery || selectedTags.length > 0 || selectedYear !== "all";
+  const advancedFilterCount =
+    selectedTags.length + (selectedYear !== "all" ? 1 : 0);
 
   const visibleTags = showAllTags
     ? sortedTags
@@ -124,13 +126,8 @@ function BlogListPageContent(props: Props): JSX.Element {
         <div className={styles.header}>
           <h1 className={styles.title}>Blog</h1>
           <p className={styles.subtitle}>
-            {items.length} posts on developer tooling, Azure, coding agents, and
-            more — writing since 2011.
+            Notes on building products, developer tools, and AI.
           </p>
-          <Link className={styles.archiveLink} to="/blogs/archive">
-            Browse the complete blog archive
-          </Link>
-          <TopicLinks />
         </div>
 
         {/* Filter Bar */}
@@ -166,147 +163,168 @@ function BlogListPageContent(props: Props): JSX.Element {
             </div>
           </div>
 
-          {/* Year Filter */}
-          <div className={styles.yearField}>
-            <label htmlFor="blog-year">Year</label>
-            <select
-              id="blog-year"
-              aria-controls="blog-posts"
-              value={selectedYear}
-              onChange={(e) => {
-                setSelectedYear(e.target.value);
-                setVisibleCount(POSTS_PER_PAGE);
-              }}
-              className={styles.yearSelect}
-            >
-              <option value="all">All Years</option>
-              {allYears.map((year) => (
-                <option key={year} value={year}>
-                  {year}
-                </option>
-              ))}
-            </select>
-          </div>
-
-          {/* View Toggle */}
-          <div
-            className={styles.viewToggle}
-            role="group"
-            aria-label="Post layout"
+          <button
+            className={styles.filtersButton}
+            aria-expanded={showFilters}
+            aria-controls="blog-filters"
+            onClick={() => setShowFilters((current) => !current)}
           >
-            <button
-              className={clsx(
-                styles.viewBtn,
-                viewMode === "list" && styles.viewBtnActive,
-              )}
-              onClick={() => setViewMode("list")}
-              title="List view"
-              aria-label="List view"
-              aria-pressed={viewMode === "list"}
-              aria-controls="blog-posts"
-            >
-              <svg
-                viewBox="0 0 20 20"
-                fill="currentColor"
-                width="18"
-                height="18"
-                aria-hidden="true"
-              >
-                <path
-                  fillRule="evenodd"
-                  d="M3 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
-                  clipRule="evenodd"
-                />
-              </svg>
-            </button>
-            <button
-              className={clsx(
-                styles.viewBtn,
-                viewMode === "grid" && styles.viewBtnActive,
-              )}
-              onClick={() => setViewMode("grid")}
-              title="Grid view"
-              aria-label="Grid view"
-              aria-pressed={viewMode === "grid"}
-              aria-controls="blog-posts"
-            >
-              <svg
-                viewBox="0 0 20 20"
-                fill="currentColor"
-                width="18"
-                height="18"
-                aria-hidden="true"
-              >
-                <path d="M5 3a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2V5a2 2 0 00-2-2H5zM5 11a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2v-2a2 2 0 00-2-2H5zM11 5a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V5zM11 13a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" />
-              </svg>
-            </button>
-          </div>
+            Filters{advancedFilterCount > 0 && ` (${advancedFilterCount})`}
+          </button>
         </div>
 
-        {/* Tag Cloud */}
-        {sortedTags.length > 0 && (
-          <div className={styles.tagCloud}>
-            <div className={styles.tagCloudHeader}>
-              <span className={styles.tagCloudLabel}>Filter by tag</span>
-              {selectedTags.length > 0 && (
-                <button
-                  className={styles.clearTagsBtn}
-                  onClick={() => {
-                    setSelectedTags([]);
-                    setVisibleCount(POSTS_PER_PAGE);
-                  }}
-                >
-                  Clear ({selectedTags.length})
-                </button>
-              )}
+        <div
+          id="blog-filters"
+          className={styles.filterPanel}
+          hidden={!showFilters}
+        >
+          <div className={styles.filterOptions}>
+            {/* Year Filter */}
+            <div className={styles.yearField}>
+              <label htmlFor="blog-year">Year</label>
+              <select
+                id="blog-year"
+                aria-controls="blog-posts"
+                value={selectedYear}
+                onChange={(e) => {
+                  setSelectedYear(e.target.value);
+                  setVisibleCount(POSTS_PER_PAGE);
+                }}
+                className={styles.yearSelect}
+              >
+                <option value="all">All Years</option>
+                {allYears.map((year) => (
+                  <option key={year} value={year}>
+                    {year}
+                  </option>
+                ))}
+              </select>
             </div>
+
+            {/* View Toggle */}
             <div
-              id="blog-tags"
-              className={styles.tagPills}
+              className={styles.viewToggle}
               role="group"
-              aria-label="Filter by tag"
+              aria-label="Post layout"
             >
-              {visibleTags.map(([tag, count]) => (
-                <button
-                  key={tag}
-                  className={clsx(
-                    styles.tagPill,
-                    selectedTags.includes(tag) && styles.tagPillActive,
-                  )}
-                  onClick={() => toggleTag(tag)}
-                  aria-pressed={selectedTags.includes(tag)}
-                  aria-controls="blog-posts"
+              <button
+                className={clsx(
+                  styles.viewBtn,
+                  viewMode === "list" && styles.viewBtnActive,
+                )}
+                onClick={() => setViewMode("list")}
+                title="List view"
+                aria-label="List view"
+                aria-pressed={viewMode === "list"}
+                aria-controls="blog-posts"
+              >
+                <svg
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                  width="18"
+                  height="18"
+                  aria-hidden="true"
                 >
-                  {tag}
-                  <span className={styles.tagCount}>{count}</span>
-                </button>
-              ))}
-              {!showAllTags && hiddenTagCount > 0 && (
-                <button
-                  className={styles.showMoreBtn}
-                  onClick={() => setShowAllTags(true)}
-                  aria-expanded="false"
-                  aria-controls="blog-tags"
+                  <path
+                    fillRule="evenodd"
+                    d="M3 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+                    clipRule="evenodd"
+                  />
+                </svg>
+              </button>
+              <button
+                className={clsx(
+                  styles.viewBtn,
+                  viewMode === "grid" && styles.viewBtnActive,
+                )}
+                onClick={() => setViewMode("grid")}
+                title="Grid view"
+                aria-label="Grid view"
+                aria-pressed={viewMode === "grid"}
+                aria-controls="blog-posts"
+              >
+                <svg
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                  width="18"
+                  height="18"
+                  aria-hidden="true"
                 >
-                  +{hiddenTagCount} more
-                </button>
-              )}
-              {showAllTags && sortedTags.length > INITIAL_VISIBLE_TAGS && (
-                <button
-                  className={styles.showMoreBtn}
-                  onClick={() => setShowAllTags(false)}
-                  aria-expanded="true"
-                  aria-controls="blog-tags"
-                >
-                  Show less
-                </button>
-              )}
+                  <path d="M5 3a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2V5a2 2 0 00-2-2H5zM5 11a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2v-2a2 2 0 00-2-2H5zM11 5a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V5zM11 13a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" />
+                </svg>
+              </button>
             </div>
           </div>
-        )}
+
+          {/* Tag Cloud */}
+          {sortedTags.length > 0 && (
+            <div className={styles.tagCloud}>
+              <div className={styles.tagCloudHeader}>
+                <span className={styles.tagCloudLabel}>Filter by tag</span>
+                {selectedTags.length > 0 && (
+                  <button
+                    className={styles.clearTagsBtn}
+                    onClick={() => {
+                      setSelectedTags([]);
+                      setVisibleCount(POSTS_PER_PAGE);
+                    }}
+                  >
+                    Clear ({selectedTags.length})
+                  </button>
+                )}
+              </div>
+              <div
+                id="blog-tags"
+                className={styles.tagPills}
+                role="group"
+                aria-label="Filter by tag"
+              >
+                {visibleTags.map(([tag, count]) => (
+                  <button
+                    key={tag}
+                    className={clsx(
+                      styles.tagPill,
+                      selectedTags.includes(tag) && styles.tagPillActive,
+                    )}
+                    onClick={() => toggleTag(tag)}
+                    aria-pressed={selectedTags.includes(tag)}
+                    aria-controls="blog-posts"
+                  >
+                    {tag}
+                    <span className={styles.tagCount}>{count}</span>
+                  </button>
+                ))}
+                {!showAllTags && hiddenTagCount > 0 && (
+                  <button
+                    className={styles.showMoreBtn}
+                    onClick={() => setShowAllTags(true)}
+                    aria-expanded="false"
+                    aria-controls="blog-tags"
+                  >
+                    +{hiddenTagCount} more
+                  </button>
+                )}
+                {showAllTags && sortedTags.length > INITIAL_VISIBLE_TAGS && (
+                  <button
+                    className={styles.showMoreBtn}
+                    onClick={() => setShowAllTags(false)}
+                    aria-expanded="true"
+                    aria-controls="blog-tags"
+                  >
+                    Show less
+                  </button>
+                )}
+              </div>
+            </div>
+          )}
+          <TopicLinks />
+        </div>
 
         {/* Active Filters Summary */}
         <div className={styles.activeFilters}>
+          <h2 className={styles.sectionTitle}>
+            {hasActiveFilters ? "Matching articles" : "Latest articles"}
+          </h2>
           <span
             className={styles.resultCount}
             role="status"
@@ -333,8 +351,59 @@ function BlogListPageContent(props: Props): JSX.Element {
                   viewMode === "grid" && styles.postsGrid,
                 )}
               >
-                <BlogPostItems items={displayedItems} />
+                {displayedItems.map(({ content }, index) => {
+                  const { metadata } = content;
+                  return (
+                    <article
+                      key={metadata.permalink}
+                      className={styles.post}
+                      aria-labelledby={`blog-post-${index}`}
+                    >
+                      <h3
+                        id={`blog-post-${index}`}
+                        className={styles.postTitle}
+                      >
+                        <Link to={metadata.permalink}>{metadata.title}</Link>
+                      </h3>
+                      <div className={styles.postMeta}>
+                        <time dateTime={metadata.date}>
+                          {metadata.formattedDate}
+                        </time>
+                        {metadata.readingTime !== undefined && (
+                          <span>
+                            {" · "}
+                            {Math.max(1, Math.ceil(metadata.readingTime))} min
+                            read
+                          </span>
+                        )}
+                      </div>
+                      {metadata.description && (
+                        <p className={styles.postSummary}>
+                          {metadata.description}
+                        </p>
+                      )}
+                      {metadata.tags.length > 0 && (
+                        <nav
+                          className={styles.postTopics}
+                          aria-label="Article topics"
+                        >
+                          {metadata.tags.slice(0, 2).map((tag) => (
+                            <Link key={tag.permalink} to={tag.permalink}>
+                              {tag.label.replace(/-/g, " ")}
+                            </Link>
+                          ))}
+                        </nav>
+                      )}
+                    </article>
+                  );
+                })}
               </div>
+              <nav className={styles.archiveLinks} aria-label="More articles">
+                <Link to="/blogs/archive">
+                  Browse the complete blog archive
+                </Link>
+                <Link to="/topics">Explore all topics</Link>
+              </nav>
               {hasMore && (
                 <div className={styles.loadMore}>
                   <button

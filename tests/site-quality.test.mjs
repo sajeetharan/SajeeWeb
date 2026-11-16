@@ -150,6 +150,29 @@ test("blog controls have visible labels, toggle states, and live result feedback
   );
   assert.match(html, /role="status" aria-live="polite" aria-atomic="true"/);
   assert.match(html, /id="blog-posts"/);
+  assert.match(
+    html,
+    /<button\b[^>]*aria-expanded="false" aria-controls="blog-filters"[^>]*>Filters<\/button>/,
+  );
+  assert.match(html, /<div id="blog-filters"[^>]*hidden=""/);
+});
+
+test("blog listing uses compact summaries instead of full article excerpts", async () => {
+  const html = await readFile("build/blogs/index.html", "utf8");
+  assert.match(html, /Latest articles/);
+  const articles = [...html.matchAll(/<article\b[^>]*>([\s\S]*?)<\/article>/g)];
+  assert.equal(articles.length, 12);
+  for (const [, article] of articles) {
+    assert.match(article, /<h3\b[^>]*id="blog-post-\d+"/);
+    assert.match(article, /<time dateTime="[^"]+">/i);
+    assert.equal((article.match(/<p\b/g) ?? []).length, 1);
+    assert.ok((article.match(/<a\b/g) ?? []).length <= 3);
+    assert.doesNotMatch(
+      article,
+      /<pre\b|<img\b|<iframe\b|Principal Product Manager|Read More|<h[12]\b/,
+    );
+  }
+  assert.match(html, /href="\/blogs\/archive"/);
 });
 
 test("homepage identity and Stack Overflow ranking are consistent and qualified", async () => {

@@ -352,13 +352,21 @@ local award thumbnails below 100 KB each. Do not restore the full-resolution
 logo in navigation. Regression tests enforce these budgets.
 
 Blog controls have visible labels, pressed states, live result counts, and
-44px minimum heights. Preserve those semantics when changing filters. The
+44px minimum heights. The main listing renders compact metadata-only rows:
+title, publication date, reading time, a two-line description, and at most two
+tag links. Do not mount article bodies, author blocks, code, or large media in
+these rows; full content remains on article and tag pages. Search stays visible,
+while the Filters disclosure contains year, layout, tags, and curated topic
+links. The disclosure shows the number of active year/tag filters even when
+closed. Search, year, and tags combine across all posts, and Load more retains
+the current filters. The complete archive and topics remain linked below the
+results. Preserve those semantics when changing filters. The
 awards image dialog supports Escape, keyboard focus containment, and focus
 restoration through the native browser dialog behavior. Global focus indicators,
 contrast-safe light-theme primary colors, and reduced-motion styles apply
 across these surfaces.
 Muted text, contribution/social cards, and code highlighting also use
-contrast-safe colors in both themes. In the initial blog listing, the archived
+contrast-safe colors in both themes. In the blog tag listing, the archived
 pagination article has a sequential heading outline, and the book-giveaway
 article's linked cover has descriptive alternative text.
 
