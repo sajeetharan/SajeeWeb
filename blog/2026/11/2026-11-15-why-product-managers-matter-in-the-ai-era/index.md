@@ -21,119 +21,93 @@ utcDate: "2026-11-15T00:00:00.000Z"
 description: "From customer problems to agent-skills prototypes and DevGlobe: my perspective on why hands-on technical product managers have an edge in the AI era."
 ---
 
-When an AI agent can turn an idea into working code, it is fair to ask: do we still need product managers?
+If an engineer can use AI to build a feature without waiting for a PM, what exactly is the PM contributing?
 
-I am a product manager with a development background, so I do not dismiss that question. I build things too. Working with AI has shown me how quickly an idea can become a prototype, and how much judgment it still takes to decide whether that idea is worth pursuing.
+I'm a PM with a development background, and I think that's a reasonable question. I enjoy building. Give me an idea and the tools to try it, and I'd often rather make a small prototype than write another page explaining what it might do.
 
-But that experience has pushed me toward a different conclusion.
+So I understand the excitement about engineers doing more on their own. I want that too.
 
-**Making software easier to build does not make choosing the right software easier.**
+Where I disagree is the next leap: that because implementation is getting easier, the product decisions must be getting easier as well. In my own work, those are still the decisions I have to think hardest about.
 
-AI is changing the PM job. It is not making the underlying work disappear. If anything, it is exposing the difference between managing activity and creating value.
+Which customer problem deserves our attention? Is this prototype useful, or do I just like it because I built it? What should we stop doing to make room for this?
+
+That's the part of the PM job I want to spend more time on.
 
 <!-- truncate -->
 
 ## The customer problem came before the agent skill
 
-One experience captures this better than any argument about job titles.
+Take the agent-skills work. Customers were running into a gap: a coding agent could help with general programming, but it didn't reliably have the domain-specific guidance they needed for database work.
 
-Customers were running into a problem with coding agents: general coding ability did not reliably translate into the domain-specific guidance they needed. In database work, plausible code is not enough. The agent needs the right context and an understanding of the constraints that make a solution useful.
+That gave me something specific to investigate. Rather than leave it as a feature request, I built a proof of concept around agent skills, showed the value of the approach, and handed it over to engineering to take forward.
 
-I did not want that to remain a feature request waiting in a backlog.
+Being able to build helped. It gave us something to examine instead of asking everyone to imagine the same solution from a document.
 
-I created a proof of concept around agent skills, demonstrated the value of the approach, and handed it over to engineering to take forward.
+But I wouldn't call the prototype the whole contribution. The customer problem gave it a purpose. Demonstrating the value gave us a reason to pursue it. Engineering still had to take it beyond the proof of concept.
 
-The important part of that story is not that a PM wrote something technical. It is the sequence:
+And there were questions a demo couldn't settle: production readiness, maintenance, and whether the approach would keep helping customers over time.
 
-1. **Start with a customer problem**, rather than a technology looking for a use case.
-2. **Make the proposed solution concrete** enough to examine.
-3. **Show why it is worth pursuing**, rather than relying on a persuasive document.
-4. **Bring engineering into the next stage**, with a clearer problem and evidence to work from.
+This is why I value having a development background as a PM. I can make an uncertain idea easier to evaluate. That doesn't mean I should take over engineering, or that my first implementation is the one we should ship.
 
-A proof of concept does not settle production readiness, maintenance, or long-term customer impact. Those still need engineering work and continued validation. But it can reduce uncertainty before a team commits to a larger investment.
+## DevGlobe made me ask a different question
 
-That is product management to me: moving from ambiguity to a decision the team can act on.
+I've had a related experience through DevGlobe, skill-graph work, and building a hackathon-winning project.
 
-AI makes the prototype easier. It does not automatically identify the customer problem, establish its importance, or earn the team's confidence.
+A hackathon rewards making an idea tangible under a deadline. I enjoy that. But winning doesn't answer whether someone will come back to use what you've built.
 
-## Building a thing and building the right thing are different
+With DevGlobe, the initial idea was an interactive 3D map of developers. As I [wrote in the project walkthrough](/blogs/building-devglobe-with-azure-cosmos-db), it grew into a discovery problem: how do you find a developer with relevant experience, rather than just a popular profile?
 
-My work on DevGlobe, skill graphs, and a hackathon-winning project has given me another lens on this.
-
-In a hackathon, a working demonstration matters. You have limited time, and turning an idea into something people can experience is a real advantage. But a winning demo is not the same as evidence of sustained product value.
-
-With DevGlobe, the initial idea was an interactive 3D map of developers. As I [described in the project write-up](/blogs/building-devglobe-with-azure-cosmos-db), the deeper problem became discovery: how do you find the right developer for a particular need, using meaningful evidence rather than popularity alone?
-
-That changes the questions:
+Once I frame it that way, the map isn't enough. I need to ask:
 
 - Are we helping someone discover relevant expertise, or just giving them an attractive visualization?
 - What evidence makes a match understandable and credible?
 - How should an agent request an introduction without bypassing consent?
 
-Those are not syntax problems. They are product decisions with architectural consequences.
+Those questions affect what I build next, including the architecture.
 
-The same distinction matters in professional work on the Agent Kit and MCP Toolkit. Giving an agent more capabilities is not, by itself, the outcome. The question is whether those capabilities help a developer complete a useful workflow with the right context and boundaries.
-
-**A feature can be technically impressive and still fail to solve the problem that matters.**
+I apply the same test to work on the Agent Kit and MCP Toolkit. A new capability gives me something to demonstrate. Whether it helps a developer finish a useful workflow is a separate question, and the one that matters more.
 
 ## The strongest engineers already practice product management
 
-I agree with part of the argument that engineers are becoming more powerful in the AI era.
+The engineers best positioned to benefit from AI aren't necessarily the ones producing the most code.
 
-An engineer who understands users, exercises sound business judgment, spots a valuable opportunity, and moves it forward independently has enormous leverage. Add AI-assisted implementation, and that combination becomes even stronger.
+An engineer who understands the customer, spots an opportunity worth pursuing, and gets people behind it can now do more of the implementation independently too. That's a powerful combination.
 
-But notice what makes that engineer effective: it is not only coding speed. It is product judgment, initiative, communication, and ownership.
-
-Those qualities are not exclusive to PMs. They should not be.
+I'd happily call that product thinking. PMs don't own those qualities.
 
 [Cory House's observation about roles collapsing](https://x.com/housecor/status/2090821608080298396) captures the direction well: software engineers may increasingly act as product engineers, with responsibilities extending into design, UX, quality, and product thinking.
 
-I read that as a reason to broaden our skills, not as proof that every specialization should disappear.
-
-An engineer gaining product skills does not make product management unnecessary, any more than a PM building a prototype makes engineering unnecessary.
+I agree with the direction. Where I'm less convinced is the idea that broader skills remove the need for depth. I can build a prototype without having an engineer's judgment about running it reliably in production. An engineer can have excellent product instincts without having time to do sustained discovery across several customer segments.
 
 ## Independence is a team expectation, not a PM service
 
 Consider a simple dependency: a feature needs information or an API change from another engineering team.
 
-My expectation would be that the person working on it identifies the owner, starts the conversation, explains the need, and brings back options. A PM can help when priorities conflict or a decision needs broader alignment. But being the mandatory messenger for every technical conversation is not a useful operating model.
+I'd expect the person working on it to find the owner, start the conversation, and bring back options. If the teams disagree about priorities, that's a good place for me to help. If all that's missing is an introduction, I shouldn't need to become a permanent messenger.
 
 The same standard applies to me. I should not wait for engineering to make every uncertain idea tangible when I can investigate, prototype, or clarify it myself.
 
-That does not mean never asking for help. Some blockers involve authority, resourcing, or organizational constraints that an individual cannot resolve alone. Ownership means making progress and escalating clearly, not pretending those constraints do not exist.
+Of course, some blockers need a manager, a budget decision, or agreement between teams. Asking for help with those is sensible. I don't think independence means quietly struggling with something you don't have the authority to change.
 
-I would not turn this into a claim that most developers lack initiative, or that layoffs reveal who had good judgment. Neither conclusion follows from an anecdote.
-
-The useful lesson is simpler: **every role needs more ownership, and fewer unnecessary handoffs.**
+What I want to avoid, in myself as much as anyone else, is waiting for another role to do the next reasonable thing.
 
 ## Product management is still its own discipline
 
-There is a difference between having product instincts and taking sustained responsibility for product discovery, prioritization, and business viability.
+The case for a dedicated PM becomes clearer when there are hundreds of customer signals, dozens of possible features, and room to pursue only two or three.
 
-A great PM can work through hundreds of customer signals and dozens of possible features, then help the team identify the two or three bets that matter.
+Someone needs to work through the mess. A loud customer request might matter enormously, or it might pull the team away from the segment we've chosen to serve. Three similar requests might have different underlying problems. A useful feature might still cost more to support than the business can justify.
 
-That involves more than summarizing feedback:
+Then there is the work of getting engineering, design, data, research, and business stakeholders to understand the choice, including what we're saying no to. And changing course when the evidence doesn't support it.
 
-- Distinguishing a widespread problem from a loud request.
-- Understanding which customer segment we are choosing to serve.
-- Connecting a proposed solution to a credible business outcome.
-- Making trade-offs explicit, including what we will not build.
-- Aligning engineering, design, data, user research, and business stakeholders.
-- Revisiting the decision when evidence changes.
+AI is useful for organizing that material and challenging an argument. I still have to check the assumptions. A neatly ranked feature list isn't much help if we've misunderstood the customer.
 
-AI can help organize the inputs and challenge an argument. A generated prioritization table can still be wrong if its assumptions are wrong.
+[Marty Cagan and Marily Nika's article on AI product management](https://www.svpg.com/ai-product-management/) adds another complication: with AI products, we also have to decide what mistakes are acceptable, how to set expectations, and what happens when the system gets something wrong.
 
-Someone needs to understand the context, make the trade-offs visible, and stay accountable for learning whether the decision worked.
-
-[Marty Cagan and Marily Nika's article on AI product management](https://www.svpg.com/ai-product-management/) is especially relevant here. It explains how probabilistic behavior, acceptable error rates, user expectations, data limitations, and business risks make AI products demanding cross-functional work.
-
-The PM is not the team's boss or the sole source of ideas. Engineers should lead architectural and implementation decisions; designers should bring deep experience judgment; data and research specialists should help establish reliable evidence. Product management connects that work to customer value and business viability.
-
-**Shared ownership should strengthen specialization, not erase it.**
+I don't want the PM to be the boss of all those decisions. I want engineering to lead on architecture, design to bring deep UX judgment, and research and data specialists to challenge our evidence. My responsibility is to help connect those decisions to a customer problem and a viable business.
 
 ## The hiring data challenges the replacement story
 
-There is also a useful reality check.
+Lenny Rachitsky's latest job-market report also made me pause before accepting the claim that PMs are disappearing.
 
 In his November 10, 2026 report, [_State of the tech job market: late 2026_](https://www.lennysnewsletter.com/p/state-of-the-tech-job-market-late), Lenny Rachitsky reports:
 
@@ -151,7 +125,7 @@ The methodology matters. The openings data comes from TrueUp's tracking of more 
 
 The same report says actual hiring across the core product roles has been flat or declining over the past few years. A role can gain share in a shrinking market. The data also does not establish that AI caused the relative resilience of PM demand.
 
-So I would not use these numbers to declare PMs safe or engineers obsolete. I would use them to challenge the confident claim that product management is already disappearing.
+That's a more mixed picture than the headline suggests. It doesn't tell me my role is safe. It does make me skeptical of blanket claims that companies no longer need PMs.
 
 ## The Reddit debate makes the distinction clearer
 
@@ -163,35 +137,29 @@ In [_Product Managers who build AI powered features_](https://www.reddit.com/r/P
 
 These are practitioner anecdotes, not representative research or a benchmark of today's models. I take them as discussion prompts, not proof.
 
-The distinction they surface still matters: producing the artifacts of a job is not the same as taking responsibility for its decisions.
-
-My agent-skills experience fits that distinction. The point was not to generate a better-looking requirement. It was to make a real customer problem actionable and show why a solution deserved engineering attention.
+What interests me in both discussions is where the useful output stops. Drafting a requirement or suggesting a solution helps. Deciding whether to back that solution, push back on it, or investigate further is still work someone has to own.
 
 ## What I am taking forward
 
-For PMs, including myself:
+For my own work, there are three things I want to keep checking:
 
-- **Become technically fluent.** Understand enough about models, tools, evaluation, latency, and cost to participate in real trade-offs.
-- **Use AI to reduce uncertainty.** Prototype to test an assumption, not just to impress a stakeholder.
-- **Stay close to customers.** Faster synthesis is useful; it is not a substitute for understanding their workflow.
-- **Measure outcomes, not artifacts.** A demo, PRD, or shipped feature is an intermediate result.
-- **Make the handoff collaborative.** Share the evidence and unresolved questions, not a supposedly finished answer.
+- **What am I trying to learn by building this?** If I can't answer that, I may be using the prototype to avoid a harder customer question.
+- **What does engineering still need to decide?** A working PoC should make that conversation better, not imply that the difficult work is finished.
+- **How will we know it helped?** Shipping is worth celebrating, but I need to come back to the problem that justified the work.
 
-For engineers, I would emphasize user understanding, communication, prioritization, and owning dependencies alongside technical depth.
+None of this requires everyone to do five jobs. It does require enough understanding of each other's work to know when to act independently and when to bring someone else in.
 
-Neither list is a request for everyone to do five full-time jobs. It is a request to understand adjacent disciplines well enough to work together with less friction.
+## Where I land
 
-## My answer: the role matters, but the bar is moving
+I don't think every team needs the same setup. On a small team, an engineer or founder may be doing much of this product work already. Giving someone a PM title doesn't automatically improve the decisions.
 
-I do not think the future belongs to PMs who only write requirements. I also do not think it belongs to engineers who only implement tickets.
+But the work still needs to happen. Someone has to sort through conflicting needs, decide what deserves attention, and stay with the problem after the demo.
 
-It belongs to people who combine craft with judgment, take initiative, and help their teams create something valuable.
+For me, being a PM who builds is a useful way to do that. I can test an idea rather than only describe it, and bring something concrete to the team. The part I have to keep watching is whether I'm building because it helps the customer or because I enjoy building.
 
-For me, that means being willing to build the proof of concept, while recognizing when engineering needs to take it forward. It means caring about the workflow behind the Agent Kit or MCP integration, not just the capability. It means asking whether DevGlobe helps people discover relevant expertise, not just whether the globe looks good.
+I'm not worried about having fewer documents to write. I'd be worried if I couldn't explain why the next thing we build is worth the team's time.
 
-**AI can help us build more things. Product management helps us decide which things deserve to exist.**
-
-That is why I believe the work remains relevant right now.
+If you're a PM or engineer, I'd like to hear how this is changing on your team. Has AI actually shifted who makes product decisions, or mostly who can build the first version?
 
 ---
 
