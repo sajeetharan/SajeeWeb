@@ -1,0 +1,147 @@
+.page {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 3rem 1rem 5rem;
+
+  h1 {
+    font-size: clamp(2rem, 5vw, 3rem);
+    text-wrap: balance;
+  }
+
+  h2 {
+    font-size: 1.4rem;
+    line-height: 1.4;
+  }
+
+  button,
+  .cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    padding: 0.75rem 1rem;
+    border: 0;
+    border-radius: var(--ifm-global-radius);
+    background: var(--ifm-color-primary);
+    color: var(--site-on-accent);
+    font: inherit;
+    font-weight: 600;
+    text-align: center;
+    cursor: pointer;
+
+    &:hover {
+      background: var(--ifm-color-primary-dark);
+      text-decoration: none;
+    }
+  }
+}
+
+.eyebrow {
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--ifm-color-emphasis-700);
+}
+
+.intro {
+  font-size: 1.15rem;
+}
+
+.printTools {
+  margin: 1.5rem 0 2rem;
+
+  p {
+    margin: 0.75rem 0 0;
+    font-size: 0.9rem;
+    color: var(--ifm-color-emphasis-700);
+  }
+}
+
+.section {
+  margin: 2rem 0;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--ifm-color-emphasis-300);
+}
+
+.items {
+  list-style: none;
+  padding: 0;
+
+  li + li {
+    margin-top: 0.5rem;
+  }
+
+  label {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    min-height: 44px;
+    padding: 0.5rem 0;
+    cursor: pointer;
+  }
+
+  input {
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    margin-top: 0.25rem;
+    accent-color: var(--ifm-color-primary);
+  }
+}
+
+.prompt {
+  color: var(--ifm-color-emphasis-700);
+}
+
+.nextStep {
+  padding: clamp(1rem, 3vw, 2rem);
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: var(--ifm-global-radius);
+  background: var(--ifm-background-surface-color);
+}
+
+.note {
+  margin: 1rem 0 0;
+  font-size: 0.9rem;
+  color: var(--ifm-color-emphasis-700);
+}
+
+.services {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  margin-top: 0.5rem;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+@media print {
+  .page {
+    --ifm-font-color-base: #000;
+    --ifm-color-emphasis-700: #333;
+    --ifm-color-emphasis-300: #ccc;
+    --ifm-background-surface-color: #fff;
+    --ifm-color-primary: #000;
+
+    max-width: none;
+    padding: 0;
+    color: #000;
+    color-scheme: light;
+
+    a,
+    .cta {
+      background: none;
+      color: #000;
+      text-decoration: underline;
+    }
+
+    .printTools {
+      display: none;
+    }
+  }
+
+  .section,
+  .nextStep {
+    break-inside: avoid;
+  }
+}

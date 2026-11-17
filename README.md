@@ -69,10 +69,19 @@ ADPList remains a source for existing homepage testimonials, not a booking
 option on the Get Mentored page.
 
 The homepage and SkillGraph award link to mentoring. Blog posts opt into a
-career mentoring CTA with `mentoring: true` in front matter; technical posts
-and blog-list previews do not show it. The CTA points to the PM pathway card.
+career mentoring CTA with `mentoring: true` in front matter. The selected career,
+PM, and DevGlobe product-building posts show it; other technical posts and
+blog-list previews do not. The CTA links to the free discovery-call journey on
+`/mentored` and the free `/engineer-to-pm-checklist` resource.
+The checklist is also linked from the mentoring page. It provides ten
+reflection prompts with native checkboxes and browser printing/PDF saving,
+without email signup, a readiness score, storage, or checkbox analytics.
+Selections reset on reload. Update the checklist in
+`src/pages/engineer-to-pm-checklist.tsx`; Topmate details stay shared in
+`src/data/mentoring.ts`.
 Existing Google Analytics receives `mentoring_view` and `mentoring_click`
-events with fixed placement/action labels only. These measure visits and
+events with fixed placement/action labels only, including checklist links and
+booking handoffs from the checklist. These measure visits and
 interest, not confirmed bookings; no new analytics provider is added.
 
 ### Ask Sajee contact guide

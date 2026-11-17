@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "@docusaurus/Link";
 import Layout from "@theme/Layout";
 import Heading from "@theme/Heading";
 import {
@@ -43,6 +44,25 @@ export default function Mentored(): JSX.Element {
               on Topmate in a new tab.
             </p>
           </div>
+          <section
+            className={styles.expectations}
+            aria-labelledby="checklist-title"
+          >
+            <h2 id="checklist-title">Not ready to book? Start here.</h2>
+            <p>
+              Use the free Engineer &rarr; PM readiness checklist to identify
+              transferable skills and choose one gap to work on. No email signup
+              required.
+            </p>
+            <Link
+              to="/engineer-to-pm-checklist"
+              className={styles.resourceLink}
+              data-mentoring-source="mentoring"
+              data-mentoring-action="checklist"
+            >
+              Get the free readiness checklist &rarr;
+            </Link>
+          </section>
           <section
             className={styles.testimonials}
             aria-labelledby="mentoring-testimonials-title"

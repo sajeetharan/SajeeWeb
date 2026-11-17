@@ -175,7 +175,7 @@ test("homepage preserves section targets and progressive disclosure without a se
   assert.match(recentTalks, /href="\/talks"/);
 });
 
-test("Get Mentored lists all services with Topmate-only booking links", async () => {
+test("Get Mentored lists Topmate-only booking links and the free checklist resource", async () => {
   const html = await readFile("build/mentored/index.html", "utf8");
   const main = html.match(/<main\b[\s\S]*?<\/main>/)?.[0];
   assert.ok(main, "expected the Get Mentored main content");
@@ -205,8 +205,15 @@ test("Get Mentored lists all services with Topmate-only booking links", async ()
   const links = [...main.matchAll(/<a\b[^>]*href="([^"]+)"/g)].filter(
     ([, href]) => !href.startsWith("#"),
   );
-  assert.equal(links.length, services.length + 3);
-  for (const [, href] of links) {
+  const resources = links.filter(
+    ([, href]) => href === "/engineer-to-pm-checklist",
+  );
+  assert.equal(resources.length, 1);
+  const bookingAndReviewLinks = links.filter(
+    ([, href]) => href !== "/engineer-to-pm-checklist",
+  );
+  assert.equal(bookingAndReviewLinks.length, services.length + 3);
+  for (const [, href] of bookingAndReviewLinks) {
     assert.equal(new URL(href).hostname, "topmate.io");
   }
   const markdown = await readFile("build/mentored/index.md", "utf8");

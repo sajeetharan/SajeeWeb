@@ -143,7 +143,7 @@ test("mentoring landing page leads with a free call, approved proof, and actiona
   assert.match(markdown, /concrete steps to take forward/);
 });
 
-test("mentoring promotions are contextual and excluded from technical posts and previews", async () => {
+test("mentoring promotions appear only on opted-in full posts, including product-building articles", async () => {
   const awards = await readFile("build/awards/index.html", "utf8");
   assert.match(
     awards,
@@ -152,13 +152,18 @@ test("mentoring promotions are contextual and excluded from technical posts and 
   for (const file of [
     "build/blogs/2017/03/18/2017/03/microsoft-a-big-thank-you/index.html",
     "build/blogs/2020/01/01/2020/01/a-review-of-2019/index.html",
+    "build/blogs/why-product-managers-matter-in-the-ai-era/index.html",
+    "build/blogs/building-devglobe-with-azure-cosmos-db/index.html",
   ]) {
     const html = await readFile(file, "utf8");
     assert.equal(
       (html.match(/data-mentoring-promotion="true"/g) ?? []).length,
       1,
     );
-    assert.match(html, /href="\/mentored#service-2255580"/);
+    assert.match(html, /href="\/mentored"/);
+    assert.match(html, /Book a free discovery call/);
+    assert.match(html, /href="\/engineer-to-pm-checklist"/);
+    assert.match(html, /data-mentoring-action="checklist"/);
     assert.match(html, /data-mentoring-source="article"/);
   }
   for (const file of [
@@ -178,7 +183,13 @@ test("mentoring analytics uses fixed placement and action labels without booking
   globalThis.window = { gtag: (...args) => calls.push(args) };
   try {
     trackPortfolioEvent({ name: "mentoring_view" });
-    for (const source of ["homepage", "awards", "article", "mentoring"]) {
+    for (const source of [
+      "homepage",
+      "awards",
+      "article",
+      "mentoring",
+      "checklist",
+    ]) {
       for (const action of [
         "explore",
         "discovery",
@@ -186,6 +197,7 @@ test("mentoring analytics uses fixed placement and action labels without booking
         "interview",
         "pathway",
         "question",
+        "checklist",
       ]) {
         trackPortfolioClick({
           mentoringSource: source,
@@ -203,7 +215,7 @@ test("mentoring analytics uses fixed placement and action labels without booking
       mentoringSource: "mentoring",
       mentoringAction: "payment",
     });
-    assert.equal(calls.length, 25);
+    assert.equal(calls.length, 36);
     assert.deepEqual(calls[0], [
       "event",
       "mentoring_view",
@@ -220,6 +232,51 @@ test("mentoring analytics uses fixed placement and action labels without booking
   }
   const privacy = await readFile("build/privacy/index.md", "utf8");
   assert.match(privacy, /not completed Topmate bookings/);
+});
+
+test("free PM checklist is crawlable, printable, and linked from mentoring without collecting answers", async () => {
+  const html = await readFile(
+    "build/engineer-to-pm-checklist/index.html",
+    "utf8",
+  );
+  const main = html.match(/<main\b[\s\S]*?<\/main>/)?.[0];
+  assert.ok(main);
+  assert.match(main, /PM readiness checklist/);
+  assert.match(main, /No email signup/);
+  assert.match(main, /not a hiring assessment or a readiness score/);
+  assert.match(main, /reset on reload/);
+  assert.match(main, /Print or save as PDF/);
+  assert.equal((main.match(/type="checkbox"/g) ?? []).length, 10);
+  assert.equal((main.match(/<label\b/g) ?? []).length, 10);
+  for (const input of main.matchAll(/<input\b[^>]*id="([^"]+)"[^>]*>/g)) {
+    assert.ok(main.includes(`for="${input[1]}"`));
+  }
+  assert.match(
+    main,
+    /<a\b(?=[^>]*href="https:\/\/topmate.io\/sajeetharan\/2235628")(?=[^>]*data-mentoring-source="checklist")(?=[^>]*data-mentoring-action="discovery")[^>]*>/,
+  );
+  assert.doesNotMatch(main, /<form\b|type="email"|<iframe\b/);
+  const mentoring = await readFile("build/mentored/index.html", "utf8");
+  assert.match(
+    mentoring,
+    /<a\b(?=[^>]*href="\/engineer-to-pm-checklist")(?=[^>]*data-mentoring-source="mentoring")(?=[^>]*data-mentoring-action="checklist")[^>]*>/,
+  );
+  const markdown = await readFile(
+    "build/engineer-to-pm-checklist/index.md",
+    "utf8",
+  );
+  for (const text of [
+    "Know why you want the role",
+    "Start with a customer problem",
+    "Practice product trade-offs",
+    "Translate engineering experience into evidence",
+    "Choose a practical next step",
+    "Turn one gap into a plan",
+  ]) {
+    assert.ok(markdown.includes(text), text);
+  }
+  const privacy = await readFile("build/privacy/index.md", "utf8");
+  assert.match(privacy, /does not save or transmit your checkbox selections/);
 });
 
 test("portfolio events send fixed action metadata, never URLs, drafts, or text", async () => {

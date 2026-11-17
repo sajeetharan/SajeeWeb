@@ -1,5 +1,6 @@
 ---
 title: "Building DevGlobe with Azure Cosmos DB and AI Agents"
+mentoring: true
 Date: "2026-10-01"
 slug: building-devglobe-with-azure-cosmos-db
 authors:

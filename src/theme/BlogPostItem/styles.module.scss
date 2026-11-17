@@ -1,0 +1,40 @@
+.promotion {
+  margin-top: 2rem;
+  padding: clamp(1rem, 3vw, 2rem);
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: var(--ifm-global-radius);
+  background: var(--ifm-background-surface-color);
+
+  h2 {
+    font-size: 1.4rem;
+    text-wrap: balance;
+  }
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem 1.5rem;
+
+  a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+  }
+
+  .primary {
+    padding: 0.75rem 1rem;
+    border-radius: var(--ifm-global-radius);
+    background: var(--ifm-color-primary);
+    color: var(--site-on-accent);
+    font-weight: 600;
+    text-decoration: none;
+
+    &:hover {
+      background: var(--ifm-color-primary-dark);
+    }
+  }
+}

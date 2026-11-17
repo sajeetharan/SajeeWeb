@@ -43,10 +43,15 @@ contact guide do not emit these custom events.
 
 Mentoring analytics records mentoring-page views and clicks on selected
 mentoring links. Event fields contain only fixed placement labels (homepage,
-awards, article, or mentoring) and service-action categories. These clicks
+awards, article, mentoring, or checklist) and service-action categories,
+including opening the free checklist. These clicks
 measure interest and booking handoffs, not completed Topmate bookings or
 payments. No testimonial text or visitor-entered information is sent in these
 events.
+
+The Engineer to PM checklist does not save or transmit your checkbox selections.
+Selections reset on reload; printing or saving a PDF uses your browser's print
+dialog.
 
 The site also uses browser storage for interface preferences, such as your
 selected light or dark theme.

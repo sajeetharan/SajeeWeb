@@ -3,14 +3,15 @@ type PortfolioEvent =
   | { name: "mentoring_view" }
   | {
       name: "mentoring_click";
-      source: "homepage" | "awards" | "article" | "mentoring";
+      source: "homepage" | "awards" | "article" | "mentoring" | "checklist";
       action:
         | "explore"
         | "discovery"
         | "mentorship"
         | "interview"
         | "pathway"
-        | "question";
+        | "question"
+        | "checklist";
     }
   | {
       name: "project_click";
@@ -62,13 +63,15 @@ export function trackPortfolioClick(data: DOMStringMap): void {
     (mentoringSource === "homepage" ||
       mentoringSource === "awards" ||
       mentoringSource === "article" ||
-      mentoringSource === "mentoring") &&
+      mentoringSource === "mentoring" ||
+      mentoringSource === "checklist") &&
     (mentoringAction === "explore" ||
       mentoringAction === "discovery" ||
       mentoringAction === "mentorship" ||
       mentoringAction === "interview" ||
       mentoringAction === "pathway" ||
-      mentoringAction === "question")
+      mentoringAction === "question" ||
+      mentoringAction === "checklist")
   ) {
     trackPortfolioEvent({
       name: "mentoring_click",

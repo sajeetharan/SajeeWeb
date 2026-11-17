@@ -1,5 +1,6 @@
 ---
 title: "Why Product Managers Who Build Have an Edge in the AI Era"
+mentoring: true
 Date: "2026-11-15"
 slug: why-product-managers-matter-in-the-ai-era
 image: /img/blog/product-managers-ai-era-preview.png
