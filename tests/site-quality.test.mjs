@@ -3,27 +3,32 @@ import { readFile, readdir, stat } from "node:fs/promises";
 import test from "node:test";
 import redirects from "../worker/blog-redirects.mjs";
 
-test("navigation puts Developers last and uses a lightweight logo", async () => {
+test("simple navigation keeps secondary pages in More and a lightweight logo", async () => {
   const html = await readFile("build/index.html", "utf8");
   const navbar = html.match(/<nav\b[^>]*aria-label="Main"[\s\S]*?<\/nav>/)?.[0];
   assert.ok(navbar);
-  const labels = [
-    "Blogs",
-    "Talks",
-    "Projects",
-    "Awards",
-    "Get Mentored",
-    "Developers",
-  ];
+  const labels = ["Writing", "Work", "Mentoring", "More"];
   let previous = -1;
   for (const label of labels) {
-    const position = navbar.indexOf(`>${label}</a>`);
+    const position = navbar.indexOf(`>${label}`);
     assert.ok(position > previous, `${label} is out of order`);
     previous = position;
   }
   assert.match(navbar, /logo-sketch-96\.webp/);
   assert.equal((navbar.match(/href="\/hire-me"/g) ?? []).length, 1);
-  assert.match(navbar, /aria-label="Social profiles"/);
+  for (const url of [
+    "/career",
+    "/talks",
+    "/awards",
+    "/developers",
+    "/contact",
+  ]) {
+    assert.ok(
+      navbar.includes(`href="${url}"`),
+      `missing secondary page ${url}`,
+    );
+  }
+  assert.doesNotMatch(navbar, /aria-label="Social profiles"/);
   assert.doesNotMatch(html, /aria-label="Connect with Sajeetharan"/);
   assert.doesNotMatch(navbar, /logo-sketch\.png/);
   const logo = await readFile("build/img/logo-sketch-96.webp");
@@ -175,27 +180,27 @@ test("blog listing uses compact summaries instead of full article excerpts", asy
   assert.match(html, /href="\/blogs\/archive"/);
 });
 
-test("homepage identity and Stack Overflow ranking are consistent and qualified", async () => {
+test("homepage identity stays accurate without adding ranking claims", async () => {
   const html = await readFile("build/index.html", "utf8");
   assert.doesNotMatch(
     html,
     /Recognized expertise|First developer from Sri Lanka to earn both honors/,
   );
   assert.doesNotMatch(html, /stackoverflow\.com\/users\/3785469|Global top 10/);
-  assert.match(html, /Top 10 in key tags/);
-  assert.match(html, /Stack Overflow: Azure, Angular, Cosmos DB/);
+  assert.match(html, /Sajeetharan Sinnathurai/);
+  assert.match(html, /Principal Product Manager/);
   assert.match(
     html,
     /"sameAs":\[[^\]]*stackoverflow\.com\/users\/1749403\/sajeetharan/,
   );
 });
 
-test("homepage hero and topic strip are inside the main landmark", async () => {
+test("simplified homepage keeps content and deep links in the main landmark", async () => {
   const html = await readFile("build/index.html", "utf8");
   const main = html.match(/<main\b[^>]*>[\s\S]*?<\/main>/)?.[0];
   assert.ok(main);
-  assert.match(main, /<h1\b[^>]*>Sajeetharan Sinnathurai<\/h1>/);
-  assert.match(main, /Working across/);
+  assert.match(main, /<h1\b[^>]*>Hi, I&#x27;m Sajee\.<\/h1>/);
+  assert.match(html, /href="\/topics"/);
   assert.doesNotMatch(html, /aria-label="Homepage sections"/);
   assert.match(html, /class="navbar\b/);
   for (const id of ["work", "mentoring", "talks", "about", "connect"]) {
@@ -214,11 +219,11 @@ test("the production theme includes ivory, ink, and accessible orange button col
   ).join("\n");
   for (const token of [
     "--ifm-background-color:#fffaf2",
-    "--ifm-background-color:#181512",
+    "--ifm-background-color:#191a1d",
     "--ifm-color-primary:#c2410c",
     "--ifm-color-primary:#ffb073",
     "--site-on-accent:#fff",
-    "--site-on-accent:#181512",
+    "--site-on-accent:#191a1d",
   ]) {
     assert.ok(css.includes(token), `missing theme token: ${token}`);
   }
@@ -228,7 +233,7 @@ test("the production theme includes ivory, ink, and accessible orange button col
   );
   assert.match(
     css,
-    /:root\[data-theme=(?:"dark"|dark)\]\{[^}]*--ifm-color-emphasis-600:#bfae9e/,
+    /:root\[data-theme=(?:"dark"|dark)\]\{[^}]*--ifm-color-emphasis-600:#b4b8c0/,
     "dark neutral tokens must override Infima's :root[data-theme] defaults",
   );
 });

@@ -16,7 +16,8 @@ test("developer examples use published Markdown and a working resources anchor",
   assert.doesNotMatch(html, /curl -H/);
   assert.match(html, /aria-live="polite" aria-busy="false"/);
   const markdown = await readFile("build/index.md", "utf8");
-  assert.match(markdown, /Sajeetharan Sinnathurai/);
+  assert.match(markdown, /# Hi, I'm Sajee\./);
+  assert.match(markdown, /Principal Product Manager at Microsoft/);
   assert.doesNotMatch(markdown, /<!doctype html>/i);
   const index = await readFile("build/llms.txt", "utf8");
   assert.match(index, /GitHub Pages/);

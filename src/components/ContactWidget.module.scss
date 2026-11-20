@@ -11,16 +11,20 @@
   padding: 0.65rem 1rem;
   border: 1px solid var(--ifm-color-primary);
   border-radius: 2rem;
-  background: var(--ifm-color-primary);
-  color: var(--ifm-background-color);
-  box-shadow: var(--ifm-global-shadow-md);
+  background: var(--ifm-background-color);
+  color: var(--ifm-color-primary);
+  box-shadow: none;
   font-size: 0.9rem;
   font-weight: 700;
   text-decoration: none;
+  transition:
+    background-color 160ms ease,
+    color 160ms ease;
 
-  &:hover {
-    background: var(--ifm-color-primary-dark);
-    color: var(--ifm-background-color);
+  &:hover,
+  &:focus-visible {
+    background: var(--ifm-color-primary);
+    color: var(--site-on-accent);
     text-decoration: none;
   }
 
@@ -217,6 +221,12 @@
 .panel :is(a, button, h3):focus-visible {
   outline: 3px solid var(--ifm-font-color-base);
   outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .launcher {
+    transition: none;
+  }
 }
 
 @media print {

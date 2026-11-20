@@ -46,13 +46,12 @@ This branding applies to browser/bookmark icons, not the navbar portrait.
 
 ### Mentoring reviews
 
-The homepage review cards in `src/components/homepage/Reviews.tsx` contain
+The retained review component in `src/components/homepage/Reviews.tsx` contains
 verbatim excerpts from the public ADPList and Topmate profiles (verified
 October 20, 2026). Keep author names, full text, and source links aligned with
 the originals when updating them. These are curated snapshots, not a live feed.
-Three highlights appear initially; visitors can filter by platform, expand long
-reviews, or show all six. Original reviews and mentoring impact remain linked
-on each platform, and the booking link leads to `/mentored`.
+It is no longer mounted on the simplified homepage. The `/mentored` page keeps
+its approved testimonials and original source links.
 
 ### Mentoring services
 
@@ -65,7 +64,7 @@ guidance, and two permission-approved Topmate testimonial excerpts.
 Service names, formats, durations, links, and the free discovery call were
 verified against the public Topmate profile on November 9, 2026; keep them
 aligned when offerings change. Other pricing and availability remain on Topmate.
-ADPList remains a source for existing homepage testimonials, not a booking
+ADPList remains a source for the retained review component, not a booking
 option on the Get Mentored page.
 
 The homepage and SkillGraph award link to mentoring. Blog posts opt into a
@@ -93,6 +92,8 @@ Topmate priority DM, four mentoring/video services, or an email draft for speaki
 collaboration, article questions, and corrections. It is not live chat or AI.
 No message form, backend, external chat script, custom analytics events, or
 conversation storage is added.
+The launcher uses an outlined treatment to keep attention on page content,
+filling with the accent color on hover or keyboard focus.
 
 `src/data/mentoring.ts` is the shared source for Topmate service details and
 links used by both the widget and Get Mentored page. Keep current pricing and
@@ -112,46 +113,53 @@ from generated Markdown so global contact prompts do not pollute article exports
 ### Homepage navigation and events
 
 The site uses warm ivory surfaces, ink text, and burnt-orange accents, with
-charcoal surfaces and apricot accents in dark mode. Shared theme tokens live in
+neutral charcoal surfaces, cool-gray secondary text, and apricot accents in dark mode.
+Cream headings keep the dark palette warm. Shared theme tokens live in
 `src/css/custom.scss`; homepage highlights and blog controls use those tokens
 rather than hard-coded cyan. Existing browser-tab artwork is unchanged.
 
-The enlarged homepage portrait uses nine supplied expression photos, cropped
-from the user's 3-by-3 expression grid into `static/img/expressions/*.webp`.
-The original attachment is not changed. Each crop is 480 by 320 pixels, without
-the grid's white gutters; all nine main images load up front to avoid flashes.
-`src/data/portrait-reactions.ts` maps the Navarasa names and six props to the
-photos: slap, pinch, boxing glove, feather, flower, and spider. Tool use counts
-are independent. Repeated pinches deepen localized cheek redness; punches
-alternate angry/sad photos. A small, non-graphic nosebleed appears after three
-boxing-glove uses automatically, without a settings checkbox.
-Slaps and punches also add watery lower eyelids and translucent tears anchored
-to the active photo's eyes. Drops roll down once per contact; reduced-motion
-mode keeps them still. Other props clear the tears on contact.
-Gentle props clear redness and injury effects on contact. The "Nine moods, one
-developer" playground grows to 600px wide on desktop and stacks below the copy
-on tablet/mobile. All nine expressions are reached through the props, without
-a separate expression picker. Every third photo interaction shows a short,
-prop-specific developer joke over the lower edge of the photo. The caption
-clears on the next interaction or prop selection, rather than appearing on
-every tap. The caption leaves the photo and prop controls in place, without
-a popup, timer, sound, project promotion, or automatic navigation.
-The existing screen-reader status announces the current expression and occasional
-caption without moving focus. There is still no mood-name badge,
-selected-tool text, visible counter, reset button, or how-to instructions.
+The landing page in `src/pages/index.tsx` keeps its main content under 90 words:
+a short introduction, writing/talk links, mentoring, and contact links.
+Selected work is no longer shown on the landing page; projects remain accessible
+from Work in the navbar and compact footer. The footer also links to the career
+profile, contact, topics, and privacy. The existing `#about`, `#work`, `#talks`,
+`#mentoring`, and `#connect` targets remain available.
 
-Click, tap, horizontal swipe, and Enter/Space on the photo are equivalent
-ways to apply a prop. Vertical touch scrolling is preserved and a swipe counts
-once, not again on its synthesized click. Reloading starts a fresh scene.
-One scene is shared across responsive layouts; the small mobile portrait links
-to it below the hero copy. Reduced-motion mode retains photos, skin effects,
-and accessible expression announcements without movement. Photos and shaded vector props stay
-local: no AI service, image uploads, sound, tracking events, or API calls.
+`src/components/homepage/LinePortrait.tsx` contains an original SVG sketch
+based on the existing profile photo: swept short hair, a beard, and a smile.
+An original, single-sweep line frames the introduction and leads into the
+portrait, then continues down the page beside writing, mentoring, and contact.
+The ribbon, portrait, and trailing line draw continuously over eight seconds.
+Native scrolling speeds up the reveal; pausing or scrolling back never rewinds
+the artwork. Animation frames update one CSS custom property and stop once
+the drawing is complete; resize and reduced-motion changes update it too. There is
+no scroll interception, pinning, or parallax. CSS in `src/pages/index.module.scss`
+maps progress to normalized SVG strokes. Without JavaScript, a finite drawing
+animation reveals the artwork; reduced-motion users see it complete immediately.
+Pages that fit the viewport also show the complete drawing.
+Text never waits for the animation. The artwork uses theme colors, an
+accessible image label, and a reserved aspect ratio, without external assets,
+image uploads, or an AI service.
+An original pair of decorative eyes sits above the greeting, blinks once,
+and gently follows the mouse. Touch devices keep the eyes neutral; reduced
+motion disables the blink and tracking. The eyes are hidden from screen readers
+and do not add a focus target or intercept pointer events.
+The line portrait is a toggle button: click, tap, Enter, or Space reveals the
+existing profile photo with a soft circular reveal; activating it again restores
+the drawing. Its pressed state is exposed to assistive technology. Both layers
+share the reserved portrait space, and reduced motion makes the swap immediate.
+The previous `PortraitPlayground` component and local expression assets remain
+in the repository but are not loaded by the homepage.
+
+The shared navbar shows Writing, Work, and Mentoring, with secondary pages
+under More. No routes were removed. Light mode is the default, with system
+preference and the theme toggle still supported; returning visitors retain
+their saved choice.
 
 ### Recruiter and collaborator paths
 
-The homepage retains its original layout, visible interactive portrait, and
-links to projects and mentoring. Recruiter and collaborator details live on
+The simplified homepage retains direct links to projects and mentoring.
+Recruiter and collaborator details live on
 the career and Contact pages rather than adding more homepage sections.
 Featured project facts are exported by `src/data/featured-projects.ts` from
 `static/profile.json` and shared by the career page and project listing.
@@ -241,10 +249,10 @@ Official guidance: [Google AI search features](https://developers.google.com/sea
 and [OpenAI crawlers](https://developers.openai.com/api/docs/bots).
 
 The homepage keeps the main navbar without a second sticky section menu.
-Section IDs remain available for direct links. Concise work and talk previews
-and a native expandable biography keep the initial page compact without hiding
-content behind JavaScript. The complete talk collection remains at `/talks`.
-Upcoming event details are shared by the homepage and talks page through
+Section IDs remain available for direct links. Minimal copy and
+links to the biography and talks keep the page compact without hiding content
+behind JavaScript. The complete talk collection remains at `/talks`.
+Upcoming event details remain on the talks page through
 `src/components/talks/UpcomingEvents.tsx`. Keep dates and the agenda link current;
 only add session titles or times when confirmed by the organizer.
 
@@ -252,10 +260,10 @@ only add session titles or times when confirmed by the organizer.
 
 `/hire-me` combines an original recruiter landing page, public FAQs, contact
 links, and an optional text AI assistant with browser speech input/read-aloud.
-One sitewide header combines the logo, navigation, GitHub, LinkedIn, X/Twitter,
-email, a single Hire Me button, and the theme toggle. Social icons use a custom
-Docusaurus navbar item so the same links appear inside the mobile hamburger
-menu; there is no separate utility bar. The existing Ask Sajee widget remains a separate non-AI contact guide on
+One sitewide header combines the logo, Writing, Work, Mentoring, a More menu,
+and the theme toggle. Contact and Hire Me remain available under More, including
+in the mobile menu; social links remain in page content and the footer rather
+than the header. The existing Ask Sajee widget remains a separate non-AI contact guide on
 other pages; it is hidden on Hire Me to avoid two competing assistant controls.
 
 `src/data/hire-me.json` is the shared source for the visible FAQs and the

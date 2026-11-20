@@ -290,7 +290,7 @@ test("built hire page has sourced FAQs, contact recovery, and consent-first UI",
   assert.match(html, /id="recruiter-question"/);
   assert.match(html, /maxLength="1200"/i);
   assert.match(html, /role="log"/);
-  assert.match(html, /aria-label="Social profiles"/);
+  assert.match(html, /href="\/contact"/);
   assert.doesNotMatch(html, /aria-controls="ask-sajee-dialog"/);
   for (const section of facts.sections) {
     assert.ok(markdown.includes(section.question));
@@ -307,7 +307,7 @@ test("built hire page has sourced FAQs, contact recovery, and consent-first UI",
   assert.match(privacy, /browser provider/);
 });
 
-test("social shortcuts and hire navigation appear across the site", async () => {
+test("simplified navigation retains contact and hire paths across the site", async () => {
   for (const file of [
     "build/index.html",
     "build/blogs/index.html",
@@ -319,9 +319,11 @@ test("social shortcuts and hire navigation appear across the site", async () => 
       /<nav\b[^>]*aria-label="Main"[\s\S]*?<\/nav>/,
     )?.[0];
     assert.ok(header, file);
-    for (const name of ["GitHub", "LinkedIn", "X (Twitter)", "Email"]) {
-      assert.ok(header.includes(`aria-label="${name}"`), name);
+    for (const route of ["blogs", "projects", "mentored", "contact"]) {
+      assert.ok(header.includes(`href="/${route}"`), `${file}: ${route}`);
     }
+    assert.match(header, />More</);
+    assert.doesNotMatch(header, /aria-label="Social profiles"/);
     assert.equal((header.match(/href="\/hire-me"/g) ?? []).length, 1, file);
     assert.doesNotMatch(html, /aria-label="Connect with Sajeetharan"/);
     assert.doesNotMatch(html, /resume-sajeetharan\.pdf/);

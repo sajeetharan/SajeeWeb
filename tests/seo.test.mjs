@@ -75,13 +75,12 @@ test("topic pages are crawlable, canonical, and list their articles without Java
       readFile(`build/${file}.html`, "utf8"),
     ),
   );
+  assert.ok(sourcePages[0].includes('href="/topics"'));
   for (const topic of definitions) {
     const url = `${origin}/topics/${topic.slug}`;
     assert.ok(sitemap.includes(`<loc>${url}</loc>`));
     assert.ok(hub.includes(`href="/topics/${topic.slug}"`));
-    for (const source of sourcePages) {
-      assert.ok(source.includes(`href="/topics/${topic.slug}"`));
-    }
+    assert.ok(sourcePages[1].includes(`href="/topics/${topic.slug}"`));
     const html = await readFile(builtPage(url), "utf8");
     assert.ok(html.includes(`rel="canonical" href="${url}"`));
     assert.doesNotMatch(html, /name="robots" content="noindex/);

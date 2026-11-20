@@ -110,69 +110,49 @@ test("individual articles retain their SEO and crawlers can discover the sitemap
 
 test("homepage is meaningful without JavaScript", async () => {
   const html = await readFile("build/index.html", "utf8");
-  const text = html
+  const main = html.match(/<main\b[^>]*>[\s\S]*?<\/main>/)?.[0];
+  assert.ok(main);
+  const text = main
     .replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, " ")
     .replace(/<style\b[^>]*>[\s\S]*?<\/style>/gi, " ")
     .replace(/<[^>]+>/g, " ")
     .replace(/\s+/g, " ")
     .trim();
-  assert.match(html, /<h1\b[^>]*>Sajeetharan Sinnathurai<\/h1>/);
+  assert.match(html, /<h1\b[^>]*>Hi, I&#x27;m Sajee\.<\/h1>/);
   assert.ok(
-    text.length >= 500,
-    `expected at least 500 text characters, got ${text.length}`,
+    text.split(/\s+/).length <= 90,
+    `expected at most 90 landing-page words, got ${text.split(/\s+/).length}`,
   );
+  for (const phrase of ["Principal Product Manager", "Microsoft", "Writing"]) {
+    assert.ok(text.includes(phrase), `missing visible content: ${phrase}`);
+  }
 });
 
-test("mentoring reviews render compact, source-linked highlights without embeds", async () => {
+test("homepage mentoring stays concise and links to the full mentoring journey", async () => {
   const html = await readFile("build/index.html", "utf8");
   const section = html.match(
-    /<section\b[^>]*aria-labelledby="mentoring-reviews-title"[\s\S]*?<\/section>/,
+    /<section\b[^>]*aria-labelledby="mentoring-title"[\s\S]*?<\/section>/,
   )?.[0];
-  assert.ok(section, "expected the mentoring reviews section");
-  assert.equal((section.match(/<article\b/g) ?? []).length, 3);
-  assert.match(section, /Review by Hirish/);
-  assert.match(section, /Review by Shruti Solanki/);
-  assert.match(section, /Review by Tharu Tharujan/);
-  assert.match(
-    section,
-    /https:\/\/adplist\.org\/mentors\/sajeetharan-sinnathurai/,
-  );
-  assert.match(section, /https:\/\/topmate\.io\/sajeetharan/);
+  assert.ok(section, "expected the mentoring section");
+  assert.match(section, /Engineer to product manager/);
   assert.match(section, /href="\/mentored"/);
-  assert.match(section, /Show 3 more reviews/);
-  assert.match(section, /Read full review/);
-  assert.match(section, /aria-pressed="true"/);
+  assert.match(section, /Start with a free discovery call/);
+  assert.match(section, /data-mentoring-source="homepage"/);
   assert.doesNotMatch(section, /<iframe\b/);
 });
 
-test("homepage preserves section targets and progressive disclosure without a second menu", async () => {
+test("homepage preserves section targets with direct links instead of dense previews", async () => {
   const html = await readFile("build/index.html", "utf8");
   assert.doesNotMatch(html, /<nav\b[^>]*aria-label="Homepage sections"/);
   for (const section of ["work", "mentoring", "talks", "about", "connect"]) {
     assert.ok(html.includes(`id="${section}"`), `missing ${section} target`);
   }
-  assert.match(html, /<details\b[^>]*><summary>Read my full story<\/summary>/);
-  const biography = html.match(/<details\b[^>]*>/)?.[0];
-  assert.ok(
-    biography && !/\bopen\b/.test(biography),
-    "biography starts collapsed",
-  );
+  assert.match(html, /href="\/career"/);
   const main = html.match(/<main\b[\s\S]*?<\/main>/)?.[0];
   assert.ok(main);
   assert.doesNotMatch(main, /opacity:0/);
-  assert.ok(
-    html.indexOf('id="mentoring"') < html.indexOf('id="about"'),
-    "reviews should appear before the full biography",
-  );
-  const recentTalks = html.match(
-    /<section\b[^>]*id="talks"[\s\S]*?<\/section>/,
-  )?.[0];
-  assert.ok(recentTalks);
-  assert.equal(
-    (recentTalks.match(/presentation"|mqdefault\.jpg/g) ?? []).length,
-    3,
-  );
-  assert.match(recentTalks, /href="\/talks"/);
+  assert.match(main, /id="talks"[^>]*href="\/talks"/);
+  assert.doesNotMatch(main, /<iframe\b|mqdefault\.jpg|<details\b/);
 });
 
 test("Get Mentored lists Topmate-only booking links and the free checklist resource", async () => {
@@ -222,8 +202,8 @@ test("Get Mentored lists Topmate-only booking links and the free checklist resou
   assert.doesNotMatch(markdown, /adplist/i);
 });
 
-test("upcoming conference details stay consistent on homepage and talks page", async () => {
-  for (const file of ["build/index.html", "build/talks/index.html"]) {
+test("upcoming conference details remain available on the talks page", async () => {
+  for (const file of ["build/talks/index.html"]) {
     const html = await readFile(file, "utf8");
     assert.match(html, /WeAreDevelopers Conference India/);
     assert.match(html, /datetime="2026-11-25"/i);
@@ -250,7 +230,7 @@ test("build contains recovery, developer, and Markdown artifacts", async () => {
   assert.match(developerPortal, /<h1[^>]*>Build with the public content/);
   assert.match(developerPortal, /Access and API keys/);
   assert.match(developerPortal, /Read-only sandbox/);
-  assert.match(homepageMarkdown, /^# Sajeetharan Sinnathurai/m);
+  assert.match(homepageMarkdown, /^# Hi, I'm Sajee\./m);
   assert.match(llms, /^# Sajeetharan Sinnathurai/m);
 });
 

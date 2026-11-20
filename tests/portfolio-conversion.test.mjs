@@ -16,22 +16,23 @@ async function loadTypeScript(file) {
   );
 }
 
-test("the homepage keeps the original visible interactive portrait and simple work path", async () => {
+test("the simplified homepage keeps direct work and mentoring paths", async () => {
   const html = await readFile("build/index.html", "utf8");
-  const hero = html.match(/<header\b[^>]*>[\s\S]*?<\/header>/)?.[0];
-  assert.ok(hero);
+  const main = html.match(/<main\b[^>]*>[\s\S]*?<\/main>/)?.[0];
+  assert.ok(main);
   for (const [url, label] of [
-    ["/projects", "Explore my work"],
     ["/mentored", "Start with a free discovery call"],
   ]) {
-    assert.ok(hero.includes(`href="${url}"`));
-    assert.ok(hero.includes(label));
+    assert.ok(main.includes(`href="${url}"`));
+    assert.ok(main.includes(label));
   }
-  assert.match(hero, /I help developers build what/);
-  assert.match(hero, /data-portrait-playground="true"/);
-  assert.match(hero, /id="slap-portrait" tabindex="-1"/);
-  assert.match(hero, /aria-label="Slap my photo"/);
-  assert.doesNotMatch(hero, /<details\b|Meet the human/);
+  assert.match(main, /Hi, I&#x27;m Sajee\./);
+  assert.match(main, /data-line-portrait="true"/);
+  assert.match(main, /data-mentoring-source="homepage"/);
+  assert.match(html, /id="work"[^>]*href="\/projects"/);
+  assert.doesNotMatch(main, /Selected work|data-portfolio-project/);
+  assert.doesNotMatch(main, /data-portrait-playground|<details\b/);
+  assert.doesNotMatch(main, /&amp;nearr;|&nearr;/);
   assert.doesNotMatch(html, /id="collaborate"/);
 });
 

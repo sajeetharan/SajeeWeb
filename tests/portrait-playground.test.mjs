@@ -126,59 +126,60 @@ test("every prop has deterministic expression reactions with independent use cou
   }
 });
 
-test("homepage exposes accessible props and nine photos without settings or instructions", async () => {
+test("homepage renders an accessible original vector portrait instead of loading nine photos", async () => {
   const html = await readFile("build/index.html", "utf8");
-  assert.equal(
-    (html.match(/data-portrait-playground="true"/g) ?? []).length,
-    1,
+  const portraits = html.match(
+    /<svg\b[^>]*data-line-portrait[^>]*>[\s\S]*?<\/svg>/g,
   );
-  assert.match(html, /aria-label="Choose a portrait prop"/);
-  assert.doesNotMatch(
-    html,
-    /Choose a portrait playground|Stretch &amp; grow|data-stretch-portrait/,
-  );
-  assert.match(html, /<h2\b[^>]*>Nine moods, one developer<\/h2>/);
-  assert.match(html, /aria-label="Slap my photo"/);
-  assert.match(html, /role="status" aria-atomic="true"/);
-  assert.doesNotMatch(html, /expressionBadge_/);
-  for (const expression of EXPRESSIONS) {
-    assert.ok(
-      !html.includes(`${expression.rasa} / ${expression.label}`),
-      "expression names must not appear as a visible photo badge",
-    );
-  }
-  assert.doesNotMatch(
-    html,
-    /Explore all nine expressions|Navarasa expressions/,
-  );
-  assert.doesNotMatch(
-    html,
-    /Enable mild nosebleed|Choose a prop\.|Click, tap, or swipe the photo|Enter or Space works|Real supplied portraits|Please be nice to the human/,
-  );
-  assert.doesNotMatch(html, /type="checkbox"/);
-  const description = html.match(
-    /aria-label="Slap my photo" aria-describedby="([^"]+)"/,
-  )?.[1];
-  assert.ok(description?.endsWith("-expression"));
-  assert.ok(html.includes(`id="${description}"`));
+  assert.equal(portraits?.length, 1);
+  assert.match(portraits[0], /role="img"/);
   assert.match(
-    html,
-    /class="srOnly_[^"]*" role="status" aria-atomic="true">Affection<\/p>/,
+    portraits[0],
+    /aria-label="An original line portrait of Sajeetharan/,
   );
-  assert.doesNotMatch(
-    html,
-    /Reset scene|My face has entered the chat|feature request I can love|>\d+ reactions?[.<]/,
-  );
-  assert.doesNotMatch(html, /data-nosebleed/);
-  assert.doesNotMatch(html, /data-tears/);
-  assert.doesNotMatch(html, /data-portrait-quip|data-portrait-project/);
-  for (const expression of EXPRESSIONS) {
-    assert.ok(html.includes(`/img/expressions/${expression.id}.webp`));
-  }
-  assert.match(html, /id="slap-portrait" tabindex="-1"/);
+  assert.match(portraits[0], /viewBox="0 0 280 320"/);
+  assert.match(portraits[0], /stroke="currentColor"/);
+  const paths = portraits[0].match(/<path\b[^>]*>/g);
+  assert.ok(paths?.length > 0);
+  assert.ok(paths.every((path) => path.includes('pathLength="1"')));
+  assert.ok(paths.every((path) => path.includes('data-drawing-path="true"')));
+  assert.ok(Buffer.byteLength(portraits[0]) < 5000);
+  assert.doesNotMatch(html, /data-portrait-playground|\/img\/expressions\//);
+  assert.doesNotMatch(portraits[0], /<image\b|<script\b|<animate\b/);
 });
 
-test("active portrait visibility survives production CSS optimization", async () => {
+test("greeting includes two decorative vector eyes without changing the readable introduction", async () => {
+  const html = await readFile("build/index.html", "utf8");
+  const eyes = html.match(
+    /<svg\b[^>]*data-greeting-eyes[^>]*>[\s\S]*?<\/svg>/g,
+  );
+  assert.equal(eyes?.length, 1);
+  assert.match(eyes[0], /aria-hidden="true"/);
+  assert.match(eyes[0], /focusable="false"/);
+  assert.equal(eyes[0].match(/<ellipse\b/g)?.length, 2);
+  assert.equal(eyes[0].match(/<circle\b/g)?.length, 2);
+  assert.doesNotMatch(eyes[0], /tabindex|<image\b|<script\b/);
+  assert.match(html, /<h1\b[^>]*>Hi, I&#x27;m Sajee\.<\/h1>/);
+});
+
+test("portrait photo reveal is a keyboard-native toggle with a local image and reserved dimensions", async () => {
+  const html = await readFile("build/index.html", "utf8");
+  const button = html.match(
+    /<button\b[^>]*aria-label="Reveal original photo"[^>]*>[\s\S]*?<\/button>/,
+  )?.[0];
+  assert.ok(button);
+  assert.match(button, /type="button"/);
+  assert.match(button, /aria-pressed="false"/);
+  assert.match(button, /data-photo-revealed="false"/);
+  assert.match(button, /data-line-portrait/);
+  assert.match(
+    button,
+    /<img\b(?=[^>]*src="\/assets\/ideal-img\/avatar\.[^"]+\.jpg")(?=[^>]*width="310")(?=[^>]*height="310")(?=[^>]*aria-hidden="true")[^>]*>/,
+  );
+  assert.match(button, /Click to reveal/);
+});
+
+test("production drawing supports scroll progression with a complete reduced-motion fallback", async () => {
   const files = await readdir("build/assets/css");
   const css = (
     await Promise.all(
@@ -187,18 +188,30 @@ test("active portrait visibility survives production CSS optimization", async ()
         .map((file) => readFile(`build/assets/css/${file}`, "utf8")),
     )
   ).join("\n");
-  assert.match(
-    css,
-    /\.expressionImage_[\w-]+\[aria-hidden=(?:"false"|false)\][^{]*\{[^}]*display:block/,
+  assert.match(css, /\.portrait_[\w-]+ svg\{[^}]*height:auto[^}]*width:100%/);
+  const animation = css.match(
+    /\[data-drawing-path\]\{[^}]*animation:(?:([\w-]+) 1\.4s ease-out 2s both|1\.4s ease-out 2s both ([\w-]+))/,
   );
+  const animationName = animation?.[1] ?? animation?.[2];
+  assert.ok(animationName, "drawing must have a finite, sequenced animation");
+  assert.ok(
+    new RegExp(
+      `@keyframes ${animationName}\\{(?:from|0%)\\{stroke-dashoffset:1\\}(?:to|100%)\\{stroke-dashoffset:0\\}\\}`,
+    ).test(css),
+    "drawing animation must reveal the entire normalized stroke",
+  );
+  assert.match(css, /\[data-ribbon\]\{[^}]*animation-delay:0s/);
+  assert.match(css, /\[data-detail\]\{[^}]*animation-delay:3\.3s/);
+  const scrollRules = css.match(
+    /\.home_[\w-]+\[data-scroll-drawing\][^{]*\{[^}]*\}/g,
+  );
+  assert.ok(scrollRules?.some((rule) => rule.includes("--scroll-progress")));
+  assert.ok(scrollRules?.some((rule) => rule.includes("[data-trail]")));
   assert.doesNotMatch(
     css,
     /@keyframes\s+[\w-]+\s*\{(?:[^{}]*\{[^{}]*\})*[^{}]*@keyframes/,
     "contact animations must not be nested inside other keyframes",
   );
-  const tearAnimation = css.match(/\.tearDrop_[\w-]+\{animation:([^;}]+)/)?.[1];
-  assert.ok(tearAnimation);
-  assert.doesNotMatch(tearAnimation, /none|infinite/);
   const reducedMotionRules = [
     ...css.matchAll(
       /@media\s*\(prefers-reduced-motion:\s*reduce\)\{((?:[^{}]*\{[^{}]*\})*)\}/g,
@@ -206,8 +219,149 @@ test("active portrait visibility survives production CSS optimization", async ()
   ];
   assert.ok(
     reducedMotionRules.some(([, rules]) =>
-      /\.tearDrop_[\w-]+[^{}]*\{[^{}]*animation:none/.test(rules),
+      /\[data-drawing-path\]\{(?=[^{}]*animation:none)(?=[^{}]*stroke-dashoffset:0)/.test(
+        rules,
+      ),
     ),
-    "reduced-motion mode must keep tears still",
+    "reduced-motion mode must show the complete drawing immediately",
   );
+});
+
+async function startHomepageDrawing({ reduced = false, height = 1400 } = {}) {
+  const text = await readFile("src/pages/index.tsx", "utf8");
+  const sourceFile = ts.createSourceFile(
+    "index.tsx",
+    text,
+    ts.ScriptTarget.Latest,
+    true,
+    ts.ScriptKind.TSX,
+  );
+  let effect;
+  const visit = (node) => {
+    if (
+      ts.isCallExpression(node) &&
+      node.expression.getText(sourceFile) === "useEffect"
+    ) {
+      effect = node.arguments[0];
+    }
+    ts.forEachChild(node, visit);
+  };
+  visit(sourceFile);
+  assert.ok(effect, "homepage must initialize its drawing effect");
+  const { outputText } = ts.transpileModule(
+    `const start = ${effect.getText(sourceFile)};`,
+    { compilerOptions: { target: ts.ScriptTarget.ES2020 } },
+  );
+  const properties = new Map();
+  const element = {
+    style: {
+      setProperty: (key, value) => properties.set(key, value),
+      removeProperty: (key) => properties.delete(key),
+    },
+    setAttribute() {},
+    removeAttribute() {},
+  };
+  const events = new Map();
+  const frames = new Map();
+  let id = 0;
+  let time = 0;
+  const window = {
+    innerHeight: 900,
+    scrollY: 0,
+    matchMedia: () => ({
+      matches: reduced,
+      addEventListener() {},
+      removeEventListener() {},
+    }),
+    addEventListener: (name, listener) => events.set(name, listener),
+    removeEventListener: (name) => events.delete(name),
+  };
+  const cleanup = new Function(
+    "home",
+    "window",
+    "document",
+    "requestAnimationFrame",
+    "cancelAnimationFrame",
+    "ResizeObserver",
+    `${outputText}\nreturn start();`,
+  )(
+    { current: element },
+    window,
+    { documentElement: { scrollHeight: height } },
+    (callback) => {
+      frames.set(++id, callback);
+      return id;
+    },
+    (frame) => frames.delete(frame),
+    class {
+      observe() {}
+      disconnect() {}
+    },
+  );
+  return {
+    progress: () => Number(properties.get("--scroll-progress")),
+    advance: () => {
+      time += 100;
+      const callbacks = [...frames.values()];
+      frames.clear();
+      callbacks.forEach((callback) => callback(time));
+    },
+    scroll: (y) => {
+      window.scrollY = y;
+      events.get("scroll")();
+    },
+    frames,
+    events,
+    cleanup,
+  };
+}
+
+test("drawing keeps advancing between scrolls, never rewinds, and stops when complete", async () => {
+  const drawing = await startHomepageDrawing();
+  try {
+    const initial = drawing.progress();
+    for (let i = 0; i < 10; i++) drawing.advance();
+    assert.ok(
+      drawing.progress() > initial,
+      "drawing must advance without scrolling",
+    );
+    drawing.scroll(300);
+    const afterScroll = drawing.progress();
+    assert.ok(afterScroll > 0.6, "scrolling must accelerate the reveal");
+    drawing.scroll(0);
+    assert.equal(
+      drawing.progress(),
+      afterScroll,
+      "scrolling up must not erase the line",
+    );
+    drawing.advance();
+    assert.ok(
+      drawing.progress() > afterScroll,
+      "drawing must continue after scrolling stops",
+    );
+    for (let i = 0; i < 81; i++) drawing.advance();
+    assert.equal(drawing.progress(), 1);
+    assert.equal(
+      drawing.frames.size,
+      0,
+      "completed drawing must stop requesting frames",
+    );
+  } finally {
+    drawing.cleanup();
+  }
+  assert.equal(drawing.events.size, 0);
+});
+
+test("reduced motion and no-scroll pages complete immediately; unmount cancels drawing", async () => {
+  for (const options of [{ reduced: true }, { height: 900 }]) {
+    const drawing = await startHomepageDrawing(options);
+    assert.equal(drawing.progress(), 1);
+    assert.equal(drawing.frames.size, 0);
+    drawing.cleanup();
+  }
+  const drawing = await startHomepageDrawing();
+  assert.equal(drawing.frames.size, 1);
+  drawing.cleanup();
+  assert.equal(drawing.frames.size, 0);
+  assert.equal(drawing.events.size, 0);
 });

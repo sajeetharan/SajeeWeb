@@ -73,23 +73,23 @@ h5 {
   --ifm-color-primary-lightest: #ffe4cf;
   --ifm-color-secondary-accent: #ffc294;
   --ifm-font-color-base: #fff4e6;
-  --ifm-color-emphasis-100: #221d18;
-  --ifm-color-emphasis-200: #352c24;
-  --ifm-color-emphasis-300: #514338;
-  --ifm-color-emphasis-400: #796657;
-  --ifm-color-emphasis-500: #a18a77;
-  --ifm-color-emphasis-600: #bfae9e;
-  --ifm-color-emphasis-700: #d6c6b7;
-  --ifm-color-emphasis-800: #eddfd1;
+  --ifm-color-emphasis-100: #232529;
+  --ifm-color-emphasis-200: #34373d;
+  --ifm-color-emphasis-300: #4a4e56;
+  --ifm-color-emphasis-400: #70757f;
+  --ifm-color-emphasis-500: #969ba5;
+  --ifm-color-emphasis-600: #b4b8c0;
+  --ifm-color-emphasis-700: #ced1d7;
+  --ifm-color-emphasis-800: #e6e8ec;
   --ifm-color-emphasis-900: #fff4e6;
   --site-accent-rgb: 255, 176, 115;
-  --site-on-accent: #181512;
+  --site-on-accent: #191a1d;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
 
 html[data-theme="dark"] {
-  --ifm-background-color: #181512;
-  --ifm-background-surface-color: #221d18;
+  --ifm-background-color: #191a1d;
+  --ifm-background-surface-color: #232529;
 
   .navbar {
     border-bottom: 1px solid var(--ifm-color-emphasis-200);
@@ -98,13 +98,13 @@ html[data-theme="dark"] {
 
 /* Navigation styling */
 .navbar {
-  backdrop-filter: blur(16px);
-  background: rgba(255, 250, 242, 0.92);
-  box-shadow: var(--ifm-navbar-shadow);
+  background: var(--ifm-background-color);
+  box-shadow: none;
+  border-bottom: 1px solid var(--ifm-color-emphasis-200);
   min-height: 68px;
 
   [data-theme="dark"] & {
-    background: rgba(24, 21, 18, 0.92);
+    background: var(--ifm-background-color);
   }
 
   .navbar__title {
