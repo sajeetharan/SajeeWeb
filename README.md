@@ -118,7 +118,12 @@ Cream headings keep the dark palette warm. Shared theme tokens live in
 `src/css/custom.scss`; homepage highlights and blog controls use those tokens
 rather than hard-coded cyan. Existing browser-tab artwork is unchanged.
 
-The landing page in `src/pages/index.tsx` keeps its main content under 90 words:
+The landing page in `src/pages/index.tsx` keeps its main content under 90 words.
+Its browser and social-sharing title use the full name, Sajeetharan Sinnathurai;
+the visible greeting and compact navigation brand retain Sajee.
+Compact GitHub, LinkedIn, X/Twitter, and email icons sit below the introduction
+for quick contact, reusing the existing social-link component with accessible
+names and 44px targets. Text contact links remain near the bottom.
 a short introduction, writing/talk links, mentoring, and contact links.
 Selected work is no longer shown on the landing page; projects remain accessible
 from Work in the navbar and compact footer. The footer also links to the career

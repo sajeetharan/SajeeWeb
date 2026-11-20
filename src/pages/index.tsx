@@ -6,6 +6,7 @@ import Head from "@docusaurus/Head";
 import { personSchema, profile } from "../data/profile";
 import { LinePortrait } from "../components/homepage/LinePortrait";
 import { GreetingEyes } from "../components/homepage/GreetingEyes";
+import NavbarSocialLinks from "../components/NavbarSocialLinks";
 import avatar from "./assets/index/avatar.jpg";
 import styles from "./index.module.scss";
 
@@ -70,11 +71,7 @@ export default function Home(): JSX.Element {
   }, []);
 
   return (
-    <Layout
-      title="Azure Cosmos DB, AI Agents & Developer Tooling"
-      description={siteConfig.tagline}
-      noFooter
-    >
+    <Layout description={siteConfig.tagline} noFooter>
       <Head>
         <script type="application/ld+json">
           {JSON.stringify({
@@ -114,6 +111,9 @@ export default function Home(): JSX.Element {
               {profile.jobTitle} at {profile.employer.name}.
             </p>
             <p>I build developer tools and AI agents.</p>
+            <div className={styles.socials}>
+              <NavbarSocialLinks inline />
+            </div>
           </div>
           <button
             type="button"

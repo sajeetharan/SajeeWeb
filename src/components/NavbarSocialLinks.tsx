@@ -26,9 +26,11 @@ const profiles = [
 
 export default function NavbarSocialLinks({
   mobile = false,
+  inline = false,
   onClick,
 }: {
   mobile?: boolean;
+  inline?: boolean;
   onClick?: React.MouseEventHandler<HTMLAnchorElement>;
 }): JSX.Element {
   const links = (
@@ -48,6 +50,7 @@ export default function NavbarSocialLinks({
       ))}
     </div>
   );
+  if (inline) return links;
   return mobile ? (
     <li className={`menu__list-item ${styles.mobile}`}>{links}</li>
   ) : (

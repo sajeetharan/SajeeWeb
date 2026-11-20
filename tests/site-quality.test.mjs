@@ -36,6 +36,37 @@ test("simple navigation keeps secondary pages in More and a lightweight logo", a
   assert.ok(logo.length < 10_000, `logo is ${logo.length} bytes`);
 });
 
+test("homepage uses the full professional title and a friendly Sajee greeting", async () => {
+  const html = await readFile("build/index.html", "utf8");
+  assert.match(html, /<title\b[^>]*>Sajeetharan Sinnathurai<\/title>/);
+  assert.match(
+    html,
+    /<meta\b(?=[^>]*property="og:title")(?=[^>]*content="Sajeetharan Sinnathurai")[^>]*>/,
+  );
+  assert.match(html, /<h1>Hi, I&#x27;m Sajee\.<\/h1>/);
+  assert.match(html, /class="navbar__title[^"]*">Sajee<\/b>/);
+});
+
+test("homepage introduction offers accessible social and email shortcuts", async () => {
+  const html = await readFile("build/index.html", "utf8");
+  const intro = html.match(/<header\b[^>]*id="about"[\s\S]*?<\/header>/)?.[0];
+  assert.ok(intro);
+  const socials = intro.match(
+    /<div\b[^>]*role="group"[^>]*aria-label="Social profiles"[^>]*>[\s\S]*?<\/div>/,
+  )?.[0];
+  assert.ok(socials);
+  for (const [name, href] of [
+    ["GitHub", "https://github.com/sajeetharan"],
+    ["LinkedIn", "https://www.linkedin.com/in/sajeetharan/"],
+    ["X (Twitter)", "https://x.com/kokkisajee"],
+    ["Email", "mailto:sajeefx@gmail.com"],
+  ]) {
+    assert.ok(socials.includes(`aria-label="${name}"`), name);
+    assert.ok(socials.includes(`href="${href}"`), href);
+  }
+  assert.equal((socials.match(/aria-hidden="true"/g) ?? []).length, 4);
+});
+
 test("award previews stay below their image budget", async () => {
   const directory = "build/img/awards/thumbnails";
   const files = await readdir(directory);
