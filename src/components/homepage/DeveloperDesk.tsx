@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import Link from "@docusaurus/Link";
 import { socialProfiles } from "../NavbarSocialLinks";
+import { officeTestimonials } from "../../data/mentoring";
 import {
   OfficeBackground,
   OfficeCharacter,
@@ -42,12 +43,30 @@ export function DeveloperDesk(): JSX.Element {
   const [visible, setVisible] = useState(false);
   const [tabVisible, setTabVisible] = useState(true);
   const [phase, setPhase] = useState<keyof typeof phases>("phone");
-  const [hintVisible, setHintVisible] = useState(false);
+  const [hintMode, setHintMode] = useState<"closed" | "preview" | "pinned">(
+    "closed",
+  );
+  const [reviewIndex, setReviewIndex] = useState(0);
+  const [reviewsVisible, setReviewsVisible] = useState(false);
+  const [reviewsHovered, setReviewsHovered] = useState(false);
+  const [reviewsFocused, setReviewsFocused] = useState(false);
+  const [reviewsPaused, setReviewsPaused] = useState(false);
   const [invitationIndex, setInvitationIndex] = useState(
     objects.findIndex((object) => object.kind === "noticeboard"),
   );
   const scene = useRef<HTMLDivElement>(null);
+  const news = useRef<HTMLElement>(null);
   const running = !reducedMotion && visible && tabVisible;
+  const hintVisible = hintMode !== "closed";
+  const review = officeTestimonials[reviewIndex];
+  const reviewsRunning =
+    !reducedMotion &&
+    reviewsVisible &&
+    tabVisible &&
+    !reviewsHovered &&
+    !reviewsFocused &&
+    !reviewsPaused &&
+    !hintVisible;
 
   useEffect(() => {
     const motion = window.matchMedia("(prefers-reduced-motion: reduce)");
@@ -62,10 +81,17 @@ export function DeveloperDesk(): JSX.Element {
 
   useEffect(() => {
     const observer = new IntersectionObserver(
-      ([entry]) => setVisible(entry.isIntersecting),
+      (entries) => {
+        for (const entry of entries) {
+          if (entry.target === scene.current) setVisible(entry.isIntersecting);
+          if (entry.target === news.current)
+            setReviewsVisible(entry.isIntersecting);
+        }
+      },
       { threshold: 0.1 },
     );
     if (scene.current) observer.observe(scene.current);
+    if (news.current) observer.observe(news.current);
     const syncVisibility = () => setTabVisible(!document.hidden);
     syncVisibility();
     document.addEventListener("visibilitychange", syncVisibility);
@@ -93,15 +119,46 @@ export function DeveloperDesk(): JSX.Element {
     return () => window.clearTimeout(timer);
   }, [running, invitationIndex]);
 
+  useEffect(() => {
+    if (!reviewsRunning) return;
+    const timer = window.setTimeout(
+      () =>
+        setReviewIndex((current) => (current + 1) % officeTestimonials.length),
+      6000,
+    );
+    return () => window.clearTimeout(timer);
+  }, [reviewsRunning, reviewIndex]);
+
+  useEffect(() => {
+    if (!hintVisible) return;
+    const dismissOutside = (event: PointerEvent) => {
+      if (
+        event.target instanceof Element &&
+        !event.target.closest("[data-agentic-trigger], #agentic-coding-hint")
+      ) {
+        setHintMode("closed");
+      }
+    };
+    document.addEventListener("pointerdown", dismissOutside);
+    return () => document.removeEventListener("pointerdown", dismissOutside);
+  }, [hintVisible]);
+
+  const showHint = () =>
+    setHintMode((current) => (current === "pinned" ? current : "preview"));
   const hintHandlers = {
-    onPointerEnter: () => setHintVisible(true),
-    onFocus: () => setHintVisible(true),
+    onPointerEnter: showHint,
+    onFocus: showHint,
+    onClick: () =>
+      setHintMode((current) => (current === "pinned" ? "closed" : "pinned")),
     onBlur: (event: React.FocusEvent<HTMLButtonElement>) => {
       if (
-        !(event.relatedTarget instanceof HTMLElement) ||
-        !event.relatedTarget.hasAttribute("data-agentic-trigger")
+        event.relatedTarget instanceof HTMLElement &&
+        event.relatedTarget.hasAttribute("data-agentic-trigger")
       ) {
-        setHintVisible(false);
+        return;
+      }
+      if (hintMode !== "pinned" || event.relatedTarget !== null) {
+        setHintMode("closed");
       }
     },
   };
@@ -112,13 +169,14 @@ export function DeveloperDesk(): JSX.Element {
       data-developer-desk
       onPointerLeave={(event) => {
         if (
+          hintMode !== "pinned" &&
           !event.currentTarget.querySelector("[data-agentic-trigger]:focus")
         ) {
-          setHintVisible(false);
+          setHintMode("closed");
         }
       }}
       onKeyDown={(event) => {
-        if (event.key === "Escape") setHintVisible(false);
+        if (event.key === "Escape") setHintMode("closed");
       }}
     >
       <div
@@ -136,7 +194,7 @@ export function DeveloperDesk(): JSX.Element {
           data-agentic-trigger="head"
           aria-describedby="agentic-coding-hint"
           aria-label="How I use coding agents"
-          onClick={() => setHintVisible(true)}
+          aria-expanded={hintVisible}
           {...hintHandlers}
         />
         <button
@@ -145,7 +203,7 @@ export function DeveloperDesk(): JSX.Element {
           data-agentic-trigger="body"
           aria-label="About my agentic coding workflow"
           aria-describedby="agentic-coding-hint"
-          onClick={() => setHintVisible(true)}
+          aria-expanded={hintVisible}
           {...hintHandlers}
         />
         <a
@@ -155,7 +213,13 @@ export function DeveloperDesk(): JSX.Element {
           title="View my LinkedIn profile"
           data-office-employer-link
         />
-        <nav className={styles.objects} aria-label="Explore my developer desk">
+        <nav
+          className={styles.objects}
+          aria-label="Explore my developer desk"
+          onPointerEnter={() => {
+            if (hintMode !== "pinned") setHintMode("closed");
+          }}
+        >
           {objects.map((object, index) => (
             <Link
               key={object.kind}
@@ -200,13 +264,104 @@ export function DeveloperDesk(): JSX.Element {
           className={styles.agenticHint}
           hidden={!hintVisible}
         >
-          <strong>Agentic coding, in three acts.</strong>
+          <strong>Tab Pray Repeat</strong>
           <p>
-            Read the agent&apos;s plan. Press Tab. Pray the tests pass. I still
-            review the diff before shipping.
+            Review the plan. Tab to accept. Pray for green tests. I still review
+            the diff before shipping.
           </p>
+          <small>Tap again or press Escape to close.</small>
         </div>
       </div>
+      <section
+        ref={news}
+        className={styles.newsBanner}
+        data-desk-reviews
+        data-review-motion={reviewsRunning ? "running" : "paused"}
+        aria-label="Mentoring review excerpts"
+        onPointerEnter={(event) => {
+          if (event.pointerType !== "touch") setReviewsHovered(true);
+        }}
+        onPointerLeave={() => setReviewsHovered(false)}
+        onFocusCapture={() => setReviewsFocused(true)}
+        onBlurCapture={(event) => {
+          if (!event.currentTarget.contains(event.relatedTarget)) {
+            setReviewsFocused(false);
+          }
+        }}
+      >
+        <p className={styles.newsHeading}>
+          Mentoring news <span>{review.source}</span>
+        </p>
+        <div
+          className={styles.reviewStack}
+          aria-live={reviewsRunning ? "off" : "polite"}
+          aria-atomic="true"
+        >
+          {officeTestimonials.map((item, index) => (
+            <figure
+              key={item.id}
+              className={styles.reviewEntry}
+              data-review-id={item.id}
+              data-review-source={item.source}
+              data-review-active={index === reviewIndex}
+              aria-hidden={index !== reviewIndex}
+            >
+              <blockquote className={styles.reviewQuote}>
+                <p>{item.quote}</p>
+              </blockquote>
+              <figcaption>{item.author || "Review excerpt"}</figcaption>
+            </figure>
+          ))}
+        </div>
+        <div className={styles.newsFooter}>
+          <a
+            href={review.sourceUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={`Read original ${review.source} reviews (opens in a new tab)`}
+          >
+            Read reviews
+          </a>
+          <div className={styles.reviewControls}>
+            <span>
+              {reviewIndex + 1}/{officeTestimonials.length}
+            </span>
+            <button
+              type="button"
+              disabled={reducedMotion}
+              aria-label={
+                reducedMotion
+                  ? "Review rotation disabled by reduced motion"
+                  : reviewsPaused
+                    ? "Resume reviews"
+                    : "Pause reviews"
+              }
+              onClick={() => setReviewsPaused((current) => !current)}
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                {reviewsPaused ? (
+                  <path d="M8 5L19 12L8 19Z" />
+                ) : (
+                  <path d="M8 5V19M16 5V19" />
+                )}
+              </svg>
+            </button>
+            <button
+              type="button"
+              aria-label="Next review"
+              onClick={() =>
+                setReviewIndex(
+                  (current) => (current + 1) % officeTestimonials.length,
+                )
+              }
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <path d="M5 12H19M13 6L19 12L13 18" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }

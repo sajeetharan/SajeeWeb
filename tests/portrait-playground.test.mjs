@@ -371,6 +371,29 @@ test("office links retain independent artwork and the keyboard retains its anima
 
 test("agentic coding remains discoverable from both head and body without portrait tools", async () => {
   const html = await readFile("build/index.html", "utf8");
+  const shirt = html.match(
+    /<text\b[^>]*data-office-shirt-quote[^>]*>([\s\S]*?)<\/text>/,
+  )?.[1];
+  assert.ok(shirt, "the coding quote must be printed on the shirt");
+  const printMask = html.match(
+    /<g\b[^>]*mask="url\(#(office-shirt-[^"]+)\)"[^>]*>\s*<text\b[^>]*data-office-shirt-quote/,
+  )?.[1];
+  assert.ok(printMask, "the shirt print must respect the active pose's hands");
+  const maskIds = [
+    ...html.matchAll(/<mask\b[^>]*id="(office-shirt-[^"]+)"/g),
+  ].map(([, id]) => id);
+  assert.ok(maskIds.includes(printMask), "the print mask must resolve");
+  for (const pose of ["phone", "tab", "pray"]) {
+    assert.ok(maskIds.includes(`office-shirt-${pose}`));
+  }
+  const printedQuote = shirt
+    .replace(/<[^>]+>/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+  assert.ok(
+    html.includes(`<strong>${printedQuote}</strong>`),
+    "the tooltip must repeat the shirt quote at a readable size",
+  );
   for (const trigger of ["head", "body"]) {
     assert.match(
       html,

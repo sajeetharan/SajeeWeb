@@ -329,6 +329,13 @@ export function OfficeBackground(): JSX.Element {
 const characterPoses = ["phone", "tab", "pray"] as const;
 export type OfficeCharacterPose = (typeof characterPoses)[number];
 
+const shirtOcclusions: Record<OfficeCharacterPose, string> = {
+  phone:
+    "M454 334L507 336L514 369L528 391L526 414L510 437L478 449L444 424L440 395Z",
+  tab: "",
+  pray: "M513 322L541 321L551 349L556 389L574 412L554 437L534 432L502 414L498 392L506 354Z",
+};
+
 export function OfficeCharacter({
   pose,
 }: {
@@ -346,6 +353,24 @@ export function OfficeCharacter({
       strokeLinejoin="round"
       strokeLinecap="round"
     >
+      <defs>
+        {characterPoses.map((item) => (
+          <mask
+            key={item}
+            id={`office-shirt-${item}`}
+            maskUnits="userSpaceOnUse"
+            x="360"
+            y="82"
+            width="384"
+            height="512"
+          >
+            <rect x="480" y="345" width="135" height="100" fill="white" />
+            {shirtOcclusions[item] && (
+              <path d={shirtOcclusions[item]} fill="black" stroke="none" />
+            )}
+          </mask>
+        ))}
+      </defs>
       <g data-character-part="portrait">
         {characterPoses.map((item) => (
           <image
@@ -370,6 +395,24 @@ export function OfficeCharacter({
           <rect x="22" y="5" width="15" height="15" fill="#7fba00" />
           <rect x="5" y="22" width="15" height="15" fill="#00a4ef" />
           <rect x="22" y="22" width="15" height="15" fill="#ffb900" />
+        </g>
+        <g className={styles.shirtPrint} mask={`url(#office-shirt-${pose})`}>
+          <text
+            transform="translate(550 381) rotate(-4) skewX(-6)"
+            data-office-shirt-quote
+            textAnchor="middle"
+            fontFamily="Arial, sans-serif"
+            fontSize="24"
+            fontWeight="900"
+            fill="var(--office-shirt-print)"
+            fillOpacity="0.78"
+            stroke="none"
+          >
+            <tspan x="0">Tab Pray</tspan>
+            <tspan x="0" dy="28">
+              Repeat
+            </tspan>
+          </text>
         </g>
       </g>
     </svg>

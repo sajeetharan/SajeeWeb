@@ -36,6 +36,106 @@ export const mentoringTestimonials = [
   },
 ];
 
+const topmateReviewSource = {
+  source: "Topmate",
+  sourceUrl: "https://topmate.io/sajeetharan",
+};
+const adplistReviewSource = {
+  source: "ADPList",
+  sourceUrl: "https://adplist.org/mentors/sajeetharan-sinnathurai",
+};
+
+export const officeTestimonials = [
+  {
+    ...mentoringTestimonials[0],
+    ...topmateReviewSource,
+    id: "topmate-pm",
+    author: "Shruti Solanki",
+  },
+  {
+    ...mentoringTestimonials[1],
+    ...topmateReviewSource,
+    id: "topmate-next-steps",
+    author: "",
+  },
+  {
+    ...topmateReviewSource,
+    id: "topmate-job-search",
+    quote: "Very insightful and helpful in job search and CV analysis.",
+    author: "Harsh Kalokhe",
+  },
+  {
+    ...topmateReviewSource,
+    id: "topmate-connection",
+    quote: "Was an insightful connection. Very helpful",
+    author: "",
+  },
+  {
+    ...topmateReviewSource,
+    id: "topmate-career-clarity",
+    quote: "He will clear all my doubts regarding the positions and jobs",
+    author: "Pidikiti Madhu Chandana",
+  },
+  {
+    ...topmateReviewSource,
+    id: "topmate-feedback",
+    quote: "Got lot of insights and feebacks",
+    author: "Gowseik V",
+  },
+  {
+    ...topmateReviewSource,
+    id: "topmate-discussion",
+    quote: "Super insightful session and a great person to discuss with",
+    author: "Satish Kumar G",
+  },
+  {
+    ...topmateReviewSource,
+    id: "topmate-guidance",
+    quote: "Got more insights and guidance.",
+    author: "",
+  },
+  {
+    ...adplistReviewSource,
+    id: "adplist-ai",
+    quote: "his ability to turn complex concepts into clear, practical advice",
+    author: "Hirish",
+  },
+  {
+    ...adplistReviewSource,
+    id: "adplist-goals",
+    quote:
+      "amazing communication and subject knowledge truly helped clarify my goals",
+    author: "Tharu Tharujan",
+  },
+  {
+    ...adplistReviewSource,
+    id: "adplist-problem-solving",
+    quote:
+      "They provided practical insights that helped me navigate my challenges effectively.",
+    author: "Soumya Soni",
+  },
+  {
+    ...adplistReviewSource,
+    id: "adplist-pm",
+    quote:
+      "He shared practical guidance, a useful template, and resources to explore further.",
+    author: "Neha Tiwary",
+  },
+  {
+    ...adplistReviewSource,
+    id: "adplist-encouragement",
+    quote:
+      "His motivational approach provided me with invaluable insights and encouragement.",
+    author: "Satish Kumar G",
+  },
+  {
+    ...adplistReviewSource,
+    id: "adplist-profile",
+    quote: "The session was very insightful and gave me a clear understanding",
+    author: "Bhaskar Madiredla",
+  },
+];
+
 export const mentoringServices = [
   discoveryCall,
   {

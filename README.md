@@ -173,20 +173,35 @@ index finger. The room does not move. The loop runs automatically without
 play/pause controls and stops outside the viewport or in a hidden tab. Reduced
 motion leaves a still keyboard pose and disables object reactions.
 Hovering or keyboard-focusing the head or body reveals an agentic-coding message.
-Both also reveal it on tap, Escape dismisses it, and the message remains
-available while focused or while the pointer stays within the desk.
+Both also pin it on tap; tapping again, pressing Escape, or clicking elsewhere
+dismisses it. Hover previews yield to object navigation. The message repeats
+the shirt's "Tab Pray Repeat" print at a readable size, and explains
+that suggestions still need a diff review and tests.
+The chest lettering follows the shirt's angle, blends with its fabric shading,
+and is masked behind the phone and prayer hands rather than floating above them.
 The office illustration remains visible in full rather than becoming a photo
 card. Material gradients on the wall, desk, and laptop, softer outlines, and
 subtle object shadows bring the illustrated room closer to the shaded portrait.
 Reduced motion disables pose transitions, the key press, and object animations;
 keyboard focus outlines remain visible.
-The portrait wears a four-color Microsoft logo patch in all three poses.
+The portrait wears a four-color Microsoft logo patch and the AI-coding quote
+in all three poses.
 Clicking the logo opens the [LinkedIn profile](https://in.linkedin.com/in/sajeetharan);
 the link is keyboard-accessible and has a minimum 44px target.
 The wall displays framed photographs of the actual Microsoft MVP award
 (2017-2019) and Google Developer Expert recognition, reusing the optimized
 images from `static/img/awards/thumbnails`. These are background artwork;
 the trophy still provides the existing Awards navigation.
+A compact "Mentoring news" banner below the desk shows 14 short review excerpts
+verified on the public Topmate and ADPList profiles on 2026-11-23, stored in
+`src/data/mentoring.ts`. Each entry retains its platform, public source URL,
+and author when displayed by the source. The original curated Topmate pair
+on the mentoring page stays unchanged. The banner crossfades every six seconds,
+with manual next and pause controls for reviews only. Hover, keyboard focus,
+an open portrait tooltip, hidden tabs, and leaving the viewport suspend rotation.
+Reduced motion disables automatic rotation and fading. Overlaid grid entries
+reserve the tallest review's space so changing text does not move the page.
+It does not claim LinkedIn recommendations without verified excerpts.
 The photographic playground, line portrait, and greeting-eyes components remain available but are not
 mounted on the homepage.
 
@@ -200,8 +215,9 @@ their saved choice.
 ### Recruiter and collaborator paths
 
 The homepage pairs the office with a clear introduction and an "Explore my
-projects" action. Readable MVP and Google Developer Expert text links to the
-full award photographs. Three featured project cards appear before Writing
+projects" action, without repeating the award credentials under the greeting.
+The wall artwork and trophy link retain award discovery.
+Three featured project cards appear before Writing
 & talks, with descriptions and explicit source links drawn from the shared
 profile data. The homepage retains direct links to projects and mentoring.
 Recruiter and collaborator details live on

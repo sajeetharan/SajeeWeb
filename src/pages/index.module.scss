@@ -61,20 +61,13 @@
   justify-content: flex-start;
 }
 
-.credentials {
-  display: block;
-  margin: 1rem 0;
-  font-size: 0.85rem;
-  line-height: 1.6;
-  text-decoration: underline;
-}
-
 .projectCta {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 0.75rem;
   min-height: 44px;
+  margin-top: 1rem;
   padding: 0.65rem 1rem;
   border-radius: 0.5rem;
   background: var(--ifm-color-primary);

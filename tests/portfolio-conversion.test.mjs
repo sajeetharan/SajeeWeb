@@ -33,6 +33,9 @@ test("the simplified homepage keeps direct work and mentoring paths", async () =
   assert.match(html, /id="work"[^>]*href="\/projects"/);
   assert.match(main, /Featured projects/);
   assert.match(main, /href="#featured-projects"/);
+  const introduction = main.match(/<h1\b[\s\S]*?<\/header>/)?.[0];
+  assert.ok(introduction);
+  assert.doesNotMatch(introduction, /Microsoft MVP|Google Developer Expert/);
   assert.match(main, /<h2\b[^>]*id="featured-projects"/);
   assert.ok(
     main.indexOf("Featured projects") < main.indexOf("Writing &amp; talks"),
@@ -40,6 +43,32 @@ test("the simplified homepage keeps direct work and mentoring paths", async () =
   assert.doesNotMatch(main, /data-line-portrait|data-drawing-path|<details\b/);
   assert.doesNotMatch(main, /&amp;nearr;|&nearr;/);
   assert.doesNotMatch(html, /id="collaborate"/);
+});
+
+test("homepage mentoring news renders sourced excerpts with accessible rotation controls", async () => {
+  const { officeTestimonials } = await loadTypeScript("src/data/mentoring.ts");
+  const html = await readFile("build/index.html", "utf8");
+  const news = html.match(
+    /<section\b[^>]*data-desk-reviews[^>]*>[\s\S]*?<\/section>/,
+  )?.[0];
+  assert.ok(news);
+  const entries = [
+    ...news.matchAll(
+      /<figure\b[^>]*data-review-id="([^"]+)"[^>]*>([\s\S]*?)<\/figure>/g,
+    ),
+  ];
+  assert.equal(entries.length, officeTestimonials.length);
+  assert.equal(new Set(entries.map(([, id]) => id)).size, entries.length);
+  for (const item of officeTestimonials) {
+    const entry = entries.find(([, id]) => id === item.id);
+    assert.ok(entry, item.id);
+    assert.ok(entry[2].includes(item.quote), item.id);
+  }
+  assert.equal((news.match(/data-review-active="true"/g) || []).length, 1);
+  assert.match(news, /data-review-source="ADPList"/);
+  assert.match(news, /href="https:\/\/topmate\.io\/sajeetharan"/);
+  assert.match(news, /<div\b[^>]*aria-live="polite"/);
+  assert.match(news, /<button\b[^>]*aria-label="Next review"/);
 });
 
 test("featured project evidence is shared and crawlable with explicit source actions", async () => {

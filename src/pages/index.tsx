@@ -32,9 +32,6 @@ export default function Home(): JSX.Element {
               {profile.jobTitle} at {profile.employer.name}.
             </p>
             <p>I build developer tools and AI agents.</p>
-            <Link to="/awards" className={styles.credentials}>
-              Microsoft MVP (2017-2019) &middot; Google Developer Expert
-            </Link>
             <Link className={styles.projectCta} to="#featured-projects">
               Explore my projects <span aria-hidden="true">&rarr;</span>
             </Link>
