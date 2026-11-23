@@ -1,15 +1,6 @@
 .home {
-  --hero-height: 540px;
-  --portrait-width: 240px;
-  --join-x: 72%;
-  --join-y: 0.56;
-  --tail-x: calc(var(--join-x) - var(--portrait-width) * 87 / 280);
-  --tail-top: calc(
-    2rem + var(--hero-height) * var(--join-y) + var(--portrait-width) * 281 /
-      280
-  );
   position: relative;
-  width: min(100% - 3rem, 760px);
+  width: min(100% - 2rem, 1120px);
   margin: 0 auto;
   padding: 2rem 0 0;
   font-size: 1.05rem;
@@ -18,7 +9,7 @@
     font-size: clamp(2.6rem, 5vw, 3.6rem);
     letter-spacing: -0.055em;
     line-height: 1.12;
-    margin-bottom: 3rem;
+    margin-bottom: 1.5rem;
   }
 
   h2 {
@@ -40,92 +31,24 @@
   [id] {
     scroll-margin-top: calc(var(--ifm-navbar-height) + 1.5rem);
   }
-  [data-drawing-path] {
-    stroke-dasharray: 1;
-    stroke-dashoffset: 0;
-    animation: draw 1.4s ease-out 2s both;
-  }
-
-  [data-detail] {
-    animation-duration: 1s;
-    animation-delay: 3.3s;
-  }
-
-  [data-ribbon] {
-    animation-duration: 2s;
-    animation-delay: 0s;
-  }
-
-  [data-trail] {
-    animation-duration: 1s;
-    animation-delay: 4.2s;
-  }
-}
-
-.home[data-scroll-drawing] {
-  [data-drawing-path] {
-    animation: none;
-    stroke-dashoffset: clamp(
-      0,
-      calc(1 - (var(--scroll-progress) - 0.28) / 0.27),
-      1
-    );
-  }
-
-  [data-ribbon] {
-    stroke-dashoffset: clamp(0, calc(1 - var(--scroll-progress) / 0.3), 1);
-  }
-
-  [data-detail] {
-    stroke-dashoffset: clamp(
-      0,
-      calc(1 - (var(--scroll-progress) - 0.4) / 0.22),
-      1
-    );
-  }
-
-  [data-trail] {
-    stroke-dashoffset: clamp(
-      0,
-      calc(1 - (var(--scroll-progress) - 0.58) / 0.42),
-      1
-    );
-  }
 }
 
 .intro {
-  position: relative;
-  min-height: var(--hero-height);
-  padding: 3rem 2.5rem;
+  display: grid;
+  grid-template-columns: minmax(0, 1.65fr) minmax(18rem, 1fr);
+  align-items: center;
+  gap: 3rem;
+  padding: 1rem 0 3rem;
 }
 
 .introCopy {
   position: relative;
-  max-width: 480px;
+  max-width: 720px;
+  margin: 0 auto;
+  text-align: left;
 
   p {
     margin-bottom: 0.35rem;
-  }
-}
-
-.greetingEyes {
-  position: absolute;
-  top: -3rem;
-  left: 0;
-  width: 72px;
-  height: 48px;
-  color: var(--ifm-font-color-base);
-  pointer-events: none;
-
-  [data-eye-blink] {
-    transform-box: fill-box;
-    transform-origin: center;
-    animation: blink 320ms ease-in-out 3s both;
-  }
-
-  [data-eye-pupils] {
-    transform: translate(var(--eye-x, 0px), var(--eye-y, 0px));
-    transition: transform 120ms ease-out;
   }
 }
 
@@ -134,113 +57,79 @@
   z-index: 1;
   margin-top: 0.5rem;
   margin-left: -0.75rem;
+  display: flex;
+  justify-content: flex-start;
 }
 
-.ribbon {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  fill: none;
-  stroke: var(--ifm-color-primary);
-  stroke-width: 0.3;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  pointer-events: none;
-}
-
-.trail {
-  position: absolute;
-  left: var(--tail-x);
-  top: var(--tail-top);
-  width: calc(100% - var(--tail-x));
-  height: calc(100% - var(--tail-top));
-  fill: none;
-  stroke: var(--ifm-color-primary);
-  stroke-width: 0.5;
-  stroke-linecap: round;
-  pointer-events: none;
-}
-
-.mobileLine {
-  display: none;
-}
-
-.portrait {
-  position: absolute;
-  width: var(--portrait-width);
-  padding: 0;
-  border: 0;
-  background: transparent;
-  font: inherit;
-  cursor: pointer;
-  // Align the ribbon endpoint with the portrait's (135, 26) starting point.
-  left: calc(var(--join-x) - var(--portrait-width) * 135 / 280);
-  top: calc(
-    var(--hero-height) * var(--join-y) - var(--portrait-width) * 26 / 280
-  );
-  color: var(--ifm-color-primary);
-
-  svg {
-    display: block;
-    width: 100%;
-    height: auto;
-  }
-
-  &:hover .portraitHint,
-  &:focus-visible .portraitHint {
-    color: var(--ifm-font-color-base);
-    text-decoration: underline;
-  }
-
-  &[data-photo-revealed="true"] {
-    .portraitDrawing {
-      opacity: 0;
-    }
-
-    .portraitPhoto {
-      opacity: 1;
-      clip-path: circle(75% at 50% 45%);
-    }
-  }
-}
-
-.portraitDrawing {
+.credentials {
   display: block;
-  transition: opacity 400ms ease;
+  margin: 1rem 0;
+  font-size: 0.85rem;
+  line-height: 1.6;
+  text-decoration: underline;
 }
 
-.portraitPhoto {
-  position: absolute;
-  inset: 5% 5% auto;
-  width: 90%;
-  height: 90%;
-  object-fit: cover;
-  border: 1px solid var(--ifm-color-primary);
-  border-radius: 48% 48% 42% 42%;
-  opacity: 0;
-  clip-path: circle(0% at 50% 45%);
-  transition:
-    clip-path 500ms ease,
-    opacity 400ms ease;
+.projectCta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  min-height: 44px;
+  padding: 0.65rem 1rem;
+  border-radius: 0.5rem;
+  background: var(--ifm-color-primary);
+  color: var(--ifm-background-color);
+  font-weight: 650;
+
+  &:hover,
+  &:focus-visible {
+    background: var(--ifm-color-primary-dark);
+    color: var(--ifm-background-color);
+    text-decoration: none;
+  }
 }
 
-.portraitHint {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  width: 100%;
-  margin-top: 0.25rem;
-  color: var(--ifm-color-emphasis-600);
-  font-size: 0.75rem;
-  line-height: 1.5;
-  text-align: center;
+.sectionHeading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+}
+
+.projectGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.projectCard {
+  display: flex;
+  flex-direction: column;
+  padding: 1.25rem;
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 0.75rem;
+  background: var(--ifm-background-surface-color);
+
+  h3 {
+    font-size: 1.15rem;
+    line-height: 1.4;
+    margin-bottom: 0.65rem;
+  }
+
+  p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+
+  a {
+    margin-top: auto;
+  }
 }
 
 .section {
   position: relative;
   padding: 2.5rem 0;
-  padding-right: 2rem;
   scroll-margin-top: calc(var(--ifm-navbar-height) + 1.5rem);
 }
 
@@ -261,7 +150,7 @@
 }
 
 .footer {
-  width: min(100% - 3rem, 760px);
+  width: min(100% - 2rem, 1120px);
   margin: 0 auto;
   padding: 1.5rem 0 5rem;
   border-top: 1px solid var(--ifm-color-emphasis-200);
@@ -274,65 +163,26 @@
   gap: 0.5rem 1.5rem;
 }
 
-@keyframes draw {
-  from {
-    stroke-dashoffset: 1;
-  }
-  to {
-    stroke-dashoffset: 0;
-  }
-}
-
-@keyframes blink {
-  0%,
-  100% {
-    transform: scaleY(1);
-  }
-  50% {
-    transform: scaleY(0.08);
-  }
-}
-
-@media (max-width: 600px) {
-  .home {
-    --hero-height: 600px;
-    --join-x: 60%;
-    --join-y: 0.54;
-  }
-
+@media (max-width: 900px) {
   .intro {
-    padding: 3rem 1.25rem;
-  }
-
-  .desktopLine {
-    display: none;
-  }
-
-  .mobileLine {
-    display: block;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 2rem;
+    padding: 2rem 0;
   }
 
   .home h1 {
     font-size: clamp(2rem, 8vw, 2.8rem);
   }
-}
 
-@media (prefers-reduced-motion: reduce) {
-  .portraitDrawing,
-  .portraitPhoto {
-    transition: none;
+  .introCopy {
+    text-align: center;
   }
 
-  .greetingEyes [data-eye-blink],
-  .greetingEyes [data-eye-pupils] {
-    animation: none;
-    transition: none;
-    transform: none;
+  .socials {
+    justify-content: center;
   }
 
-  .home [data-drawing-path],
-  .home[data-scroll-drawing] [data-drawing-path] {
-    animation: none;
-    stroke-dashoffset: 0;
+  .projectGrid {
+    grid-template-columns: minmax(0, 1fr);
   }
 }

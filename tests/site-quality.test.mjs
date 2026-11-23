@@ -3,11 +3,19 @@ import { readFile, readdir, stat } from "node:fs/promises";
 import test from "node:test";
 import redirects from "../worker/blog-redirects.mjs";
 
-test("simple navigation keeps secondary pages in More and a lightweight logo", async () => {
+test("navigation restores all six headings and keeps secondary pages accessible", async () => {
   const html = await readFile("build/index.html", "utf8");
   const navbar = html.match(/<nav\b[^>]*aria-label="Main"[\s\S]*?<\/nav>/)?.[0];
   assert.ok(navbar);
-  const labels = ["Writing", "Work", "Mentoring", "More"];
+  const labels = [
+    "Blogs",
+    "Talks",
+    "Projects",
+    "Awards",
+    "Get Mentored",
+    "Developers",
+    "More",
+  ];
   let previous = -1;
   for (const label of labels) {
     const position = navbar.indexOf(`>${label}`);
@@ -44,7 +52,10 @@ test("homepage uses the full professional title and a friendly Sajee greeting", 
     /<meta\b(?=[^>]*property="og:title")(?=[^>]*content="Sajeetharan Sinnathurai")[^>]*>/,
   );
   assert.match(html, /<h1>Hi, I&#x27;m Sajee\.<\/h1>/);
-  assert.match(html, /class="navbar__title[^"]*">Sajee<\/b>/);
+  assert.match(
+    html,
+    /class="navbar__title[^"]*">I help Developers build what&#x27;s next<\/b>/,
+  );
 });
 
 test("homepage introduction offers accessible social and email shortcuts", async () => {

@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./NavbarSocialLinks.module.scss";
 
-const profiles = [
+export const socialProfiles = [
   {
     name: "GitHub",
     href: "https://github.com/sajeetharan",
@@ -35,7 +35,7 @@ export default function NavbarSocialLinks({
 }): JSX.Element {
   const links = (
     <div className={styles.links} role="group" aria-label="Social profiles">
-      {profiles.map(({ name, href, path }) => (
+      {socialProfiles.map(({ name, href, path }) => (
         <a
           key={name}
           href={href}

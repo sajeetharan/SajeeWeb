@@ -118,52 +118,92 @@ Cream headings keep the dark palette warm. Shared theme tokens live in
 `src/css/custom.scss`; homepage highlights and blog controls use those tokens
 rather than hard-coded cyan. Existing browser-tab artwork is unchanged.
 
-The landing page in `src/pages/index.tsx` keeps its main content under 90 words.
+The landing page in `src/pages/index.tsx` keeps a concise introduction,
+writing/talk links, mentoring, and contact links.
 Its browser and social-sharing title use the full name, Sajeetharan Sinnathurai;
-the visible greeting and compact navigation brand retain Sajee.
+the visible greeting retains Sajee, while the navbar title beside the portrait
+reads "I help Developers build what's next".
 Compact GitHub, LinkedIn, X/Twitter, and email icons sit below the introduction
 for quick contact, reusing the existing social-link component with accessible
 names and 44px targets. Text contact links remain near the bottom.
-a short introduction, writing/talk links, mentoring, and contact links.
 Selected work is no longer shown on the landing page; projects remain accessible
-from Work in the navbar and compact footer. The footer also links to the career
+from Projects in the navbar and Work in the compact footer. The footer also links to the career
 profile, contact, topics, and privacy. The existing `#about`, `#work`, `#talks`,
 `#mentoring`, and `#connect` targets remain available.
 
-`src/components/homepage/LinePortrait.tsx` contains an original SVG sketch
-based on the existing profile photo: swept short hair, a beard, and a smile.
-An original, single-sweep line frames the introduction and leads into the
-portrait, then continues down the page beside writing, mentoring, and contact.
-The ribbon, portrait, and trailing line draw continuously over eight seconds.
-Native scrolling speeds up the reveal; pausing or scrolling back never rewinds
-the artwork. Animation frames update one CSS custom property and stop once
-the drawing is complete; resize and reduced-motion changes update it too. There is
-no scroll interception, pinning, or parallax. CSS in `src/pages/index.module.scss`
-maps progress to normalized SVG strokes. Without JavaScript, a finite drawing
-animation reveals the artwork; reduced-motion users see it complete immediately.
-Pages that fit the viewport also show the complete drawing.
-Text never waits for the animation. The artwork uses theme colors, an
-accessible image label, and a reserved aspect ratio, without external assets,
-image uploads, or an AI service.
-An original pair of decorative eyes sits above the greeting, blinks once,
-and gently follows the mouse. Touch devices keep the eyes neutral; reduced
-motion disables the blink and tracking. The eyes are hidden from screen readers
-and do not add a focus target or intercept pointer events.
-The line portrait is a toggle button: click, tap, Enter, or Space reveals the
-existing profile photo with a soft circular reveal; activating it again restores
-the drawing. Its pressed state is exposed to assistive technology. Both layers
-share the reserved portrait space, and reduced motion makes the swap immediate.
-The previous `PortraitPlayground` component and local expression assets remain
-in the repository but are not loaded by the homepage.
+The office focuses on the portrait and navigation. There are no playful prop
+actions, reaction effects, or separate "Nine moods, one developer" panel.
+`src/components/homepage/DeveloperDesk.tsx` composes an original, fully layered
+illustrated office drawn in `src/components/homepage/OfficeArtwork.tsx`, with
+Sajeetharan's likeness, a laptop, cloud monitor, books, microphone, coffee,
+trophy, plants, and robot. The room, character, foreground laptop, and each
+navigation object are separate SVG layers, not crops or highlights
+over a flattened image. No third-party office artwork is copied or loaded.
+Each native navigation link contains its own illustrated object. Hovering or
+focusing it plays an independent reaction: the note flutters, books bounce,
+microphone swings, mug tilts with rising steam, trophy rocks and sparkles,
+robot wiggles and blinks, GitHub sticker bounces, and Instagram photo sways.
+Link targets stay fixed while their artwork moves.
+The scene itself is the navigation at every screen size, without a separate
+button grid. "My Projects" is written on a pinned wall note and links to Projects.
+The books, microphone, mug, trophy, and robot link to Blogs, Talks, Get Mentored,
+Awards, and Developers. An official GitHub logo sticker on the laptop links
+to the GitHub profile, reusing the social-link component's icon and URL.
+The Instagram photo on the wall links to `https://www.instagram.com/sajeetharan/`;
+its official camera glyph comes from Simple Icons (CC0).
+Small arrow badges and persistent destination labels mark every navigation
+object, without an instruction paragraph. Labels remain readable without
+hovering or waiting for animation, and adapt to the scene's actual width.
+While the visible scene is idle, an object takes a turn every four seconds
+to perform its own motion, starting with Projects. These invitations
+yield to hovering or keyboard-focusing navigation and stop in a hidden tab,
+outside the viewport, or with reduced motion. The static arrow cues and
+destination labels remain available without animation.
+Every object has an accessible
+name and a minimum 44px target. Percentage-based positions keep these links
+attached to the artwork as it resizes.
+The character depicts AI-assisted coding in a seven-second loop: read the phone
+for three seconds, press Tab for one second, then pray for three seconds.
+The whole character uses consistently shaded, photo-referenced illustrations,
+including natural clothing folds, connected arms, and joined prayer hands.
+Three registered transparent WebP poses in `static/img/office-character` keep
+the face, shoulders, and torso aligned and crossfade over 180ms. The Tab key
+animates during the keyboard pose and is positioned under the illustrated
+index finger. The room does not move. The loop runs automatically without
+play/pause controls and stops outside the viewport or in a hidden tab. Reduced
+motion leaves a still keyboard pose and disables object reactions.
+Hovering or keyboard-focusing the head or body reveals an agentic-coding message.
+Both also reveal it on tap, Escape dismisses it, and the message remains
+available while focused or while the pointer stays within the desk.
+The office illustration remains visible in full rather than becoming a photo
+card. Material gradients on the wall, desk, and laptop, softer outlines, and
+subtle object shadows bring the illustrated room closer to the shaded portrait.
+Reduced motion disables pose transitions, the key press, and object animations;
+keyboard focus outlines remain visible.
+The portrait wears a four-color Microsoft logo patch in all three poses.
+Clicking the logo opens the [LinkedIn profile](https://in.linkedin.com/in/sajeetharan);
+the link is keyboard-accessible and has a minimum 44px target.
+The wall displays framed photographs of the actual Microsoft MVP award
+(2017-2019) and Google Developer Expert recognition, reusing the optimized
+images from `static/img/awards/thumbnails`. These are background artwork;
+the trophy still provides the existing Awards navigation.
+The photographic playground, line portrait, and greeting-eyes components remain available but are not
+mounted on the homepage.
 
-The shared navbar shows Writing, Work, and Mentoring, with secondary pages
-under More. No routes were removed. Light mode is the default, with system
+The shared navbar shows Blogs, Talks, Projects, Awards, Get Mentored, and
+Developers directly, with About me, Contact, and Hire Me under More.
+The longer brand title wraps beside the logo, and mobile navigation retains
+the native menu. No routes were removed. Light mode is the default, with system
 preference and the theme toggle still supported; returning visitors retain
 their saved choice.
 
 ### Recruiter and collaborator paths
 
-The simplified homepage retains direct links to projects and mentoring.
+The homepage pairs the office with a clear introduction and an "Explore my
+projects" action. Readable MVP and Google Developer Expert text links to the
+full award photographs. Three featured project cards appear before Writing
+& talks, with descriptions and explicit source links drawn from the shared
+profile data. The homepage retains direct links to projects and mentoring.
 Recruiter and collaborator details live on
 the career and Contact pages rather than adding more homepage sections.
 Featured project facts are exported by `src/data/featured-projects.ts` from

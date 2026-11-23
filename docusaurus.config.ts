@@ -194,7 +194,7 @@ const config: Config = {
     },
     navbar: {
       hideOnScroll: false,
-      title: "Sajee",
+      title: "I help Developers build what's next",
       logo: {
         alt: "Sajeetharan's Logo",
         src: "img/logo-sketch-96.webp",
@@ -202,18 +202,18 @@ const config: Config = {
         style: { borderRadius: "50%" },
       },
       items: [
-        { to: "/blogs", label: "Writing", position: "right" },
-        { to: "/projects", label: "Work", position: "right" },
-        { to: "/mentored", label: "Mentoring", position: "right" },
+        { to: "/blogs", label: "Blogs", position: "left" },
+        { to: "/talks", label: "Talks", position: "left" },
+        { to: "/projects", label: "Projects", position: "left" },
+        { to: "/awards", label: "Awards", position: "left" },
+        { to: "/mentored", label: "Get Mentored", position: "left" },
+        { to: "/developers", label: "Developers", position: "left" },
         {
           type: "dropdown",
           label: "More",
           position: "right",
           items: [
             { to: "/career", label: "About me" },
-            { to: "/talks", label: "Talks" },
-            { to: "/awards", label: "Awards" },
-            { to: "/developers", label: "Developers" },
             { to: "/contact", label: "Contact" },
             { to: "/hire-me", label: "Hire Me" },
           ],

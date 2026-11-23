@@ -112,7 +112,12 @@ test("homepage is meaningful without JavaScript", async () => {
   const html = await readFile("build/index.html", "utf8");
   const main = html.match(/<main\b[^>]*>[\s\S]*?<\/main>/)?.[0];
   assert.ok(main);
+  const projectCards =
+    /<article\b[^>]*data-portfolio-project="[^"]*"[\s\S]*?<\/article>/g;
+  assert.equal(main.match(projectCards)?.length, 3);
   const text = main
+    .replace(projectCards, " ")
+    .replace(/<div\b[^>]*\shidden(?:="[^"]*")?[^>]*>[\s\S]*?<\/div>/gi, " ")
     .replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, " ")
     .replace(/<style\b[^>]*>[\s\S]*?<\/style>/gi, " ")
     .replace(/<[^>]+>/g, " ")
@@ -121,7 +126,7 @@ test("homepage is meaningful without JavaScript", async () => {
   assert.match(html, /<h1\b[^>]*>Hi, I&#x27;m Sajee\.<\/h1>/);
   assert.ok(
     text.split(/\s+/).length <= 90,
-    `expected at most 90 landing-page words, got ${text.split(/\s+/).length}`,
+    `expected at most 90 overview words outside the project cards, got ${text.split(/\s+/).length}`,
   );
   for (const phrase of ["Principal Product Manager", "Microsoft", "Writing"]) {
     assert.ok(text.includes(phrase), `missing visible content: ${phrase}`);

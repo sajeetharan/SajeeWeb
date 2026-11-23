@@ -27,11 +27,17 @@ test("the simplified homepage keeps direct work and mentoring paths", async () =
     assert.ok(main.includes(label));
   }
   assert.match(main, /Hi, I&#x27;m Sajee\./);
-  assert.match(main, /data-line-portrait="true"/);
+  assert.match(main, /data-character-pose="tab"/);
+  assert.doesNotMatch(main, /Nine moods, one developer|data-portrait-/);
   assert.match(main, /data-mentoring-source="homepage"/);
   assert.match(html, /id="work"[^>]*href="\/projects"/);
-  assert.doesNotMatch(main, /Selected work|data-portfolio-project/);
-  assert.doesNotMatch(main, /data-portrait-playground|<details\b/);
+  assert.match(main, /Featured projects/);
+  assert.match(main, /href="#featured-projects"/);
+  assert.match(main, /<h2\b[^>]*id="featured-projects"/);
+  assert.ok(
+    main.indexOf("Featured projects") < main.indexOf("Writing &amp; talks"),
+  );
+  assert.doesNotMatch(main, /data-line-portrait|data-drawing-path|<details\b/);
   assert.doesNotMatch(main, /&amp;nearr;|&nearr;/);
   assert.doesNotMatch(html, /id="collaborate"/);
 });
@@ -42,7 +48,11 @@ test("featured project evidence is shared and crawlable with explicit source act
   );
   assert.equal(featuredProjects.length, 3);
   assert.equal(new Set(featuredProjects.map((project) => project.id)).size, 3);
-  for (const file of ["build/career/index.html", "build/projects/index.html"]) {
+  for (const file of [
+    "build/index.html",
+    "build/career/index.html",
+    "build/projects/index.html",
+  ]) {
     const html = await readFile(file, "utf8");
     for (const project of featuredProjects) {
       assert.ok(html.includes(project.title), `${file}: ${project.title}`);

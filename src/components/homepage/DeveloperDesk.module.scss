@@ -1,0 +1,660 @@
+.desk {
+  --office-ink: #292a3b;
+  --office-wall: #fbefd9;
+  --office-floor: #e8d5b8;
+  --office-paper: #fff9eb;
+  --office-wood: #d3a070;
+  --office-wood-light: #eac493;
+  --office-wood-dark: #ac754d;
+  --office-cork: #dfb887;
+  --office-blue: #6fa7c0;
+  --office-teal: #70b9b8;
+  --office-cloud: #c6eeea;
+  --office-coral: #d78972;
+  --office-gold: #efc269;
+  --office-lilac: #ae8ba8;
+  --office-leaf: #6e9670;
+  --office-screen: #365571;
+  --office-chair: #484d58;
+  --office-chair-line: #606670;
+  --office-metal: #c8c8c5;
+  --office-laptop: #b4b8bd;
+  --office-coffee: #694632;
+  --office-shirt: #848487;
+  --office-shirt-shadow: #707174;
+  --office-skin: #bd896b;
+  --office-skin-light: #d6a182;
+  --office-skin-shadow: #9a674f;
+  --office-hair: #29292e;
+  --office-hair-light: #43424b;
+  width: 100%;
+}
+
+.scene {
+  position: relative;
+  container-type: inline-size;
+  overflow: visible;
+  border-radius: 1rem;
+  aspect-ratio: 3 / 2;
+  --character-play-state: paused;
+
+  &[data-character-motion="running"] {
+    --character-play-state: running;
+  }
+
+  &[data-character-phase="tab"] {
+    .pressedKey {
+      animation: keyPress 1000ms ease-in-out infinite;
+    }
+
+    .pressedKey {
+      animation-play-state: var(--character-play-state);
+    }
+  }
+}
+
+.illustration {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 2;
+  border-radius: inherit;
+}
+
+.character,
+.foreground {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.characterPose {
+  transition: opacity 180ms ease-in-out;
+}
+
+.face,
+.body,
+.employerLink {
+  position: absolute;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  cursor: pointer;
+
+  &:focus-visible {
+    outline: 3px solid var(--ifm-color-primary);
+    outline-offset: 2px;
+  }
+}
+
+.face {
+  top: 12%;
+  left: 40%;
+  width: 13%;
+  height: 28%;
+}
+
+.body {
+  top: 45%;
+  left: 36%;
+  width: 15%;
+  height: 24%;
+  border-radius: 1rem;
+}
+
+.employerLink {
+  top: 47.875%;
+  left: 53.833333%;
+  width: 3.5%;
+  height: 5.25%;
+  transform: translate(-50%, -50%);
+  border-radius: 0.35rem;
+}
+
+.objects {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.object {
+  position: absolute;
+  left: clamp(28px, var(--object-x), calc(100% - 28px));
+  top: var(--object-y);
+  width: var(--object-width);
+  height: var(--object-height);
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  min-height: 44px;
+  border-radius: 0.75rem;
+  color: var(--ifm-font-color-base);
+  pointer-events: auto;
+  text-decoration: none;
+
+  &:hover,
+  &:focus-visible {
+    color: var(--ifm-font-color-base);
+    text-decoration: none;
+  }
+
+  &:focus-visible {
+    outline: 3px solid var(--ifm-color-primary);
+    outline-offset: 2px;
+  }
+
+  &:hover .clickCue,
+  &:focus-visible .clickCue {
+    background: var(--office-gold);
+    transform: translate(1px, -1px);
+  }
+
+  &:active .clickCue {
+    transform: scale(0.9);
+  }
+
+  &[data-desk-object="noticeboard"] {
+    --object-x: 12%;
+    --object-y: 21%;
+    --object-width: 18%;
+    --object-height: 20%;
+
+    .objectDrawing {
+      transform-origin: 55% 5%;
+    }
+
+    &[data-desk-invited="true"] .objectDrawing,
+    &:hover .objectDrawing,
+    &:focus-visible .objectDrawing {
+      animation: noteFlutter 800ms ease-in-out;
+    }
+  }
+
+  &[data-desk-object="notebook"] {
+    --object-x: 8%;
+    --object-y: 85%;
+    --object-width: 14%;
+    --object-height: 24%;
+
+    &[data-desk-invited="true"] .objectDrawing,
+    &:hover .objectDrawing,
+    &:focus-visible .objectDrawing {
+      animation: bookBounce 650ms ease-out;
+    }
+  }
+
+  &[data-desk-object="microphone"] {
+    --object-x: 15%;
+    --object-y: 54%;
+    --object-width: 11%;
+    --object-height: 25%;
+
+    &[data-desk-invited="true"] .objectDrawing,
+    &:hover .objectDrawing,
+    &:focus-visible .objectDrawing {
+      animation: micSwing 850ms ease-in-out;
+    }
+  }
+
+  &[data-desk-object="coffee"] {
+    --object-x: 27%;
+    --object-y: 80%;
+    --object-width: 12%;
+    --object-height: 20%;
+
+    &[data-desk-invited="true"] .objectDrawing,
+    &:hover .objectDrawing,
+    &:focus-visible .objectDrawing {
+      animation: coffeeTilt 700ms ease-in-out;
+    }
+
+    &:hover .steam,
+    &:focus-visible .steam {
+      animation: steamRise 850ms ease-out;
+    }
+  }
+
+  &[data-desk-object="trophy"] {
+    --object-x: 92%;
+    --object-y: 49%;
+    --object-width: 10%;
+    --object-height: 23%;
+
+    &[data-desk-invited="true"] .objectDrawing,
+    &:hover .objectDrawing,
+    &:focus-visible .objectDrawing {
+      animation: trophyRock 800ms ease-in-out;
+    }
+
+    &:hover .sparkle,
+    &:focus-visible .sparkle {
+      animation: sparkleFlash 800ms ease-out;
+    }
+  }
+
+  &[data-desk-object="robot"] {
+    --object-x: 89%;
+    --object-y: 79%;
+    --object-width: 14%;
+    --object-height: 24%;
+
+    &[data-desk-invited="true"] .objectDrawing,
+    &:hover .objectDrawing,
+    &:focus-visible .objectDrawing {
+      animation: robotWiggle 750ms ease-in-out;
+    }
+
+    &:hover .robotEyes,
+    &:focus-visible .robotEyes {
+      animation: eyeBlink 600ms ease-in-out;
+    }
+  }
+
+  &[data-desk-object="github"] {
+    --object-x: 66%;
+    --object-y: 65%;
+    --object-width: 7%;
+    --object-height: 11%;
+
+    .objectArt {
+      width: clamp(32px, 6cqw, 70px);
+      height: auto;
+    }
+
+    &[data-desk-invited="true"] .objectDrawing,
+    &:hover .objectDrawing,
+    &:focus-visible .objectDrawing {
+      animation: stickerWiggle 650ms ease-out;
+    }
+  }
+
+  &[data-desk-object="instagram"] {
+    --object-x: 85%;
+    --object-y: 21%;
+    --object-width: 11%;
+    --object-height: 18%;
+
+    .objectDrawing {
+      transform-origin: 50% 5%;
+    }
+
+    &[data-desk-invited="true"] .objectDrawing,
+    &:hover .objectDrawing,
+    &:focus-visible .objectDrawing {
+      animation: photoWiggle 800ms ease-in-out;
+    }
+  }
+}
+
+.objects:hover .object:not(:hover):not(:focus-visible),
+.objects:focus-within .object:not(:hover):not(:focus-visible) {
+  .objectDrawing {
+    animation: none;
+  }
+}
+
+.clickCue {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: grid;
+  place-items: center;
+  width: clamp(14px, 3cqw, 20px);
+  height: clamp(14px, 3cqw, 20px);
+  border: 1px solid var(--office-ink);
+  border-radius: 50%;
+  background: var(--office-paper);
+  color: var(--office-ink);
+  pointer-events: none;
+  transition: transform 150ms ease-out;
+
+  svg {
+    width: 70%;
+    height: 70%;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+}
+
+.objectArt {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  pointer-events: none;
+  filter: drop-shadow(
+    0 2px 2px color-mix(in srgb, var(--office-ink) 14%, transparent)
+  );
+}
+
+.objectDrawing {
+  transform-box: fill-box;
+  transform-origin: 50% 100%;
+}
+
+.wallNote {
+  fill: var(--office-ink);
+  stroke: none;
+  font-family: "Comic Sans MS", "Segoe Print", cursive;
+  font-size: 30px;
+  font-weight: 700;
+  text-anchor: middle;
+}
+
+.robotEyes {
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.objectLabel {
+  position: absolute;
+  top: calc(100% + 2px);
+  left: 50%;
+  transform: translateX(-50%);
+  width: max-content;
+  max-width: 150px;
+  padding: 3px 6px;
+  border: 1px solid var(--office-wood-dark);
+  border-radius: 0.4rem;
+  background: var(--office-paper);
+  color: var(--office-ink);
+  font-size: clamp(12px, 1.5cqw, 14px);
+  font-weight: 650;
+  line-height: 1.25;
+  text-align: center;
+  pointer-events: auto;
+}
+
+.controls {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-top: 32px;
+}
+
+.phaseCaption {
+  margin: 0;
+  font-size: 0.85rem;
+  line-height: 1.4;
+}
+
+.agenticHint {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 5;
+  width: min(24rem, 100%);
+  padding: 0.8rem 1rem;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 0.75rem;
+  background: var(--ifm-background-surface-color);
+  color: var(--ifm-font-color-base);
+  box-shadow: var(--ifm-global-shadow-md);
+  font-size: 0.85rem;
+  line-height: 1.5;
+
+  p {
+    margin: 0.25rem 0 0;
+  }
+
+  &[hidden] {
+    display: none;
+  }
+}
+
+.object[data-desk-object="noticeboard"] .objectLabel,
+.object[data-desk-object="notebook"] .objectLabel {
+  left: 0;
+  transform: none;
+}
+
+.object[data-desk-object="trophy"] .objectLabel,
+.object[data-desk-object="robot"] .objectLabel,
+.object[data-desk-object="instagram"] .objectLabel {
+  right: 0;
+  left: auto;
+  transform: none;
+}
+
+@keyframes keyPress {
+  0%,
+  55%,
+  100% {
+    transform: translateY(0);
+    opacity: 0.5;
+  }
+  30% {
+    transform: translateY(2px);
+    opacity: 1;
+  }
+}
+
+@keyframes noteFlutter {
+  0%,
+  100% {
+    transform: rotate(0);
+  }
+  25% {
+    transform: rotate(-7deg) skewX(-2deg);
+  }
+  55% {
+    transform: rotate(5deg);
+  }
+  80% {
+    transform: rotate(-2deg);
+  }
+}
+
+@keyframes bookBounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  30% {
+    transform: translateY(-5%) rotate(-1deg);
+  }
+  60% {
+    transform: translateY(-1%);
+  }
+  80% {
+    transform: translateY(-2%);
+  }
+}
+
+@keyframes micSwing {
+  0%,
+  100% {
+    transform: rotate(0);
+  }
+  25% {
+    transform: rotate(5deg);
+  }
+  55% {
+    transform: rotate(-4deg);
+  }
+  80% {
+    transform: rotate(2deg);
+  }
+}
+
+@keyframes coffeeTilt {
+  0%,
+  100% {
+    transform: rotate(0);
+  }
+  30% {
+    transform: rotate(-5deg) translateY(-2%);
+  }
+  65% {
+    transform: rotate(3deg);
+  }
+}
+
+@keyframes steamRise {
+  0%,
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  60% {
+    opacity: 0;
+    transform: translateY(-12px);
+  }
+}
+
+@keyframes trophyRock {
+  0%,
+  100% {
+    transform: rotate(0);
+  }
+  25% {
+    transform: rotate(-6deg);
+  }
+  55% {
+    transform: rotate(5deg);
+  }
+  80% {
+    transform: rotate(-2deg);
+  }
+}
+
+@keyframes sparkleFlash {
+  0%,
+  100% {
+    opacity: 0.3;
+  }
+  40% {
+    opacity: 1;
+  }
+}
+
+@keyframes robotWiggle {
+  0%,
+  100% {
+    transform: rotate(0) scaleY(1);
+  }
+  25% {
+    transform: rotate(-4deg) scaleY(0.96);
+  }
+  50% {
+    transform: rotate(4deg) translateY(-3%);
+  }
+  75% {
+    transform: rotate(-2deg);
+  }
+}
+
+@keyframes stickerWiggle {
+  0%,
+  100% {
+    transform: rotate(0);
+  }
+  30% {
+    transform: translateY(-15%) rotate(18deg) scale(1.08);
+  }
+  65% {
+    transform: rotate(-8deg);
+  }
+}
+
+@keyframes photoWiggle {
+  0%,
+  100% {
+    transform: rotate(0);
+  }
+  25% {
+    transform: rotate(9deg);
+  }
+  60% {
+    transform: rotate(-7deg);
+  }
+  80% {
+    transform: rotate(3deg);
+  }
+}
+
+@media (max-width: 360px) {
+  .object[data-desk-object="microphone"] {
+    --object-y: 49%;
+  }
+}
+
+@media (max-width: 600px) {
+  .desk {
+    padding-top: 24px;
+  }
+}
+
+@container (max-width: 600px) {
+  .object[data-desk-object="coffee"] {
+    --object-x: 28%;
+
+    .objectLabel {
+      left: calc(100% - 18px);
+      transform: none;
+    }
+  }
+
+  .object[data-desk-object="noticeboard"] {
+    min-width: 56px;
+
+    .wallNote {
+      display: none;
+    }
+
+    .objectLabel {
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      padding: 0;
+      border: 0;
+      background: transparent;
+    }
+  }
+
+  .object[data-desk-object="microphone"] .objectLabel,
+  .object[data-desk-object="trophy"] .objectLabel {
+    top: auto;
+    bottom: 0;
+  }
+
+  .object[data-desk-object="instagram"] .objectLabel {
+    top: auto;
+    bottom: calc(100% + 2px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scene,
+  .scene[data-character-phase] {
+    .characterPose,
+    .pressedKey,
+    .clickCue,
+    .objectLabel {
+      animation: none;
+      transition: none;
+    }
+
+    .object[data-desk-object] {
+      .objectDrawing,
+      .steam,
+      .sparkle,
+      .robotEyes {
+        animation: none;
+        transition: none;
+      }
+    }
+  }
+}
