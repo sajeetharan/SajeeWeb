@@ -3,6 +3,8 @@ import useBaseUrl from "@docusaurus/useBaseUrl";
 import { socialProfiles } from "../NavbarSocialLinks";
 import styles from "./DeveloperDesk.module.scss";
 
+const deskBackEdge = "M0 551L1200 520";
+
 export type OfficeObjectKind =
   | "noticeboard"
   | "notebook"
@@ -254,7 +256,11 @@ export function OfficeBackground(): JSX.Element {
       />
       <path d="M1081 455L1137 459M1081 522L1137 526" strokeWidth="8" />
       <Plant x={1166} y={397} scale={1.05} />
-      <path d="M0 551L1200 520V719L0 765Z" fill="url(#office-desk-depth)" />
+      <path
+        data-office-desktop
+        d={`${deskBackEdge}V719L0 765Z`}
+        fill="url(#office-desk-depth)"
+      />
       <path d="M0 719L1200 680V729L0 776Z" fill="var(--office-wood)" />
       <path
         d="M0 757L1200 711M58 702L324 693M877 671L1126 664M213 588L335 584"
@@ -377,6 +383,18 @@ export function OfficeCharacter({
     >
       <defs>
         {characterPoses.map((item) => (
+          <clipPath
+            key={item}
+            id={`office-portrait-${item}`}
+            clipPathUnits="userSpaceOnUse"
+          >
+            <path d={`${deskBackEdge}V0H0Z`} />
+            {item === "tab" && (
+              <path d="M420 520L490 520L535 537L550 559L542 580L480 574L438 552Z" />
+            )}
+          </clipPath>
+        ))}
+        {characterPoses.map((item) => (
           <mask
             key={item}
             id={`office-shirt-${item}`}
@@ -400,6 +418,7 @@ export function OfficeCharacter({
             href={`${characterBase}${item}.webp`}
             className={styles.characterPose}
             data-character-pose={item}
+            clipPath={`url(#office-portrait-${item})`}
             x="360"
             y="82"
             width="384"

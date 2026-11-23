@@ -169,7 +169,10 @@ These are generated photographic poses with short crossfades, not continuous vid
 The whole character uses consistently shaded, photo-referenced illustrations,
 including natural clothing folds, connected arms, and joined prayer hands.
 Seven registered transparent WebP poses in `static/img/office-character` keep
-the face, shoulders, and torso aligned and crossfade over 180ms. The Tab key
+the face, shoulders, and torso aligned and crossfade over 180ms.
+The lower body in every pose is clipped to the desktop's shared back edge,
+including during crossfades; the keyboard hand can extend onto the desktop.
+The Tab key
 animates during the keyboard pose and is positioned under the illustrated
 index finger. The room does not move. The loop runs automatically; a labeled
 Pause/Resume animation button with the same pause/play icons as Mentoring News

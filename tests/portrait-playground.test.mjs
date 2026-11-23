@@ -158,6 +158,30 @@ test("the office shows one lifelike pose without playful actions or a separate p
   assert.match(html, /<h1\b[^>]*>Hi, I&#x27;m Sajee\.<\/h1>/);
 });
 
+test("every portrait stays behind the desktop while the Tab hand can reach the keyboard", async () => {
+  const html = await readFile("build/index.html", "utf8");
+  const desktop = html.match(
+    /<path\b[^>]*data-office-desktop="true"[^>]*d="(M[^"]+?)V719L0 765Z"/,
+  )?.[1];
+  assert.ok(desktop);
+  for (const pose of officePoses) {
+    const clip = html.match(
+      new RegExp(
+        `<clipPath\\b(?=[^>]*id="office-portrait-${pose}")(?=[^>]*clipPathUnits="userSpaceOnUse")[^>]*>([\\s\\S]*?)<\\/clipPath>`,
+      ),
+    )?.[1];
+    assert.ok(clip, `${pose} must have a desktop occlusion clip`);
+    assert.ok(clip.includes(`d="${desktop}V0H0Z"`));
+    assert.equal((clip.match(/<path\b/g) ?? []).length, pose === "tab" ? 2 : 1);
+    assert.match(
+      html,
+      new RegExp(
+        `<image\\b(?=[^>]*data-character-pose="${pose}")(?=[^>]*clip-path="url\\(#office-portrait-${pose}\\)")[^>]*>`,
+      ),
+    );
+  }
+});
+
 test("the realistic portrait reserves scene space and disables pose transitions for reduced motion", async () => {
   const files = await readdir("build/assets/css");
   const css = (
