@@ -162,34 +162,38 @@ destination labels remain available without animation.
 Every object has an accessible
 name and a minimum 44px target. Percentage-based positions keep these links
 attached to the artwork as it resizes.
-The character depicts AI-assisted coding in a seven-second loop: read the phone
-for three seconds, press Tab for one second, then pray for three seconds.
+The character depicts AI-assisted coding in a 12.8-second pose loop:
+pressing Tab, thinking, frustration, an annoyed laptop tap, praying,
+relief, and a hands-up celebration.
+These are generated photographic poses with short crossfades, not continuous video.
 The whole character uses consistently shaded, photo-referenced illustrations,
 including natural clothing folds, connected arms, and joined prayer hands.
-Three registered transparent WebP poses in `static/img/office-character` keep
+Seven registered transparent WebP poses in `static/img/office-character` keep
 the face, shoulders, and torso aligned and crossfade over 180ms. The Tab key
 animates during the keyboard pose and is positioned under the illustrated
-index finger. The room does not move. The loop runs automatically without
-play/pause controls and stops outside the viewport or in a hidden tab. Reduced
+index finger. The room does not move. The loop runs automatically; a labeled
+Pause/Resume animation button with the same pause/play icons as Mentoring News
+below the desk keeps the current pose still
+without disabling navigation or pausing the separate reviews. Pausing also
+stops the keyboard and automatic object invitations. The loop stops outside
+the viewport or in a hidden tab. Reduced
 motion leaves a still keyboard pose and disables object reactions.
-Hovering or keyboard-focusing the head or body reveals an agentic-coding message.
-Both also pin it on tap; tapping again, pressing Escape, or clicking elsewhere
-dismisses it. Hover previews yield to object navigation. The message repeats
-the shirt's "Tab Pray Repeat" print at a readable size, and explains
-that suggestions still need a diff review and tests.
+The animation button is disabled and labeled "Motion reduced" in this mode.
+The head and body have no tooltip or invisible click targets.
+The "Tab Pray Repeat" quote remains printed on the shirt.
 The chest lettering follows the shirt's angle, blends with its fabric shading,
-and is masked behind the phone and prayer hands rather than floating above them.
+and is masked behind the thinking and prayer hands rather than floating above them.
 The office illustration remains visible in full rather than becoming a photo
 card. Material gradients on the wall, desk, and laptop, softer outlines, and
 subtle object shadows bring the illustrated room closer to the shaded portrait.
 Reduced motion disables pose transitions, the key press, and object animations;
 keyboard focus outlines remain visible.
 The portrait wears a four-color Microsoft logo patch and the AI-coding quote
-in all three poses.
+in all seven poses.
 Clicking the logo opens the [LinkedIn profile](https://in.linkedin.com/in/sajeetharan);
 the link is keyboard-accessible and has a minimum 44px target.
 The wall displays framed photographs of the actual Microsoft MVP award
-(2017-2019) and Google Developer Expert recognition, reusing the optimized
+(2017-2019) and Google Developer Expert recognition (2018-present), reusing the optimized
 images from `static/img/awards/thumbnails`. These are background artwork;
 the trophy still provides the existing Awards navigation.
 A compact "Mentoring news" banner below the desk shows 14 short review excerpts
@@ -198,7 +202,7 @@ verified on the public Topmate and ADPList profiles on 2026-11-23, stored in
 and author when displayed by the source. The original curated Topmate pair
 on the mentoring page stays unchanged. The banner crossfades every six seconds,
 with manual next and pause controls for reviews only. Hover, keyboard focus,
-an open portrait tooltip, hidden tabs, and leaving the viewport suspend rotation.
+hidden tabs, and leaving the viewport suspend rotation.
 Reduced motion disables automatic rotation and fading. Overlaid grid entries
 reserve the tallest review's space so changing text does not move the page.
 It does not claim LinkedIn recommendations without verified excerpts.

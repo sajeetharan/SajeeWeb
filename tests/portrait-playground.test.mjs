@@ -3,6 +3,16 @@ import { readFile, readdir, stat } from "node:fs/promises";
 import test from "node:test";
 import ts from "typescript";
 
+const officePoses = [
+  "tab",
+  "think",
+  "frustration",
+  "angry",
+  "pray",
+  "happy",
+  "celebrate",
+];
+
 const source = await readFile("src/data/portrait-reactions.ts", "utf8");
 const { outputText } = ts.transpileModule(source, {
   compilerOptions: {
@@ -132,19 +142,12 @@ test("the office shows one lifelike pose without playful actions or a separate p
     html,
     /Nine moods, one developer|data-portrait-|portrait-reaction-status|Slap my portrait|Play with my portrait/,
   );
-  const button = html.match(
-    /<button\b(?=[^>]*data-agentic-trigger="head")[^>]*>[\s\S]*?<\/button>/,
-  )?.[0];
-  assert.ok(button);
-  assert.match(button, /type="button"/);
-  assert.match(button, /aria-label="[^"]+"/);
-  assert.match(button, /aria-label="How I use coding agents"/);
   const images = [
     ...html.matchAll(/<image\b[^>]*data-character-pose="([^"]+)"[^>]*>/g),
   ];
-  assert.equal(images.length, 3);
+  assert.equal(images.length, officePoses.length);
   assert.equal(images.filter(([tag]) => tag.includes('opacity="1"')).length, 1);
-  for (const pose of ["phone", "tab", "pray"]) {
+  for (const pose of officePoses) {
     assert.ok(html.includes(`/img/office-character/${pose}.webp`));
   }
   assert.doesNotMatch(html, /data-nosebleed|data-tears|data-cheek-redness/);
@@ -220,10 +223,6 @@ test("independent office objects provide navigation with Projects, GitHub, and I
     html,
     /<svg\b(?=[^>]*viewBox="0 0 1200 800")(?=[^>]*width="1200")(?=[^>]*height="800")(?=[^>]*role="img")(?=[^>]*aria-label="An original illustrated office with a lifelike portrait of Sajeetharan)[^>]*>/,
   );
-  assert.match(
-    html,
-    /<button\b(?=[^>]*type="button")(?=[^>]*data-agentic-trigger="head")(?=[^>]*aria-label="How I use coding agents")[^>]*>/,
-  );
   assert.doesNotMatch(html, /id="slap-portrait"/);
 });
 
@@ -248,10 +247,14 @@ test("the office includes Microsoft branding and existing MVP and GDE award phot
     )?.[1];
     assert.ok(frame);
     assert.ok(frame.includes(`/img/awards/thumbnails/${award}.webp`));
+    if (award === "gde") assert.match(frame, />2018-present<\/text>/);
     await stat(`static/img/awards/thumbnails/${award}.webp`);
   }
   assert.match(html, /MVP 2017-2019/);
-  assert.match(html, /Google Developer Expert award photographs on the wall/);
+  assert.match(
+    html,
+    /Google Developer Expert \(2018-present\) award photographs on the wall/,
+  );
 });
 
 test("office navigation has persistent destination labels without instruction text", async () => {
@@ -322,10 +325,11 @@ test("office links retain independent artwork and the keyboard retains its anima
     html,
     /data-character-motion="paused" data-character-phase="tab"/,
   );
-  assert.doesNotMatch(
+  assert.match(
     html,
-    /data-character-toggle|Play character animation|Pause character animation/,
+    /<button\b(?=[^>]*type="button")(?=[^>]*data-character-toggle)(?=[^>]*aria-controls="developer-desk-scene")(?=[^>]*disabled="")[^>]*><svg\b[^>]*aria-hidden="true"[^>]*>[\s\S]*?<\/svg>Motion reduced<\/button>/,
   );
+  assert.match(html, /id="developer-desk-scene"/);
   assert.doesNotMatch(
     html,
     /data-desk-layer|\/img\/office-layers\/|\/img\/sajee-office/,
@@ -369,7 +373,7 @@ test("office links retain independent artwork and the keyboard retains its anima
   );
 });
 
-test("agentic coding remains discoverable from both head and body without portrait tools", async () => {
+test("the shirt keeps its printed quote without head or body tooltip targets", async () => {
   const html = await readFile("build/index.html", "utf8");
   const shirt = html.match(
     /<text\b[^>]*data-office-shirt-quote[^>]*>([\s\S]*?)<\/text>/,
@@ -383,28 +387,17 @@ test("agentic coding remains discoverable from both head and body without portra
     ...html.matchAll(/<mask\b[^>]*id="(office-shirt-[^"]+)"/g),
   ].map(([, id]) => id);
   assert.ok(maskIds.includes(printMask), "the print mask must resolve");
-  for (const pose of ["phone", "tab", "pray"]) {
+  for (const pose of officePoses) {
     assert.ok(maskIds.includes(`office-shirt-${pose}`));
   }
   const printedQuote = shirt
     .replace(/<[^>]+>/g, " ")
     .replace(/\s+/g, " ")
     .trim();
-  assert.ok(
-    html.includes(`<strong>${printedQuote}</strong>`),
-    "the tooltip must repeat the shirt quote at a readable size",
-  );
-  for (const trigger of ["head", "body"]) {
-    assert.match(
-      html,
-      new RegExp(
-        `<button\\b(?=[^>]*data-agentic-trigger="${trigger}")(?=[^>]*aria-describedby="[^"]*agentic-coding-hint)(?=[^>]*type="button")[^>]*>`,
-      ),
-    );
-  }
-  assert.match(
+  assert.equal(printedQuote, "Tab Pray Repeat");
+  assert.doesNotMatch(
     html,
-    /<div\b(?=[^>]*id="agentic-coding-hint")(?=[^>]*role="tooltip")(?=[^>]*hidden="")[^>]*>[\s\S]*?review the diff before shipping/,
+    /data-agentic-trigger|agentic-coding-hint|How I use coding agents|About my agentic coding workflow/,
   );
   assert.doesNotMatch(html, /data-portrait-tools/);
   assert.match(
@@ -416,12 +409,9 @@ test("agentic coding remains discoverable from both head and body without portra
 test("lifelike full-character poses have matching transparent frames within the image budget", async () => {
   let total = 0;
   const distinct = new Set();
-  assert.deepEqual((await readdir("static/img/office-character")).sort(), [
-    "phone.webp",
-    "pray.webp",
-    "tab.webp",
-  ]);
-  for (const pose of ["phone", "tab", "pray"]) {
+  const files = await readdir("static/img/office-character");
+  for (const pose of officePoses) {
+    assert.ok(files.includes(`${pose}.webp`));
     const image = await readFile(`static/img/office-character/${pose}.webp`);
     assert.equal(image.toString("ascii", 8, 16), "WEBPVP8X");
     assert.ok(
@@ -434,8 +424,8 @@ test("lifelike full-character poses have matching transparent frames within the 
     total += image.length;
     distinct.add(image.toString("base64"));
   }
-  assert.equal(distinct.size, 3);
-  assert.ok(total < 150_000);
+  assert.equal(distinct.size, officePoses.length);
+  assert.ok(total < 300_000);
 });
 
 test("all character poses share placement without hidden ancestor layers", async () => {
@@ -458,5 +448,5 @@ test("all character poses share placement without hidden ancestor layers", async
       ancestors.push(tag);
     }
   }
-  assert.equal(posesFound, 3);
+  assert.equal(posesFound, officePoses.length);
 });

@@ -43,7 +43,7 @@ export function OfficeBackground(): JSX.Element {
       width="1200"
       height="800"
       role="img"
-      aria-label="An original illustrated office with a lifelike portrait of Sajeetharan, independently illustrated navigation objects, a keyboard, laptop, cloud monitor, books, plants, and a phone. A Microsoft logo is on his shirt, with framed Microsoft MVP (2017-2019) and Google Developer Expert award photographs on the wall."
+      aria-label="An original illustrated office with a lifelike portrait of Sajeetharan, independently illustrated navigation objects, a keyboard, laptop, cloud monitor, books, plants, and a phone. A Microsoft logo is on his shirt, with framed Microsoft MVP (2017-2019) and Google Developer Expert (2018-present) award photographs on the wall."
       stroke="var(--office-ink)"
       strokeWidth="2"
       strokeLinejoin="round"
@@ -142,12 +142,12 @@ export function OfficeBackground(): JSX.Element {
         </text>
       </g>
       <g transform="translate(642 8)" data-office-award="gde">
-        <rect width="124" height="232" rx="3" fill="var(--office-wood)" />
+        <rect width="124" height="250" rx="3" fill="var(--office-wood)" />
         <rect
           x="5"
           y="5"
           width="114"
-          height="222"
+          height="240"
           fill="var(--office-paper)"
           strokeWidth="1"
         />
@@ -178,6 +178,16 @@ export function OfficeBackground(): JSX.Element {
           stroke="none"
         >
           Expert
+        </text>
+        <text
+          x="62"
+          y="234"
+          textAnchor="middle"
+          fontSize="13"
+          fill="var(--office-ink)"
+          stroke="none"
+        >
+          2018-present
         </text>
       </g>
       <path d="M782 124L1097 105L1114 372L794 389Z" fill="var(--office-ink)" />
@@ -263,7 +273,7 @@ export function OfficeBackground(): JSX.Element {
         opacity="0.14"
         stroke="none"
       />
-      <g transform="translate(-98 0)" data-office-keyboard>
+      <g transform="translate(-80 -14)" data-office-keyboard>
         <path
           d="M502 557L690 541L921 640L671 684Z"
           fill="var(--office-metal)"
@@ -326,14 +336,26 @@ export function OfficeBackground(): JSX.Element {
   );
 }
 
-const characterPoses = ["phone", "tab", "pray"] as const;
+const characterPoses = [
+  "tab",
+  "think",
+  "frustration",
+  "angry",
+  "pray",
+  "happy",
+  "celebrate",
+] as const;
 export type OfficeCharacterPose = (typeof characterPoses)[number];
 
 const shirtOcclusions: Record<OfficeCharacterPose, string> = {
-  phone:
-    "M454 334L507 336L514 369L528 391L526 414L510 437L478 449L444 424L440 395Z",
   tab: "",
-  pray: "M513 322L541 321L551 349L556 389L574 412L554 437L534 432L502 414L498 392L506 354Z",
+  think:
+    "M502 286L553 282L563 308L538 338L517 384L495 425L469 447L445 428L459 386L483 338Z",
+  frustration: "",
+  angry: "",
+  pray: "M533 306L557 306L566 342L576 377L595 402L577 427L549 405L526 423L505 402L523 374L531 342Z",
+  happy: "",
+  celebrate: "",
 };
 
 export function OfficeCharacter({

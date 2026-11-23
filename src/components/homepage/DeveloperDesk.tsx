@@ -29,12 +29,36 @@ const objects = [
 ] as const;
 
 const phases = {
-  phone: { duration: 3000, next: "tab", caption: "Review the agent's plan" },
-  tab: { duration: 1000, next: "pray", caption: "Tab: accept the suggestion" },
+  tab: { duration: 1000, next: "think", caption: "Tab: accept the suggestion" },
+  think: {
+    duration: 2600,
+    next: "frustration",
+    caption: "Wait... why did the agent change that?",
+  },
+  frustration: {
+    duration: 1800,
+    next: "angry",
+    caption: "That was working a minute ago.",
+  },
+  angry: {
+    duration: 1000,
+    next: "pray",
+    caption: "It's definitely the laptop's fault.",
+  },
   pray: {
-    duration: 3000,
-    next: "phone",
+    duration: 2400,
+    next: "happy",
     caption: "Please let the tests pass.",
+  },
+  happy: {
+    duration: 1800,
+    next: "celebrate",
+    caption: "Green tests. Finally!",
+  },
+  celebrate: {
+    duration: 2200,
+    next: "tab",
+    caption: "Ship it! Then do it all again.",
   },
 } as const;
 
@@ -42,10 +66,8 @@ export function DeveloperDesk(): JSX.Element {
   const [reducedMotion, setReducedMotion] = useState(true);
   const [visible, setVisible] = useState(false);
   const [tabVisible, setTabVisible] = useState(true);
-  const [phase, setPhase] = useState<keyof typeof phases>("phone");
-  const [hintMode, setHintMode] = useState<"closed" | "preview" | "pinned">(
-    "closed",
-  );
+  const [animationPaused, setAnimationPaused] = useState(false);
+  const [phase, setPhase] = useState<keyof typeof phases>("tab");
   const [reviewIndex, setReviewIndex] = useState(0);
   const [reviewsVisible, setReviewsVisible] = useState(false);
   const [reviewsHovered, setReviewsHovered] = useState(false);
@@ -56,8 +78,7 @@ export function DeveloperDesk(): JSX.Element {
   );
   const scene = useRef<HTMLDivElement>(null);
   const news = useRef<HTMLElement>(null);
-  const running = !reducedMotion && visible && tabVisible;
-  const hintVisible = hintMode !== "closed";
+  const running = !reducedMotion && visible && tabVisible && !animationPaused;
   const review = officeTestimonials[reviewIndex];
   const reviewsRunning =
     !reducedMotion &&
@@ -65,14 +86,13 @@ export function DeveloperDesk(): JSX.Element {
     tabVisible &&
     !reviewsHovered &&
     !reviewsFocused &&
-    !reviewsPaused &&
-    !hintVisible;
+    !reviewsPaused;
 
   useEffect(() => {
     const motion = window.matchMedia("(prefers-reduced-motion: reduce)");
     const syncMotion = () => {
       setReducedMotion(motion.matches);
-      if (motion.matches) setPhase("phone");
+      if (motion.matches) setPhase("tab");
     };
     syncMotion();
     motion.addEventListener("change", syncMotion);
@@ -129,57 +149,10 @@ export function DeveloperDesk(): JSX.Element {
     return () => window.clearTimeout(timer);
   }, [reviewsRunning, reviewIndex]);
 
-  useEffect(() => {
-    if (!hintVisible) return;
-    const dismissOutside = (event: PointerEvent) => {
-      if (
-        event.target instanceof Element &&
-        !event.target.closest("[data-agentic-trigger], #agentic-coding-hint")
-      ) {
-        setHintMode("closed");
-      }
-    };
-    document.addEventListener("pointerdown", dismissOutside);
-    return () => document.removeEventListener("pointerdown", dismissOutside);
-  }, [hintVisible]);
-
-  const showHint = () =>
-    setHintMode((current) => (current === "pinned" ? current : "preview"));
-  const hintHandlers = {
-    onPointerEnter: showHint,
-    onFocus: showHint,
-    onClick: () =>
-      setHintMode((current) => (current === "pinned" ? "closed" : "pinned")),
-    onBlur: (event: React.FocusEvent<HTMLButtonElement>) => {
-      if (
-        event.relatedTarget instanceof HTMLElement &&
-        event.relatedTarget.hasAttribute("data-agentic-trigger")
-      ) {
-        return;
-      }
-      if (hintMode !== "pinned" || event.relatedTarget !== null) {
-        setHintMode("closed");
-      }
-    },
-  };
-
   return (
-    <div
-      className={styles.desk}
-      data-developer-desk
-      onPointerLeave={(event) => {
-        if (
-          hintMode !== "pinned" &&
-          !event.currentTarget.querySelector("[data-agentic-trigger]:focus")
-        ) {
-          setHintMode("closed");
-        }
-      }}
-      onKeyDown={(event) => {
-        if (event.key === "Escape") setHintMode("closed");
-      }}
-    >
+    <div className={styles.desk} data-developer-desk>
       <div
+        id="developer-desk-scene"
         ref={scene}
         className={styles.scene}
         data-character-motion={running ? "running" : "paused"}
@@ -188,24 +161,6 @@ export function DeveloperDesk(): JSX.Element {
         <OfficeBackground />
         <OfficeCharacter pose={reducedMotion ? "tab" : phase} />
         <OfficeLaptop />
-        <button
-          type="button"
-          className={styles.face}
-          data-agentic-trigger="head"
-          aria-describedby="agentic-coding-hint"
-          aria-label="How I use coding agents"
-          aria-expanded={hintVisible}
-          {...hintHandlers}
-        />
-        <button
-          type="button"
-          className={styles.body}
-          data-agentic-trigger="body"
-          aria-label="About my agentic coding workflow"
-          aria-describedby="agentic-coding-hint"
-          aria-expanded={hintVisible}
-          {...hintHandlers}
-        />
         <a
           className={styles.employerLink}
           href="https://in.linkedin.com/in/sajeetharan"
@@ -213,13 +168,7 @@ export function DeveloperDesk(): JSX.Element {
           title="View my LinkedIn profile"
           data-office-employer-link
         />
-        <nav
-          className={styles.objects}
-          aria-label="Explore my developer desk"
-          onPointerEnter={() => {
-            if (hintMode !== "pinned") setHintMode("closed");
-          }}
-        >
+        <nav className={styles.objects} aria-label="Explore my developer desk">
           {objects.map((object, index) => (
             <Link
               key={object.kind}
@@ -258,19 +207,32 @@ export function DeveloperDesk(): JSX.Element {
             ? "Agentic coding: review, accept, verify."
             : phases[phase].caption}
         </p>
-        <div
-          id="agentic-coding-hint"
-          role="tooltip"
-          className={styles.agenticHint}
-          hidden={!hintVisible}
+        <button
+          type="button"
+          className={styles.motionToggle}
+          data-character-toggle
+          aria-controls="developer-desk-scene"
+          disabled={reducedMotion}
+          title={
+            reducedMotion
+              ? "Animation disabled by your reduced-motion preference"
+              : undefined
+          }
+          onClick={() => setAnimationPaused((current) => !current)}
         >
-          <strong>Tab Pray Repeat</strong>
-          <p>
-            Review the plan. Tab to accept. Pray for green tests. I still review
-            the diff before shipping.
-          </p>
-          <small>Tap again or press Escape to close.</small>
-        </div>
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            {animationPaused && !reducedMotion ? (
+              <path d="M8 5L19 12L8 19Z" />
+            ) : (
+              <path d="M8 5V19M16 5V19" />
+            )}
+          </svg>
+          {reducedMotion
+            ? "Motion reduced"
+            : animationPaused
+              ? "Resume animation"
+              : "Pause animation"}
+        </button>
       </div>
       <section
         ref={news}

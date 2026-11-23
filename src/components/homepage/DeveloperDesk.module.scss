@@ -79,8 +79,6 @@
   mix-blend-mode: multiply;
 }
 
-.face,
-.body,
 .employerLink {
   position: absolute;
   min-width: 44px;
@@ -95,21 +93,6 @@
     outline: 3px solid var(--ifm-color-primary);
     outline-offset: 2px;
   }
-}
-
-.face {
-  top: 12%;
-  left: 40%;
-  width: 13%;
-  height: 28%;
-}
-
-.body {
-  top: 45%;
-  left: 36%;
-  width: 15%;
-  height: 24%;
-  border-radius: 1rem;
 }
 
 .employerLink {
@@ -383,46 +366,49 @@
 .controls {
   position: relative;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
   gap: 0.75rem;
   margin-top: 32px;
 }
 
+.motionToggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-width: 168px;
+  min-height: 44px;
+  margin-left: auto;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 0.4rem;
+  background: var(--ifm-background-color);
+  color: var(--ifm-font-color-base);
+  font: inherit;
+  font-size: 0.8rem;
+  cursor: pointer;
+
+  &:hover:not(:disabled) {
+    border-color: var(--ifm-color-primary);
+  }
+
+  &:focus-visible {
+    outline: 3px solid var(--ifm-color-primary);
+    outline-offset: 2px;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+}
+
 .phaseCaption {
   margin: 0;
   font-size: 0.85rem;
   line-height: 1.4;
-}
-
-.agenticHint {
-  position: absolute;
-  top: calc(100% + 12px);
-  left: 0;
-  z-index: 5;
-  width: 100%;
-  padding: 0.8rem 1rem;
-  border: 1px solid var(--ifm-color-emphasis-300);
-  border-radius: 0.75rem;
-  background: var(--ifm-background-surface-color);
-  color: var(--ifm-font-color-base);
-  box-shadow: var(--ifm-global-shadow-md);
-  font-size: 0.85rem;
-  line-height: 1.5;
-
-  p {
-    margin: 0.25rem 0 0;
-  }
-
-  small {
-    display: block;
-    margin-top: 0.5rem;
-    font-size: 0.75rem;
-  }
-
-  &[hidden] {
-    display: none;
-  }
 }
 
 .newsBanner {
@@ -553,16 +539,18 @@
       opacity: 0.5;
     }
   }
+}
 
-  svg {
-    width: 18px;
-    height: 18px;
-    fill: none;
-    stroke: currentColor;
-    stroke-width: 1.5;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-  }
+.motionToggle svg,
+.reviewControls svg {
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 
 .object[data-desk-object="noticeboard"] .objectLabel,
