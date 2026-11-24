@@ -146,7 +146,11 @@ test("the office shows one lifelike pose without playful actions or a separate p
     ...html.matchAll(/<image\b[^>]*data-character-pose="([^"]+)"[^>]*>/g),
   ];
   assert.equal(images.length, officePoses.length);
-  assert.equal(images.filter(([tag]) => tag.includes('opacity="1"')).length, 1);
+  const layers = [
+    ...html.matchAll(/<g\b[^>]*data-character-pose-layer="([^"]+)"[^>]*>/g),
+  ];
+  assert.equal(layers.length, officePoses.length);
+  assert.equal(layers.filter(([tag]) => tag.includes('opacity="1"')).length, 1);
   for (const pose of officePoses) {
     assert.ok(html.includes(`/img/office-character/${pose}.webp`));
   }
@@ -452,7 +456,7 @@ test("lifelike full-character poses have matching transparent frames within the 
   assert.ok(total < 300_000);
 });
 
-test("all character poses share placement without hidden ancestor layers", async () => {
+test("each shirt print shares its photo's crossfade layer, placement, and hand mask", async () => {
   const html = await readFile("build/index.html", "utf8");
   const ancestors = [];
   let posesFound = 0;
@@ -463,14 +467,30 @@ test("all character poses share placement without hidden ancestor layers", async
       if (tag.includes("data-character-pose=")) {
         posesFound++;
         assert.match(tag, /x="360" y="82" width="384" height="512"/);
-        assert.ok(
-          !ancestors.some((parent) => parent.includes('opacity="0"')),
-          "a hidden ancestor must not hide the active pose",
-        );
+        const pose = tag.match(/data-character-pose="([^"]+)"/)[1];
+        const layer = ancestors.at(-1);
+        assert.ok(layer.includes(`data-character-pose-layer="${pose}"`));
+        assert.match(layer, /class="characterPose_[^"]+"/);
+        assert.match(layer, new RegExp(`opacity="${pose === "tab" ? 1 : 0}"`));
+        assert.doesNotMatch(tag, /\bopacity=/);
       }
     } else {
       ancestors.push(tag);
     }
   }
   assert.equal(posesFound, officePoses.length);
+  const transforms = new Set();
+  for (const pose of officePoses) {
+    const layer = html.match(
+      new RegExp(
+        `<g\\b[^>]*data-character-pose-layer="${pose}"[^>]*>([\\s\\S]*?)<\\/g><\\/g>`,
+      ),
+    )?.[1];
+    assert.ok(layer, pose);
+    assert.match(layer, new RegExp(`mask="url\\(#office-shirt-${pose}\\)"`));
+    const print = layer.match(/<text\b[^>]*data-office-shirt-quote[^>]*>/)?.[0];
+    assert.ok(print, `${pose} must carry its own shirt print`);
+    transforms.add(print.match(/transform="([^"]+)"/)[1]);
+  }
+  assert.equal(transforms.size, officePoses.length);
 });

@@ -184,8 +184,10 @@ motion leaves a still keyboard pose and disables object reactions.
 The animation button is disabled and labeled "Motion reduced" in this mode.
 The head and body have no tooltip or invisible click targets.
 The "Tab Pray Repeat" quote remains printed on the shirt.
-The chest lettering follows the shirt's angle, blends with its fabric shading,
-and is masked behind the thinking and prayer hands rather than floating above them.
+The smaller chest lettering has pose-specific placement and follows the shirt's
+angle, blends with its fabric shading, and is masked behind the thinking and
+prayer hands. Each photo and its print share one opacity layer, so they crossfade
+together rather than leaving stationary text above the moving body on mobile.
 The office illustration remains visible in full rather than becoming a photo
 card. Material gradients on the wall, desk, and laptop, softer outlines, and
 subtle object shadows bring the illustrated room closer to the shaded portrait.
