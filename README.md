@@ -184,16 +184,17 @@ motion leaves a still keyboard pose and disables object reactions.
 The animation button is disabled and labeled "Motion reduced" in this mode.
 The head and body have no tooltip or invisible click targets.
 The "Tab Pray Repeat" quote remains printed on the shirt.
-The smaller chest lettering has pose-specific placement and follows the shirt's
-angle, blends with its fabric shading, and is masked behind the thinking and
-prayer hands. Each photo and its print share one opacity layer, so they crossfade
-together rather than leaving stationary text above the moving body on mobile.
+The smaller chest lettering and four-color Microsoft mark are composited into
+each portrait WebP with pose-specific placement, fabric shading, and hand
+occlusion. There are no floating text or logo overlays, or white badge backgrounds.
+Both prints crossfade with the photograph and retain the same appearance in
+light and dark themes.
 The office illustration remains visible in full rather than becoming a photo
 card. Material gradients on the wall, desk, and laptop, softer outlines, and
 subtle object shadows bring the illustrated room closer to the shaded portrait.
 Reduced motion disables pose transitions, the key press, and object animations;
 keyboard focus outlines remain visible.
-The portrait wears a four-color Microsoft logo patch and the AI-coding quote
+The portrait wears a four-color Microsoft chest print and the AI-coding quote
 in all seven poses.
 Clicking the logo opens the [LinkedIn profile](https://in.linkedin.com/in/sajeetharan);
 the link is keyboard-accessible and has a minimum 44px target.

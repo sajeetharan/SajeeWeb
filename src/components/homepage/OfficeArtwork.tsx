@@ -353,27 +353,6 @@ const characterPoses = [
 ] as const;
 export type OfficeCharacterPose = (typeof characterPoses)[number];
 
-const shirtOcclusions: Record<OfficeCharacterPose, string> = {
-  tab: "",
-  think:
-    "M502 286L553 282L563 308L538 338L517 384L495 425L469 447L445 428L459 386L483 338Z",
-  frustration: "",
-  angry: "",
-  pray: "M533 306L557 306L566 342L576 377L595 402L577 427L549 405L526 423L505 402L523 374L531 342Z",
-  happy: "",
-  celebrate: "",
-};
-
-const shirtTransforms: Record<OfficeCharacterPose, string> = {
-  tab: "translate(558 385) rotate(-2) skewX(-3)",
-  think: "translate(564 392) rotate(3) skewX(-3)",
-  frustration: "translate(565 389) rotate(5) skewX(-3)",
-  angry: "translate(558 374) rotate(-2) skewX(-3)",
-  pray: "translate(557 383) rotate(-1) skewX(-3)",
-  happy: "translate(551 390) rotate(1) skewX(-3)",
-  celebrate: "translate(557 377) rotate(-2) skewX(-3)",
-};
-
 export function OfficeCharacter({
   pose,
 }: {
@@ -404,22 +383,6 @@ export function OfficeCharacter({
             )}
           </clipPath>
         ))}
-        {characterPoses.map((item) => (
-          <mask
-            key={item}
-            id={`office-shirt-${item}`}
-            maskUnits="userSpaceOnUse"
-            x="360"
-            y="82"
-            width="384"
-            height="512"
-          >
-            <rect x="480" y="345" width="135" height="100" fill="white" />
-            {shirtOcclusions[item] && (
-              <path d={shirtOcclusions[item]} fill="black" stroke="none" />
-            )}
-          </mask>
-        ))}
       </defs>
       <g data-character-part="portrait">
         {characterPoses.map((item) => (
@@ -438,40 +401,8 @@ export function OfficeCharacter({
               width="384"
               height="512"
             />
-            <g
-              className={styles.shirtPrint}
-              mask={`url(#office-shirt-${item})`}
-            >
-              <text
-                transform={shirtTransforms[item]}
-                data-office-shirt-quote
-                textAnchor="middle"
-                fontFamily="Arial, sans-serif"
-                fontSize="20"
-                fontWeight="900"
-                fill="var(--office-shirt-print)"
-                fillOpacity="0.7"
-                stroke="none"
-              >
-                <tspan x="0">Tab Pray</tspan>
-                <tspan x="0" dy="23">
-                  Repeat
-                </tspan>
-              </text>
-            </g>
           </g>
         ))}
-        <g
-          transform="translate(625 362)"
-          data-office-brand="microsoft"
-          stroke="none"
-        >
-          <rect width="42" height="42" rx="4" fill="var(--office-paper)" />
-          <rect x="5" y="5" width="15" height="15" fill="#f25022" />
-          <rect x="22" y="5" width="15" height="15" fill="#7fba00" />
-          <rect x="5" y="22" width="15" height="15" fill="#00a4ef" />
-          <rect x="22" y="22" width="15" height="15" fill="#ffb900" />
-        </g>
       </g>
     </svg>
   );

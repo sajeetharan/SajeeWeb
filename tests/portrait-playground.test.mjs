@@ -256,17 +256,10 @@ test("independent office objects provide navigation with Projects, GitHub, and I
 
 test("the office includes Microsoft branding and existing MVP and GDE award photographs", async () => {
   const html = await readFile("build/index.html", "utf8");
-  const brand = html.match(
-    /<g\b[^>]*data-office-brand="microsoft"[^>]*>([\s\S]*?)<\/g>/,
-  )?.[1];
-  assert.ok(brand);
   assert.match(
     html,
     /<a\b(?=[^>]*data-office-employer-link="true")(?=[^>]*href="https:\/\/in\.linkedin\.com\/in\/sajeetharan")(?=[^>]*aria-label="Microsoft: view my LinkedIn profile")[^>]*>/,
   );
-  for (const color of ["#f25022", "#7fba00", "#00a4ef", "#ffb900"]) {
-    assert.ok(brand.includes(`fill="${color}"`));
-  }
   for (const award of ["mvp", "gde"]) {
     const frame = html.match(
       new RegExp(
@@ -401,28 +394,9 @@ test("office links retain independent artwork and the keyboard retains its anima
   );
 });
 
-test("the shirt keeps its printed quote without head or body tooltip targets", async () => {
+test("the portrait has no floating shirt overlays or head and body tooltip targets", async () => {
   const html = await readFile("build/index.html", "utf8");
-  const shirt = html.match(
-    /<text\b[^>]*data-office-shirt-quote[^>]*>([\s\S]*?)<\/text>/,
-  )?.[1];
-  assert.ok(shirt, "the coding quote must be printed on the shirt");
-  const printMask = html.match(
-    /<g\b[^>]*mask="url\(#(office-shirt-[^"]+)\)"[^>]*>\s*<text\b[^>]*data-office-shirt-quote/,
-  )?.[1];
-  assert.ok(printMask, "the shirt print must respect the active pose's hands");
-  const maskIds = [
-    ...html.matchAll(/<mask\b[^>]*id="(office-shirt-[^"]+)"/g),
-  ].map(([, id]) => id);
-  assert.ok(maskIds.includes(printMask), "the print mask must resolve");
-  for (const pose of officePoses) {
-    assert.ok(maskIds.includes(`office-shirt-${pose}`));
-  }
-  const printedQuote = shirt
-    .replace(/<[^>]+>/g, " ")
-    .replace(/\s+/g, " ")
-    .trim();
-  assert.equal(printedQuote, "Tab Pray Repeat");
+  assert.doesNotMatch(html, /data-office-shirt-quote|data-office-brand=/);
   assert.doesNotMatch(
     html,
     /data-agentic-trigger|agentic-coding-hint|How I use coding agents|About my agentic coding workflow/,
@@ -456,7 +430,7 @@ test("lifelike full-character poses have matching transparent frames within the 
   assert.ok(total < 300_000);
 });
 
-test("each shirt print shares its photo's crossfade layer, placement, and hand mask", async () => {
+test("printed portrait photographs are the only content of each crossfade layer", async () => {
   const html = await readFile("build/index.html", "utf8");
   const ancestors = [];
   let posesFound = 0;
@@ -479,18 +453,14 @@ test("each shirt print shares its photo's crossfade layer, placement, and hand m
     }
   }
   assert.equal(posesFound, officePoses.length);
-  const transforms = new Set();
   for (const pose of officePoses) {
     const layer = html.match(
       new RegExp(
-        `<g\\b[^>]*data-character-pose-layer="${pose}"[^>]*>([\\s\\S]*?)<\\/g><\\/g>`,
+        `<g\\b[^>]*data-character-pose-layer="${pose}"[^>]*>([\\s\\S]*?)<\\/g>`,
       ),
     )?.[1];
     assert.ok(layer, pose);
-    assert.match(layer, new RegExp(`mask="url\\(#office-shirt-${pose}\\)"`));
-    const print = layer.match(/<text\b[^>]*data-office-shirt-quote[^>]*>/)?.[0];
-    assert.ok(print, `${pose} must carry its own shirt print`);
-    transforms.add(print.match(/transform="([^"]+)"/)[1]);
+    assert.match(layer, /^<image\b[^>]*><\/image>$/);
+    assert.match(layer, new RegExp(`/img/office-character/${pose}\\.webp`));
   }
-  assert.equal(transforms.size, officePoses.length);
 });
