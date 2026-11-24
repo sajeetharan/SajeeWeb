@@ -1,5 +1,12 @@
 import React from "react";
 import useBaseUrl from "@docusaurus/useBaseUrl";
+import tabPortrait from "@site/static/img/office-character/tab.webp";
+import thinkPortrait from "@site/static/img/office-character/think.webp";
+import frustrationPortrait from "@site/static/img/office-character/frustration.webp";
+import angryPortrait from "@site/static/img/office-character/angry.webp";
+import prayPortrait from "@site/static/img/office-character/pray.webp";
+import happyPortrait from "@site/static/img/office-character/happy.webp";
+import celebratePortrait from "@site/static/img/office-character/celebrate.webp";
 import { socialProfiles } from "../NavbarSocialLinks";
 import styles from "./DeveloperDesk.module.scss";
 
@@ -353,12 +360,21 @@ const characterPoses = [
 ] as const;
 export type OfficeCharacterPose = (typeof characterPoses)[number];
 
+const characterImages: Record<OfficeCharacterPose, string> = {
+  tab: tabPortrait,
+  think: thinkPortrait,
+  frustration: frustrationPortrait,
+  angry: angryPortrait,
+  pray: prayPortrait,
+  happy: happyPortrait,
+  celebrate: celebratePortrait,
+};
+
 export function OfficeCharacter({
   pose,
 }: {
   pose: OfficeCharacterPose;
 }): JSX.Element {
-  const characterBase = useBaseUrl("/img/office-character/");
   return (
     <svg
       className={styles.character}
@@ -393,7 +409,7 @@ export function OfficeCharacter({
             opacity={item === pose ? 1 : 0}
           >
             <image
-              href={`${characterBase}${item}.webp`}
+              href={characterImages[item]}
               data-character-pose={item}
               clipPath={`url(#office-portrait-${item})`}
               x="360"

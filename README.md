@@ -189,6 +189,8 @@ each portrait WebP with pose-specific placement, fabric shading, and hand
 occlusion. There are no floating text or logo overlays, or white badge backgrounds.
 Both prints crossfade with the photograph and retain the same appearance in
 light and dark themes.
+Portrait images use content-hashed build URLs so changes do not reuse cached
+plain-shirt images after deployment.
 The office illustration remains visible in full rather than becoming a photo
 card. Material gradients on the wall, desk, and laptop, softer outlines, and
 subtle object shadows bring the illustrated room closer to the shaded portrait.

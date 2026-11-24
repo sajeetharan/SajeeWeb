@@ -1,4 +1,5 @@
 import assert from "node:assert/strict";
+import { createHash } from "node:crypto";
 import { readFile, readdir, stat } from "node:fs/promises";
 import test from "node:test";
 import ts from "typescript";
@@ -151,9 +152,6 @@ test("the office shows one lifelike pose without playful actions or a separate p
   ];
   assert.equal(layers.length, officePoses.length);
   assert.equal(layers.filter(([tag]) => tag.includes('opacity="1"')).length, 1);
-  for (const pose of officePoses) {
-    assert.ok(html.includes(`/img/office-character/${pose}.webp`));
-  }
   assert.doesNotMatch(html, /data-nosebleed|data-tears|data-cheek-redness/);
   assert.doesNotMatch(
     html,
@@ -461,6 +459,19 @@ test("printed portrait photographs are the only content of each crossfade layer"
     )?.[1];
     assert.ok(layer, pose);
     assert.match(layer, /^<image\b[^>]*><\/image>$/);
-    assert.match(layer, new RegExp(`/img/office-character/${pose}\\.webp`));
+    const url = layer.match(/href="([^"]+)"/)?.[1];
+    assert.ok(url, `${pose} must have an image URL`);
+    assert.match(
+      url,
+      new RegExp(`^/assets/images/${pose}-[a-f0-9]+\\.webp$`),
+      "portrait updates must change the URL instead of reusing cached plain shirts",
+    );
+    const deployed = await readFile(`build${url}`);
+    const source = await readFile(`static/img/office-character/${pose}.webp`);
+    assert.equal(
+      createHash("sha256").update(deployed).digest("hex"),
+      createHash("sha256").update(source).digest("hex"),
+      `${pose} must publish the printed portrait without image conversion`,
+    );
   }
 });

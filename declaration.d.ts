@@ -5,4 +5,8 @@ declare module "*.scss" {
 
 declare module "*.jpg";
 declare module "*.png";
+declare module "*.webp" {
+  const url: string;
+  export default url;
+}
 declare module "*.md";
