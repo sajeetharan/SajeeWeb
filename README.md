@@ -174,15 +174,17 @@ The lower body in every pose is clipped to the desktop's shared back edge,
 including during crossfades; the keyboard hand can extend onto the desktop.
 The Tab key
 animates during the keyboard pose and is positioned under the illustrated
-index finger. The room does not move. The loop runs automatically; a labeled
-Pause/Resume animation button with the same pause/play icons as Mentoring News
-below the desk keeps the current pose still
-without disabling navigation or pausing the separate reviews. Pausing also
-stops the keyboard and automatic object invitations. The loop stops outside
+index finger. The room does not move. The portrait starts still: hovering over
+the head or body runs the loop until the pointer leaves; clicking, tapping,
+or activating the keyboard-accessible portrait button plays one cycle.
+A labeled Play/Pause animation button below the desk provides an alternative
+control without disabling navigation or pausing the separate reviews.
+Office objects react only to hover or focus, with no automatic invitations.
+The loop stops outside
 the viewport or in a hidden tab. Reduced
 motion leaves a still keyboard pose and disables object reactions.
 The animation button is disabled and labeled "Motion reduced" in this mode.
-The head and body have no tooltip or invisible click targets.
+The head and body have one keyboard-accessible animation target, without a tooltip.
 The "Tab Pray Repeat" quote remains printed on the shirt.
 The smaller chest lettering and four-color Microsoft mark are composited into
 each portrait WebP with pose-specific placement, fabric shading, and hand

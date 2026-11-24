@@ -392,8 +392,13 @@ test("office links retain independent artwork and the keyboard retains its anima
   );
 });
 
-test("the portrait has no floating shirt overlays or head and body tooltip targets", async () => {
+test("the portrait has a tooltip-free animation target without floating shirt overlays", async () => {
   const html = await readFile("build/index.html", "utf8");
+  const trigger = html.match(/<button\b[^>]*data-character-trigger[^>]*>/)?.[0];
+  assert.ok(trigger);
+  assert.match(trigger, /aria-label="Animate my portrait"/);
+  assert.match(trigger, /aria-controls="developer-desk-scene"/);
+  assert.doesNotMatch(trigger, /\btitle=/);
   assert.doesNotMatch(html, /data-office-shirt-quote|data-office-brand=/);
   assert.doesNotMatch(
     html,

@@ -67,18 +67,27 @@ export function DeveloperDesk(): JSX.Element {
   const [visible, setVisible] = useState(false);
   const [tabVisible, setTabVisible] = useState(true);
   const [animationPaused, setAnimationPaused] = useState(false);
+  const [portraitHovered, setPortraitHovered] = useState(false);
+  const [portraitPlaying, setPortraitPlaying] = useState(false);
   const [phase, setPhase] = useState<keyof typeof phases>("tab");
   const [reviewIndex, setReviewIndex] = useState(0);
   const [reviewsVisible, setReviewsVisible] = useState(false);
   const [reviewsHovered, setReviewsHovered] = useState(false);
   const [reviewsFocused, setReviewsFocused] = useState(false);
   const [reviewsPaused, setReviewsPaused] = useState(false);
-  const [invitationIndex, setInvitationIndex] = useState(
-    objects.findIndex((object) => object.kind === "noticeboard"),
-  );
   const scene = useRef<HTMLDivElement>(null);
   const news = useRef<HTMLElement>(null);
-  const running = !reducedMotion && visible && tabVisible && !animationPaused;
+  const running =
+    !reducedMotion &&
+    visible &&
+    tabVisible &&
+    !animationPaused &&
+    (portraitHovered || portraitPlaying);
+  const playPortrait = () => {
+    setAnimationPaused(false);
+    setPortraitPlaying(true);
+    setPhase("think");
+  };
   const review = officeTestimonials[reviewIndex];
   const reviewsRunning =
     !reducedMotion &&
@@ -92,7 +101,11 @@ export function DeveloperDesk(): JSX.Element {
     const motion = window.matchMedia("(prefers-reduced-motion: reduce)");
     const syncMotion = () => {
       setReducedMotion(motion.matches);
-      if (motion.matches) setPhase("tab");
+      if (motion.matches) {
+        setPhase("tab");
+        setPortraitHovered(false);
+        setPortraitPlaying(false);
+      }
     };
     syncMotion();
     motion.addEventListener("change", syncMotion);
@@ -123,21 +136,16 @@ export function DeveloperDesk(): JSX.Element {
 
   useEffect(() => {
     if (!running) return;
-    const timer = window.setTimeout(
-      () => setPhase(phases[phase].next),
-      phases[phase].duration,
-    );
+    const timer = window.setTimeout(() => {
+      setPhase(phases[phase].next);
+      if (phase === "celebrate") setPortraitPlaying(false);
+    }, phases[phase].duration);
     return () => window.clearTimeout(timer);
   }, [running, phase]);
 
   useEffect(() => {
-    if (!running) return;
-    const timer = window.setTimeout(
-      () => setInvitationIndex((current) => (current + 1) % objects.length),
-      4000,
-    );
-    return () => window.clearTimeout(timer);
-  }, [running, invitationIndex]);
+    if (!portraitHovered && !portraitPlaying) setPhase("tab");
+  }, [portraitHovered, portraitPlaying]);
 
   useEffect(() => {
     if (!reviewsRunning) return;
@@ -161,6 +169,22 @@ export function DeveloperDesk(): JSX.Element {
         <OfficeBackground />
         <OfficeCharacter pose={reducedMotion ? "tab" : phase} />
         <OfficeLaptop />
+        <button
+          type="button"
+          className={styles.portraitTrigger}
+          data-character-trigger
+          aria-label="Animate my portrait"
+          aria-controls="developer-desk-scene"
+          disabled={reducedMotion}
+          onPointerEnter={(event) => {
+            if (event.pointerType !== "touch") {
+              setAnimationPaused(false);
+              setPortraitHovered(true);
+            }
+          }}
+          onPointerLeave={() => setPortraitHovered(false)}
+          onClick={playPortrait}
+        />
         <a
           className={styles.employerLink}
           href="https://in.linkedin.com/in/sajeetharan"
@@ -169,16 +193,13 @@ export function DeveloperDesk(): JSX.Element {
           data-office-employer-link
         />
         <nav className={styles.objects} aria-label="Explore my developer desk">
-          {objects.map((object, index) => (
+          {objects.map((object) => (
             <Link
               key={object.kind}
               to={object.route}
               target={object.kind === "github" ? "_self" : undefined}
               className={styles.object}
               data-desk-object={object.kind}
-              data-desk-invited={
-                running && invitationIndex === index ? true : undefined
-              }
               aria-label={object.label}
             >
               <OfficeObject kind={object.kind} />
@@ -203,7 +224,7 @@ export function DeveloperDesk(): JSX.Element {
       </div>
       <div className={styles.controls}>
         <p className={styles.phaseCaption} data-character-caption>
-          {reducedMotion
+          {reducedMotion || !running
             ? "Agentic coding: review, accept, verify."
             : phases[phase].caption}
         </p>
@@ -218,10 +239,17 @@ export function DeveloperDesk(): JSX.Element {
               ? "Animation disabled by your reduced-motion preference"
               : undefined
           }
-          onClick={() => setAnimationPaused((current) => !current)}
+          onClick={() => {
+            if (running) {
+              setAnimationPaused(true);
+              setPortraitPlaying(false);
+            } else {
+              playPortrait();
+            }
+          }}
         >
           <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-            {animationPaused && !reducedMotion ? (
+            {!running && !reducedMotion ? (
               <path d="M8 5L19 12L8 19Z" />
             ) : (
               <path d="M8 5V19M16 5V19" />
@@ -229,9 +257,9 @@ export function DeveloperDesk(): JSX.Element {
           </svg>
           {reducedMotion
             ? "Motion reduced"
-            : animationPaused
-              ? "Resume animation"
-              : "Pause animation"}
+            : running
+              ? "Pause animation"
+              : "Play animation"}
         </button>
       </div>
       <section
